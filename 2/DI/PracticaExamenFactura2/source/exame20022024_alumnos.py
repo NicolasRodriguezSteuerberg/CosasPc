@@ -126,13 +126,6 @@ class FiestraPrincipal (QMainWindow):
         dataAlbara = self.txtDataAlbara.text()
         dataEntrega = self.txtDataEntrega.text()
         numeroCliente = self.txtNumeroCliente.text()
-        index = self.tablaDetalleAlbara.selectedIndexes()
-        if not index==[]:
-            self.codigoProducto = self.tableData[index[0].row()][0]
-            self.cantidade = self.tableData[index[0].row()][1]
-            self.prezoUnitario = self.tableData[index[0].row()][2]
-            self.numeroLinhaAlbaran = self.tableData[index[0].row()][3]
-            print("dsajlkhfgsdlkjg")
 
         Factura(numeroAlbara, dataAlbara, dataEntrega, numeroCliente, self.tableData)
 
