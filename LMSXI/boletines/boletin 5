@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--10 Marcadores
+<!DOCTYPE marcadores [
+<!ELEMENT marcadores (marcador+)>
+<!ELEMENT marcador (nombre, uri)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT uri (#PCDATA)>
+]>
+<marcadores>
+<marcador>
+<nombre>W3C</nombre>
+<uri>http://www.w3.org/</uri>
+</marcador>
+<marcador>
+<nombre>Web Hypertext Application Technology Working Group (WHATWG)</nombre>
+<uri>http://www.whatwg.org/</uri>
+</marcador>
+</marcadores>
+-->
+
+<!-- 11 Efemérides
+<!DOCTYPE efemerides [
+<!ELEMENT efemerides (efemeride+)>
+<!ELEMENT efemeride (fecha, hecho)>
+<!ELEMENT fecha (#PCDATA)>
+<!ELEMENT hecho (#PCDATA)>
+]>
+<efemerides>
+
+<efemeride>
+<fecha>20 de julio de 1969</fecha>
+<hecho>Llegada del hombre a laLuna</hecho>
+</efemeride>
+
+<efemeride>
+<fecha>12 de octubre de 1492</fecha>
+<hecho>Llegada de Colón a América</hecho>
+</efemeride>
+
+<efemeride>
+<fecha>6 de abril de 1909</fecha>
+<hecho>llegada de Robert Peary al Polo Norte</hecho>
+</efemeride>
+
+</efemerides>
+-->
+
+<!--12 Aeropuertos
+<!DOCTYPE aeropuertos [
+<!ELEMENT aeropuertos (aeropuerto)>
+<!ELEMENT aeropuerto (nombre, cerrado?)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT cerrado EMPTY>
+]>
+<aeropuertos>
+<aeropuerto>
+<nombre>Berlín Schönefeld (SFX)</nombre>
+</aeropuerto>
+
+<aeropuerto>
+<nombre>Berlín Tempelhof (THF)</nombre>
+<cerrado/>
+</aeropuerto>
+
+</aeropuertos>
+-->
+
+<!--13 Vuelos
+<!DOCTYPE vuelos [
+<!ELEMENT vuelos (vuelo*)>
+<!ELEMENT vuelo ((origen | destino)+)>
+<!ELEMENT origen (#PCDATA)>
+<!ELEMENT destino (#PCDATA)>
+]>
+<vuelos>
+<vuelo>
+<origen>Valencia (VLC)</origen>
+<destino>Londres Heathrow (LHR)</destino>
+</vuelo>
+
+<vuelo>
+<destino>Berlín Schönefeld (SFX)</destino>
+<origen>Paris Charles de Gaulle (CDG)</origen>
+</vuelo>
+
+</vuelos>
+-->
+
+<!--14 Reyes españoles
+<!DOCTYPE reyesEspañoles [
+<!ELEMENT reyesEspañoles ((rey*, reina*)+)>
+<!ELEMENT rey (nombre, padre, madre)>
+<!ELEMENT reina (nombre, padre, madre)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT padre (#PCDATA)>
+<!ELEMENT madre (#PCDATA)>
+]>
+<reyesEspañoles>
+<rey>
+<nombre>Felipe III</nombre>
+<padre>Felipe II</padre>
+<madre>Ana de Austria</madre>
+</rey>
+
+<reina>
+<nombre>Juana la Loca</nombre>
+<padre>Fernando el Católico</padre>
+<madre>Isabel la Católica</madre>
+</reina>
+
+<rey>
+<nombre>Carlos I</nombre>
+<padre>Felipe el Hermoso</padre>
+<madre>Juan la Loca</madre>
+</rey>
+
+</reyesEspañoles>
+-->
+
+<!--15 Países
+<!DOCTYPE paises [
+<!ELEMENT paises (pais*)>
+<!ELEMENT pais (nombre | unionEuropea | otan)+>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT unionEuropea EMPTY>
+<!ELEMENT otan EMPTY>
+]>
+<paises>
+
+<pais>
+<nombre>España</nombre>
+<unionEuropea />
+<otan />
+</pais>
+
+<pais>
+<nombre>Noruega</nombre>
+<otan />
+</pais>
+
+<pais>
+
+<nombre>Austria</nombre>
+<unionEuropea />
+</pais>
+
+</paises>
+-->
+
+<!-- 16Codigo de colores
+<!DOCTYPE colores [
+<!ELEMENT colores (color*)>
+<!ELEMENT color (nombreSvg, codigo)>
+<!ELEMENT nombreSvg (#PCDATA)>
+<!ELEMENT codigo (rgb | cmyk)>
+<!ELEMENT rgb (#PCDATA)>
+<!ELEMENT cmyk (#PCDATA)>
+]>
+<colores>
+
+<color>
+<nombreSvg>Purple</nombreSvg>
+<codigo>
+<rgb>#800080</rgb>
+</codigo>
+</color>
+
+<color>
+<nombreSvg>Purple</nombreSvg>
+<codigo>
+<cmyk>#00FF007F</cmyk>
+</codigo>
+</color>
+
+</colores>
+-->
+
+<!-- 17 Contabilidad
+<!DOCTYPE contabilidad [
+<!ELEMENT contabilidad (apunte*)>
+<!ELEMENT apunte (ingreso?, gasto?, fecha, cantidad, concepto)>
+<!ELEMENT ingreso EMPTY>
+<!ELEMENT gasto EMPTY>
+<!ELEMENT fecha (#PCDATA)>
+<!ELEMENT cantidad (#PCDATA)>
+<!ELEMENT concepto (#PCDATA)>
+
+]>
+<contabilidad>
+
+<apunte>
+<ingreso />
+<fecha>24 de febrero de 2011</fecha>
+<cantidad>1800,00 €</cantidad>
+<concepto>Salario</concepto>
+</apunte>
+
+<apunte>
+<gasto />
+<fecha>28 de febrero de 2011</fecha>
+<cantidad>74,25 €</cantidad>
+<concepto>Recibo luz</concepto>
+</apunte>
+
+</contabilidad>
+-->
+
+<!--18 Mensajes
+<!DOCTYPE mensajes [
+<!ELEMENT mensajes (mensaje*)>
+<!ELEMENT mensaje (de, para, hora, texto)>
+<!ELEMENT de (#PCDATA)>
+<!ELEMENT para (#PCDATA)>
+<!ELEMENT hora (#PCDATA)>
+<!ELEMENT texto ANY>
+<!ELEMENT strong (#PCDATA)>
+]>
+<mensajes>
+<mensaje>
+<de>Pepe (pepe@example.com)</de>
+<para>Juan (juan@example.com)</para>
+<hora>28/02/2011 17:48:23,61</hora>
+<texto>¿Hola, Juan, qué haces?</texto>
+</mensaje>
+<mensaje>
+<de>Juan (juan@example.com)</de>
+<para>Pepe (pepe@example.com)</para>
+<hora>28/02/2011 17:54:20,87</hora>
+<texto>Aquí, aprendiendo <strong>XML</strong></texto>
+</mensaje>
+</mensajes>
+-->

@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--1 Numeros
+<!DOCTYPE numeros [
+<!ELEMENT numeros (#PCDATA)>
+]>
+
+<numeros>25</numeros>
+-->
+<!--2 Letras
+<!DOCTYPE letras [
+<!ELEMENT letras (letra)>
+<!ELEMENT letra (#PCDATA)>
+]>
+<letras>
+<letra>m, uve doble</letra>
+</letras>
+-->
+<!--3 Colores
+<!DOCTYPE colores [
+<!ELEMENT colores (color*)>
+<!ELEMENT color (#PCDATA)>
+]>
+<colores>
+<color>azul marino</color>
+<color>negro</color>
+<color>amarillo</color>
+</colores>
+-->
+<!-- 4 Flores
+<!DOCTYPE flores [
+<!ELEMENT flores (flor+)>
+<!ELEMENT flor (#PCDATA)>
+]>
+<flores>
+<flor>margarita</flor>
+</flores>
+-->
+<!--
+<!DOCTYPE animales [
+<!ELEMENT animales (animal*)>
+<!ELEMENT animal (#PCDATA)>
+]>
+<animales>
+<animal>Caniche</animal>
+<animal>Siamés</animal>
+</animales>
+-->
+<!-- 6 Escritores
+<!DOCTYPE escritores [
+<!ELEMENT escritores
+(escritor*)>
+<!ELEMENT escritor (nombre,
+nacimiento)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT nacimiento (#PCDATA)>
+]>
+<escritores>
+<escritor>
+<nombre>Mario Vargas LLosa</nombre>
+<nacimiento>28 de marzo de1936</nacimiento>
+</escritor>
+<escritor>
+<nombre>Milan Kundera</nombre>
+<nacimiento>1 de abril de 1929</nacimiento>
+</escritor>
+</escritores>
+-->
+<!--
+<!DOCTYPE musicos [
+<!ELEMENT musicos (musico*)>
+<!ELEMENT musico ((nombre |
+apodo), fechaNacimiento)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apodo (#PCDATA)>
+<!ELEMENT fechaNacimiento
+(#PCDATA)>
+]>
+<musicos>
+<musico>
+<nombre>AntonioVivaldi</nombre>
+
+<fechaNacimiento>4 de marzo de1678</fechaNacimiento>
+</musico>
+<musico>
+
+<apodo>El viejo peluca</apodo>
+<fechaNacimiento>21 de marzode 1685</fechaNacimiento>
+</musico>
+</musicos>
+-->
+<!--8 Telefonos de emergencia
+<!DOCTYPE agenda [
+ <!ELEMENT agenda (contacto*)>
+ <!ELEMENT contacto (nombre,telefonoFijo*, telefonoMovil+)>
+ <!ELEMENT nombre (#PCDATA)>
+ <!ELEMENT telefonoFijo (#PCDATA)>
+ <!ELEMENT telefonoMovil (#PCDATA)>
+]>
+<agenda>
+
+<contacto> 
+<nombre>Ayuntamiento</nombre>
+<telefonoFijo>010</telefonoFijo>
+<telefonoMovil>123809477218</telefonoMovil>
+</contacto>
+
+<contacto>
+<nombre>Emergencias</nombre>
+<telefonoFijo>112 (UniónEuropea)</telefonoFijo>
+<telefonoFijo>911 (EstadosUnidos)</telefonoFijo>
+<telefonoMovil>Desconocido</telefonoMovil>
+</contacto>
+
+</agenda>
+-->
+<!--
+<!DOCTYPE sistemaSolar [
+<!ELEMENT sistemaSolar
+(cuerpo*)>
+<!ELEMENT cuerpo ((planeta|
+satelite|asteroide)+)>
+<!ELEMENT planeta (#PCDATA)>
+<!ELEMENT satelite (#PCDATA)>
+<!ELEMENT asteroide (#PCDATA)>
+]>
+<sistemaSolar>
+<cuerpo>
+<planeta>Tierra</planeta>
+<satelite>Luna</satelite>
+<asteroide>Ceres</asteroide>
+
+</cuerpo>
+</sistemaSolar>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

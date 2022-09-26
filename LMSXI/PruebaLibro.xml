@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE libro SYSTEM "/home/dam1/Documentos/LMSXI/Prueba%20dtd%20libro/validacion.dtd">
+<libro>
+<titulo>Titulooo</titulo>
+<autor>
+  <nombre>Pepito</nombre>
+</autor>
+</libro>

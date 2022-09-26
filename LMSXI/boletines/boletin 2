@@ -1,0 +1,87 @@
+BOLETÍN 2 Documentos XML bien formados
+Los siguientes documentos no están bien formados porque cada uno contiene dos errores (dos errores del
+mismo tipo cuentan como uno sólo). Corrige los errores y comprueba si ya son documentos bien formados
+(si para corregir algún error hay que inventarse una etiqueta o atributo, utiliza un nombre que tenga relación
+con la información contenida en el documento).
+
+1- 
+   <cartelera>
+	<pelicula>
+	<titulo>Con faldas y a lo loco</titulo>
+	<director>Billy Wilder</director>
+	</pelicula>
+	<pelicula>
+	<director>Leo McCarey</director>
+	<titulo>Sopa de ganso</titulo>
+	</pelicula>
+	<autor>barto</autor>
+   </cartelera>
+   
+2-
+<deportistas>
+     <deportista>
+	<deporte Atletismo="A"/>
+	<nombre>Jesse Owens</nombre>
+     </deportista>
+     <deportista>
+	<deporte> Natación="N"/>
+	<nombre>Mark Spitz</nombre>
+     </deportista>
+</deportistas>
+
+3-
+<texto>
+	<Titulo>XML explicado a los niños</Titulo>
+	<párrafo>El <abreviatura>XML</abreviatura>define cómo crear
+	lenguajes de marcas.</párrafo>
+	<párrafo>Las marcas se añaden a un documento de texto
+	para añadir información.</párrafo>
+        <http>www.example.org</http>
+</texto>   
+
+4-
+<geografia_mundial>
+     <pais>
+	<pais>España</pais>
+	<continente>Europa</continente>
+	<capital>Madrid</capital>
+     </pais>
+</geografia_mundial>
+
+5-
+<programas>
+	<programa nombre="Firefox" licencia="GPL" licencia2="MPL" />
+	<programa nombre="OpenOffice.org" licencia3="LGPL" />
+	<programa nombre="Inkscape" licencia4="GPL" />
+</programas>
+
+6-
+<mundiales-de-futbol>
+	<mundial pais="España" año="1982" />
+</mundiales-de-futbol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

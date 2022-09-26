@@ -1,0 +1,13 @@
+médicos 
+un medico de cabeceira ten asignado polo menos unha persoa
+unha persoa debe  ter asignado somente  un médico de cabeceira 
+unha persoa pode solicitar somente unha consulta
+unha consulta pode ser solicitada por unha única persoa  
+unha persoa pode pedir varias  receitas
+un pedido de receita debe  ser feitoo  por unha sola persona
+unha consulta debe ser atendida por un so médico
+un médico pode atender varias consultas
+un médico e apoiado polo menos por un auxiliar de enfermería 
+un auxiliar de enfermería pode  estar apoiando a varios médicos 
+un auxiliar de enfermería pode dar recetas
+unha receta debe ser dada por un so auxiliar de enfermería

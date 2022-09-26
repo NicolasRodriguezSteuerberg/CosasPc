@@ -1,0 +1,11 @@
+
+músicos
+
+1 músico pode pertencer a varios grupos
+1 grupo debe tener  polo menos un músico                                                                                                                                                       
+1 músico pode ter en propiedade varios instrumentos
+1 instrumento debe ser propiedade de polo menos un  músico
+1 instrumento  pode ser tocado por varios músicos
+1 músico pode tocar varios instrumentos
+1 grupo so pode ter un manager
+1 manager pode selo de varios grupos

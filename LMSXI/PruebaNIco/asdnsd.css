@@ -1,0 +1,3 @@
+<!ELEMENT root (element+)>
+<!ELEMENT element (#PCDATA)>
+nombre, telefono  [display :block;]
