@@ -17,14 +17,14 @@ public class Boletin2_3 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        double euros, precioDolar,conversion;
-        Scanner obxScanner= new Scanner(System.in);
+        double euros, precioDolar,conversion; //declaracion variables
+        Scanner obxScanner= new Scanner(System.in);//declaracion del objeto scanner
         System.out.println("Teclee os euros a cambiar");
-        euros=obxScanner.nextDouble();
+        euros=obxScanner.nextDouble();//declaro euros a scanner
         System.out.println("teclee a tasa da conversion");
         precioDolar=obxScanner.nextDouble();
         conversion=euros*precioDolar;
-        System.out.println("A conversión é "+conversion+"$");
+        System.out.println("A conversión é de"+conversion+"$");
     }
     
 }

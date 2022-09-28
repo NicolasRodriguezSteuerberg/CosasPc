@@ -23,15 +23,15 @@ public class Boletin2_4 {
         a = obxScanner.nextInt();
         System.out.println("Teclee o 2º numero");
         b = obxScanner.nextInt();
-        suma=a+b;
+        suma=(a)+(b);
         System.out.println("A suma dos números é "+suma);
-        resta=a-b;
+        resta=(a)-(b);
         System.out.println("A resta dos números é "+resta);
-        multiplicacion=a*b;
+        multiplicacion=(a)*(b);
         System.out.println("A multiplicacion dos números é "+multiplicacion);
-        division=a/b;
+        division=(a)/(b);
         System.out.println("A division dos números é "+division);
-        
+        //System.out.println("A suma é "+suma+"\n "resta é "+resta+"\n a multiplicación é "+multiplicacion+"\n a division é "+division);
     }
     
 }

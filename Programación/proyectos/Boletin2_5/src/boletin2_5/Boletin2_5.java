@@ -15,14 +15,14 @@ public class Boletin2_5 {
     /**
      * @param args the command line arguments
      */
-    public static final int conv=1852;//conversion millas a metros
+    public static final int CONV=1852;//declaramos a constante conversion, de millas a metros(Siempre encima de la clase)
     public static void main(String[] args) {
         // TODO code application logic here
-        int millas, metros;
+        float millas, metros;
         Scanner obxScanner = new Scanner(System.in);
         System.out.println("Teclee os millas a convertir");
-        millas=obxScanner.nextInt();
-        metros=millas*conv;
+        millas=obxScanner.nextFloat();//leo/meto al objeto scanner
+        metros=millas*CONV;
         System.out.println("A conversion é de "+metros+" metros");
         
         
