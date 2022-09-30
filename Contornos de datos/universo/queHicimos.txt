@@ -1,0 +1,1 @@
+Creamos carpetas y archivos desde la terminal, lo subimos a github y lo cerramFIN
