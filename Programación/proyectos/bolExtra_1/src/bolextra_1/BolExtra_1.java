@@ -16,7 +16,7 @@ public class BolExtra_1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        float bIm, bIva, iIva, iTotal;//base imponible, % do IVA, importe só do IVA, importe Total
+        float bIm, bIva, iIva, iTotal;//base imponible, % do IVA, importe só do IVA, importe Totalz
         Scanner obxScanner=new Scanner(System.in);
         System.out.println("Ingrese a base imponible");
         bIm=obxScanner.nextFloat();
@@ -24,7 +24,8 @@ public class BolExtra_1 {
         bIva=obxScanner.nextFloat();
         iIva=bIm*(bIva/100);        
         iTotal=bIm+iIva;
-        System.out.println("O importe pagado do IVA é de "+iIva+ " de euros"+"\nO importe total pagado é de "+ iTotal+ " de euros");
+        System.out.println("O importe pagado do IVA é de "+iIva+ " de euros"+"\n"
+                + "O importe total pagado é de "+ iTotal+ " de euros");
     }
     
 }
