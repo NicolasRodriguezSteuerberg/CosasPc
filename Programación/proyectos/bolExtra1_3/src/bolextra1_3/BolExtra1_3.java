@@ -24,7 +24,7 @@ public class BolExtra1_3 {
        b=oS.nextFloat();
        System.out.println("Ingrese c");
        c=oS.nextFloat();
-       x1=(float) (((-b)+ Math.sqrt(Math.pow(b, 2)-4*a*c))/(2*a));
+       x1=(float) ((-b)+ Math.sqrt(Math.pow(b, 2)-4*a*c))/(2*a);
        x2=(float) ((-b)- Math.sqrt(Math.pow(b, 2)-4*a*c))/(2*a);
        
        
