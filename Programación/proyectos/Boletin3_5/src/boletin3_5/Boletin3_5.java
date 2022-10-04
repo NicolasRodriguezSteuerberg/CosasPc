@@ -27,8 +27,9 @@ public class Boletin3_5 {
         System.out.println("Introduzca os días de desprazamento");
         dietas=obxScanner.nextDouble();
         sbruto=sfixo+ivendas*(5/100)+kmf*2+dietas*30 ;
-        sliquido=sbruto-18/100*sbruto-36;
-        System.out.println("O teu soldo bruto é de "+sbruto+" de euros"+"\nO teu soldo líquido é de "+sliquido+" de euros");
+        sliquido=sbruto-(18/100*sbruto-36);
+        System.out.println("O teu soldo bruto é de "+sbruto+" de euros"+"\n"
+                + "O teu soldo líquido é de "+sliquido+" de euros");
     }
     
 }

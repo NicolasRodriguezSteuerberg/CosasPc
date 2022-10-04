@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Boletin3_1 {
 
     public static void main(String[] args) {
-       Scanner obxScanner=new Scanner(System.in);
+       Scanner obxScanner=new Scanner(System.in);//instancia un obxecto de tipo scaner  
        double pt, pp, d;//pt=ptotal, pp=ppagado,d=descuento
        System.out.println("Introduzca o prezo total");
        pt=obxScanner.nextDouble();

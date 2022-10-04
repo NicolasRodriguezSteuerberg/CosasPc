@@ -24,8 +24,13 @@ public class Boletin3_4 {
         r20=r100%20;
         c5=r20/5;
         r5=r20%5;
-        c1=r20/1;
-        System.out.println("Tu cantidad "+ctotal+" a desglosar é de \n" + c100 + " billetes de 100"+"\n"+c20+" billetes de 20 \n"+c5+" billetes de 5 \n"+c1+" monedas de 1\n");
+        c1=r5;
+        System.out.println("Tu cantidad "+ctotal+
+                " a desglosar é de \n"
+                +c100+" billetes de 100"+"\n"
+                +c20+" billetes de 20 \n"
+                +c5+" billetes de 5 \n"
+                +c1+" monedas de 1\n");
         
     }
 }
