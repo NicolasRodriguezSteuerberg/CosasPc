@@ -22,15 +22,12 @@ public class Rectangulo {
     public void setBase(float b){
         base=b;
     }
+    /*public void setBase(float base){       //para cuando haya conflicto de nomes utilízase o this
+        this.base=base;
+    }*/
     public float getBase(){
         return base;
-    }
-    
-    
-    
-    
-    
-    
+    }    
     
     //defino metodos
     public float calcularArea (float b, float h){//base, altura

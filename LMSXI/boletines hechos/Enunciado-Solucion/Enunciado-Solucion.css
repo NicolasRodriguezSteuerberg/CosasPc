@@ -1,0 +1,21 @@
+champions{
+background-color:grey;
+}
+grupo, nombreGrupo, equipo{
+display: block;
+text-align: center;
+}
+grupo{padding: 2em;
+}
+nombreGrupo, equipo{
+border: 2px solid blue;
+}
+nombreGrupo{
+background-color:blue;
+color:white;
+font-size:30px;
+}
+equipo{
+background-color:white;
+color:blue
+}
