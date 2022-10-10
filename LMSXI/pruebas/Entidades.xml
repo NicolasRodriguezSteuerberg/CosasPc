@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="/home/dam1/Documentos/CosasPc/LMSXI/Entidades.css"?>
+<!DOCTYPE datos [
+<!ELEMENT datos (nombre, direccion)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+<!ENTITY n "Carlota Pérez">
+<!ENTITY d "García Barbón 34">
+]>
+
+<datos>
+<nombre>El nombre es:Carlota Pérez</nombre>
+<direccion>La direccion es:García Barbón 34</direccion>
+</datos>

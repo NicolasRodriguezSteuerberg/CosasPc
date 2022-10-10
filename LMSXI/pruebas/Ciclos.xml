@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="/home/dam1/Documentos/CosasPc/LMSXI/pruebas/Ciclos.css"?>
+<!DOCTYPE ciclos [
+<!ELEMENT  ciclos (ciclo+)>
+<!ELEMENT ciclo (nombre, modulo+)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT modulo (#PCDATA)>
+<!ENTITY LM "Lenguaxe de Sistemas de Xestión de Información">
+<!ENTITY FOL "Formación de Orientación Laboral">
+]>
+
+
+
+<ciclos>
+  <ciclo>
+    <nombre>DAM1º</nombre>
+    <modulo>Lenguaxe de Sistemas de Xestión de Información</modulo>
+    <modulo>Formación de Orientación Laboral</modulo>
+  </ciclo>
+  <ciclo>
+    <nombre>ASIR1º</nombre>
+    <modulo>Lenguaxe de Sistemas de Xestión de Información</modulo>
+    <modulo>Formación de Orientación Laboral</modulo>
+  </ciclo>
+  <ciclo>
+    <nombre>DAW1º</nombre>
+    <modulo>Lenguaxe de Sistemas de Xestión de Información</modulo>
+    <modulo>Formación de Orientación Laboral</modulo>
+  </ciclo>
+</ciclos>

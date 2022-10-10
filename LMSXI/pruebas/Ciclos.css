@@ -1,0 +1,15 @@
+ciclo, nombre, modulo {display:block;
+color:white;}
+
+ciclo {border:2px solid #f6f92c }
+
+nombre {background-color:#ddd98d;
+border:2px solid black;
+color:black;
+}
+
+modulo {
+background-color:#ffb55d;
+padding-left:2em;
+
+}
