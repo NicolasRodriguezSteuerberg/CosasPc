@@ -7,7 +7,7 @@ public class Rectangulo {
     //constructores
     public Rectangulo(float b, float h){ //constructor parametrizado
         base=b;
-        altura=b;
+        altura=h;
     }
     public Rectangulo(){ //constructor por defecto
     
