@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE espacios [
+<!ELEMENT espacios (p:banco, s:banco, d:banco)>
+<!ATTLIST espacios xmlns:p CDATA #FIXED "http://peces"
+xmlns:s CDATA #REQUIRED
+xmlns:d CDATA #REQUIRED>
+<!ELEMENT p:banco (p:nombre)>
+<!ELEMENT p:nombre (#PCDATA)>
+<!ELEMENT s:banco (s:nombre)>
+<!ELEMENT s:nombre (#PCDATA)>
+<!ELEMENT d:banco (d:nombre)>
+<!ELEMENT d:nombre (#PCDATA)>
+]>
+<espacios xmlns:p="http://peces" xmlns:s="http://sentarse" xmlns:d="http://dinero">
+  <p:banco>
+    <p:nombre>sardinas, salmon</p:nombre>
+  </p:banco>
+  <s:banco>
+    <s:nombre>Sin respaldo</s:nombre>
+  </s:banco>
+  <d:banco>
+    <d:nombre>Abanca</d:nombre>
+  </d:banco>
+</espacios>
+

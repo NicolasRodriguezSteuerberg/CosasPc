@@ -1,30 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE factura[
-<!ELEMENT factura (datos_empresa, datos_cliente, datos_factura)>
-<!ATTLIST factura n_fac CDATA #REQUIRED>
-<!ELEMENT datos_empresa (nombre, dir, poblacion, provincia, cif, telefono)>
-<!ELEMENT nombre (#PCDATA)>
-<!ELEMENT dir (#PCDATA)>
-<!ELEMENT poblacion (#PCDATA)>
-<!ATTLIST poblacion cod_postal CDATA #REQUIRED>
-<!ELEMENT provincia (#PCDATA)>
-<!ELEMENT cif (#PCDATA)>
-<!ELEMENT telefono (#PCDATA)>
-<!ELEMENT datos_cliente (nombre, dir_env, poblacion, provincia)>
-<!ATTLIST datos_cliente n_cli CDATA #REQUIRED>
-<!ELEMENT dir_env (#PCDATA)>
-<!ELEMENT datos_factura (fecha, linea+)>
-<!ATTLIST datos_factura n_ped ID #REQUIRED
-iva CDATA #REQUIRED
-f_pago CDATA #REQUIRED
-moneda CDATA #REQUIRED>
-<!ELEMENT fecha (#PCDATA)>
-<!ELEMENT linea (ref, desc, cant, precio, importe)>
-]>
-
-
-
-
+<!DOCTYPE factura SYSTEM "/home/dam1/Escritorio/Validacion%20externa.dtd">
 <factura n_fac="f999"> 
   <datos_empresa> 
     <nombre>Equipos Digitales S.L.</nombre> 
