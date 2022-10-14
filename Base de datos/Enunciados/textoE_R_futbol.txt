@@ -1,0 +1,22 @@
+Un xogador pode pertencer a un unico equipo e coñécese de devandito xogador ou seu codigo(codx) e ou seu nome(nomx),o seu salario,comision , a sua data de nacemento (datan) 
+
+Un equipo pode ter mais dun xogador e coñécese de devandito equipo ou seu codigo(codequ) o seu nome (nomequ) e o numero de xogadores que o conforman (numx)
+
+Un xogador pode xogar varios partidos por iso  anotarase en que posto ( ou dito doutro xeito  con  que camiseta ) xoga cada xogador cada partido. Tamén se anotará cantos goles marcou dito xogador en cada partido.
+
+Evidentemente un partido pode ser xogado por varios xogadores . 
+
+Dun partido anotaráse ou seu codigo (codpar), ou seu nome(nompar) , a data en que se celebra (data) e o estadio onde pode  celebrarse.
+
+Un equipo pode adestrar en varios estadios distintos 
+(non ter en conta : pero só nun cada ano, (e dicir podendo repetir estadio en anos distintos)).
+
+De cada  estadio coñécese ou seu codigo(codest) e ou seu nome (nomest)
+
+Nun estadio pode adestrar mais dun equipo (non ter en conta : pero só nun cada ano,(e dicir un equipo pode repetir estadio  pero en anos distintos))
+
+Un colexiado pode realizar unha función nun partido e outra distinta noutro partido ,(non ter en conta: pero nun partido determinado só pode realizar unha función asignada só a el). De cada  colexiado recollese o seu codigo (codc) , o seu nome (nomc).
+
+Nun partido poden intervir mais dun colexiado
+ 
+
