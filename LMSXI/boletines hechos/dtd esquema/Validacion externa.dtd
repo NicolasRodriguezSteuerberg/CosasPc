@@ -1,0 +1,12 @@
+<!ELEMENT persona (nombre, nacimiento?, direccion, varon)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT nacimiento EMPTY>
+<!ATTLIST nacimiento dia NMTOKEN #REQUIRED
+mes NMTOKEN #REQUIRED
+anyo NMTOKEN #REQUIRED>
+<!ELEMENT direccion (calle, poblacion, provincia, cpostal)>
+<!ELEMENT calle (#PCDATA)>
+<!ELEMENT poblacion (#PCDATA)>
+<!ELEMENT provincia (#PCDATA)>
+<!ELEMENT cpostal (#PCDATA)>
+<!ELEMENT varon EMPTY>
