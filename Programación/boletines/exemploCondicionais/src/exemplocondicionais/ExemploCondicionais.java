@@ -16,18 +16,32 @@ public class ExemploCondicionais {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       // CondicionalSimple obxCS=new CondicionalSimple();
-       // obxCS.maiorEdade(20);
-       // obxCS.maiorEdade(16);
-       
-       //pedimos datos utilizando JOptionPane
-       String resS=JOptionPane.showInputDialog("teclea a edade");
-       int res=Integer.parseInt(resS);
-       if(res>=18){
-           JOptionPane.showMessageDialog(null, "É maior de edade");
-       }
-       JOptionPane.showMessageDialog(null, "Se acaba o if");
+        //Condicional simple        
+        /*CondicionalSimple obxCS=new CondicionalSimple();
+        obxCS.maiorEdade(20);
+        obxCS.maiorEdade(16);
+        pedimos datos utilizando JOptionPane
+        String res=JOptionPane.showInputDialog("teclea a edade");
+        int edade=Integer.parseInt(res);
+        obxCS.maiorEdade(edade);*/
         
+        //Condicional Dobre       
+        CondicionalDobre obxCD=new CondicionalDobre();
+        String res=JOptionPane.showInputDialog("Teclee a súa edade");
+        int edade=Integer.parseInt(res);
+        int edad=Integer.parseInt(JOptionPane.showInputDialog("Teclee a súa edade"));  //lo mismo que arriba pero simplificado y feo :)
+        obxCD.consultaEdade(edade);
+        obxCD.operarEdade(edade); //condicion dobre con operando
+
+        
+        
+        
+    
+    
+    
+    
+    
+    
     }
     
 }

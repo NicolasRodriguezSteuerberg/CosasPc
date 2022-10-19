@@ -15,15 +15,20 @@ public class Boletin6_3 {
      */
     public static void main(String[] args) {
         Circulo obxC=new Circulo();
-        obxC.calcularArea();
-        obxC.calcularLonxitude();
-        obxC.verResultado();       
+        obxC.setradio(15);
+            double area=obxC.calcularArea();
+            double lonx=obxC.calcularLonxitude();
+      
+        System.out.println("A área é "+area+"\n"
+                + "A lonxitude é "+lonx);
         
         Circulo obxC2=new Circulo(2.0);
-        obxC2.setradio(2.0);
-        obxC2.calcularArea();
-        obxC2.calcularLonxitude();
-        obxC2.verResultado();
+            
+            double area2=obxC2.calcularArea();
+            double lonx2=obxC2.calcularLonxitude();
+
+        System.out.println("A área é "+area2+"\n"
+                + "A lonxitude é "+lonx2);
         
         
         

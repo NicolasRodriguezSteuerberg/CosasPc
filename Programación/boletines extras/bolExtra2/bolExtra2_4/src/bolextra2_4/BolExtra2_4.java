@@ -19,11 +19,19 @@ public class BolExtra2_4 {
         Conta obxC=new Conta();
         Scanner Sca=new Scanner(System.in);
         System.out.println("Escriba o teu nome");
-        Sca.next();
-        Sca=obxC.se;
-        obxC.ingreso(1230.45);
-        obxC.reintegro(23.12);
-        obxC.calcularSaldo();
+        obxC.setnomeCliente(Sca.next());
+        System.out.println("Escriba o teu saldo actual");
+        obxC.sgSaldo(Sca.nextDouble());
+        System.out.println("Teclee a cantidade a ingresar");
+        obxC.ingreso(Sca.nextDouble());
+        System.out.println("O saldo actual é "+obxC.calcularSaldo());
+        System.out.println("Teclee a cantidade a retirar");
+        obxC.reintegro(Sca.nextDouble());
+        System.out.println("O saldo actual é de "+obxC.calcularSaldo2());
+        
+        obxC.transferencia("teclee o teu nome"+Sca.next(), "teclee o nome da conta da transferencia"+Sca.next(),123.34);
+        
+
     }
     
 }

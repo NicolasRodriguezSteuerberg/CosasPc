@@ -53,11 +53,17 @@ public class Conta {
         return rein;
     }
     public double calcularSaldo(){
-        double nSaldo=saldo+ingreso-reintegro;
+        double nSaldo=saldo+ingreso;
+        System.out.println("O teu saldo actual é de "+saldo);
+        return saldo;
+    }
+    public double calcularSaldo2(){
+        double nSaldo=saldo+reintegro;
         System.out.println("O teu saldo actual é de "+saldo);
         return saldo;
     }
     public void transferencia(String cuentaOrigen, String cuentaDestino, double importe){
+        
         if (importe<0){
             System.out.println("Error: Deposito incorrecto");
         }
