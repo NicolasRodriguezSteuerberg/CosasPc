@@ -29,7 +29,7 @@ public class BolExtra2_4 {
         obxC.reintegro(Sca.nextDouble());
         System.out.println("O saldo actual é de "+obxC.calcularSaldo2());
         
-        obxC.transferencia("teclee o teu nome"+Sca.next(), "teclee o nome da conta da transferencia"+Sca.next(),123.34);
+        obxC.transferencia("teclee o teu nome"+Sca.next(), "teclee o nome da conta da transferencia"+Sca.next(),"Teclee o importe a transferir"+Sca.next());
         
 
     }

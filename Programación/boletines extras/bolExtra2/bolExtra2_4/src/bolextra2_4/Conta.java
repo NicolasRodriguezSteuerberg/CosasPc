@@ -62,9 +62,9 @@ public class Conta {
         System.out.println("O teu saldo actual é de "+saldo);
         return saldo;
     }
-    public void transferencia(String cuentaOrigen, String cuentaDestino, double importe){
-        
-        if (importe<0){
+    public void transferencia(String cuentaOrigen, String cuentaDestino, String importe){
+        double imp=Double.parseDouble(importe);
+        if (imp<0){
             System.out.println("Error: Deposito incorrecto");
         }
         else

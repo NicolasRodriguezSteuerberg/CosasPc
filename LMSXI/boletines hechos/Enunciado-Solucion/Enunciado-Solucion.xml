@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/css" href="/home/dam1/Documentos/CosasPc/LMSXI/Enunciado-Solucion.css"?>
+<?xml-stylesheet type="text/css" href="Enunciado-Solucion.css"?>
 <!DOCTYPE champions [
 <!ELEMENT champions (grupo+)>
 <!ELEMENT grupo (nombreGrupo, equipo+)>
@@ -10,67 +10,67 @@
 championsGanadas NMTOKEN #REQUIRED>
 ]>
 <champions>
-<grupo letra="A">
-  <nombreGrupo>Grupo A</nombreGrupo>
-  <equipo pais="Italia" championsGanadas="0">Napoli</equipo>
-  <equipo pais="Inglaterra" championsGanadas="2">Liverpool</equipo>
-  <equipo pais="Holanda" championsGanadas="4">Ajax</equipo>
-  <equipo pais="Escocia" championsGanadas="0">Rangers</equipo>
-  </grupo>
+  <grupo letra="A">
+    <nombreGrupo>Grupo A</nombreGrupo>
+   <equipo pais="Italia" championsGanadas="0">Napoli</equipo>
+   <equipo pais="Inglaterra" championsGanadas="2">Liverpool</equipo>
+   <equipo pais="Holanda" championsGanadas="4">Ajax</equipo>
+   <equipo pais="Escocia" championsGanadas="0">Rangers</equipo>
+   </grupo>
   
-<grupo letra="B">
-  <nombreGrupo>Grupo B</nombreGrupo>
-  <equipo pais="Bélgica" championsGanadas="0">Club Brujas</equipo>
-  <equipo pais="Portugal" championsGanadas="2">O Porto</equipo>
-  <equipo pais="Alemania" championsGanadas="0">Leverkusen</equipo>
-  <equipo pais="España" championsGanadas="0">Atlético Madrid</equipo>
-</grupo>
+  <grupo letra="B">
+    <nombreGrupo>Grupo B</nombreGrupo>
+    <equipo pais="Bélgica" championsGanadas="0">Club Brujas</equipo>
+    <equipo pais="Portugal" championsGanadas="2">O Porto</equipo>
+    <equipo pais="Alemania" championsGanadas="0">Leverkusen</equipo>
+    <equipo pais="España" championsGanadas="0">Atlético Madrid</equipo>
+  </grupo>
 
-<grupo letra="C">
-  <nombreGrupo>Grupo C</nombreGrupo>
-  <equipo pais="Alemania" championsGanadas="6">Bayern de Múnich</equipo>
-  <equipo pais="Italia" championsGanadas="3">Inter de Milán</equipo>
-  <equipo pais="España" championsGanadas="5">Barcelona</equipo>
-  <equipo pais="Chequia" championsGanadas="0">Viktoria Plzen</equipo>
-</grupo>
+  <grupo letra="C">
+    <nombreGrupo>Grupo C</nombreGrupo>
+    <equipo pais="Alemania" championsGanadas="6">Bayern de Múnich</equipo>
+    <equipo pais="Italia" championsGanadas="3">Inter de Milán</equipo>
+    <equipo pais="España" championsGanadas="5">Barcelona</equipo>
+    <equipo pais="Chequia" championsGanadas="0">Viktoria Plzen</equipo>
+  </grupo>
 
-<grupo letra="D">
-  <nombreGrupo>Grupo D</nombreGrupo>
-  <equipo pais="Portugal" championsGanadas="0">Sporting Lisboa</equipo>
-  <equipo pais="Inglaterra" championsGanadas="0">Tottenham</equipo>
-  <equipo pais="Alemania" championsGanadas="0">Frankfurth</equipo>
-  <equipo pais="Francia" championsGanadas="1">Olympique de Marsella</equipo>
-</grupo>
+  <grupo letra="D">
+    <nombreGrupo>Grupo D</nombreGrupo>
+    <equipo pais="Portugal" championsGanadas="0">Sporting Lisboa</equipo>
+    <equipo pais="Inglaterra" championsGanadas="0">Tottenham</equipo>
+    <equipo pais="Alemania" championsGanadas="0">Frankfurth</equipo>
+    <equipo pais="Francia" championsGanadas="1">Olympique de Marsella</equipo>
+  </grupo>
 
-<grupo letra="E">
-  <nombreGrupo>Grupo E</nombreGrupo>
-  <equipo pais="Austria" championsGanadas="0">RB Salzburg</equipo>
-  <equipo pais="Inglaterra" championsGanadas="2">Chelsea</equipo>
-  <equipo pais="Italia" championsGanadas="7">A.C. Milan</equipo>
-  <equipo pais="Croacia" championsGanadas="0">Dinamo Zagreb</equipo>
-</grupo>
+  <grupo letra="E">
+    <nombreGrupo>Grupo E</nombreGrupo>
+    <equipo pais="Austria" championsGanadas="0">RB Salzburg</equipo>
+    <equipo pais="Inglaterra" championsGanadas="2">Chelsea</equipo>
+    <equipo pais="Italia" championsGanadas="7">A.C. Milan</equipo>
+    <equipo pais="Croacia" championsGanadas="0">Dinamo Zagreb</equipo>
+  </grupo>
 
-<grupo letra="F">
-  <nombreGrupo>Grupo F</nombreGrupo>
-  <equipo pais="España" championsGanadas="14">Real Madrid</equipo>
-  <equipo pais="Ucrania" championsGanadas="0">Shakthar</equipo>
-  <equipo pais="Alemania" championsGanadas="0">RB Leipzig</equipo>
-  <equipo pais="Escocia" championsGanadas="1">Celtic F.C</equipo>
-</grupo>
+  <grupo letra="F">
+   <nombreGrupo>Grupo F</nombreGrupo>
+    <equipo pais="España" championsGanadas="14">Real Madrid</equipo>
+    <equipo pais="Ucrania" championsGanadas="0">Shakthar</equipo>
+    <equipo pais="Alemania" championsGanadas="0">RB Leipzig</equipo>
+   <equipo pais="Escocia" championsGanadas="1">Celtic F.C</equipo>
+  </grupo>
 
-<grupo letra="G">
-  <nombreGrupo>Grupo G</nombreGrupo>
-  <equipo pais="Inglaterra" championsGanadas="0">Manchester City</equipo>
-  <equipo pais="Alemania" championsGanadas="1">Dortmund</equipo>
-  <equipo pais="España" championsGanadas="0">Sevilla</equipo>
-  <equipo pais="Dinamarca" championsGanadas="0">Kobenhavn</equipo>
-</grupo>
+  <grupo letra="G">
+    <nombreGrupo>Grupo G</nombreGrupo>
+    <equipo pais="Inglaterra" championsGanadas="0">Manchester City</equipo>
+    <equipo pais="Alemania" championsGanadas="1">Dortmund</equipo>
+    <equipo pais="España" championsGanadas="0">Sevilla</equipo>
+    <equipo pais="Dinamarca" championsGanadas="0">Kobenhavn</equipo>
+  </grupo>
 
-<grupo letra="H">
-  <nombreGrupo>Grupo H</nombreGrupo>
-  <equipo pais="Francia" championsGanadas="0">PSG</equipo>
-  <equipo pais="Portugal" championsGanadas="2">Benfica</equipo>
-  <equipo pais="Italia" championsGanadas="2">Juventus</equipo>
-  <equipo pais="Israel" championsGanadas="0">Maccabi Haifa</equipo>
-</grupo>
+  <grupo letra="H">
+    <nombreGrupo>Grupo H</nombreGrupo>
+    <equipo pais="Francia" championsGanadas="0">PSG</equipo>
+    <equipo pais="Portugal" championsGanadas="2">Benfica</equipo>
+    <equipo pais="Italia" championsGanadas="2">Juventus</equipo>
+    <equipo pais="Israel" championsGanadas="0">Maccabi Haifa</equipo>
+  </grupo>
 </champions>
