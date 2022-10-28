@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="fg.css"?>
+<!DOCTYPE documento SYSTEM "DTD%20externo.dtd">
+<documento>
+  <cabecera>
+    <titulo>Ejercicio 6</titulo>
+    <metainfo nombre="Info" contenido="metainfo"/>
+    <estilo color="rojo"/>
+  </cabecera>
+  <cuerpo>
+    <parrafo>
+      <subrayado>Hola</subrayado>
+    </parrafo>
+    <lista>
+     <item tipo="numerado">Ordenador</item>
+     <item tipo="noNumerado">Monitor</item>
+    </lista>
+  </cuerpo>
+  </documento>

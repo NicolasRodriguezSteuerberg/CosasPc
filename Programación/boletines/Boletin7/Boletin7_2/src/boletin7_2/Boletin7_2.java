@@ -23,7 +23,7 @@ public class Boletin7_2 {
         System.out.println("Teclee o segundo número");
         float n2=obxS.nextFloat();
         if(n1>=n2){
-            JOptionPane.showMessageDialog(null, "A resta é "+(n1-n2));
+            JOptionPane.showMessageDialog(null, "A resta é "+(n1-n2)+"\nA suma é"+(n1+n2));
             
         }
         else{

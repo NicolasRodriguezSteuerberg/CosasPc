@@ -1,0 +1,16 @@
+<!ELEMENT documento (cabecera,cuerpo)>
+<!ELEMENT cabecera (titulo?,metainfo*,estilo)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT metainfo EMPTY>
+<!ELEMENT estilo EMPTY>
+<!ELEMENT cuerpo (parrafo,lista*)+>
+<!ELEMENT parrafo (negrita?,subrayado?)>
+<!ELEMENT negrita (#PCDATA)>
+<!ELEMENT subrayado (#PCDATA)>
+<!ELEMENT lista (item+)>
+<!ELEMENT item (#PCDATA)>
+<!ATTLIST metainfo nombre CDATA #IMPLIED
+          contenido CDATA #IMPLIED>
+<!ATTLIST estilo tamanyo (1|2|3) #IMPLIED
+                 color (rojo|negro) "negro">
+<!ATTLIST item tipo (numerado|noNumerado) #REQUIRED>
