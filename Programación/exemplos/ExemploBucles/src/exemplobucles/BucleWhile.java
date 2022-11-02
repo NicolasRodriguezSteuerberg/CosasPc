@@ -15,7 +15,7 @@ public class BucleWhile {
         int num;
         num=Integer.parseInt(JOptionPane.showInputDialog("teclee número positivo"));
         while(num>=0){
-            System.out.println(num);
+            
             num=Integer.parseInt(JOptionPane.showInputDialog("teclee número positivo"));
         }
         System.out.println("saímos do bucle");
