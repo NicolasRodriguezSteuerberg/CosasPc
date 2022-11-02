@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tebeos [
+<!ELEMENT tebeos (autor, UltimaModificacion, personajes, autores, albumes)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT UltimaModificacion (#PCDATA)>
+<!ELEMENT personajes (personaje*)>
+<!ELEMENT personaje (#PCDATA)>
+<!ATTLIST personaje id ID #IMPLIED
+                                    especie (humano | animal) #IMPLIED>
+<!ELEMENT autores ANY>
+<!ELEMENT dibujantes (dibujante*)>
+<!ELEMENT dibujante ANY>
+<!ATTLIST dibujante id ID #IMPLIED>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apodo (#PCDATA)>
+<!ELEMENT nacimientoFecha (#PCDATA)>
+<!ELEMENT nacimientoPais (#PCDATA)>
+<!ELEMENT fallecimientoFecha (#PCDATA)>
+<!ELEMENT guionistas (guionista+)>
+<!ELEMENT guionista ANY>
+<!ATTLIST guionista id ID #IMPLIED>
+<!ELEMENT albumes (album+)>
+<!ELEMENT album (titulo, personajes, autores, fechaPublicacion)>
+<!ATTLIST album id NMTOKEN #REQUIRED>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT fechaPublicacion (#PCDATA)>
+
+]>
+<tebeos>
+  <autor>Bernardo Garcia  Marcial </autor>
+  <UltimaModificacion>20120601</UltimaModificacion>
+  <personajes>
+    <personaje id="P001" especie="humano">Astérix</personaje>
+    <personaje id="P002" especie="animal">Idéfix</personaje>
+    <personaje id="P003" especie="humano">Lucky Luke</personaje>
+    <personaje id="P004" especie="animal">Jolly Jumper</personaje>
+    <personaje id="P005" especie="humano">Averrell Dalton</personaje>
+    <personaje id="P006" especie="humano">Cayo coyuntural</personaje>
+  </personajes>
+  <autores>
+    <dibujantes>
+      <dibujante id="D001">
+        <nombre>Albert Uderzo</nombre>
+        <nacimientoFecha>1927</nacimientoFecha>
+        <nacimientoPais>Francia</nacimientoPais>
+      </dibujante>
+      <dibujante id="D002">
+        <nombre>Maurice de Bévère</nombre>
+        <apodo>Morris</apodo>
+        <nacimientoFecha>1923</nacimientoFecha>
+        <nacimientoPais>Bélgica</nacimientoPais>
+        <fallecimientoFecha>2001</fallecimientoFecha>
+      </dibujante>
+    </dibujantes>
+    <guionistas>
+      <guionista id="G001">
+        <nombre>René Goscinny</nombre>
+        <nacimientoFecha>1926</nacimientoFecha>
+        <nacimientoPais>Francia</nacimientoPais>
+        <fallecimientoFecha>1977</fallecimientoFecha>
+      </guionista>
+    </guionistas>
+  </autores>
+  <albumes>
+    <album id="A001">
+      <titulo>Astérix, el galo</titulo>
+      <personajes>
+        <personaje>P001</personaje>
+        <personaje>P002</personaje>
+      </personajes>
+      <autores>
+        <dibujante>D001</dibujante>
+        <guionista>G001</guionista>
+      </autores>
+      <fechaPublicacion>1961</fechaPublicacion>
+    </album>
+    <album id="A002">
+      <titulo>Indulto para los Dalton</titulo>
+      <personajes>
+        <personaje>P003</personaje>
+        <personaje>P004</personaje>
+        <personaje>P005</personaje>
+      </personajes>
+      <autores>
+        <dibujante>D002</dibujante>
+        <guionista>G001</guionista>
+      </autores>
+      <fechaPublicacion>1965</fechaPublicacion>
+    </album>
+    <album id="A001">
+      <titulo>Obélix y compañia</titulo>
+      <personajes>
+        <personaje>P001</personaje>
+        <personaje>P002</personaje>
+        <personaje>P006</personaje>
+      </personajes>
+      <autores>
+        <dibujante>D001</dibujante>
+        <guionista>G001</guionista>
+      </autores>
+      <fechaPublicacion>1976</fechaPublicacion>
+    </album>
+  </albumes>
+</tebeos>

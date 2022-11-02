@@ -1,0 +1,12 @@
+Hoja de estilo:
+nombre{
+display:block;                                          (para que se escriban en diferentes líneas)
+color: blue;                                               (cambiar el color de la letra)
+background-color:blue;                         (cambiar color de fondo)
+padding-left:2em;                                   (desplazar solo el texto)
+margin-left:2em;                                    (desplaza "la linea de hoja, es decir si usas el color de fondo empezará desde los caracteres, no desde el inicio de la hoja")
+font-size:30px;
+text-align: center;                                   (para alinearlo al centro)
+border: 2px solid blue;                           (crear borde solido tanto tamaño y color de el) 
+text-decoration: underline;                  (subliñar)
+}   
