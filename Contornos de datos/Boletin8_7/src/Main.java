@@ -26,6 +26,8 @@ public class Main {
                 area = obx.calcularAreaCircunferencia(radio,pi);
                 obx.mostrarArea(area);
                 break;
+            default:
+                System.out.println("Error");
         }
     }
 }
