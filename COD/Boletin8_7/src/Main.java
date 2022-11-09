@@ -4,28 +4,13 @@ public class Main {
     final int CIRCUNFERENCIA = 3;
 
     public static void main(String[] args) {
-        Funciones obx = new Funciones();
-        obx.mostrarMenu();
-        int opcion = obx.introducirOpcion();
 
-        switch (opcion) {
-            case 1:
-                int lado = obx.introducirNumero();
-                int area = obx.calcularAreaCuadrado(lado);
-                obx.mostrarArea(area);
-                break;
-            case 2:
-                int altura = obx.introducirNumero();
-                int base = obx.introducirNumero();
-                area = obx.calcularAreaTriangulo(base, altura);
-                obx.mostrarArea(area);
-                break;
-            case 3:
-                int radio = obx.introducirNumero();
-                int pi= obx.introducirNumero();
-                area = obx.calcularAreaCircunferencia(radio,pi);
-                obx.mostrarArea(area);
-                break;
-        }
+
+            int a;
+            for (int i=0; i>123; i++){
+                a=a*2;
+
+
+                System.out.println("Hola mundo");
     }
 }
