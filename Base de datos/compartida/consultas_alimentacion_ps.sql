@@ -107,4 +107,13 @@ select nome from produto where codm in (select codm from marca where nomm='argal
 select nif, nome, nomz from cliente left join zona on cliente.codz=zona.codz;
 
 
+26)amosar cantos pedidos estan cargados na furgoneta 1 polo repartidor que ten a clave z1,2:
+
+select count(*) from carga where nf='1' and codz='z1' and n='2';
+
+
+27) amosar o nif e nome dos clientes que fixeron pedidos entre o '7/7/2020' e o '13/7/2020'
+
+select nome, pedido.nif from cliente, pedido where cliente.nif=pedido.nif and data>'7/7/2020' and data<'13/7/2020';
+
 

@@ -16,8 +16,7 @@ public class Boletin11_5 {
         int numT=numT();
         float soldo;
         int soldTC=0;//soldo comprendido entrre 1000-1750
-        int soldP=0;//soldo de trabajadores menor que 1000
-        float porC=0;
+        double soldP=0;//soldo de trabajadores menor que 1000
         if (numT<0){
             JOptionPane.showMessageDialog(null,"O numero de trabajadores no puede ser negativo ni 0");
         }
@@ -25,7 +24,7 @@ public class Boletin11_5 {
             soldo=Float.parseFloat(JOptionPane.showInputDialog("Teclee el soldo del trabajador "+(1+i)));
             if (soldo<0){
                 do{
-                JOptionPane.showInputDialog("O soldo non pode ser negativo");
+                JOptionPane.showMessageDialog(null, "O soldo non pode ser negativo");
                 soldo=Float.parseFloat(JOptionPane.showInputDialog("Teclee el soldo del trabajador "+(1+i)));
                 }
                 while(soldo<0);
@@ -48,7 +47,7 @@ public class Boletin11_5 {
             
         }
         System.out.println("O numero de trabajadores que ganan entre 1000 e 1750 euros é "+soldTC);
-        System.out.println("O porcentaxe dos tranajadores que ganan menos de 1000 é "+((float)(soldP/numT)*100)+"%");   
+        System.out.println("O porcentaxe dos tranajadores que ganan menos de 1000 é "+((soldP/numT)*100)+"%");   
     }
     
     
@@ -58,10 +57,6 @@ public class Boletin11_5 {
     }
     
     
-    public float soldo(){
-        float soldo=Float.parseFloat(JOptionPane.showInputDialog("Teclee el soldo del trabajador "));
-        return soldo;
-    }
-    
+
     
 }
