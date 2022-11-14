@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="84989c01-21df-481e-8a3a-67ebe13d95c6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../LMSXI/boletines hechos/Enunciado-Solucion/Enunciado-Solucion.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../LMSXI/boletines hechos/Enunciado-Solucion/Enunciado-Solucion.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LMSXI/boletines hechos/Enunciado-Solucion/Enunciado-Solucion.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../LMSXI/boletines hechos/Enunciado-Solucion/Enunciado-Solucion.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programación/boletines extras/bolExtra2/bolExtra2_4/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Programación/boletines extras/bolExtra2/bolExtra2_4/nbproject/private/private.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programación/boletines extras/bolExtra2/bolExtra2_4/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Programación/boletines extras/bolExtra2/bolExtra2_4/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programación/boletines extras/bolExtra2/bolExtra2_4/src/bolextra2_4/BolExtra2_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Programación/boletines extras/bolExtra2/bolExtra2_4/src/bolextra2_4/BolExtra2_4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programación/boletines extras/bolExtra2/bolExtra2_4/src/bolextra2_4/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Programación/boletines extras/bolExtra2/bolExtra2_4/src/bolextra2_4/Conta.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2GdQwo7UizDk1MKxECYYQXMIeTi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/CosasPc/Contornos de datos/releases/Subir-sources-main/src"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="84989c01-21df-481e-8a3a-67ebe13d95c6" name="Changes" comment="" />
+      <created>1666716221923</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666716221923</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
