@@ -117,3 +117,11 @@ select count(*) from carga where nf='1' and codz='z1' and n='2';
 select nome, pedido.nif from cliente, pedido where cliente.nif=pedido.nif and data>'7/7/2020' and data<'13/7/2020';
 
 
+28)amosar nif, nome, email de cliente ordenado por provedor
+
+select nif, nome, email from cliente order by substr(email, strpos(email, '@'));
+
+
+29)Amosar nome e marca de todos os produtos cun prezo maior de 4
+
+select nome,nomm from produto,marca where produto.codm=marca.codm and prezo>4;
