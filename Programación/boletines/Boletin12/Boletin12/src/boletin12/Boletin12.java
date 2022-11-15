@@ -9,12 +9,14 @@ public class Boletin12 {
         Adivinar2 obx2=new Adivinar2();
         AdivinarSolo obxS=new AdivinarSolo();
         int sOd=Integer.parseInt(JOptionPane.showInputDialog("Escoge cuantos a jugar 1 o 2"));
+        
         switch(sOd){
             case 1:
-                obx2.adivinarNumero();
+                obxS.adivinarNumero();
                 break;
             case 2:
-                obxS.AdivinarNumero();
+                obx2.adivinarNumero();
+                break;
         }
     }
     

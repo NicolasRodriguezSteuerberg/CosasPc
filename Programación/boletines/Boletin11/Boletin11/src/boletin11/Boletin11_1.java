@@ -14,15 +14,15 @@ public class Boletin11_1 {
     public void contN(){
         int c0=0, cPos=0, cNeg=0;
         for (int i=0; i<10; i++){
-            float num=Float.parseFloat(JOptionPane.showInputDialog("Teclee un número"));
+            float num=Float.parseFloat(JOptionPane.showInputDialog("Teclee o "+(i+1)+"º número"));
             if (num>0){
-                cPos=cPos+1;
+                cPos++;
             }
             else if(num<0){
-                cNeg=cNeg+1;
+                cNeg++;
             }
             else{
-                c0=c0+1;
+                c0++;
             }
         }
         System.out.println("Hai "+cPos+" numeros positivos\n"

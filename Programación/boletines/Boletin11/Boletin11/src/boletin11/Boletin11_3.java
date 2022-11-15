@@ -13,24 +13,15 @@ import javax.swing.JOptionPane;
 public class Boletin11_3 {
     public void calcArea(){
         float b, h;
-        b=Float.parseFloat(JOptionPane.showInputDialog("Teclee a base"));
-        h=Float.parseFloat(JOptionPane.showInputDialog("Teclee a altura"));
-        if (b<=0){
-            do{
-                JOptionPane.showMessageDialog(null, "A base ten que ser maior de 0");
-                b=Float.parseFloat(JOptionPane.showInputDialog("Teclee a base"));
-            }
-            while(b<=0);
+        do{
+            b=Float.parseFloat(JOptionPane.showInputDialog("Teclee unha base positiva"));
         }
-        else{
-            if(h<=0){
-                do{
-                JOptionPane.showMessageDialog(null, "A altura ten que ser maior de 0");
-                h=Float.parseFloat(JOptionPane.showInputDialog("Teclee a altura"));
-                }
-                while(h<=0);
-            }
+        while(b<=0);
+
+        do{
+            h=Float.parseFloat(JOptionPane.showInputDialog("Teclee unha altura positiva"));
         }
+        while(h<=0);
         JOptionPane.showMessageDialog(null, "A area do rectangulo es "+(h*b));
     }
 }
