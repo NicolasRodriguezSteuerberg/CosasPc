@@ -26,6 +26,7 @@ pwd  (enseña el directorio en el que estamos
 ./(archivo)         (ejecuta ese archivo) (puedes poner que abra las carpetas que quieras y que abra el programa)
 $ mkdir           (creación de directorio)
 echo "Texto" >> Readme.md (añadir el texto al readme)
+nano README.md 
 
 
 Para diagramas
