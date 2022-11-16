@@ -16,6 +16,7 @@ public class AdivinarSolo {
         numAdiv=(int) (Math.random()*50+1);  
         PedirDatos obx=new PedirDatos();
         numInt=obx.numIntentos();
+        
         for (i=0; i<numInt; i++){
             numEsc=obx.numEsc();
             
@@ -39,6 +40,7 @@ public class AdivinarSolo {
                 JOptionPane.showMessageDialog(null, "Adivinaste el número era "+numAdiv);
                 break;
             }
+            JOptionPane.showMessageDialog(null, "Te quedan "+(numInt-(i+1))+" intentos");
         }
             if (i==numInt){
                 JOptionPane.showMessageDialog(null, "Perdiste, el número era "+numAdiv);

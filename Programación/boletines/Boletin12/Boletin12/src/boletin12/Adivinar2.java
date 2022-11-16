@@ -7,34 +7,32 @@ package boletin12;
 import javax.swing.JOptionPane;
 
 /**
- *
  * @author nicol
  */
 public class Adivinar2 {
-    
-    public void adivinarNumero(){
-        
-        int numAdiv, numEsc, numInt, i;
-        numAdiv=Integer.parseInt(JOptionPane.showInputDialog("Teclee o numero a adivinar"));
-        PedirDatos obx=new PedirDatos();
-        numInt=obx.numIntentos();
-            
-        for (i=0; i<numInt; i++){
-            numEsc=obx.numEsc();
-            if (numAdiv<numEsc){
+
+    public void adivinarNumero() {
+        PedirDatos obx = new PedirDatos();
+        int numAAdivinar, numEsc, numInt, i;
+        numAAdivinar = obx.numA();
+        numInt = obx.numIntentos();
+
+        for (i = 0; i < numInt; i++) {
+            numEsc = obx.numEsc();
+            if (numAAdivinar < numEsc) {
                 JOptionPane.showMessageDialog(null, "El numero es menor");
             }
-            
-            else if (numAdiv>numEsc){
+            else if (numAAdivinar > numEsc) {
                 JOptionPane.showMessageDialog(null, "El numero es mayor");
             }
-            else if(numAdiv==numEsc){
-                JOptionPane.showMessageDialog(null, "Adivinaste el número era "+numAdiv);
+            else if (numAAdivinar == numEsc) {
+                JOptionPane.showMessageDialog(null, "Adivinaste el número era " + numAAdivinar);
                 break;
             }
+
         }
-        if (i==numInt){
-            JOptionPane.showMessageDialog(null, "El número era "+numAdiv);
+        if (i == numInt) {
+            JOptionPane.showMessageDialog(null, "Perdiste, el numero era " + numAAdivinar);
         }
     }
 }
