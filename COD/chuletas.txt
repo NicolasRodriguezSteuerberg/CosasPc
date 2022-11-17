@@ -27,6 +27,9 @@ pwd  (enseña el directorio en el que estamos
 $ mkdir           (creación de directorio)
 echo "Texto" >> Readme.md (añadir el texto al readme)
 nano README.md 
+gedit
+rm -rf    (remover lo que sea)
+cat (nombre archivo)     para ver lo que hay en el documento
 
 
 Para diagramas
