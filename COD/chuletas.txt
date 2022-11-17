@@ -30,6 +30,7 @@ nano README.md
 
 
 Para diagramas
+https://mermaid-js.github.io/mermaid/#/./flowchart?id=flowcharts-basic-syntax
 ```mermaid
 graph TD;
     I-->mostrarMenu;
