@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tablas</title>
+	<style>
+		table{border: 1px solid black;
+			  width: 25%; 
+			  margin: auto;
+			  text-align: center;
+			  background-color: lightblue;
+			  border-collapse: collapse;} 
+		td,th{border: 1px solid black;}
+		th{background-color: dodgerblue;
+		   column-span:;}
+		caption{font-size: 3em;
+				color: indianred;
+				background-color: steelblue;
+				border: 4px solid black;}
+
+
+	</style>
+</head>
+<body>
+<table>
+	<caption>Tabla letras</caption>
+	<tr><th colspan="3">Columnas</th></tr>
+	<tr><td>A</td><td>B</td><td>C</td></tr>
+	<tr><td>D</td><td>E</td><td>F</td></tr>
+</table>
+<br>
+<table>
+	<caption>Tabla números</caption>
+	<tr><td>1</td><td>2</td></tr>
+	<tr><td colspan="2">3-4</td></tr>
+	<tr><td>5</td><td>6</td></tr>
+</table>
+<br>
+<table>
+	<caption>Numero 2</caption>
+	<tr><td>1</td><td>2</td><td>3</td></tr>
+	<tr><td colspan="2">4-5<td rowspan="2">6<br>9</td></tr>
+	<tr><td>7</td><td>8</td></tr>
+</table>
+</body>
+</html>
