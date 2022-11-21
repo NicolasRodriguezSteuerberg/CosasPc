@@ -12,4 +12,8 @@ public class ClaseC {
     protected void amosarClaseC(){
         System.out.println("Amosamos clase C");
     }
+    public void amosar(){
+        ClaseD obxD=new ClaseD();
+        obxD.amosarClaseD();
+    }
 }

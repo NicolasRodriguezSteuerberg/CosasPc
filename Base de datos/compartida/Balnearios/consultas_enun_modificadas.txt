@@ -183,7 +183,7 @@ xose
 
 15 rows selected.
 
-Sin revisar a partir de aqui
+
 13) amosar os nomes de pacientes sen que se repitan
 
 select distinct nomp from pacientes;
@@ -210,7 +210,7 @@ eva
 
 14) amosar os nomes de pacientes que posuan polo menos unha letra -a- e polo menos unha letra -o- no seu  nome
 
-select nomp from pacientes where nomp like'%a%' and nomp like'%o%'
+select nomp from pacientes where nomp like'%a%' and nomp like'%o%';
 
 carlos
 carlos
@@ -219,7 +219,9 @@ mario
 
 
 NON FACER 15) amosar os nomes de todos e cada un dos medicos e os  nomes dos seus xefes
-mostar los nombres de todos y cada uno de los medicos y los nombres de sus jefes 
+
+
+
 
 francisco	federico
 rosa		federico
@@ -234,7 +236,7 @@ federico
 
 16) amosar os nomes dos hoteis que posuan  algunha habitacion con interede
 
-select nomh from hoteis 
+select nomh from hoteis where codh in (select codh from habitacions where interede='s');
 
 mexico
 andurina
@@ -243,7 +245,10 @@ melia
 
 
 17) amosar cales son os ingresos mensuais  dos pacientes cronicos
-mostrar cuales son los ingresos mensuales de los pacientes crónicos 
+
+select ingm from pacientes where nif in (select nif from cronicos);
+
+
 
       1000
       1200
@@ -260,6 +265,7 @@ mostrar cuales son los ingresos mensuales de los pacientes crónicos
 
 18) amosar os nomes dos balnearios que posuan  fisioterapeuta
 
+select nomb from balnearios where codb in (select codb from cat1 where fisioterapeuta='s');
 
 
 banos_de_molgas
@@ -268,7 +274,7 @@ caldas_de_partovia
 
 
 NON FACER  19) amosar o tipo de auga en que o mineral sodio existe en maior cantidade
-mostar el piselect tipo from augato de agua en el cual el mineral 'sodio' existe en mayor cantidad
+
 
 sulfatadas
 

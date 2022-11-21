@@ -9,7 +9,11 @@ package com.nicosteuerberg.paqueteA;
  * @author dam1
  */
 public class ClaseB {
-    void claseB(){
+    void amosarClaseB(){
         System.out.println("Amosamos clase B");
-    } 
+    }
+   /* public void amosar(){
+        ClaseA obxA=new ClaseA();
+        obxA.amosarClaseA();
+    }*/
 }

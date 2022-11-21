@@ -4,6 +4,8 @@
  */
 package com.nicosteuerberg.paqueteA;
 
+import com.nicosteuerberg.paqueteB.ClaseD;
+
 /**
  *
  * @author dam1
@@ -11,5 +13,15 @@ package com.nicosteuerberg.paqueteA;
 public class ClaseA {
     private void amosarClaseA(){
         System.out.println("Amosamos clase A");
+    }
+    
+    public void amosar(){
+        ClaseB obxB=new ClaseB();
+        obxB.amosarClaseB();
+    }
+    
+    public void amosarD(){
+        ClaseD obxD=new ClaseD();
+        obxD.amosarClaseD();
     }
 }
