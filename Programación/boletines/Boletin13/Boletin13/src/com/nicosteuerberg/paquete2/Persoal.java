@@ -3,24 +3,24 @@ package com.nicosteuerberg.paquete2;
 
 
 public class Persoal {
-    private double telefono;
+    private String telefono;
     private String correo;
     
     // constructores
-    public Persoal(){};
+    public Persoal(){}
     
-    public Persoal(double tlf, String email){
+    public Persoal(String tlf, String email){
         telefono = tlf;
         correo = email;
     }
     
     // Accesos
-    public void setTelefono(double tlf){
+    public void setTelefono(String tlf){
         telefono = tlf;
     } 
     
-    public double getTelefono(){
-        double tlf=telefono;
+    public String getTelefono(){
+        String tlf=telefono;
         return tlf;
     }
     
@@ -36,7 +36,7 @@ public class Persoal {
     // to string
     @Override
     public String toString() {
-        return "Persoal{" + "telefono=" + telefono + ", correo=" + correo + '}';
+        return "telefono=" + telefono + ", correo=" + correo;
     }
     
     
