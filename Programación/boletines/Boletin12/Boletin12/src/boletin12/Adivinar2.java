@@ -7,7 +7,7 @@ package boletin12;
 import javax.swing.JOptionPane;
 
 /**
- * @author nicol
+ * @author NSteuerberg
  */
 public class Adivinar2 {
 

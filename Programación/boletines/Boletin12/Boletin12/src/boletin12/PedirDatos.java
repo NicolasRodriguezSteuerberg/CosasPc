@@ -7,7 +7,7 @@ package boletin12;
 import javax.swing.JOptionPane;
 
 /**
- * @author dam1
+ * @author NSteuerberg
  */
 public class PedirDatos {
 

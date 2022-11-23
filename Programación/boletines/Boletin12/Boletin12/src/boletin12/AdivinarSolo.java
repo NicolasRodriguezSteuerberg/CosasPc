@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author nicol
+ * @author NSteuerberg
  */
 public class AdivinarSolo {
     public void adivinarNumero(){

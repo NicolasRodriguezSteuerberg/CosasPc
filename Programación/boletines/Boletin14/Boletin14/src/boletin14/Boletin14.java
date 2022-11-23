@@ -4,6 +4,7 @@
  */
 package boletin14;
 
+
 /**
  *
  * @author dam1
@@ -14,7 +15,16 @@ public class Boletin14 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Ordenador obx = new Ordenador(21.2f, "corsair", 2, 1020.3f);
+        System.out.println(obx.toString());
+        System.out.println(obx.getPrecio());
+        System.out.println(obx.getTeclado().getMarca());
+        System.out.println(obx.getCpu().getVelocidade()+"\n\n");
+   
+        
+        
+        Ordenador obx1 = new Ordenador(24.0f, "logitech",3 ,1001.2f);
+        System.out.println(obx1.toString());
     }
     
 }

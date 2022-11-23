@@ -2,7 +2,10 @@
 package boletin12;
 
 import javax.swing.JOptionPane;
-
+/**
+*@author NSteuerberg
+* @version 1.0.0
+ */
 public class Boletin12 {
     static final String MSG_CANT_JUGADORES = "Escoge cuantos a jugar 1 o 2";
 

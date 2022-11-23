@@ -6,11 +6,12 @@ public class Main {
     public static void main(String[] args) {
 
 
-            int a;
-            for (int i=0; i>123; i++){
-                a=a*2;
+        int a;
+        for (int i = 0; i > 123; i++) {
+            a = a * 2;
 
 
-                System.out.println("Hola mundo");
+            System.out.println("Hola mundo");
+        }
     }
 }
