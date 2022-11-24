@@ -27,7 +27,9 @@ sulfatadas
 
 4) amosar codigos de poboacions onde viven os pacientes  e o numero de pacientes que ten cada unha desas poboacions
 
-select poboacions.codp, count(pacientes.nomp) from poboacions right join pacientes on poboacions.codp=pacientes.codp group by poboacions.codp;
+select poboacions.codp, count(*) from poboacions right join pacientes on poboacions.codp=pacientes.codp group by poboacions.codp;
+
+(correción profe: select codp, count(*) from pacientes group by codp;)
 
 	     2
 p10	     2
@@ -54,11 +56,13 @@ sulfuradas		      4
 cloradas		      1
 
 
-6) amosar sen repeticion os codigos de medicos que cumplan que asignaron polo menos un balneario a un paciente crÃ³nico e prescribiron polo menos un balneario a un enfermo agudo 
+6) amosar sen repeticion os codigos de medicos que cumplan que asignaron polo menos un balneario a un paciente crónico e prescribiron polo menos un balneario a un enfermo agudo 
 
 select distinct medicos.codme from medicos, asignan, prescriben where medicos.codme=asignan.codme and medicos.codme=prescriben.codme;
 
+select distinct codme from medicos where codme in (select codme from asignan) and codme in (select codme from prescriben);
 
+select distinct codme from asignan where codme in (select codme from prescriben);
 
 m4
 m1
@@ -95,7 +99,13 @@ select nif, pacientes.nomp nombre, poboacions.nomp lugar from pacientes left joi
 
 8) (MODIFICADA) amosar o nome do balneario  onde supostamente se atopaba  o paciente agudo  de nif 3615 o 8/7/2020
 
-select nomb from cat2, prescriben, balnearios where cat2.codb=prescriben.codb and dea<'08/07/2020' and dsa>'08/07/2020' and nif='3615' and cat2.codb=balnearios.codb;
+select nomb from cat2, prescriben, balnearios where cat2.codb=prescriben.codb and dea<='08/07/2020' and dsa>='08/07/2020' and nif='3615' and cat2.codb=balnearios.codb;
+
+(bastante mejor/rapida que la anterior)
+select nomb from prescriben, balnearios where balnearios.codb=prescriben.codb and dea<='08/07/2020' and dsa>='08/07/2020' and nif='3615';
+
+(otra opción)(con solo dea o dsa llega)
+select nomb from balnearios where codb in (select codb from prescriben where nif='3615' and dea<='08/07/2020' and dsa>='08/07/2020');
 
 
 
@@ -182,6 +192,7 @@ xoan
 xose
 
 15 rows selected.
+
 
 
 13) amosar os nomes de pacientes sen que se repitan
@@ -281,7 +292,7 @@ sulfatadas
 
 20)amosar os nomes dos pacientes cuxa estancia no hotel -melia- trancurriu en parte ou totalmente entres os dias  15/7/2020   e   20/7/2020. E dicir que si un paciente aloxouse no hotel -melia- o dia 10/7/2020  e  deixou o hotel o dia 15/7/2020 , deberia aparecer neste listado pois transcurriu parte da sua estancia entres as datas referidas , ainda que so fose so un dia  . Pasaria o mesmo para un paciente que entrase neste hotel o dia 17/7/2020 e marchase o 24/7/2020. Ou o mesmo para un paciente que entrase o 11/7/2020 e saise o 15/7/2020';
 
-select distinct nomp from pacientes, aloxan, hoteis where pacientes.nif=aloxan.nif and nomh='melia' and hoteis.codh=aloxan.codh and de<='20/07/2020' and ds>='15/07/2020';
+select nomp from pacientes, aloxan, hoteis where pacientes.nif=aloxan.nif and nomh='melia' and hoteis.codh=aloxan.codh and de<='20/07/2020' and ds>='15/07/2020';
 
 
 resposta: 

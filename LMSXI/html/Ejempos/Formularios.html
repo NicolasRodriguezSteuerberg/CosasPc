@@ -7,27 +7,29 @@
 </head>
 <body>
 	<form method="post" action="mailto:nrodriguezsteuerberg@danielcastelao.org" enctype="text/plain"> 
-		<fieldset style="border: 3px dotted red;">
+		<fieldset style="border: 3px dotted red; border-top: 1px dashed; border-bottom: 1px double;">
 			<legend>Ejemplo formulario</legend>
-		<p>Nombre:<input type="text" name="cb2" size="50" maxlength="15" placeholder="Teclea nombre"></p>
-		<p>Correo:<input type="email" name="" size="50" maxlength="100" placeholder="Teclea correo" autofocus></p>
-		<p>Contraseña:<input type="password" placeholder="Teclea contraseña"></p>
-		<textarea name="kdfjg" rows="20" cols="100" placeholder="Escribe comentarios"></textarea><br>
-		<input type="color"><br>
-		<input type="date" name=""><br>
-		<input type="time" name=""><br>
-		<p>¿En que transporte vas a clase?
-		<select name="Transporte">
-			<option>Bus</option>
-			<option>Coche</option>
-			<option selected>Tren</option>
-		</select>
-		</p>
-		<input type="radio" name="T" value="1">Tren<br>
-		<input type="radio" name="T" value="2">Coche<br>
-		<input type="radio" name="T" value="3" checked>Bus<br>
-		<button>Enviar</button>
+			<p>Nombre:<input type="text" name="cb2" size="50" maxlength="15" placeholder="Teclea nombre"></p>
+			<p>Correo:<input type="email" name="" size="50" maxlength="100" placeholder="Teclea correo" autofocus style="border: 3px solid black;"></p>
+			<p>Contraseña:<input type="password" placeholder="Teclea contraseña"></p>
+			<textarea name="kdfjg" rows="20" cols="100" placeholder="Escribe comentarios"></textarea><br>
+			<h2>Elige color</h2>
+			<input type="color"><br>
+			<p><b>Fecha de nacimiento:<input type="date" name=""></b></p>
+			<p>Hora:<input type="time" name=""></p>
+			<p>¿En que transporte vas a clase?
+			<select name="Transporte">
+				<option>Bus</option>
+				<option>Coche</option>
+				<option selected>Tren</option>
+			</select>
+			</p>
+			<input type="radio" name="T" value="1">Tren<br>
+			<input type="radio" name="T" value="2">Coche<br>
+			<input type="radio" name="T" value="3" checked>Bus<br>
 		</fieldset>
+		<input type="submit" name="e" value="enviar">
+		<input type="reset" name="b" value="borrar">
 	</form>
 </body>
 </html>
