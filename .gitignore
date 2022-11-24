@@ -137,4 +137,5 @@
 /Programación/boletines extras/bolExtra4/calquera/build/
 /COD/entregas/untilted/.idea/AdivinarJuego.iml/
 /COD/entregas/adivinar/.idea/adivinar.iml/
-
+*.data
+*.idea
