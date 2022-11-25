@@ -123,7 +123,7 @@
 /Programación/boletines extras/MostrarAsteriscos/build/
 /Programación/boletines extras/bolExtraCondicionais/BolExtraCondicionais/build/
 /Programación/exemplos/ExPackages/nbproject/private/
-/Programación/exemplos/ExPackages/build/
+/Programación/exemplos/*/build/
 /Programación/boletines/TarefaPaquetes/nbproject/private/
 /Programación/boletines/Boletin13/Boletin13/nbproject/private/
 /Programación/boletines/Boletin13/Boletin13/build/
@@ -135,7 +135,8 @@
 /Programación/boletines extras/bolExtra4/bolExtra4/nbproject/private/
 /Programación/boletines extras/bolExtra4/calquera/nbproject/private/
 /Programación/boletines extras/bolExtra4/calquera/build/
-/COD/entregas/untilted/.idea/AdivinarJuego.iml/
-/COD/entregas/adivinar/.idea/adivinar.iml/
-*.data
-*.idea
+.idea
+out
+build
+nbproject
+test

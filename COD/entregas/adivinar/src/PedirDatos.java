@@ -55,6 +55,11 @@ public class PedirDatos {
         return num;
     }
 
+    /**
+     * Conseguir el número a adivinar
+     *
+     * @return numero a adivinar
+     */
     public int numA() {
         int numAdiv;
         do {
