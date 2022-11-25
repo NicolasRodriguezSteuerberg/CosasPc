@@ -7,6 +7,11 @@ public class Adivinar2 {
 
     public void adivinarNumero() {
         PedirDatos obx = new PedirDatos();
+
+        /**
+         * declaro numeroadivinar, numeroescogido, numero intentos, intentos
+         */
+
         int numAAdivinar, numEsc, numInt, i;
         numAAdivinar = obx.numA();
         numInt = obx.numIntentos();

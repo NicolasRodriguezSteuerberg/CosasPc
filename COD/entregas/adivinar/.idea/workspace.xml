@@ -2,31 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1eb8bf25-bb0e-4289-988b-4ff96c233cd1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.~lock..gitignore#" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Adivinar2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Adivinar2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AdivinarSolo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AdivinarSolo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PedirDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PedirDatos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/Adivinar2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/Adivinar2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/AdivinarSolo.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/AdivinarSolo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/PedirDatos.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/PedirDatos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/class-use/Adivinar2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/class-use/Adivinar2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/class-use/AdivinarSolo.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/class-use/AdivinarSolo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/class-use/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/class-use/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/class-use/PedirDatos.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/class-use/PedirDatos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../docs/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../docs/package-use.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

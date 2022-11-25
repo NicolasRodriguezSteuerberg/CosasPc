@@ -1,4 +1,4 @@
-1) amosar nomes de balnearios cuxo coste diario supere os 45 euros
+ï»¿1) amosar nomes de balnearios cuxo coste diario supere os 45 euros
 
 select nomb from balnearios where costed>45;
 
@@ -29,7 +29,7 @@ sulfatadas
 
 select poboacions.codp, count(*) from poboacions right join pacientes on poboacions.codp=pacientes.codp group by poboacions.codp;
 
-(correción profe: select codp, count(*) from pacientes group by codp;)
+(correciï¿½n profe: select codp, count(*) from pacientes group by codp;)
 
 	     2
 p10	     2
@@ -56,7 +56,7 @@ sulfuradas		      4
 cloradas		      1
 
 
-6) amosar sen repeticion os codigos de medicos que cumplan que asignaron polo menos un balneario a un paciente crónico e prescribiron polo menos un balneario a un enfermo agudo 
+6) amosar sen repeticion os codigos de medicos que cumplan que asignaron polo menos un balneario a un paciente crï¿½nico e prescribiron polo menos un balneario a un enfermo agudo 
 
 select distinct medicos.codme from medicos, asignan, prescriben where medicos.codme=asignan.codme and medicos.codme=prescriben.codme;
 
@@ -104,7 +104,7 @@ select nomb from cat2, prescriben, balnearios where cat2.codb=prescriben.codb an
 (bastante mejor/rapida que la anterior)
 select nomb from prescriben, balnearios where balnearios.codb=prescriben.codb and dea<='08/07/2020' and dsa>='08/07/2020' and nif='3615';
 
-(otra opción)(con solo dea o dsa llega)
+(otra opciï¿½n)(con solo dea o dsa llega)
 select nomb from balnearios where codb in (select codb from prescriben where nif='3615' and dea<='08/07/2020' and dsa>='08/07/2020');
 
 
@@ -138,10 +138,18 @@ select nif from pacientes where (select count(*) from agudos)=(select count(*) f
 
 18 rows selected.
 
+9 Extra)amosar os nif de todos os pacientes que no esten en agudos ni en cronicos
+
+select nif from pacientes where nif not in (select nif from cronicos) and nif not in(select nif from agudos);
+
+
+
 
 10) amosar os nomes das poboacions que non posuan balnearios
 
 select nomp from poboacions left join balnearios on poboacions.codp=balnearios.codp where nomb is null;
+
+select nomp from poboacions where codp not in (select codp from balnearios);
 
 
 lugo
@@ -163,6 +171,8 @@ bueu
 
 select nomb from balnearios, poboacions where nomb=nomp;
 
+select nomb from balnearios where nomb in (select nomp from poboacions);
+
 
 arnoia
 arteixo
@@ -172,7 +182,7 @@ toxa
 
 12) amosar nomes de pacientes distintos aos nomes de calquera medico
 
-select distinct nomp from pacientes, medicos where nomp!=nomme group by nomp;
+select distinct nomp from pacientes where nomp not in (select nomme from medicos);
 
 
 ana
@@ -284,7 +294,12 @@ termas_de_cuntis
 caldas_de_partovia
 
 
-NON FACER  19) amosar o tipo de auga en que o mineral sodio existe en maior cantidade
+NON FACER  19) amosar o tipo de auga en que o mineral sodio existe en maior cantidade 
+
+select tipo from augas where coda  in (select coda from compon where codm= (select codm from minerais where nomm='sodio') and mg= (select max(mg) from compon where codm in (select codm from minerais where nomm='sodio')));
+
+select tipo from augas, minerais, compon where augas.coda=compon.coda and minerais.codm=compon.codm and nomm='sodio' and mg=(select max(mg) from compon) group by tipo;
+
 
 
 sulfatadas
