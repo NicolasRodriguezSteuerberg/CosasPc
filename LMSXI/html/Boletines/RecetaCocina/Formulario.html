@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1>FORMULARIO</h1>
+    <form action="mailto:elisa@danielcastelao.org" method="post" enctype="text/plain">
+        <fieldset>
+            <legend>Tu Opinión también cuenta</legend>
+            <label>Nombre: </label><input type="text" name="nombre" maxlength="15" placeholder="máx. 15 caract">
+        <br><br>
+        <label>Apellidos: </label><input type="text" name="app" max="15" placeholder="máx. 15 caract">
+        <br><br>
+        <label>Correo electrónico: </label><input type="email" name="mail" placeholder="abc123@hotmail.com">
+        <br><br>
+        <label>Población: </label><input type="text" name="pob" maxlength="15" placeholder="Vigo">
+        <br><br>
+        <label>Provincia: </label><input type="text" name="prov" maxlength="15" placeholder="Pontevedra">
+        <br><br>
+                <label>Edad:</label><br>
+                <input type="radio" name="edad">0-20<br>
+                <input type="radio" name="edad" checked>20-40<br>
+                <input type="radio" name="edad">40-60<br>
+                <input type="radio" name="edad">60-100
+            <br><br>
+                <label>¿Cómo nos conociste?</label><br>
+                <input type="checkbox" name="cbox" id="">A través de un amigo.<br>
+                <input type="checkbox" name="cbox" id="">A través de un buscador.<br>
+                <input type="checkbox" name="cbox" id="">Navegando por la red.<br>
+                <input type="checkbox" name="cbox" id="">Otros
+        <br><br>
+        <label>Opinión sobre nuestra página web</label><br>
+        <textarea name="opinion" cols="30" rows="6" placeholder="Escriba aquí su opinión..."></textarea>
+        <br><br>
+        <label>Tiene alguna sugerencia</label><br>
+        <textarea name="sugerencia" cols="30" rows="6" placeholder="Escriba aquí sus sugerencias..."></textarea>
+        <br><br>
+        <div id="botones">
+            <input type="submit" value="Enviar formulario">
+        <input type="reset" value="Borrar formulario">
+        </div>
+        </fieldset>
+    </form>
+    <br><br>
+    <div>
+        <a href="RecetaCocina.html">Volver</a>
+    <a href="Elaboracion.html">Elaboracion</a>
+    <a href="ValorNutricional.html">Valor Nutricional</a>
+    </div>
+</body>
+</html>

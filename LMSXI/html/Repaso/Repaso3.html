@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Repaso3</title>
+	<style>
+		fieldset{
+			margin-left: 15%;
+			margin-right: 15%;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>Your details</legend>
+				<ol type="1">
+					<li>Name <input type="text" placeholder="First and last name" style="height: 10px;"></li>
+					<li>Email <input type="email" placeholder="example@domain.com" style="height: 10px;"></li>
+					<li>Phone <input type="text" name="" placeholder="Eg. +4475000000" style="height: 10px;"></li>
+				</ol>
+		</fieldset>
+		
+		<fieldset>
+			<legend>Delivery adrress</legend>
+				<ol type="1">
+					<li>Addres <textarea rows="4" cols="17"></textarea></li>
+					<li>Post code <input type="text" style="height: 10px;"></li>
+					<li>Country <input type="text" style="height: 13px;"></li>
+				</ol>
+		</fieldset>
+		
+		<fieldset>
+			<legend>Card details</legend>
+			<ol>
+				<li>
+					<fieldset style="margin-left: 0%;">
+						<legend>Card type</legend>
+							<ol>
+								<li><input type="radio" name="VISA">VISA</li>
+								<li><input type="radio" name="AmEx">AmEx</li>
+								<li><input type="radio" name="Mastercard">Mastercard</li>
+							</ol>
+					</fieldset>
+				</li>
+				<li>Card number <input type="number" style="height: 10px;"></li>
+				<li>Security code<input type="number" style="height: 10px;"></li>
+				<li>Name on card <input type="text" style="height: 10px;" placeholder="Exact name as on the card"></li>
+			</ol>
+		</fieldset>
+
+		<fieldset>
+			<input type="submit" name="" value="Buy it!" style="border-radius: 40%;">		
+		</fieldset>
+	</form>
+</body>
+</html>
