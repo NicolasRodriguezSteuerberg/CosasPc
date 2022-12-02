@@ -1,4 +1,4 @@
-.idea
+﻿.idea
 out
 build
 nbproject
@@ -6,3 +6,6 @@ test
 build.xml
 manifest.mf
 dist
+COD/entregas/Singleton
+COD/entregas/VariosBranchs
+.iml
