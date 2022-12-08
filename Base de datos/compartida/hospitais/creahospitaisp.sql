@@ -251,4 +251,3 @@ insert into hosp2 values('h2','p11',1,'m5','1/3/2015','1/4/2015');
 insert into hosp2 values('h3','p11',1,'m5','1/5/2015','1/6/2015');
 insert into hosp2 values('h3','p13',1,'m5','1/5/2015','1/6/2015');
 insert into hosp2 values('h3','p5',2,'m5','1/5/2012','1/6/2012');
-commit;
