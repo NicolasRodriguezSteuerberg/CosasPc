@@ -1,0 +1,317 @@
+﻿1) amosar nomes de balnearios cuxo coste diario supere os 45 euros
+
+select nomb from balnearios where costed>45;
+
+banos_de_molgas
+mondariz
+toxa
+
+
+2) amosar nomes de pacientes que vivan na poboacion denominada 'brea'
+
+select nomp from pacientes where codp in(select codp from poboacions where nomp='brea');
+
+pedro
+bieito
+mario
+
+
+3) indicar os tipos de augas que estarian indicadas para os pacientes que sufren de 'ril'
+
+select tipo from augas where coda in (select coda from indicadas where codz in(select codz from zonas_corporais where nomz='ril'));
+
+bicarbonatadas
+oligometalicas
+sulfatadas
+
+
+4) amosar codigos de poboacions onde viven os pacientes  e o numero de pacientes que ten cada unha desas poboacions
+
+select poboacions.codp, count(*) from poboacions right join pacientes on poboacions.codp=pacientes.codp group by poboacions.codp;
+
+(correci�n profe: select codp, count(*) from pacientes group by codp;)
+
+	     2
+p10	     2
+p7	     3
+p21	     1
+p4	     2
+p2	     1
+p8	     2
+p9	     4
+p5	     1
+
+9 rows selected.
+
+
+5) amosar de cantos minerais se compon cada tipo de auga
+
+select tipo, count(codm) from augas, compon where augas.coda=compon.coda group by tipo;
+
+
+sulfatadas		      1
+ferruginosas		      1
+bicarbonatadas		      2
+sulfuradas		      4
+cloradas		      1
+
+
+6) amosar sen repeticion os codigos de medicos que cumplan que asignaron polo menos un balneario a un paciente cr�nico e prescribiron polo menos un balneario a un enfermo agudo 
+
+select distinct medicos.codme from medicos, asignan, prescriben where medicos.codme=asignan.codme and medicos.codme=prescriben.codme;
+
+select distinct codme from medicos where codme in (select codme from asignan) and codme in (select codme from prescriben);
+
+select distinct codme from asignan where codme in (select codme from prescriben);
+
+m4
+m1
+m5
+
+
+7) amosar  nif e nome de todos e cada un dos pacientes e ademais a poboacion onde viven
+
+select nif, pacientes.nomp nombre, poboacions.nomp lugar from pacientes left join poboacions on pacientes.codp=poboacions.codp;
+
+
+
+362	  ana		  arteixo
+3612	  elisa 	  mondariz
+363	  carlos	  mondariz
+3618	  iria		  lugo
+3613	  mario 	  brea
+3610	  bieito	  brea
+364	  pedro 	  brea
+369	  xoan		  davila
+365	  bea		  davila
+3617	  antia 	  carballo
+3614	  palmira	  carballo
+368	  carlos	  carballo
+366	  eva		  carballo
+3616	  xose		  carballino
+3615	  lucia 	  carballino
+361	  luis		  moimenta
+3611	  carmen
+367	  bea
+
+18 rows selected.
+
+
+8) (MODIFICADA) amosar o nome do balneario  onde supostamente se atopaba  o paciente agudo  de nif 3615 o 8/7/2020
+
+select nomb from cat2, prescriben, balnearios where cat2.codb=prescriben.codb and dea<='08/07/2020' and dsa>='08/07/2020' and nif='3615' and cat2.codb=balnearios.codb;
+
+(bastante mejor/rapida que la anterior)
+select nomb from prescriben, balnearios where balnearios.codb=prescriben.codb and dea<='08/07/2020' and dsa>='08/07/2020' and nif='3615';
+
+(otra opci�n)(con solo dea o dsa llega)
+select nomb from balnearios where codb in (select codb from prescriben where nif='3615' and dea<='08/07/2020' and dsa>='08/07/2020');
+
+
+
+arteixo
+
+
+9) amosar os nif de todos os pacientes se o numero de pacientes cronicos e igual  ao numero de pacientes agudos
+
+select nif from pacientes where (select count(*) from agudos)=(select count(*) from cronicos);
+ 
+
+361
+3610
+3611
+3612
+3613
+3614
+3615
+3616
+3617
+3618
+362
+363
+364
+365
+366
+367
+368
+369
+
+18 rows selected.
+
+9 Extra)amosar os nif de todos os pacientes que no esten en agudos ni en cronicos
+
+select nif from pacientes where nif not in (select nif from cronicos) and nif not in(select nif from agudos);
+
+
+
+
+10) amosar os nomes das poboacions que non posuan balnearios
+
+select nomp from poboacions left join balnearios on poboacions.codp=balnearios.codp where nomb is null;
+
+select nomp from poboacions where codp not in (select codp from balnearios);
+
+
+lugo
+moimenta
+carballo
+santiago
+carballino
+coruna
+guitiriz
+ourense
+cangas
+vigo
+bueu
+
+11 rows selected.
+
+
+11) amosar nomes de balnearios que se chamen exactamente igual que nomes de poboacions
+
+select nomb from balnearios, poboacions where nomb=nomp;
+
+select nomb from balnearios where nomb in (select nomp from poboacions);
+
+
+arnoia
+arteixo
+mondariz
+toxa
+
+
+12) amosar nomes de pacientes distintos aos nomes de calquera medico
+
+select distinct nomp from pacientes where nomp not in (select nomme from medicos);
+
+
+ana
+antia
+bea
+bieito
+carlos
+carmen
+elisa
+eva
+iria
+lucia
+luis
+palmira
+pedro
+xoan
+xose
+
+15 rows selected.
+
+
+
+13) amosar os nomes de pacientes sen que se repitan
+
+select distinct nomp from pacientes;
+
+carlos
+bieito
+elisa
+xoan
+iria
+antia
+mario
+palmira
+ana
+bea
+carmen
+xose
+lucia
+luis
+pedro
+eva
+
+16 rows selected.
+
+
+14) amosar os nomes de pacientes que posuan polo menos unha letra -a- e polo menos unha letra -o- no seu  nome
+
+select nomp from pacientes where nomp like'%a%' and nomp like'%o%';
+
+carlos
+carlos
+xoan
+mario
+
+
+NON FACER 15) amosar os nomes de todos e cada un dos medicos e os  nomes dos seus xefes
+
+
+
+
+francisco	federico
+rosa		federico
+manuel		anabel
+elena		anabel
+mario		elena
+anabel
+federico
+
+7 rows selected.
+
+
+16) amosar os nomes dos hoteis que posuan  algunha habitacion con interede
+
+select nomh from hoteis where codh in (select codh from habitacions where interede='s');
+
+mexico
+andurina
+solpor
+melia
+
+
+17) amosar cales son os ingresos mensuais  dos pacientes cronicos
+
+select ingm from pacientes where nif in (select nif from cronicos);
+
+
+
+      1000
+      1200
+      1300
+       900
+       850
+      1400
+      1600
+      1250
+      1100
+
+9 rows selected.
+
+
+18) amosar os nomes dos balnearios que posuan  fisioterapeuta
+
+select nomb from balnearios where codb in (select codb from cat1 where fisioterapeuta='s');
+
+
+banos_de_molgas
+termas_de_cuntis
+caldas_de_partovia
+
+
+NON FACER  19) amosar o tipo de auga en que o mineral sodio existe en maior cantidade 
+
+select tipo from augas where coda  in (select coda from compon where codm= (select codm from minerais where nomm='sodio') and mg= (select max(mg) from compon where codm in (select codm from minerais where nomm='sodio')));
+
+select tipo from augas, minerais, compon where augas.coda=compon.coda and minerais.codm=compon.codm and nomm='sodio' and mg=(select max(mg) from compon) group by tipo;
+
+
+
+sulfatadas
+
+
+20)amosar os nomes dos pacientes cuxa estancia no hotel -melia- trancurriu en parte ou totalmente entres os dias  15/7/2020   e   20/7/2020. E dicir que si un paciente aloxouse no hotel -melia- o dia 10/7/2020  e  deixou o hotel o dia 15/7/2020 , deberia aparecer neste listado pois transcurriu parte da sua estancia entres as datas referidas , ainda que so fose so un dia  . Pasaria o mesmo para un paciente que entrase neste hotel o dia 17/7/2020 e marchase o 24/7/2020. Ou o mesmo para un paciente que entrase o 11/7/2020 e saise o 15/7/2020';
+
+select nomp from pacientes, aloxan, hoteis where pacientes.nif=aloxan.nif and nomh='melia' and hoteis.codh=aloxan.codh and de<='20/07/2020' and ds>='15/07/2020';
+
+
+resposta: 
+
+ana
+elisa
+
