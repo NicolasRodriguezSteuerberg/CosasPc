@@ -1,0 +1,10 @@
+h1,h2,h3,address,p, em {font: font-family; font-style: normal;}
+h2 {color: red;}
+h1 {text-decoration: underline;}
+h3 {}
+body {background-color: lightgrey;}
+p{background-color: grey;}
+em{
+	color: blue;
+	text-decoration: underline;
+}
