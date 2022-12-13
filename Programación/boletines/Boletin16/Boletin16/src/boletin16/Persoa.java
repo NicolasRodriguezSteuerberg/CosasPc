@@ -46,6 +46,11 @@ public class Persoa {
         String nf = nif;
         return nf;
     }
+
+    @Override
+    public String toString() {
+        return "nome=" + nome + ", apelidos=" + apelidos + ", nif=" + nif ;
+    }
     
     
 }

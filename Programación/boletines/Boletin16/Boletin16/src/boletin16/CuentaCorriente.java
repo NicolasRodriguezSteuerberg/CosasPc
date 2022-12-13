@@ -9,23 +9,28 @@ package boletin16;
  * @author dam1
  */
 public class CuentaCorriente extends Conta{
-    
-    private Conta con;
-    
+        
+    //atributos
     private double interese = 1.5;
     
+    private double saldo;
+    
+    //constructores
     public CuentaCorriente(){}
     
-    public CuentaCorriente(Cliente cli, long nC, double inte){
+    public CuentaCorriente(Cliente cli, long nC){
         super (cli, nC);
-        double sald = con.getSaldo();
-        sald = sald - (sald*interese/100);
+        super.setSaldo(1500);
+        saldo = super.getSaldo();
+        saldo = saldo - (saldo*interese/100);
     }
+    
+    //método toString
 
     @Override
     public String toString() {
-        return "conta=" + con + ", interese=" + interese + '}';
+        return super.toString() + " saldo=" + saldo;
     }
-    
+
     
 }

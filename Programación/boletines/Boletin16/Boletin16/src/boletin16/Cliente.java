@@ -14,4 +14,9 @@ public class Cliente extends Persoa{
     public Cliente(String nom, String apel, String nf){
         super(nom, apel, nf);
     }
+    
+    @Override
+    public String toString() {
+        return super.toString(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
 }

@@ -15,6 +15,11 @@ public class Boletin15 {
      */
     public static void main(String[] args) {
 
+        Pelicula obx1= new Pelicula("Pinocho","Disney","DVD","2h","Muñeco","niña");
+        System.out.println(obx1.toString());
+        
+        Disco obx2= new Disco("Welcome to the Black Parade","MCR","CD","1h15m","Rock");
+        System.out.println(obx2.toString());
         
     }
     

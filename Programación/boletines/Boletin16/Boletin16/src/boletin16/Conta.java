@@ -42,15 +42,14 @@ public class Conta{
     }
     
     public double getSaldo(){
-        double sald = saldo;
-        return sald;
+        return saldo;
     }
     
     
     //métodos
     
     public double ingresar(){
-        int ing = JOptionPane.showConfirmDialog(null, "Quieres retirar dinero");
+        int ing = JOptionPane.showConfirmDialog(null, "Quieres ingresar dinero");
         
         if (ing == 0){
             double ingreso;
@@ -58,7 +57,7 @@ public class Conta{
             while (ingreso < 0){
                 ingreso = Double.parseDouble(JOptionPane.showInputDialog("No puedes ingresar menos de 0"));
             }
-            saldo = saldo - ingreso;
+            saldo = saldo + ingreso;
         }
         return saldo;
     }
@@ -78,6 +77,11 @@ public class Conta{
     
     public void actualizarSaldo(){
         JOptionPane.showMessageDialog(null, "O novo saldo é "+saldo);
+    }
+
+    @Override
+    public String toString() {
+        return cliente.toString()+ " numeroConta=" + numeroConta ;
     }
     
     
