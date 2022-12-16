@@ -1,10 +1,25 @@
 h1,h2,h3,address,p, em {font: font-family; font-style: normal;}
-h2 {color: red;}
-h1 {text-decoration: underline;}
-h3 {}
-body {background-color: lightgrey;}
-p{background-color: grey;}
+h2 {
+	color: red;
+	background-color: steelblue;
+	}
+h1 {
+	text-decoration: underline;
+	}
+h3 {
+	color: purple;
+	background-color: skyblue;
+	}
+body {
+	background-color: floralwhite;
+	}
+p{
+	background-color: lightblue;
+	}
 em{
 	color: blue;
 	text-decoration: underline;
+}
+strong{
+	color: green;
 }
