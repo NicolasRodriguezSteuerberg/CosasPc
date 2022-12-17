@@ -16,16 +16,14 @@ public class Calendario {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Calendario2 cumple = new Calendario2(29,10,2000);
-        cumple.mostrar();
-        Calendario2 cumple2 = new Calendario2(18,6,1965);
-      
-        cumple2.mostrar();
-      
+        Calendario2 obx1 = new Calendario2(31,10,2000);
+        obx1.mostrar();
         
-        Calendario2 fechaMal = new Calendario2(34,10,200);
+        Calendario2 fechaCorregida = new Calendario2 (32, 13, 2013);
+        fechaCorregida.mostrar();
+        
+        Calendario2 fechaMal = new Calendario2 (-1, 13, 1903);
         fechaMal.mostrar();
-        
         
     }
     
