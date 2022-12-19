@@ -1,0 +1,17 @@
+body {
+	background-color: #F2F5A9;
+	background-image: url("https://media.tenor.com/aDAS7QDqDNoAAAAM/feliz-navidad-merry-christmas.gif");
+	background-repeat: repeat-x;
+	background-attachment: fixed;
+	background-position: 0 30%;
+	background-position: 0 90%;
+}
+
+h1{
+	color: green;
+	text-align: center;
+	text-transform: initial;
+	font-size: 6em;
+	text-shadow: 4px 2px black;
+	background: radial-gradient(red,yellow,blue);
+}
