@@ -11,42 +11,24 @@ import javax.swing.JOptionPane;
  * @author dam1
  */
 public class PlataformaPelis {
+    private Peliculas pli;
     
-   private String titulo;
-    private float prezo;
-    
-    
-    //constructor por defecto y parametrizado
-    public PlataformaPelis(){}
-    
-    public PlataformaPelis(String titulo, float prezo){
-        this.titulo = titulo;
-        this.prezo = prezo;
+    public PlataformaPelis(Peliculas pli){
+        this.pli = pli;
+        pli.setPrezo(Float.parseFloat(JOptionPane.showInputDialog("Teclee o novo prezo")));
     }
     
     
-    //metodos (set/get/toString)
-    public void setPrezo(float prezo){
-        this.prezo = prezo;
-    }
-    
-    public float getPrezo(){
-        return prezo;
-    }
-    
+   
     public void visualizar(){
-        System.out.println(toString());
+        System.out.println(pli.toString());
     }
     
     public void rebaixa(){
         float rebaixa = Float.parseFloat(JOptionPane.showInputDialog("Teclee a rebaixa a realizar"));
+        float prezo = pli.getPrezo();
         prezo = prezo - (prezo*rebaixa/100);
         System.out.println("O novo prezo é de " + prezo + "\n");
     }
 
-    @Override
-    public String toString() {
-        return "titulo=" + titulo + "\t" + " prezo=" + prezo;
-    }
-    
 }

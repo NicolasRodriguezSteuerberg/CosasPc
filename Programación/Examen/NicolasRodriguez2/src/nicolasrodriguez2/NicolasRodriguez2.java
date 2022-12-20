@@ -15,13 +15,14 @@ public class NicolasRodriguez2 {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
         //declaro o atributo numeroValidacion para poder validar se se quere continuar no programa
-        int numeroValidacion;
-        
+        int numeroValidacion;        
         //fago do while para que se execute ata que o usuario ponga que non quere seguir
         do{
-            PlataformaPelis pel1 = new PlataformaPelis(JOptionPane.showInputDialog("Teclee o titulo"), Float.parseFloat(JOptionPane.showInputDialog("Teclee o prezo")));
+            Peliculas pli1 = new Peliculas("Contos de Vigo" , 22.3f);
+            PlataformaPelis pel1 = new PlataformaPelis(pli1);
             pel1.visualizar();
             pel1.rebaixa();
             numeroValidacion = JOptionPane.showConfirmDialog(null, "Queres seguir no programa?");
