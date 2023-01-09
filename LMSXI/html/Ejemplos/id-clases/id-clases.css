@@ -1,0 +1,15 @@
+div#EnNegrita{
+	color: red;
+	margin-left: 5px;
+	text-decoration: underline;
+	text-decoration-color: blue;
+}
+
+span.Clase{
+	color: blue;
+	text-decoration: underline;
+	text-decoration-color: red;
+}
+p.Clase{
+	padding-left: 10px;
+}
