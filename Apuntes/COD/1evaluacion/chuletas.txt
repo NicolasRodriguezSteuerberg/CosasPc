@@ -1,0 +1,56 @@
+PARA GIT           (hay que descargarlo)
+$ git clone         (descargar un repositorio)
+$ git pull           (actualizar el repositorio)
+$ git status          (para saber si has hecho modificaciones)
+$ git add --all        (para añadir todo el repositiorio)
+$ git commit -m "texto"
+$ git push -u origin main   (para subir los cambios
+$ git add -a "version" -m "comentario"   (para añadir una etiqueta)
+$ git push origin -tags
+$ git remote -v      (ver los remotos)
+$ git remote remove nombreRemote   (para borrarlo)
+
+INICIAR UN REPOSITORIO GIT
+git init
+git add README.md
+git commit -m "Primer commit"
+git branch -M main
+git remote add origin
+
+
+Para terminal
+cd (nombre carpeta(abre la carpeta))
+pwd  (enseña el directorio en el que estamos
+... tar ... (descomprime el archivo)
+-xzvf ...      -x (desempaqueta) z (descomprime) v (para ver la operación) f (fichero)
+./(archivo)         (ejecuta ese archivo) (puedes poner que abra las carpetas que quieras y que abra el programa)
+$ mkdir           (creación de directorio)
+echo "Texto" >> Readme.md (añadir el texto al readme)
+nano README.md 
+gedit
+rm -rf    (remover lo que sea)
+cat (nombre archivo)     para ver lo que hay en el documento
+
+
+Para diagramas
+https://mermaid-js.github.io/mermaid/#/./flowchart?id=flowcharts-basic-syntax
+```mermaid
+graph TD;
+    I-->mostrarMenu;
+    mostrarMenu-->introducirOpcion;
+    introducirOpcion-->B{switch};
+    B--=1-->introducirLado;
+    B--=2-->introducirB,H;
+    B--=3-->introducirR;
+    B-->opcionIncorrecta;
+    introducirLado-->sup=L*L;
+    sup=L*L-->VisualizarSup;
+    VisualizarSup-->Fin
+    introducirB,H-->sup=b*h/2;
+    sup=b*h/2-->VisualizrSup;
+    VisualizrSup-->Fin;
+    introducirR-->sup=PI*r2;
+    sup=PI*r2-->VisualizaSup;
+    VisualizaSup-->Fin;
+    opcionIncorrecta-->Fin;
+```
