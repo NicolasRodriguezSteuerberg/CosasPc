@@ -1,8 +1,8 @@
 ﻿.idea
 out
 dist
-COD/entregas/Singleton
-COD/entregas/VariosBranchs
+COD/1evaluacion/entregas/Singleton
+COD/1evaluacion/entregas/VariosBranchs
 .iml
 /Programación/boletines extras/DiaDeLaSemana/build/
 /Programación/boletines extras/DiaDeLaSemana/nbproject/private/
@@ -28,3 +28,5 @@ COD/entregas/VariosBranchs
 /Programación/1evaluacion/boletines extras/DiaDeLaSemana/nbproject/private/
 /Programación/2evaluacion/miLibreria/LibreriaNico/nbproject/private/
 /Programación/2evaluacion/miLibreria/com.nicosteuerberg.datos/nbproject/private/
+/Programación/2evaluacion/exemplos/Excepcions/nbproject/private/
+/Programación/2evaluacion/exemplos/Excepcions/build/

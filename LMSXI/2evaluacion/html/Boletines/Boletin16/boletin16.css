@@ -1,0 +1,41 @@
+body{
+	background-color: green;
+	font-family: arial;
+}
+
+h1{
+	font-size: 40px;
+	font-variant: small-caps;
+}
+
+span{
+	font-size: 60px;
+}
+
+p {
+	font-size: 20px;
+}
+
+p.infancia{
+	font-style: italic;
+	color: white;
+	font-family: serif;
+}
+
+p.animales{
+	color: yellow;
+	font-family: sans-serif;
+	letter-spacing: 5px;
+}
+
+p.literatura{
+	color: orange;
+	font-family: monospace;
+	font-size: 25px;
+}
+
+p.numeros{
+	font-family: cursive;
+	color: red;
+	word-spacing: 5px;
+}
