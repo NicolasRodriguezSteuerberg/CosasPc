@@ -52,10 +52,10 @@ public class DividirExcepcions {
             throw new NosaExcepcion("Non dividas entre 0 ****");
         }
         
-        else{
+        /*else{
             int resultado = numerador/denominador;
             System.out.println(numerador + "/" + denominador + " = " + resultado);
-        }
+        }*/
     }
     
     
