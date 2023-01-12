@@ -1,0 +1,75 @@
+h1{
+	text-transform: uppercase;
+	font-size: 30px;
+	text-align: center;
+	border: 3px solid black;
+}
+
+h2{
+	font-size: 15px;
+	font-weight: normal;
+	border-left: 10px double red;
+}
+
+h3{
+	font-size: 15px;
+	font-weight: normal;
+	border-top: 3px dotted blue;
+	border-bottom: 10px dotted blue;
+	border-left: 20px dotted pink;
+	border-right: 7px dotted pink;
+}
+
+h4{
+	font-size: 15px;
+	font-weight: normal;
+	border-top: 10px double green;
+	border-bottom: 10px double blue;
+}
+
+h5{
+	font-size: 15px;
+	font-weight: normal;
+	border-top: 10px dashed red;
+	border-bottom: 10px dotted black;
+	border-left: 10px solid black;
+	border-right: 10px solid black;
+}
+
+h6{
+	font-size: 15px;
+	font-weight: normal;
+	border-top: 10px  dotted black;
+	border-bottom: 10px dashed black;
+	border-left: 7px dotted red;
+	border-right: 10px solid black; 
+}
+
+p#uno{
+	font-size: 20px;
+	border-top: 7px dashed blue;
+	border-right: 10px dashed green;
+	border-bottom: 15px dashed blue;
+	border-left: 40px dashed green;
+}
+
+p.uno{
+	font-size: 20px;
+	border: 10px double yellow;
+	border-left: 5px double yellow;
+	border-right: 5px double yellow;
+}
+
+p#dos{
+	font-size: 20px;
+	border-top: 20px solid green;
+	border-bottom: 20px solid blue;
+}
+
+p.dos{
+	font-size: 20px;
+	border-top: 30px dashed red;
+	border-right: 30px solid black;
+	border-bottom: 30px dotted black;
+	border-left: 30px solid black;
+}
