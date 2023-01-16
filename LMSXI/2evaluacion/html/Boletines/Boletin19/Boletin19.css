@@ -1,0 +1,43 @@
+article.politico{
+	background-color: saddlebrown;
+	color: black;
+	border: 3px solid darkorange;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.politico .fecha{
+	background-color: darkorange;
+}
+.politico .vida{
+	background-color: orange;
+}
+
+article.deportista{
+	background-color: deeppink;
+	border: 3px solid deeppink;
+	border-bottom-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+.deportista .fecha{
+	background-color: hotpink;
+}
+.deportista .vida{
+	background-color: lightpink;
+}
+
+article.empresario{
+	background-color: darkblue;
+	border: 3px solid darkblue;
+	border-radius: 10px;
+}
+.empresario .fecha{
+	background-color: skyblue;
+}
+.empresario .vida{
+	background-color: lightblue;
+}
+
+h2{
+	color: white;
+}
