@@ -9,9 +9,10 @@ package pokemon;
  * @author Usuario
  */
 public class Bulbasaur extends DatosComunes implements IPlanta{
-    private int daño = 0;
-    public Bulbasaur(int ps, int ataque, int defensa, int velocidad) {
-        super(ps, ataque, defensa, velocidad);
+    private float daño = 0;
+    
+    public Bulbasaur(String nome, int ps, int ataque, int defensa, int velocidad) {
+        super(nome, ps, ataque, defensa, velocidad);
     }
 
     public void ataques(){
@@ -19,26 +20,29 @@ public class Bulbasaur extends DatosComunes implements IPlanta{
     }
     
     public void placaje(){
+        System.out.println("Bulbasaur ha usado placaje");
         daño = super.getAtaque()*20/100;
     }
 
     public void mordisco(){
+        System.out.println("Bulbasaur ha usado mordisco");
         daño = super.getAtaque()*30/100;
     }
 
-    public void arañazo(){
-        daño = super.getAtaque()*20/100;
-    }
-
     public void hojaAfilada(){
+        System.out.println("Bulbasaur ha usado hoja afilada");
         daño = super.getAtaque()*55/100;
     }
 
    
     public void latigoCepa(){
-        daño = super.getAtaque()*55/100;
+        System.out.println("Bulbasaur ha usado latigo cepa");
+        daño = super.getAtaque()*60/100;
     }
     
+    public float getDaño(){
+        return daño;
+    }
     
 }
 

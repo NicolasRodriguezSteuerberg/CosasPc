@@ -9,7 +9,6 @@ package pokemon;
  * @author Usuario
  */
 public interface IAgua {
-    public void atacarHidrobomba();
     
     public void atacarPistolaAgua();
     

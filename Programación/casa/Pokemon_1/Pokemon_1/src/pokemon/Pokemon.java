@@ -16,35 +16,64 @@ public class Pokemon {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Pickachu obxP = new Pickachu(35, 55, 40, 90);
-        Bulbasaur obxB = new Bulbasaur(45, 49, 49, 45);
         Scanner obxSca = new Scanner(System.in);
-        
-        
+                
         String estado1 = "vivo";
         String estado2 = "vivo";
-        String poke1;
-        String poke2 = "";
-        
-        System.out.println("Jugador 1 teclee el nombre de tu pokemon:\nPickachu\nBulbasaur");
-        poke1 = obxSca.next();
-        
-        if(poke1 == "Pickachu"){
-            poke2 = "Bulbasaur";
-        }else{
-            poke2 = "Pickachu";
-        }
-        System.out.println("Los equipos son los siguientes:\nPokemons primer jugador \t Pokemons segundo jugador\n   " + poke1 +"\t \t " + poke2);
+        int pok1, pok2;
+        String nPoke1 = ""; 
+        String nPoke2 = "";
         
         
-        
-        do{
-            if(poke1 == "Pickachu"){
-                obxP.getVelocidad();
-                obxB.getVelocidad();
+        System.out.println("Jugador 1 escoge tu pokemon:\n1. Pickachu\n2. Bulbasaur\n3. Charmander\n4. Squirtle");
+        pok1 = obxSca.nextInt();
+        switch(pok1){
+            case 1:
+                Pickachu Pika1 = new Pickachu("Pikachu", 35, 55, 50, 90);
+                nPoke1 = Pika1.getNombre();
+                break;
                 
-            }
-        }while(estado1 != "vivo" || estado2 != "vivo");
+            case 2:
+                Bulbasaur obxB = new Bulbasaur("Bulbasaur", 45, 49, 65, 45);
+                nPoke1 = obxB.getNombre();
+                break;
+            case 3:
+                Charmander obxC = new Charmander("Charmander", 39, 60, 50, 65);
+                nPoke1 = obxC.getNombre();
+                break;
+            case 4:
+                Squirtle obxS = new Squirtle("Squirtle", 44, 50, 65, 43);
+                nPoke1 = obxS.getNombre();
+                break;
+        }
+        
+        System.out.println("Jugador 2 escoge tu pokemon:\n1. Pickachu\n2. Bulbasaur\n3. Charmander\n4. Squirtle");
+        pok2 = obxSca.nextInt();
+        switch(pok2){
+            case 1:
+                Pickachu Pika1 = new Pickachu("Pikachu", 35, 55, 50, 90);
+                nPoke2 = Pika1.getNombre();
+                break;
+                
+            case 2:
+                Bulbasaur obxB = new Bulbasaur("Bulbasaur", 45, 49, 65, 45);
+                nPoke2 = obxB.getNombre();
+                break;
+            case 3:
+                Charmander obxC = new Charmander("Charmander", 39, 60, 50, 65);
+                nPoke2 = obxC.getNombre();
+                break;
+            case 4:
+                Squirtle obxS = new Squirtle("Squirtle", 44, 50, 65, 43);
+                nPoke2 = obxS.getNombre();
+                break;
+        }
+        
+        System.out.println("Los equipos son los siguientes:\nPokemon primer jugador: " + nPoke1 + "\nPokemon segundo jugador: " + nPoke2);
+        
+        
+        
+        
         
     }
     

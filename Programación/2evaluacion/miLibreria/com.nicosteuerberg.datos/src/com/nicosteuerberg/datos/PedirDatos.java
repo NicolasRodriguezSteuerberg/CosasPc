@@ -12,40 +12,33 @@ import javax.swing.JOptionPane;
  */
 public class PedirDatos {
     
-    public byte getByte(){
-        return Byte.parseByte(JOptionPane.showInputDialog("Teclee o número"));
+    public static byte getByte(String mensaxe){
+        return Byte.parseByte(JOptionPane.showInputDialog(mensaxe));
     }
     
-    public short getShort(){
-        return Short.parseShort(JOptionPane.showInputDialog("Teclee o número"));
+    public static short getShort(String mensaxe){
+        return Short.parseShort(JOptionPane.showInputDialog(mensaxe));
     }
     
     
-    public static int getInt(){
-        return Integer.parseInt(JOptionPane.showInputDialog("Teclee o numero"));
+    public static int getInt(String mensaxe){
+        return Integer.parseInt(JOptionPane.showInputDialog(mensaxe));
     }
     
-    public long getLong(){
-        return Long.parseLong(JOptionPane.showInputDialog("Teclee o número"));
+    public static long getLong(String mensaxe){
+        return Long.parseLong(JOptionPane.showInputDialog(mensaxe));
     }
     
-    public float getFloat(){
-        return Float.parseFloat(JOptionPane.showInputDialog("Teclee o número"));
+    public static float getFloat(String mensaxe){
+        return Float.parseFloat(JOptionPane.showInputDialog(mensaxe));
     }
     
-    public double getDouble(){
-        return Double.parseDouble(JOptionPane.showInputDialog("Teclee o número"));
+    public static double getDouble(String mensaxe){
+        return Double.parseDouble(JOptionPane.showInputDialog(mensaxe));
     }
     
-    public String getNome(){
-        return JOptionPane.showInputDialog("Teclee o nome");
+    public static String getString(String mensaxe){
+        return JOptionPane.showInputDialog(mensaxe);
     }
     
-    public String getApelido(){
-        return JOptionPane.showInputDialog("Teclee o apelido");
-    }
-    
-    public String getString(){
-        return JOptionPane.showInputDialog("Teclee a palabra");
-    }
 }

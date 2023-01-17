@@ -9,45 +9,40 @@ package pokemon;
  * @author Usuario
  */
 public class Pickachu extends DatosComunes implements IElectrico{
-    private int daño = 0;
+    private float daño = 0;
     
-    public Pickachu(int ps, int ataque, int defensa, int velocidad) {
-        super(ps, ataque, defensa, velocidad);
+    public Pickachu(String nome, int ps, int ataque, int defensa, int velocidad) {
+        super(nome, ps, ataque, defensa, velocidad);
     }
+    
     public void ataques(){
-        System.out.println("placaje, mordisco, arañazo, impactrueno, puñoTrueno, rayo, ");
-    }
-
-    public void placaje(){
-        daño = super.getAtaque()*20/100;
-    }
-
-    public void mordisco(){
-        daño = super.getAtaque()*30/100;
+        System.out.println("Los ataques de Pickachu son 1. Arañazo\n2. Impactrueno\n3. rayo\n4. Puño Trueno");
     }
 
     public void arañazo(){
+        System.out.println("Pickachu ha usado arañazo");
         daño = super.getAtaque()*20/100;
     }
         
 
     public void impactrueno(){
+        System.out.println("Pickachu ha usado impactrueno");
         daño = super.getAtaque()*40/100;
     }
-
-    
-    public void puñoTrueno(){
-        daño = super.getAtaque()*75/100;
-    }
-
     
     public void rayo(){
-        daño = super.getAtaque()*90/100;
+        System.out.println("Pickachu ha usado rayo");
+        daño = super.getAtaque()*50/100;
     }
-
-    public int getDaño(){
+    
+    public void puñoTrueno(){
+        System.out.println("Pickachu ha usado puño trueno");
+        daño = super.getAtaque()*55/100;
+    }
+    
+    public float getDaño(){
         return daño;
     }
 
-    
+       
 }
