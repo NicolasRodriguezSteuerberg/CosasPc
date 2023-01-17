@@ -18,12 +18,12 @@ public class Pokemon {
     public static void main(String[] args) {
         Scanner obxSca = new Scanner(System.in);
                 
-        String estado1 = "vivo";
-        String estado2 = "vivo";
+        int estado1 = 1; //1 vivo--0 muerto
+        int estado2 = 1;
         int pok1, pok2;
         String nPoke1 = ""; 
         String nPoke2 = "";
-        
+
         
         System.out.println("Jugador 1 escoge tu pokemon:\n1. Pickachu\n2. Bulbasaur\n3. Charmander\n4. Squirtle");
         pok1 = obxSca.nextInt();
@@ -69,12 +69,18 @@ public class Pokemon {
                 break;
         }
         
-        System.out.println("Los equipos son los siguientes:\nPokemon primer jugador: " + nPoke1 + "\nPokemon segundo jugador: " + nPoke2);
+        System.out.println("Los equipos son los siguientes:\nPokemon jugador 1: " + nPoke1 + "\nPokemon jugador 2: " + nPoke2);
         
-        
-        
-        
-        
+        if (pok1==1 && pok2==1){
+            do{
+            
+            }
+            while(estado1 == 0 || estado2 == 0);
+        }
+                
+    }
+
+    public Pokemon() {
     }
     
 }
