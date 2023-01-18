@@ -30,13 +30,13 @@ public class Pokemon {
         pok1 = obxSca.nextInt();
         switch(pok1){
             case 1:
-                Pickachu Pika1 = new Pickachu("Pikachu", 35, 54, 50, 911);
+                Pickachu Pika1 = new Pickachu("Pikachu", 350, 54, 50, 91);
                 System.out.println("Jugador 2 escoge tu pokemon:\n1. Pickachu\n2. Bulbasaur\n3. Charmander\n4. Squirtle");
                 pok2 = obxSca.nextInt();
             
                 switch(pok2){
                     case 1:
-                        Pickachu Pika2 = new Pickachu("Pikachu", 35, 55, 50, 90);
+                        Pickachu Pika2 = new Pickachu("Pikachu", 350, 55, 50, 90);
                         nPoke2 = Pika2.getNombre();
                         do{
                             System.out.println("Jugador 1 elige tu ataque");
@@ -85,7 +85,7 @@ public class Pokemon {
                             
                             if(Pika1.getVelocidad()>Pika2.getVelocidad()){
                                 System.out.println("El pikachu del jugador 1 ha usado: " + nAta1);
-                                float ps2 = Pika2.getPs()-(Pika1.getDaño()/(25*Pika2.getDefensa()));
+                                float ps2 = Pika2.getPs()-(Pika1.getDaño()/(Pika2.getDefensa()));
                                 Pika2.setPs(ps2);
                                 System.out.println("El pikachu del jugador 2 se ha quedado a " + Pika2.getPs());
                                 if(Pika2.getPs()<=0){
@@ -95,7 +95,7 @@ public class Pokemon {
                                 }
                                 
                                 System.out.println("El pikachu del jugador 2 ha usado: " + nAta2);
-                                float ps1 = Pika1.getPs()-(Pika2.getDaño()/(25*Pika1.getDefensa()));
+                                float ps1 = Pika1.getPs()-(Pika2.getDaño()/(Pika1.getDefensa()));
                                 Pika1.setPs(ps1);
                                 System.out.println("El pikachu del jugador 1 se ha quedado a " + Pika1.getPs());
                                 if(Pika1.getPs()<=0){

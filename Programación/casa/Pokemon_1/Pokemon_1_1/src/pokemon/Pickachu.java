@@ -20,19 +20,19 @@ public class Pickachu extends DatosComunes implements IElectrico{
     }
 
     public void arañazo(){
-        daño = super.getAtaque()*20*1.2f;
+        daño = super.getAtaque()*20;
     }
 
     public void impactrueno(){
-        daño = super.getAtaque()*40*1.2f;
+        daño = super.getAtaque()*40;
     }
     
     public void rayo(){
-        daño = super.getAtaque()*50*1.2f;
+        daño = super.getAtaque()*50;
     }
     
     public void puñoTrueno(){
-        daño = super.getAtaque()*55*1.2f;
+        daño = super.getAtaque()*55;
 
     }
     

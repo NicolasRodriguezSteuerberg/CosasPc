@@ -25,7 +25,7 @@ public class Boletin20 {
         obxA.camiñar();
         
         Papagaio obxP = new Papagaio();
-        obxP.camiñar();obxP.volar();
+        obxP.camiñar();obxP.voar();
     }
     
 }

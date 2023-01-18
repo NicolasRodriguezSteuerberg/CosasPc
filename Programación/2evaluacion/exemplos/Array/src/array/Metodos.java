@@ -1,5 +1,7 @@
 package array;
 import com.nicosteuerberg.datos.PedirDatos;
+import java.util.Arrays;
+import javax.swing.JOptionPane;
 //para añadir nuestra libreria tenemos que tener el jar de la libreria-->clean and build
 //para añadirla click derecho na libreria do proxecto-->add JAR-->buscas a libreria a añadir-->dist-->añadir jar
 
@@ -35,6 +37,43 @@ public class Metodos {
             System.out.println("****" + elemento);
         }
     }
+    
+    public void buscarArray(float[] temperaturas){
+        int atopado = 0; //0 = no atopado
+        int posicion = 0;
+        float tempBuscar = PedirDatos.getFloat("Teclee a temperatura a buscar");
+        for(int i=0; i<temperaturas.length;i++){
+            if(tempBuscar==temperaturas[i]){
+                atopado = 1;
+                posicion = i+1;
+            }
+        }
+        if(atopado == 1){
+            JOptionPane.showMessageDialog(null, "Os " + tempBuscar + "ºC están na " + posicion + "º posicion");
+        }else{
+            JOptionPane.showMessageDialog(null, "Non se atopou esa temperatura");
+        }
+        
+    }
+    
+    public void ordenarArray(float[] temperaturas){
+        
+        /*for(int i = 0; i<temperaturas.length-1; i++){
+            for(int j = i+1; j<temperaturas.length; j++){
+                if(temperaturas[i]>temperaturas[j]){
+                    float aux = temperaturas[i];
+                    temperaturas[i] = temperaturas[j];
+                    temperaturas[j] = aux;
+                }
+            }
+        }
+        */
+        System.out.println("temperaturas ordenadas\n");
+        Arrays.sort(temperaturas);
+        
+    }
+    
+    
 }
 
 

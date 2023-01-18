@@ -9,5 +9,5 @@ package boletin20;
  * @author dam1
  */
 public interface IPodeVolar {
-    void volar();
+    void voar();
 }

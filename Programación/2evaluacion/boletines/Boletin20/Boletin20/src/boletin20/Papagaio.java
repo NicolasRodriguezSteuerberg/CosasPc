@@ -8,11 +8,11 @@ package boletin20;
  *
  * @author dam1
  */
-public class Papagaio extends Aves implements IPodeVolar{
+public class Papagaio extends Aves implements IPodeVolar, IPodeCamiñar{
     public void camiñar(){
         System.out.print("Os papagaios poden camiñar");
     }
-    public void volar(){
+    public void voar(){
         System.out.println(" e tamen poden volar\n");
     }
 }
