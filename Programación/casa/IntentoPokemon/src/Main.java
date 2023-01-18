@@ -3,7 +3,7 @@ public class Main {
         int poke1, poke2;
 
         switch (poke1){
-            
+
         }
     }
 }

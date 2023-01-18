@@ -1,6 +1,8 @@
 package array;
 import com.nicosteuerberg.datos.PedirDatos;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import javax.swing.JOptionPane;
 //para añadir nuestra libreria tenemos que tener el jar de la libreria-->clean and build
 //para añadirla click derecho na libreria do proxecto-->add JAR-->buscas a libreria a añadir-->dist-->añadir jar
@@ -73,6 +75,16 @@ public class Metodos {
         
     }
     
+    public void añadirArray(float []temperaturas){
+        List<String> testList = new ArrayList<String>();
+        testList.a
+        for(int i = 0; i<temperaturas.length; i++){
+            if(temperaturas[i] == 0){
+                
+            }
+        }
+        
+    }
     
 }
 
