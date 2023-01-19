@@ -1,0 +1,28 @@
+tituloCatalogo, titulo, director, actor{
+	display: block;
+}
+tituloCatalogo:first-letter{
+	font-size: 2em;
+}
+pelicula director{
+	margin-left: 20px;
+}
+pelicula actor{
+	padding-left: 40px;}
+primero titulo{
+	color: red;
+}
+pelicula{
+	display: block;
+	margin-top: 2px;
+	border: 2px solid green;
+}
+pelicula#a{
+	background-color: lightblue;
+}
+pelicula#a titulo{
+	background-color: yellow;
+}
+#a actor{
+	background-color: red;
+}

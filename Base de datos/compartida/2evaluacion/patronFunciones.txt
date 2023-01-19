@@ -1,0 +1,14 @@
+CREATE [or replace] FUNCTION function_name(param_list)
+	RETURNS return_type
+	LANGUAGE PLPGSQL
+    AS
+$$  
+DECLARE
+ --variable declaration       declaracion de la variable
+BEGIN
+ --logic   logica del programa, metodos etc
+ 
+ 
+ RETURN x
+END;
+$$;

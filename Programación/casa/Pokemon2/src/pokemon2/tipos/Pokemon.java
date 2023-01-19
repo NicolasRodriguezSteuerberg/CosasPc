@@ -16,15 +16,17 @@ public class Pokemon {
     public String nombre, tipo;
     public int vida, ofensiva, defensa, velocidad, danio;
 
+    Pokemons poke;
+    
     //constructor
-    public Pokemon(int vida, int ofensiva, int defensa, int velocidad, String tipo, int minimo, int maximo) {
-        getPokemon(vida, ofensiva, defensa, velocidad);
-        generarAtaques(minimo,maximo);
+    public Pokemon(int poki) {
+        generarPokemon(poki);
+        generarAtaques(poke.getMinimo(),poke.getMaximo());
     }
     private Pokemons[] pokimon = new Pokemons[1];
     private Ataque[] ataques = new Ataque [4];
     
-    
+
     
     public void generarAtaques(int minimo, int maximo){
         int i = 0;
@@ -38,12 +40,20 @@ public class Pokemon {
         }
     }
     
-    public void generarPokemon(){
-        
+    public void generarPokemon(int poki){
+        int i = 0;
+        pokimon[i] = Pokemons.values()[Random.generarPokemonN(poki)]; 
+        for(i = 0; i < pokimon.length; i++){
+            if(pokimon[poki-1] == pokimon[i]){
+                
+            }
+        }
     }
     
-    public Pokemons getPokemon(int vida, int ofensiva, int defensa, int velocidad){
-        
+    public Pokemons getPokemon(int ind){
+        if (ind >= 0 && ind <= 4)
+            return pokimon[ind];
+        return null;
     }
     
     public Ataque getAtaque(int indice){

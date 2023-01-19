@@ -75,7 +75,7 @@ public class Metodos {
         
     }
     
-    public void añadirArray(float []temperaturas){
+    /*public void añadirArray(float []temperaturas){
         List<String> testList = new ArrayList<String>();
         testList.a
         for(int i = 0; i<temperaturas.length; i++){
@@ -84,7 +84,7 @@ public class Metodos {
             }
         }
         
-    }
+    }*/
     
 }
 

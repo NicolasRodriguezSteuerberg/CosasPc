@@ -12,10 +12,10 @@ import pokemon2.Ataque;
  */
 public class Electrico extends Pokemon{
 
-    public Electrico(String nombre, int vida, int ofensiva, int defensa, int velocidad, String tipo, int minimo, int maximo) {
-        super(nombre, vida, ofensiva, defensa, velocidad, tipo, 6, 10);
+    public Electrico(int poki) {
+        super(poki);
     }
-    
+
     public int getAtaque(Ataque ataque){
         int dano = 0;
             switch(ataque){
