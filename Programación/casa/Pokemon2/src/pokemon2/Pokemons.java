@@ -43,6 +43,40 @@ public enum Pokemons {
         this.minimo = minimo;
         this.maximo = maximo;
     }
+    
+    public String getNome(){
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public void setOfensiva(int ofensiva) {
+        this.ofensiva = ofensiva;
+    }
+
+    public void setDefensa(int defensa) {
+        this.defensa = defensa;
+    }
+
+    public void setVelocidad(int velocidad) {
+        this.velocidad = velocidad;
+    }
+
+    public void setMinimo(int minimo) {
+        this.minimo = minimo;
+    }
+
+    public void setMaximo(int maximo) {
+        this.maximo = maximo;
+    }
+    
+    
 
     public void setVida(int vida) {
         this.vida = vida;
@@ -55,9 +89,7 @@ public enum Pokemons {
     public int getMaximo() {
         return maximo;
     }
-    
-    
-    
+       
     public int getVida() {
         return vida;
     }
@@ -73,6 +105,4 @@ public enum Pokemons {
     public int getVelocidad() {
         return velocidad;
     }
-    
-    
 }

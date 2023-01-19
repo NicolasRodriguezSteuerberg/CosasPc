@@ -5,6 +5,7 @@
 package pokemon2.tipos;
 
 import pokemon2.Ataque;
+import pokemon2.Pokemons;
 
 /**
  *
@@ -12,9 +13,13 @@ import pokemon2.Ataque;
  */
 public class Electrico extends Pokemon{
 
-    public Electrico(int poki) {
-        super(poki);
+    public Electrico() {
+        super();
     }
+
+
+
+
 
     public int getAtaque(Ataque ataque){
         int dano = 0;

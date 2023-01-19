@@ -4,7 +4,8 @@
  */
 package pokemon2;
 
-import java.util.Scanner;
+import pokemon2.tipos.Pokemon;
+
 
 /**
  *
@@ -17,10 +18,9 @@ public class Pokemon2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Scanner Sca = new Scanner(System.in);
-        
-        System.out.println("");
-        
+        Pokemon poke = new Pokemon();
+        poke.generarPokemon();
+        System.out.println(poke.getNombre());
     }
     
 }
