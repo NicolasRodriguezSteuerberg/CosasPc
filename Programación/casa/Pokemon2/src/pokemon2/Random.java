@@ -14,7 +14,7 @@ public class Random {
     public static int generarAleatorio(int minimo, int maximo){
         return (int) (Math.round(Math.random()*(maximo-minimo) + minimo));
     }
-    public static int generarPokemonN(){
+    public static int generarPokemonN(int i){
         return Integer.parseInt(JOptionPane.showInputDialog("Teclee o numero do pokemon a elexir"));
     }
 }

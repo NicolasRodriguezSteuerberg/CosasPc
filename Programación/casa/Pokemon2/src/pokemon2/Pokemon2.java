@@ -18,9 +18,10 @@ public class Pokemon2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Pokemons auxiliar[];
         Pokemon poke = new Pokemon();
-        poke.generarPokemon();
-        System.out.println(poke.getNombre());
+        auxiliar = poke.crearPokemons();
+        poke.generarPokemon(auxiliar);
     }
     
 }
