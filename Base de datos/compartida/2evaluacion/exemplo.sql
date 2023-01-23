@@ -75,7 +75,7 @@ BEGIN
  RETURN f;
 END;
 $$;
-/*
+/*igual co anterior pero engadindo excepción para cando non exista o nome do equipo
 Dando el nombre del equipo si tiene mas de 3...
 */
 CREATE or replace FUNCTION fMastresz(nome varchar)
@@ -160,4 +160,65 @@ BEGIN
  RETURN d;
 END;
 $$;
+ --funcion fsalairoxogador que devolte o salario dun xogador pasandolle o codigo. Se non existe que imprima 'codogo non corresponde a ningun xogador'
+ CREATE or replace FUNCTION fsalxog(codigo varchar)
+	RETURNS varchar  
+	LANGUAGE PLPGSQL
+    AS
+$$  
+DECLARE
+ --variable declaration
+d varchar;
+BEGIN
+ --logic
+ select salario into STRICT d from xogador where codx = codigo;
+ 
+ RETURN d;
+ exception 
+  when no_data_found then
+  d = codigo || ' ese codigo non corresponde a ningun xogador';
+  RETURN d;
+END;
+$$;
+
+--psalarioxogador, procedemento que imprima o salario dun xogador se sabemos o seu codigo
+
+CREATE or replace procedure p1_salarioxogador(codigo varchar)
+	LANGUAGE PLPGSQL
+	AS
+$$
+DECLARE
+  s integer;
+BEGIN
+  select salario into STRICT s from xogador where codx=codigo;
+  raise notice 'o salario do xogador de codigo % é de %',codigo,s;
+
+exception
+  when no_data_found then
+  raise notice 'xogador inexistente';
+END;
+$$;
+--call p2_nomesalarioxogador
+--procedimiento que imprima o nome e o salario dun xogador se samebos o seu codigo
+CREATE or replace procedure p2_nomesalarioxogador(codigo varchar)
+	LANGUAGE PLPGSQL
+	AS
+$$
+DECLARE
+  n varchar;
+  s integer;
+BEGIN/*
+  select salario into STRICT s from xogador where codx=codigo;
+  select nomx into STRICT n from xogador where codx=codigo;*/
+  select nomx,salario into STRICT n,s from xogador where codx=codigo;
+  raise notice 'o salario de % de codigo % é de %',n,codigo,s;
+
+exception
+  when no_data_found then
+  raise notice 'xogador inexistente';
+END;
+$$
+
+  
+
 
