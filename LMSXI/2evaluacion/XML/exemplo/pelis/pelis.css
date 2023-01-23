@@ -1,4 +1,4 @@
-tituloCatalogo, titulo, director, actor{
+/*tituloCatalogo, titulo, director, actor{
 	display: block;
 }
 tituloCatalogo:first-letter{
@@ -25,4 +25,19 @@ pelicula#a titulo{
 }
 #a actor{
 	background-color: red;
+}
+*/
+tituloCatalogo{
+	display: block;
+	text-decoration: underline;
+}
+pelicula{
+	margin-left: 3em;
+	display: list-item;
+	list-style-type: square;
+}
+director, actor{
+	display: list-item;
+	list-style-type: circle;
+	list-style-position: inside;
 }
