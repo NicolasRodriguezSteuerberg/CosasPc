@@ -155,7 +155,7 @@ public class Batalla {
                     System.out.println("Ha sido débil");
                 }
                 else{
-                    daño1 = 1.5f * 0.01f * 85 * (((0.20f * 25 + 1 ) * aux1[(num2-1)].getDanoBase() * player1.getOfensiva()) / (player2.getDefensa() * 25) + 2);
+                    daño1 = 1.5f * 0.01f * 85 * (((0.20f * 25 + 1 ) * aux1[(num1-1)].getDanoBase() * player1.getOfensiva()) / (player2.getDefensa() * 25) + 2);
                 }
                 recDaño2 = (int) (player2.getVida() - daño1);
                 player2.setVida(recDaño2);

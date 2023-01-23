@@ -185,6 +185,6 @@ public class BatallaContraMaquina {
                 JOptionPane.showInputDialog(player1.getNombre() + " ha recuperados su vida, ahora tiene: " + player1.getVida());
             }
         }while(estado1.equals("vivo"));
-        JOptionPane.showMessageDialog(null, "Tu racha de victorias ha sido de: " + i);
+        JOptionPane.showMessageDialog(null, "Tu racha de victorias ha sido de: " + (i-1));
     }
 }
