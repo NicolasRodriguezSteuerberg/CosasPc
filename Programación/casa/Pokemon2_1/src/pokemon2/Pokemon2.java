@@ -4,7 +4,7 @@
  */
 package pokemon2;
 
-import pokemon2.tipos.Pokemon;
+import pokemon2.operaciones.Batalla;
 
 
 /**
@@ -18,12 +18,13 @@ public class Pokemon2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Pokemons auxiliar[];
-        Ataque aux[];
-        Pokemon poke = new Pokemon();
-        auxiliar = poke.crearPokemons();
-        poke.generarPokemon(auxiliar);
-        aux = poke.getAtaque(0);
+        Batalla bat = new Batalla();
+        bat.generarPokemon1();
+        bat.generarPokemon2();
+        bat.batalla();
+
+
+                
     }
     
 }
