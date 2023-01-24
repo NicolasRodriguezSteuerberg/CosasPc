@@ -49,7 +49,7 @@ public class Batalla {
         String estado2 = "vivo";
         float daño1, daño2;
         int recDaño1, recDaño2;        
-        PedirDatos.getString("Que empiece la pelea pokemon");
+        JOptionPane.showMessageDialog(null, "Que empiece la batalla");
         do{
             System.out.println("Jugador 1 elige su ataque");
             player1.verAtaques(aux1);
