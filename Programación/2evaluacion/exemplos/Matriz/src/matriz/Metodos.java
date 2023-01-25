@@ -63,12 +63,12 @@ public class Metodos {
         mediaAs = new float [columnas];
         int suma = 0;
         for (int i = 0; i < columnas; i++) {
-            for (int j = 0; j < notas.length; j++) {
+            for (int j = 0; j < filas; j++) {
                 suma = suma + notas[j][i];
             }
             float median = (float) suma/filas;
             mediaAs[i] = (float) (Math.round(median * 100d)/100d);        
         }
-        return media;
+        return mediaAs;
     }
 }
