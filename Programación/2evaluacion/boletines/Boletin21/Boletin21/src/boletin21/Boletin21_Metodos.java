@@ -60,7 +60,6 @@ public class Boletin21_Metodos {
             else{
                 suspensos++;
             }
-            System.out.println(notas[i]);
         }
         System.out.println("Numeros de aprobados = " + aprobados + "\nNumeros de suspensos = " + suspensos);
     }
@@ -102,10 +101,15 @@ public class Boletin21_Metodos {
     
     public void amosarAprobados(String nombres[], int notas[]){
         System.out.println("Aprobaron:");
+        int num = 0;
         for (int i = 0; i < notas.length; i++){
             if(notas[i] >= 5){
                 System.out.println((i+1) + "º alumno: " + nombres[i] + " con un " + notas[i]);
+                num = 1;
             }
+        }
+        if (num == 0){
+            System.out.println("No aprobó nadie");
         }
     }
     

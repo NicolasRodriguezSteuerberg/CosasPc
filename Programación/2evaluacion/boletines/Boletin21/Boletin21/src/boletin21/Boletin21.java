@@ -24,7 +24,7 @@ public class Boletin21 {
         String auxNombres[] = null;
         int numero;
         do{
-            numero = PedirDatos.getInt("1. Array numeros\n2. Entrar en alumnos\n3. Calcular letra NIF");
+            numero = PedirDatos.getInt("1. Array numeros\n2. Entrar en alumnos\n3. Calcular letra NIF\n4. Saír");
             switch(numero){
                 case 1:
                     auxNum = obx1.arrayNumeros();
@@ -62,15 +62,18 @@ public class Boletin21 {
                         }
                         
                     }while (num > 0 && num < 8);
+                    break;
                 case 3:
                     obx1.calcularLetraNIF();
                     break;
-                    
-
-
-                    
+                case 4:
+                    System.out.println("Saída do programa");
+                    break;
+                default:
+                    System.out.println("Orden no encontrada, saíndo do programa");
+                    break;                    
             }
-        }while(numero >= 5);
+        }while(numero < 4 && numero > 0);
         
     }
     

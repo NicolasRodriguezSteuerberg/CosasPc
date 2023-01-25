@@ -12,12 +12,12 @@ public enum Pokemons {
     /*electricos
     * 0
     */
-    HELIOLISK("Heliolisk",62,109,94,109, "electrico", "" , "",5, 9),
+    HELIOLISK("Heliolisk",62,109,94,109, 45,"electrico", "normal","" , "",5, 9),
     
     /*fuego
     *1
     */
-    CHARMANDER("Charmander",78, 109, 85,100, "fuego", "agua" ,"",10, 14),
+    CHARMANDER("Charmander",78, 109, 85,100, 1,"fuego", "","agua" ,"",10, 14),
     
     /*AGUA
     *2
@@ -30,34 +30,25 @@ public enum Pokemons {
     BULBASAUR("Bulbasaur",80, 100, 100, 80,"planta", "fuego", "", 15, 19);
     
     
-    private String nombre, tipo, debilidad1, debilidad2;
-    private int vida, ofensiva, defensa, velocidad, minimo, maximo;    
+    private String nombre, tipo1, tipo2, debilidad1, debilidad2;
+    private int vida, ofensiva, defensa, velocidad, nivel, minimo1, maximo1;    
     
-    private Pokemons(String nombre, int vida, int ofensiva, int defensa, int velocidad, String tipo, String debilidad1, String debilidad2,int minimo, int maximo){
+    private Pokemons(String nombre, int vida, int ofensiva, int defensa, int velocidad, int nivel, String tipo1, String tipo2, String debilidad1, String debilidad2,int minimo1, int maximo1){
         this.nombre = nombre;
         this.vida = vida;
         this.ofensiva = ofensiva;
         this.defensa = defensa;
         this.velocidad = velocidad;
-        this.tipo = tipo;
+        this.tipo1 = tipo1;
+        this.tipo2 = tipo2;
         this.debilidad1 = debilidad1;
         this.debilidad2 = debilidad2;
-        this.minimo = minimo;
-        this.maximo = maximo;
+        this.nivel = nivel;
+        this.minimo1 = minimo1;
+        this.maximo1 = maximo1;
     }
     
-    public String getNome(){
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
+    //setters, solo de las estadísticas que van a cambiar
     public void setOfensiva(int ofensiva) {
         this.ofensiva = ofensiva;
     }
@@ -69,31 +60,26 @@ public enum Pokemons {
     public void setVelocidad(int velocidad) {
         this.velocidad = velocidad;
     }
-
-    public void setMinimo(int minimo) {
-        this.minimo = minimo;
-    }
-
-    public void setMaximo(int maximo) {
-        this.maximo = maximo;
-    }
     
-    
-
     public void setVida(int vida) {
         this.vida = vida;
     }
 
+    public void setNivel(int nivel){
+        this.nivel = nivel;
+    }
+    
+    //getters de todo
     public int getMinimo() {
-        return minimo;
+        return minimo1;
     }
     
     public String getTipo(){
-        return tipo;
+        return tipo1;
     }
     
     public int getMaximo() {
-        return maximo;
+        return maximo1;
     }
        
     public int getVida() {
