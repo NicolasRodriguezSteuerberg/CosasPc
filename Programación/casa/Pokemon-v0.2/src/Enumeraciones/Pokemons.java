@@ -12,22 +12,22 @@ public enum Pokemons {
     /*electricos
     * 0
     */
-    HELIOLISK("Heliolisk",62,109,94,109, 45,"electrico", "normal","" , "",5, 9),
+    HELIOLISK("Heliolisk",62,109,94,109, 45,"electrico", "normal","" , "none",5, 9),
     
     /*fuego
     *1
     */
-    CHARMANDER("Charmander",78, 109, 85,100, 1,"fuego", "","agua" ,"",10, 14),
+    CHARMANDER("Charmander",78, 109, 85,100, 1,"fuego", "none","agua" ,"none",10, 14),
     
     /*AGUA
     *2
     */
-    SQUIRTLE("Squirtle",79, 83, 105, 78,"agua", "planta", "electrico", 0, 4),
+    SQUIRTLE("Squirtle",79, 83, 105, 78, 1,"agua", "none","planta", "electrico", 0, 4),
     
     /*PLANTA
     *3
     */
-    BULBASAUR("Bulbasaur",80, 100, 100, 80,"planta", "fuego", "", 15, 19);
+    BULBASAUR("Bulbasaur",80, 100, 100, 80, 1, "planta", "none","fuego", "none", 15, 19);
     
     
     private String nombre, tipo1, tipo2, debilidad1, debilidad2;
@@ -70,6 +70,9 @@ public enum Pokemons {
     }
     
     //getters de todo
+    public String getNome(){
+        return nombre;
+    }
     public int getMinimo() {
         return minimo1;
     }
