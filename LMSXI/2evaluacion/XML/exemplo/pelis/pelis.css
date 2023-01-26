@@ -31,13 +31,22 @@ tituloCatalogo{
 	display: block;
 	text-decoration: underline;
 }
-pelicula{
+titulo{
 	margin-left: 3em;
-	display: list-item;
-	list-style-type: square;
+	list-style-type: none;
+}
+
+catalogo{
+	counter-reset:contador;
+}
+
+titulo:before{
+	content: counter(contador,decimal)". ";
+	counter-increment: contador;
 }
 director, actor{
+	margin-left: 5em;
 	display: list-item;
-	list-style-type: circle;
+	list-style-type: upper-alpha;
 	list-style-position: inside;
 }

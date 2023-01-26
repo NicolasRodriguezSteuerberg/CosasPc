@@ -1,0 +1,65 @@
+/*Ejercicio 1*/
+*{
+	margin-left: 10px;
+}
+
+nombreCentro{
+	text-decoration: underline;
+	font-size: 25px;
+}
+
+nombre, grado, decretoTitulo{
+	display: list-item;
+	list-style-type: disc;
+	margin-left: 20px;
+}
+
+/*Ejercicio2
+*{
+	margin-left: 10px;
+}
+
+nombreCentro{
+	font-size: 30px;
+	display: block;
+}
+
+ciclos{
+	display: block;
+}
+
+ciclo grado, decretoTitulo{
+	display: list-item;
+	list-style-type: disc;
+	margin-left: 60px;
+}
+
+ciclo nombre{
+	list-style: none;
+}
+
+/*Ejercicio3
+*{
+	margin-left: 15px;
+}
+nombreCentro{
+	font-size: 50px;
+}
+ciclos{
+	display: block;
+}
+
+ciclos{
+	counter-reset: contador;
+}
+
+nombre:before{
+	content: counter(contador,decimal)". ";
+	counter-increment: contador;
+}
+
+grado, decretoTitulo{
+	margin-left: 5em;
+	display: list-item;
+	list-style-type: square;
+}*/
