@@ -217,7 +217,26 @@ exception
   when no_data_found then
   raise notice 'xogador inexistente';
 END;
+$$;
+
+/*
+procedemento chamado pequipo que imprima o codigo e o nome de todos os equipos
+*/
+CREATE or replace procedure pequipos()
+	LANGUAGE PLPGSQL
+	AS
 $$
+DECLARE
+  fila record;
+  r varchar;
+BEGIN
+r='';
+FOR fila IN select * from equipo LOOP
+  r = r || E'\n' || fila.codequ || E'\t' || fila.nomequ;
+END loop;
+ raise notice '%',r;
+END;
+$$;
 
   
 

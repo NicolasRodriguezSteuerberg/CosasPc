@@ -26,7 +26,7 @@ pelicula#a titulo{
 #a actor{
 	background-color: red;
 }
-*/
+*//*
 tituloCatalogo{
 	display: block;
 	text-decoration: underline;
@@ -49,4 +49,10 @@ director, actor{
 	display: list-item;
 	list-style-type: upper-alpha;
 	list-style-position: inside;
+}*/
+
+peliculas{
+	display: table;
+	display: table-row;
+	display: table-cell;
 }

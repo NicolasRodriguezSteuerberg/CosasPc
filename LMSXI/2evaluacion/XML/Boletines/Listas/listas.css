@@ -6,6 +6,7 @@
 nombreCentro{
 	text-decoration: underline;
 	font-size: 25px;
+	text-transform: uppercase;
 }
 
 nombre, grado, decretoTitulo{
@@ -22,6 +23,7 @@ nombre, grado, decretoTitulo{
 nombreCentro{
 	font-size: 30px;
 	display: block;
+	text-transform: uppercase;
 }
 
 ciclos{
@@ -44,6 +46,7 @@ ciclo nombre{
 }
 nombreCentro{
 	font-size: 50px;
+	text-transform: uppercase;
 }
 ciclos{
 	display: block;
