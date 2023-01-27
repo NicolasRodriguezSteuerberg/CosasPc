@@ -228,16 +228,64 @@ CREATE or replace procedure pequipos()
 $$
 DECLARE
   fila record;
+  filax record; --record es registro
   r varchar;
+  c integer;
+  d integer;
 BEGIN
 r='';
-FOR fila IN select * from equipo LOOP
-  r = r || E'\n' || fila.codequ || E'\t' || fila.nomequ;
+FOR fila IN select * from equipo order by codequ LOOP
+  c = 0;
+  d = 0;
+  r = r || E'\n' || fila.codequ || ', ' || fila.nomequ;
+     FOR filax IN select * from xogador where codequ=fila.codequ LOOP
+         r = r || E'\n' || E'\t' || filax.codx || ', ' || filax.nomx;
+         if filax.salario is null then
+         	r = r || ', salario nulo';
+            else
+         	r = r || ', ' || filax.salario;
+         	c = c + filax.salario;
+         end if;
+         d = d+1;
+     END loop;
+       if c = 0 then
+            r = r || E'\n  Salario gastado desconocido';
+         else 
+            r = r || E'\n  Salario gastado = ' || c;
+       end if;
+       if d = 0 then
+          r = r || ' y no tiene jugadores';
+        else
+          r = r || ' y tiene '  || d || ' jugadores';
+       end if;
 END loop;
  raise notice '%',r;
 END;
 $$;
 
-  
+/*Procedemento
+1) que imprima os codigos e nomes de los estadios
+2) por cada estadio que imprima o codigo, nome e data dos partidos que se celebran en el
+*/
+CREATE or replace procedure pestadio()
+    LANGUAGE PLPGSQL
+    AS
+$$
+DECLARE
+  fila record;
+  filax record;
+  r varchar;
+BEGIN
+r='';
+   for fila in select * from estadio LOOP
+      r = r || E'\n' || fila.codest || ', ' || fila.nomest;
+      for filax IN select * from partido where codest=fila.codest LOOP
+         r = r || E'\n\t' || filax.codpar || ', ' || filax.nompar || ', ' || filax.data;
+      end LOOP;
+   end LOOP;
+   raise notice '%', r;
+end;
+$$;
+
 
 

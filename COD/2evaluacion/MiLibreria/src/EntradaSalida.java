@@ -29,6 +29,7 @@ public class EntradaSalida {
                     System.out.println(e.getMessage());
                     return false;
                 }
+
             default:
                 return false;
         }
