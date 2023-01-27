@@ -1,0 +1,20 @@
+```mermaid
+graph TD;
+    I-->mostrarMenu;
+    mostrarMenu-->introducirOpcion;
+    introducirOpcion-->B{switch};
+    B--=1-->introducirLado;
+    B--=2-->introducirB,H;
+    B--=3-->introducirR;
+    B-->opcionIncorrecta;
+    introducirLado-->sup=L*L;
+    sup=L*L-->VisualizarSup;
+    VisualizarSup-->Fin
+    introducirB,H-->sup=b*h/2;
+    sup=b*h/2-->VisualizrSup;
+    VisualizrSup-->Fin;
+    introducirR-->sup=PI*r2;
+    sup=PI*r2-->VisualizaSup;
+    VisualizaSup-->Fin;
+    opcionIncorrecta-->Fin;
+```
