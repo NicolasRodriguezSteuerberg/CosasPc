@@ -73,6 +73,7 @@ public class Metodos {
         
     }
     
+    /*Borrado y añadido en array_1
     public void borrarArray(float[] temperaturas){
         float elemBorrar = Float.parseFloat(JOptionPane.showInputDialog("Teclee la posición a borrar"));
         int atopado = 0;
@@ -81,7 +82,7 @@ public class Metodos {
                 
             }
         }
-    }
+    }*/
     
 }
 

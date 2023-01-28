@@ -6,7 +6,7 @@ DECLARE
   x tipoDato;
 BEGIN
    --
-   raise_notice 'o salario do xogador de codigo % é %', codigo,x;
+   raise notice 'o salario do xogador de codigo % é %', codigo,x;
 
 end;
 $$;

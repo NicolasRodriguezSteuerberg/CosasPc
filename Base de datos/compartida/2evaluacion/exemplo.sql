@@ -198,8 +198,11 @@ exception
   raise notice 'xogador inexistente';
 END;
 $$;
---call p2_nomesalarioxogador
---procedimiento que imprima o nome e o salario dun xogador se samebos o seu codigo
+
+/*
+call p2_nomesalarioxogador
+procedimiento que imprima o nome e o salario dun xogador se samebos o seu codigo
+*/
 CREATE or replace procedure p2_nomesalarioxogador(codigo varchar)
 	LANGUAGE PLPGSQL
 	AS
@@ -207,9 +210,7 @@ $$
 DECLARE
   n varchar;
   s integer;
-BEGIN/*
-  select salario into STRICT s from xogador where codx=codigo;
-  select nomx into STRICT n from xogador where codx=codigo;*/
+BEGIN
   select nomx,salario into STRICT n,s from xogador where codx=codigo;
   raise notice 'o salario de % de codigo % é de %',n,codigo,s;
 
