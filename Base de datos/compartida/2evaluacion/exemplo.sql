@@ -265,8 +265,8 @@ END;
 $$;
 
 /*Procedemento
-1) que imprima os codigos e nomes de los estadios
-2) por cada estadio que imprima o codigo, nome e data dos partidos que se celebran en el
+1) que imprima os codigos e nomes dos estadios
+2) por cada estadio que imprima o codigo, nome e data dos partidos que se celebraro nel
 */
 CREATE or replace procedure pestadio()
     LANGUAGE PLPGSQL
@@ -276,13 +276,19 @@ DECLARE
   fila record;
   filax record;
   r varchar;
+  c integer;
 BEGIN
 r='';
    for fila in select * from estadio LOOP
-      r = r || E'\n' || fila.codest || ', ' || fila.nomest;
+      c = 0;
+      r = r || E'\n ' || fila.codest || ', ' || fila.nomest;
       for filax IN select * from partido where codest=fila.codest LOOP
          r = r || E'\n\t' || filax.codpar || ', ' || filax.nompar || ', ' || filax.data;
+         c = c+1;
       end LOOP;
+      if c = 0 then
+      	r = r || E'\n\t' || 'De momento no tiene partidos';
+      end if;
    end LOOP;
    raise notice '%', r;
 end;
