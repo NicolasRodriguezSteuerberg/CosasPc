@@ -1,0 +1,94 @@
+/*Ejercicio 1
+nombre{
+	display: block;
+	margin-bottom: 1em;
+	font-size: 2em;
+}
+libros{
+	display: table;
+	border: 1px solid black;
+	border-spacing: 5px;
+}
+
+libro{
+	display: table-row;
+}
+
+titulo, autor, fechaPublicacion{
+	display: table-cell;
+	border: 1px solid black;
+}
+
+*//*Ejercicio 2
+*{
+	margin: auto;
+}
+
+nombre{
+	display: table-caption;
+	font-size: 1.5em;
+	background-color: dimgrey;
+	text-align: center;
+}
+
+biblioteca{
+	display: table;
+	border: 0px solid black;
+	border-spacing: 0px;
+}
+
+libros{
+	margin-top: 3px;
+	display: table;
+	border: 1px solid black;
+	border-spacing: 10px;
+}
+
+libro{
+	display: table-row;
+}
+
+titulo, autor, fechaPublicacion{
+	display: table-cell;
+	border: 1px solid black;
+}
+
+*//*Ejercicio 3
+libro{
+	margin: auto;
+	display: table;
+	width: 65%;
+}
+titulo{
+	margin-top: 10px;
+	margin-bottom: 5px;
+	text-align: center;
+	display: table-caption;
+	background-color: darkgrey;
+}
+autor, fechaPublicacion{
+	display: table-cell;
+	border: 1px solid black;
+
+}
+
+/*Ejercicio 4*/
+nombre{
+	display: none;
+}
+
+libros{
+	display: table;
+	border-spacing: 20px;
+	margin: auto;
+}
+
+libro{
+	display: table-cell;
+	border: 4px dashed black;
+	border-spacing: 10px;
+}
+titulo, autor, fechaPublicacion{
+	display: table-row;
+	background-color: green;
+}
