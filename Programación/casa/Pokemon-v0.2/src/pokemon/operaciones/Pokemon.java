@@ -3,12 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package pokemon.operaciones;
-
-import java.util.ArrayList;
-import java.util.Random;
-import javax.swing.JOptionPane;
 import Enumeraciones.Ataque;
 import Enumeraciones.Pokemons;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -19,8 +16,8 @@ public class Pokemon {
 
     //atributos de los pokemons
     public String nombre;
-    public String tipo, debilidad1, debilidad2;
-    public int vida, ofensiva, defensa, velocidad, minimo, maximo;
+    public String tipo1, tipo2, debilidad1, debilidad2;
+    public int vida, ofensiva, defensa, velocidad, minimo, maximo, nivel;
 
     //constructor
     public Pokemon() {
@@ -53,11 +50,13 @@ public class Pokemon {
                 ofensiva = pokemons[i].getOfensiva();
                 defensa = pokemons[i].getDefensa();
                 velocidad = pokemons[i].getVelocidad();
-                tipo = pokemons[i].getTipo();
+                tipo1 = pokemons[i].getTipo1();
+                tipo2 = pokemons[i].getTipo2();
                 debilidad1 = pokemons[i].getDebilidad1();
                 debilidad2 = pokemons[i].getDebilidad2();
-                minimo = pokemons[i].getMinimo();
-                maximo = pokemons[i].getMaximo();
+                nivel = pokemons[i].getNivel();
+                minimo = pokemons[i].getMinimo1();
+                maximo = pokemons[i].getMaximo1();
             }
         }
     }
@@ -103,8 +102,6 @@ public class Pokemon {
         return maximo;
     }
     
-    
-
     public String getNombre() {
         return nombre;
     }
@@ -125,8 +122,12 @@ public class Pokemon {
         return velocidad;
     }
     
-    public String getTipo(){
-        return tipo;
+    public String getTipo1(){
+        return tipo1;
+    }
+    
+    public String getTipo2(){
+        return tipo2;
     }
 
     public String getDebilidad1() {
@@ -141,5 +142,12 @@ public class Pokemon {
         this.vida = vida;
     }
     
-    
+    public void subirStats(int num){
+        for(int i = 0; i < num; i++){
+            vida = vida + (int) (Math.random()*3);
+            ofensiva = ofensiva + (int) (Math.random()*3);
+            defensa = defensa + (int) (Math.random()*3);
+            velocidad = velocidad + (int) (Math.random()*3);
+        }
+    }
 }

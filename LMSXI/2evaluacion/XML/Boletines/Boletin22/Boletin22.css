@@ -1,0 +1,95 @@
+/*EJERCICIO 1
+resumen{
+  font-size: 3em;
+  font-weight: bold
+  background-color: grey;
+}
+edificio{
+  display: list-item;
+  list-style: disc;
+  margin-left: 3em;
+}
+
+*//*EJERCICIO 2
+resumen{
+  font-size: 3em;
+}
+nombre, ciudad, datos{
+  display: list-item;
+  margin-left: 3em;
+  list-style: disc;
+}
+nombre{
+ font-weight: bold;
+}
+
+*//*EJERCICIO 3
+*{
+  font-weight: bold;
+  font-size: 20px;
+}
+resumen{
+  font-size: 1.5em;
+}
+edificio{
+  display: block;
+}
+
+altura, pisos{
+  display: list-item;
+  margin-left: 3em;
+  list-style: disc;
+}
+ciudad, completado{
+  display: none;
+
+}
+
+*//*EJERCICIO 4 
+altura, pisos{
+  display: none;
+}
+
+resumen{
+  font-size: 3em;
+}
+
+edificio{
+  counter-reset: contador;
+}
+
+nombre:before, ciudad:before, completado:before{
+  content: counter(contador,lower-alpha)'. ';
+  counter-increment: contador;
+  margin-left: 3em;
+}
+nombre, ciudad, completado{
+  display: block;
+}
+
+*//*EJERCICIO 5*/
+resumen{
+  font-size: 3em;
+}
+ciudad, completado{
+  display: none;
+}
+
+edificios{
+  counter-reset: contador;
+}
+edificio{
+  display: block;
+}
+nombre:before{
+  content: counter(contador, decimal)'. ';
+  counter-increment: contador;
+}
+altura, pisos{
+  display: list-item;
+  list-style-type: disc;
+  margin-left: 3em;
+}
+
+
+

@@ -66,11 +66,11 @@ public class BatallaContraMaquina {
                     //ataque del jugador 1 por ser más rapido
                     
                     System.out.println("\nTu" + player1.getNombre() + " ha usado " + aux1[(num1-1)].name());
-                    if(player1.getTipo().equals(player2.getDebilidad1()) || player1.getTipo().equals(player2.getDebilidad2())){
+                    if(player1.getTipo1().equals(player2.getDebilidad1()) || player1.getTipo1().equals(player2.getDebilidad2())){
                         daño1 = 1.5f * 0.01f * 85 * 2 * (((0.2f * 25 + 1)* aux1[(num1-1)].getDanoBase() * player1.getOfensiva()) / (25 * player2.getDefensa()) + 2 );
                         System.out.println("Ha sido supereficaz");
                     }
-                    else if(player1.getDebilidad1().equals(player2.getTipo()) || player1.getDebilidad2().equals(player2.getTipo())){
+                    else if(player1.getDebilidad1().equals(player2.getTipo1()) || player1.getDebilidad2().equals(player2.getTipo1())){
                         daño1 = 1.5f * 0.01f * 85 * 0.5f * (((0.2f * 25 + 1)* aux1[(num1-1)].getDanoBase() * player1.getOfensiva()) / (player2.getDefensa() * 25) + 2);
                         System.out.println("Ha sido débil");
                     }
@@ -92,11 +92,11 @@ public class BatallaContraMaquina {
                     
                     //turno del ataque de jugador 2 por ser más lento
                     System.out.println("\n" + player2.getNombre() + " salvaje ha usado " + aux2[(num2-1)].name());
-                    if(player2.getTipo().equals(player1.getDebilidad1()) || player2.getTipo().equals(player1.getDebilidad2())){
+                    if(player2.getTipo1().equals(player1.getDebilidad1()) || player2.getTipo1().equals(player1.getDebilidad2())){
                         daño2 =  1.5f * 0.01f * 2 * 85 * (((0.2f * 25 + 1 )* aux2[(num2-1)].getDanoBase() * player2.getOfensiva()) / (player1.getDefensa() * 25) + 2);
                         System.out.println("Ha sido supereficaz");
                     }
-                    else if(player2.getDebilidad1().equals(player1.getTipo()) || player2.getDebilidad2().equals(player1.getTipo())){
+                    else if(player2.getDebilidad1().equals(player1.getTipo1()) || player2.getDebilidad2().equals(player1.getTipo1())){
                         daño2 = 1.5f * 0.01f * 0.5f * 85 *(((0.20f * 25 + 1)* aux2[(num2-1)].getDanoBase() * player2.getOfensiva()) / (player1.getDefensa() * 25) + 2);
                         System.out.println("Ha sido débil");
                         System.out.println(daño2);
@@ -123,11 +123,11 @@ public class BatallaContraMaquina {
                     //jugador 2 ataca antes por ser mas veloz
                     
                     System.out.println("\n" + player2.getNombre() + " salvaje ha usado " + aux2[(num2-1)].name());
-                    if(player2.getTipo().equals(player1.getDebilidad1()) || player2.getTipo().equals(player1.getDebilidad2())){
+                    if(player2.getTipo1().equals(player1.getDebilidad1()) || player2.getTipo1().equals(player1.getDebilidad2())){
                         daño2 = 1.5f * 0.01f * 2 * 85 * (((0.20f * 25 + 1)* aux2[(num2-1)].getDanoBase() * player2.getOfensiva()) / (player1.getDefensa() * 25) + 2);
                         System.out.println("Ha sido supereficaz");
                     }
-                    else if(player2.getDebilidad1().equals(player1.getTipo()) || player2.getDebilidad2().equals(player1.getTipo())){
+                    else if(player2.getDebilidad1().equals(player1.getTipo1()) || player2.getDebilidad2().equals(player1.getTipo1())){
                         daño2 = 1.5f * 0.01f * 0.5f * 85 * (((0.20f * 25 + 1)* aux2[(num2-1)].getDanoBase() * player2.getOfensiva()) / (player1.getDefensa() * 25) + 2);
                         System.out.println("Ha sido débil");
                     }
@@ -149,11 +149,11 @@ public class BatallaContraMaquina {
                     
                     //turno del ataque de jugador 1 por ser más lento
                     System.out.println("\nTu " + player1.getNombre() + " ha usado " + aux1[(num1-1)].name());
-                    if(player1.getTipo().equals(player2.getDebilidad1()) || player1.getTipo().equals(player2.getDebilidad2())){
+                    if(player1.getTipo1().equals(player2.getDebilidad1()) || player1.getTipo1().equals(player2.getDebilidad2())){
                         daño1 = 1.5f * 0.01f * 2 * 85 *(((0.20f * 25 + 1) * aux1[(num1-1)].getDanoBase() * player1.getOfensiva()) / (player2.getDefensa() * 25) + 2);
                         System.out.println("Ha sido supereficaz");
                     }
-                    else if(player1.getDebilidad1().equals(player2.getTipo()) || player1.getDebilidad2().equals(player2.getTipo())){
+                    else if(player1.getDebilidad1().equals(player2.getTipo1()) || player1.getDebilidad2().equals(player2.getTipo1())){
                         daño1 = 1.5f * 0.01f * 85 * 0.5f * (((0.20f * 25 + 1) * aux1[(num1-1)].getDanoBase() * player1.getOfensiva()) / (player2.getDefensa()* 25) + 2);
                         System.out.println("Ha sido débil");
                     }

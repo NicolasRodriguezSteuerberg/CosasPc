@@ -73,16 +73,13 @@ public enum Pokemons {
     public String getNome(){
         return nombre;
     }
-    public int getMinimo() {
-        return minimo1;
-    }
     
-    public String getTipo(){
+    public String getTipo1(){
         return tipo1;
     }
     
-    public int getMaximo() {
-        return maximo1;
+    public String getTipo2(){
+        return tipo2;
     }
        
     public int getVida() {
@@ -108,4 +105,18 @@ public enum Pokemons {
     public String getDebilidad2(){
         return debilidad2;
     }
+
+    public int getNivel() {
+        return nivel;
+    }
+    
+    public int getMinimo1() {
+        return minimo1;
+    }
+    
+    public int getMaximo1() {
+        return maximo1;
+    }
+    
+    
 }
