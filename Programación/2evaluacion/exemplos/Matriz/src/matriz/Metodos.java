@@ -16,6 +16,7 @@ public class Metodos {
     int [][] notas;
     float[] media;
     float[] mediaAs;
+    String[] nomes ={"1º alumno","2º alumno"};
     public int[][] crearMatriz(){
         filas = PedirDatos.getInt("Teclee el numero de filas");
         columnas = PedirDatos.getInt("Teclee el numero de columnas");
@@ -43,7 +44,7 @@ public class Metodos {
         }
         System.out.println(" Media Alumno");
         for (int i = 0; i < notas.length; i++){
-            System.out.print("   " + (i+1) + "º alumno | ");
+            System.out.print("   " + nomes[i] + " | ");
             for (int j = 0; j < notas[i].length; j++) {
                 System.out.print("  " + notas[i][j] + "   ");                
             }
@@ -62,8 +63,9 @@ public class Metodos {
     
     public float[] crearMediaAlumno(int [][] notas){
         media = new float [filas];
+        int suma = 0;
         for (int i = 0; i < filas; i++) {
-            int suma=0;
+            suma=0;
             for (int j = 0; j < columnas; j++) {
                 suma = suma + notas[i][j];                
             }
@@ -74,8 +76,9 @@ public class Metodos {
     }
     public float[] crearMediaAsignatura(int [][] notas){
         mediaAs = new float [columnas];
+        int suma = 0;
         for (int i = 0; i < columnas; i++) {
-            int suma = 0;
+            suma = 0;
             for (int j = 0; j < filas; j++) {
                 suma = suma + notas[j][i];
             }
@@ -83,5 +86,32 @@ public class Metodos {
             mediaAs[i] = (float) (Math.round(median * 100d)/100d);        
         }
         return mediaAs;
+    }
+    
+    public void ordenar(int[][] notas, float []media){
+        int aux = 0;
+        float aux2 = 0;
+        String auxN = "";
+        
+        for (int i = 0; i < notas.length-1; i++) {
+            for (int j = i+1; j < media.length; j++) {
+                if(media[i]<media[j]){
+                    aux2 = media[i];
+                    media[i] = media[j];
+                    media[j] = aux2;
+                    auxN = nomes[i];
+                    nomes[i] = nomes[j];
+                    nomes[j] = auxN;
+                    
+                    for(int k = 0; k<notas[i].length; k++){
+                        aux = notas[i][k];
+                        notas[i][k] = notas[j][k];
+                        notas[j][k] = aux;
+                    }
+                }
+                
+            }
+            
+        }
     }
 }

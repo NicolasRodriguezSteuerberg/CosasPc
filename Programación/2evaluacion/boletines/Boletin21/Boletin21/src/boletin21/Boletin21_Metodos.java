@@ -11,8 +11,9 @@ import com.nicosteuerberg.datos.PedirDatos;
  * @author dam1
  */
 public class Boletin21_Metodos {
-    private int CTE = 5;
+    private int CTE = 30;
     
+    //Ejercicio 1
     public int[] arrayNumeros(){
         int numeros[] = new int[6];
         for (int i = 0; i < numeros.length; i++){
@@ -27,6 +28,8 @@ public class Boletin21_Metodos {
         }
         return numeros;        
     }
+    
+    //Ejercicio 2,3
     public void amosarArrayNumeros(int numeros[]){
         for(int i = (numeros.length-1); i>=0; i--){
             System.out.println("O numero da " + (i + 1) + "º posicion = " + numeros[i]);
@@ -75,7 +78,6 @@ public class Boletin21_Metodos {
     
     public void amosarNotaAlta(int notas[]){
         int notaAlta = 0;
-        int acumulador = 1;
         for (int i = 0; i < notas.length; i++){
             if(notaAlta < notas[i]){
                 notaAlta = notas[i];
@@ -114,11 +116,13 @@ public class Boletin21_Metodos {
     }
     
     public void ordernarLista(String nombres[], int notas[]){
+        String auxN;
+        int aux;
         for(int i = 0; i < CTE-1; i++){
             for(int j = i+1; j < CTE ; j++){
                 if(notas[i] > notas[j]){
-                    int aux = notas[i];
-                    String auxN = nombres[i];
+                    aux = notas[i];
+                    auxN = nombres[i];
                     notas[i] = notas[j];
                     nombres[i] = nombres[j];
                     notas[j] = aux;
@@ -132,7 +136,8 @@ public class Boletin21_Metodos {
         }
     }
     
-    public void calcularLetraNIF(){//8
+    //Ejercicio 4
+    public void calcularLetraNIF(){
         long num;
         num = PedirDatos.getLong("Teclee o numero do teu NIF");
         while(num < 10000000 || num > 100000000){

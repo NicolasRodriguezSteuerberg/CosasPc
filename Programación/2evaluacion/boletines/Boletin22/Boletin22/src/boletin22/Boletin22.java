@@ -33,6 +33,12 @@ public class Boletin22 {
                 case 2:
                     obx.ordenarTabla(obx.equipos, auxGoles);
                     break;
+                case 3:
+                    obx.verMaximoGoleadorXornada(obx.equipos, auxXornadas, auxGoles);
+                    break;
+                case 5:
+                    obx.verEquipoXornadaPorGoles(obx.equipos, auxXornadas, auxGoles);
+                    break;
             }
         }while(num>0);
     }

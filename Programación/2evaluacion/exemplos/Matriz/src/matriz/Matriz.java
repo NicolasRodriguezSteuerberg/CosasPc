@@ -23,6 +23,9 @@ public class Matriz {
         auxm = obxM.crearMediaAlumno(aux);
         auxma = obxM.crearMediaAsignatura(aux);
         obxM.verMatriz(aux, auxm,auxma);
+        System.out.println("\n\n");
+        obxM.ordenar(aux, auxm);
+        obxM.verMatriz(aux, auxm, auxma);
     }
     
 }
