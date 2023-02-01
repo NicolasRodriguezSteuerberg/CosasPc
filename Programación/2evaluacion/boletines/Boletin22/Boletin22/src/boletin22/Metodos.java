@@ -106,23 +106,27 @@ public class Metodos {
     }
     
     public void verMaximoGoleadorXornada(String[] equipos, int[] xornadas, int[][] goles){
-        String nomeEquipo = "";
         int nGoles = 0;
+        System.out.println("");
         for (int i = 0; i < xornadas.length; i++){
             for (int j = 0; j < goles.length; j++){
                 if(goles[j][i] > nGoles){
                     nGoles = goles[j][i];
-                    nomeEquipo = equipos[j];
                 }
-                else if(goles[j][i] == nGoles){
-                    
+            }
+            System.out.println("Na xornada x" + xornadas[i] + " o goles máximos fueron " + nGoles + " e os marcaron:");
+            for (int k = 0; k < goles.length; k++){
+                if(goles[k][i] == nGoles){
+                    System.out.println(equipos[k]);
                 }
-            }            
-            System.out.println("Na xornada x" + xornadas[i] + " o equipo que máis marcou foi: " + nomeEquipo);
+            }
             nGoles = 0;
         }
     }
     
+    public void verEquipoMaxGolesPorXornada(String []equipos, int[] xornadas, int[][] goles){
+        int xornadaBuscar = PedirDatos.getInt("Teclee a xornada a buscar que equipo marcou máis goles");
+    }
     
     
     
