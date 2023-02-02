@@ -1,0 +1,86 @@
+/*Ejercicio 1*/
+div#uno{
+	border: 2px solid orange;
+	margin: auto;
+	width: 90%;
+}
+
+#unoFrase{
+	margin: 7px 10px 0px 10px;
+	padding: 10px 0px;
+	background-color: yellow;
+	text-align: center;
+}
+
+#unoNombre{
+	margin: 7px 10px 7px 10px;
+	padding: 10px 0px;
+	text-align: right;
+	background-color: goldenrod;
+}
+
+div#dos{
+	border: 2px solid violet;
+	margin: auto;
+	width: 90%;
+}
+
+#dosFrase{
+	margin: 7px 10px 0px 10px;
+	padding: 10px 0px;
+	background-color: hotpink;
+	text-align: center;
+}
+
+#dosNombre{
+	margin: 7px 10px 7px 10px;
+	padding: 10px 0px;
+	text-align: right;
+	background-color: blueviolet;
+}
+
+
+/*Ejercicio 2*/
+div.segundo{
+	background-color: lightblue;
+	margin: 0px 15px;
+	text-align: center;
+	padding-top: 10px;
+}
+div.subsegundo{
+	margin-left: 15px;
+	margin-right: 5px;
+	border-left: 4px solid darkblue;
+	border-right: 4px solid darkblue;
+}
+h2{
+	background-color: darkblue;
+	color: white;
+	margin: 10px;
+}
+
+.contenedor{
+	margin-left: 40px;
+	margin-right: 40px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	padding-bottom: 5px;
+	background-color: white;
+	text-align: left;
+}
+
+.segundoNombre{
+	display: block;
+	font-size: 1.1em;
+	background-color: green;
+    border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	color: white;
+	font-weight: bold;
+	padding: 2px;
+}
+
+
+

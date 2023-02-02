@@ -8,6 +8,7 @@ libros{
 	display: table;
 	border: 1px solid black;
 	border-spacing: 5px;
+	margin-left: 20px;
 }
 
 libro{
@@ -17,9 +18,9 @@ libro{
 titulo, autor, fechaPublicacion{
 	display: table-cell;
 	border: 1px solid black;
-}
+}*/
 
-*//*Ejercicio 2
+/*Ejercicio 2*/
 *{
 	margin: auto;
 }
@@ -51,12 +52,14 @@ libro{
 titulo, autor, fechaPublicacion{
 	display: table-cell;
 	border: 1px solid black;
+	padding: 5px;
 }
 
-*//*Ejercicio 3
+/*Ejercicio 3
 libro{
 	margin: auto;
 	display: table;
+	border: 1px solid black;
 	width: 65%;
 }
 titulo{
@@ -66,13 +69,17 @@ titulo{
 	display: table-caption;
 	background-color: darkgrey;
 }
+libros{
+	border-spacing: 10px;
+}
+
 autor, fechaPublicacion{
 	display: table-cell;
 	border: 1px solid black;
 
 }
-
-/*Ejercicio 4*/
+*/
+/*Ejercicio 4
 nombre{
 	display: none;
 }
@@ -92,3 +99,4 @@ titulo, autor, fechaPublicacion{
 	display: table-row;
 	background-color: green;
 }
+*/

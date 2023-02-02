@@ -294,5 +294,47 @@ r='';
 end;
 $$;
 
+/*
+pmediasalarioequipos
+Procedimiento que imprima para todos os equipos existentes o nome do equipo e o salario medio que cobran os seus xogadores.
+Se un equipo non ten xogadores debe imprimirse a mensaxe: "equipo sen xogadores"
+*/
+CREATE or replace procedure pmediasalarioequipos()
+    LANGUAGE PLPGSQL
+    AS
+$$
+DECLARE
+  r varchar;
+  suma numeric;
+  cuenta integer;
+  media numeric;
+  fila record;
+  filax record;
+BEGIN
+r = '';
+   for fila in select nomequ, codequ from equipo LOOP
+   	r = r || E'\n' || fila.nomequ;
+   	suma = 0;
+   	cuenta = 0;
+   	for filax in select salario from xogador where codequ=fila.codequ LOOP
+   	   if filax.salario is not null then
+   		suma = suma + filax.salario;
+           end if;
+           cuenta = cuenta + 1;
+        end LOOP;
+        if cuenta = 0 then
+             r = r || ' - equipo sen xogadores';
+          else
+             if suma > 0 then
+                media = suma/cuenta;
+                r = r || ' - ' || media;
+             end if;
+	end if;
+   end LOOP;        
+   raise notice '%',r;
+end;
+$$;
+
+
 
 

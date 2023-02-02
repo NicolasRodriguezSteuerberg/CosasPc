@@ -1,0 +1,136 @@
+/*Ejercicio 1
+nombreCentro{
+	display: block;
+	text-decoration: underline;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+nombreCentro:before{
+	content: "ciclos ";
+}
+
+ciclos{
+	counter-reset: conta;
+}
+
+nombre{
+	margin: 10px;
+	display: block;
+}
+
+nombre:before{
+	content: counter(conta, decimal)". ";
+	counter-increment: conta;
+}
+
+grado, decretoTitulo{
+	display: none;
+}
+*/
+
+/*Ejercicio 2
+
+nombreCentro{
+	display: block;
+	text-decoration: overline;
+	font-size: 2em;
+}
+
+nombreCentro:after{
+	content: "-centro plurilingüe";
+}
+
+ciclo{
+	display: list-item;
+	list-style-type: square;
+	margin: 10px;
+	margin-left: 30px;
+}
+
+decretoTitulo{
+	display: list-item;
+	margin-left: 40px;
+}
+
+grado{
+	display: none;
+}
+*/
+
+/*Ejercicio 3
+
+nombreCentro{
+	text-align: center;
+	font-size: 1.2em;
+	display: block;
+	text-decoration: underline;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+ciclos{
+	display: table;
+	margin: auto;
+	width: 70%;
+}
+
+ciclo{
+	display: table-row;
+	border: 1px solid black;
+}
+
+nombre, grado, decretoTitulo{
+	display: table-cell;
+	border: 1px solid black;
+}
+
+grado, decretoTitulo{
+	text-align: center;
+}
+
+grado{
+	width: 15%;
+}
+decretoTitulo{
+	width: 15%;
+}
+*/
+
+/*Ejercicio 4*/
+nombreCentro{
+	display: none;
+}
+centro{
+	display: table;
+	border: 1px solid black;
+	margin: auto;
+}
+
+ciclos{
+	border: 1px solid black;
+	display: table;
+	margin: auto;
+	padding: 10px 10px 3px 10px;
+}
+
+ciclo{
+	display: table-row;
+	background-color: grey;
+}
+
+nombre, grado, decretoTitulo{
+	display: table-cell;
+	border: 1px solid black;
+}
+
+grado, decretoTitulo{
+	text-align: center;
+}
+
+grado{
+	width: 15%;
+}
+decretoTitulo{
+	width: 15%;
+}

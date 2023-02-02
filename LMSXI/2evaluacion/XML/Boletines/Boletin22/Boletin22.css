@@ -67,7 +67,7 @@ nombre, ciudad, completado{
   display: block;
 }
 
-*//*EJERCICIO 5*/
+*//*EJERCICIO 5
 resumen{
   font-size: 3em;
 }
@@ -89,6 +89,51 @@ altura, pisos{
   display: list-item;
   list-style-type: disc;
   margin-left: 3em;
+}*/
+
+/*EJERCICIO 6
+rascacielos{
+  background-color: greenyellow;
+  text-transform: capitalize;
+}
+resumen{
+  font-size: 3em;
+}
+
+edificio{
+  display: block;
+}
+
+nombre{
+  font-weight: bold;
+}
+ciudad:before{
+  content: "(";
+}
+ciudad:after{
+  content: ")";
+}
+
+/*EJERCICIO 7*/
+
+resumen{
+  font-size: 3.5em;
+  text-transform: uppercase;
+}
+rascacielos{
+  background-color: skyblue;
+}
+edificio{
+  display: list-item;
+  margin-left: 3em;
+}
+ciudad{
+  font-style: italic;
+}
+altura, pisos, completado{
+  display: list-item;
+  margin-left: 1em;
+  list-style-type: circle;
 }
 
 
