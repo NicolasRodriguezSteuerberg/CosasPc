@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.Scanner;
 
 public class EntradaSalida {
 
@@ -36,7 +37,39 @@ public class EntradaSalida {
     }
 
     //TODO entrada
-    /*static String entrada(String comentario){
-        return "";
-    }*/
+
+    /**
+     * Introducción por consola de una cadena de texto
+     * @param comentario = comentario para que el usuario sepa que tiene que escribir
+     * @return Cadena de texto introducida por el usuario
+     */
+    public static String entradaString(String comentario){
+        Scanner obx = new Scanner(System.in);
+        String dato;
+        System.out.println(comentario);
+        dato = obx.next();
+        return dato;
+        }
+
+    /**
+     * Entrada por consola
+     * @param comentario = comentario que queremos que salga
+     * @return numero, 0 si es un dato nulo
+     */
+    public static int entradaInt(String comentario){
+        int num = 0;
+        boolean validacion = false;
+        do {
+            try {
+                Scanner obx = new Scanner(System.in);
+                System.out.println(comentario);
+                num = obx.nextInt();
+                validacion = true;
+            } catch (Exception e) {
+                System.out.println("DATO NO VÁLIDO, INTENTELO DE NUEVO");
+                validacion = false;
+            }
+        }while(validacion == false);
+        return num;
+    }
 }

@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-
+        /*
         boolean isOK_ventana = false;
         boolean isOK_consola = false;
 
@@ -9,5 +9,14 @@ public class Main {
 
         isOK_ventana = EntradaSalida.salida("Hello world", EntradaSalida.SALIDA_WINDOW);
         if (!isOK_ventana) System.out.println("ERROR VENTANA");
+        */
+        String dato;
+        dato = EntradaSalida.entradaString("Teclee tu nombre");
+
+        int numero;
+        numero = EntradaSalida.entradaInt("Teclee tu edad");
+
+        EntradaSalida.salida(dato + " tiene " + numero + " años", EntradaSalida.SALIDA_CONSOLA);
+
     }
 }
