@@ -20,28 +20,23 @@ DECLARE
   suma integer;
   filax record;
   filay record;
+  z integer;
 BEGIN
-x = '';
-suma = 0;
+ x = '';
    select codn, nomen, tripul into STRICT fila from naves where nome=nomen;
-   x = x || fila.nomen;
-
-   for filax in select codn, numero, capacidade from lanzaderas where codn=fila.codn LOOP
-   	for filay numero
-   	suma = suma + filax.capacidade;
-   end LOOP;
+   z = fila.tripul;
+   select sum(capacidade) into suma from lanzaderas where codn=fila.codn;
    
-   if suma>fila.tripul then
-   	x = x || ' a nave pode levar a todos os tripulantes no conxunto das súas lanzaderas';
+   if suma>=z then
+   	x = x || 'a nave pode levar a todos os tripulantes no conxunto das suas lanzaderas';
      else
-       x = x || ' a nave non pode levar a todos os seus tripulantes no conxunto das suaslanzaderas';
+	       x = x || 'a nave non pode levar a todos os tripulantes no conxunto das suas lanzaderas';
    end if;
+   raise notice '%', x;
    
  exception
    when no_data_found then
-	x = x || nome || ' no existe';
-	
-   raise notice '%', x;
+   raise notice 'nome no encontrado';
 
 end;
 $$;
