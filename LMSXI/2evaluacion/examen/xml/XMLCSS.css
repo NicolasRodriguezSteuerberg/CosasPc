@@ -1,0 +1,67 @@
+/*Ejercicio 1
+titulo:before{
+	content: "listado ";
+
+}
+
+titulo{
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+pintores{
+	counter-reset: conta;
+}
+
+pintor:before{
+	content: counter(conta, decimal)". ";
+	counter-increment: conta;
+}
+pintor{
+	margin-left: 20px;
+	display: block;
+}
+nacido, fallecido, nacionalidad{
+	display: none;
+}
+pintor#Vermeer{
+	display: none;
+}
+pintores:after{
+	content: ".....................................................................";
+}*/
+
+/*Ejercicio 2*/
+pintores{
+	display: table;
+	width: 100%;
+}
+
+titulo{
+	font-weight: bold;
+	text-transform: uppercase;
+	display: table-caption;
+	display: block;
+}
+
+pintor{
+	margin-left: 10px;
+	display: table-cell;
+	display: block;
+	border: 1px solid black;
+	border-spacing: 20px;
+	background-color: orange;
+	width: 90%;
+	height: 40px;
+	padding-top: 20px;
+	margin-bottom: 10px;
+}
+
+nombre{
+	font-weight: bold;
+}
+
+nacionalidad{
+	display: none;
+}
+

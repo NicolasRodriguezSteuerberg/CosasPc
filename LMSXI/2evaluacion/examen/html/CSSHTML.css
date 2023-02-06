@@ -1,0 +1,53 @@
+body{
+	background-color: skyblue;
+}
+/*para asemejarlo a un a4*/
+
+h2{
+	text-align: center;
+	color: white;
+	text-shadow: 0px 10px black;
+}
+
+.primero{
+	border: 5px solid black;
+	border-radius: 10px;
+	background-color: white;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+.texto{
+	padding: 10px 10px;
+}
+
+#izquierda{
+	border: 10px solid darkorange;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	margin-right: 50%;
+	background-color: orangered;
+	color: white;
+	/*borde arriba abajo mas grueso*/
+	border-top: 15px solid darkorange;
+	border-bottom:  15px solid darkorange;
+}
+#derecha{
+	border: 10px solid brown;
+	/*borde arriba abajo mas grueso*/
+	border-top: 15px solid brown;
+	border-bottom:  15px solid brown;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+
+	background-color: sandybrown;
+	margin-left: 50%;
+	color: white;
+}
+
+#centro{
+	border: 5px dashed blue;
+	background-color: darkblue;
+	color: white;
+	margin-left: 25%;
+	margin-right: 25%;
+}
