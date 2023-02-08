@@ -4,6 +4,7 @@
  */
 package exemplostring;
 
+import com.nicosteuerberg.datos.PedirDatos;
 import java.util.Arrays;
 
 /**
@@ -17,15 +18,38 @@ public class ExemploString {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        String nome = "Nabuconodosor";
-        System.out.println("1. " + nome.length());
-        System.out.println("2. " + nome.toUpperCase());
-        System.out.println("3. " + nome.toLowerCase());
-        System.out.println("4. " + nome.compareTo("Nabuconodosor"));
-        System.out.println("5. " + nome.compareToIgnoreCase("NaBuCoNoDoSoR"));
-        char caracteres[] = nome.toCharArray();
-        System.out.println("6. " + Arrays.toString(caracteres));
-        System.out.println("7. " + nome.substring(0, 4));
+        Metodos obx = new Metodos();
+        int num;
+        
+        do{
+            num = PedirDatos.getInt("1 --> Amosar tamaño\n2 --> Poner en mayúsculas\n3 --> Poner en minúsculas\n4 --> Comparar\n5 --> Comparar letras no mayúsculas\n6 --> Amosar como array\n7 --> Cortar la palabra\n8 --> Saír");
+            switch (num){
+                case 1:
+                    obx.amosarTamaño();
+                    break;
+                case 2:
+                    obx.ponerMayusculas();
+                    break;
+                case 3:
+                    obx.ponerMinusculas();
+                    break;
+                case 4:
+                    obx.comparar();
+                    break;
+                case 5:
+                    obx.compararIgnorandoMayusculas();
+                    break;
+                case 6:
+                    obx.amosarComoArray();
+                    break;
+                case 7:
+                    obx.cortarDeterminadoLugar();
+                    break;
+                default:
+                    System.out.println("Saíndo do programa");
+                    break;
+            }
+        }while(num > 0 && num < 8);
         
     }
     
