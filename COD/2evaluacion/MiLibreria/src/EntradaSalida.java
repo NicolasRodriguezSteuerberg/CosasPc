@@ -24,10 +24,10 @@ public class EntradaSalida {
 
             case SALIDA_WINDOW:
                 try {
-                    JOptionPane.showMessageDialog(null,"Sale por un ventana " + msj.toCharArray()[10]);
+                    JOptionPane.showMessageDialog(null,msj);
                     return true;
                 } catch(Exception e) {
-                    System.out.println(e.getMessage());
+                    JOptionPane.showMessageDialog(null,e.getMessage());
                     return false;
                 }
 
@@ -54,19 +54,37 @@ public class EntradaSalida {
     /**
      * Entrada por consola
      * @param comentario = comentario que queremos que salga
-     * @return numero, 0 si es un dato nulo
+     * @return numero hasta que devuelva un valor válido
      */
     public static int entradaInt(String comentario){
         int num = 0;
         boolean validacion = false;
         do {
             try {
-                Scanner obx = new Scanner(System.in);
-                System.out.println(comentario);
-                num = obx.nextInt();
+                num = Integer.parseInt(JOptionPane.showInputDialog(comentario));
                 validacion = true;
             } catch (Exception e) {
-                System.out.println("DATO NO VÁLIDO, INTENTELO DE NUEVO");
+               EntradaSalida.salida("DATO NO VÁLIDO, INTENTELO DE NUEVO", SALIDA_WINDOW);
+                validacion = false;
+            }
+        }while(validacion == false);
+        return num;
+    }
+
+    /**
+     * Entrada por consola
+     * @param comentario = comentario que queremos que salga
+     * @return numero hasta que se devuelva un valor válido
+     */
+    public static float entradaFloat(String comentario){
+        float num = 0;
+        boolean validacion = false;
+        do {
+            try {
+                num = Float.parseFloat(JOptionPane.showInputDialog(comentario));
+                validacion = true;
+            } catch (Exception e) {
+                EntradaSalida.salida("DATO NO VÁLIDO, INTENTELO DE NUEVO",SALIDA_CONSOLA);
                 validacion = false;
             }
         }while(validacion == false);

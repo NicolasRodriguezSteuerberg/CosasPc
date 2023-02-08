@@ -8,7 +8,7 @@ package metodos;
  *
  * @author NSteuerberg
  */
-public class Libro {
+public class Libro implements Comparable{
     private String titulo, autor, ISBN;
     private float prezo;
     private int unidades;
@@ -68,4 +68,16 @@ public class Libro {
         return titulo + ", autor: " + autor + ", ISBN: " + ISBN + ", prezo: " + prezo + ", unidades: " + unidades;
     }
     
+    public int compareTo(Object o){
+        Libro lib = (Libro) o;
+        if(this.titulo.compareToIgnoreCase(lib.titulo)>0){
+            return 1;
+        }
+        else if(this.titulo.compareToIgnoreCase(lib.titulo)<0){
+            return -1;
+        }
+        else {
+            return 0;
+        }
+    }
 }

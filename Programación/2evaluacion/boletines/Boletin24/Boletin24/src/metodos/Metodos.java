@@ -47,7 +47,10 @@ public class Metodos{
     }
     
     public void amosarLibros(ArrayList<Libro> aux){
-        //Collections.sort(titulo);
+        Collections.sort(aux);
+        for(Libro elemento : aux){
+            System.out.println(elemento);
+        }
     }
     
     public void darDeBaixa(ArrayList<Libro> aux){
