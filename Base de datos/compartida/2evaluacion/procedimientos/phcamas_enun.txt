@@ -1,0 +1,25 @@
+phcamas:
+
+procedimento que, pasandolle o numero de camas como parametro, devolte os nomes dos hospitais propios que as superan asi como os nomes dos hospitalizados de 1º categoria que estiveron neles, e o seu total. Se ningun hospital propio supera o numero de camas a mensaxe debe ser: 'ningun hospital propio supera ese numero de camas'
+Si agun dos hospitais non ten hospitalizados de 1ª categoria a mensaxe debe ser : 'hospital sen hospitalizados'.
+
+
+
+
+Ex:
+call phcamas(150);
+hospital: canalejo
+dolores
+dolores
+o numero de hospitalizados e : 2
+
+hospital: meixoeiro
+hospital sen hospitalizados
+
+hospital: paz
+andrea
+o numero de hospitalizados e : 1
+Ex:
+call  phcamas(3000);
+ningun hospital propio supera ese numero de camas
+
