@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class EntradaSalida {
 
-    static final int SALIDA_CONSOLA = 1;
-    static final int SALIDA_WINDOW = 2;
+    static public final int SALIDA_CONSOLA = 1;
+    static public final int SALIDA_WINDOW = 2;
 
     /**
      * Salida por ventana o consala de un mensaje
@@ -12,7 +12,7 @@ public class EntradaSalida {
      * @param device dispositivo de salida, consola (SALIDA_CONSOLA) o ventana (SALIDA_VENTANA)
      * @return si es true: correcto si no false
      */
-    static boolean salida(String msj, int device) {
+    public static boolean salida(String msj, int device) {
         switch (device) {
             case SALIDA_CONSOLA:
                 try {
@@ -21,7 +21,6 @@ public class EntradaSalida {
                 } catch (Exception e) {
                     return false;
                 }
-
             case SALIDA_WINDOW:
                 try {
                     JOptionPane.showMessageDialog(null,msj);
@@ -30,7 +29,6 @@ public class EntradaSalida {
                     JOptionPane.showMessageDialog(null,e.getMessage());
                     return false;
                 }
-
             default:
                 return false;
         }
@@ -45,30 +43,24 @@ public class EntradaSalida {
      */
     public static String entradaString(String comentario){
         Scanner obx = new Scanner(System.in);
-        String dato;
         System.out.println(comentario);
-        dato = obx.next();
+        String dato = obx.nextLine();
         return dato;
-        }
+    }
 
     /**
      * Entrada por consola
      * @param comentario = comentario que queremos que salga
      * @return numero hasta que devuelva un valor válido
      */
-    public static int entradaInt(String comentario){
-        int num = 0;
-        boolean validacion = false;
-        do {
-            try {
-                num = Integer.parseInt(JOptionPane.showInputDialog(comentario));
-                validacion = true;
-            } catch (Exception e) {
-               EntradaSalida.salida("DATO NO VÁLIDO, INTENTELO DE NUEVO", SALIDA_WINDOW);
-                validacion = false;
-            }
-        }while(validacion == false);
-        return num;
+    public static Integer entradaInt(String comentario){
+        int num;
+        try {
+            num = Integer.parseInt(JOptionPane.showInputDialog(comentario));
+            return num;
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     /**
@@ -76,18 +68,13 @@ public class EntradaSalida {
      * @param comentario = comentario que queremos que salga
      * @return numero hasta que se devuelva un valor válido
      */
-    public static float entradaFloat(String comentario){
-        float num = 0;
-        boolean validacion = false;
-        do {
-            try {
-                num = Float.parseFloat(JOptionPane.showInputDialog(comentario));
-                validacion = true;
-            } catch (Exception e) {
-                EntradaSalida.salida("DATO NO VÁLIDO, INTENTELO DE NUEVO",SALIDA_CONSOLA);
-                validacion = false;
-            }
-        }while(validacion == false);
-        return num;
+    public static Float entradaFloat(String comentario){
+        float num;
+        try {
+            num = Float.parseFloat(JOptionPane.showInputDialog(comentario));
+            return num;
+        } catch (Exception e) {
+            return null;
+        }
     }
 }
