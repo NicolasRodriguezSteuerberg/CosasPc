@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DOCTYPE
+<!DOCTYPE agenda [
+	<!ELEMENT agenda (nombre, direccion, movil)>
+	<!ELEMENT nombre (#PCDATA)>
+	<!ELEMENT direccion (#PCDATA)>
+	<!ELEMENT movil (#PCDATA)>
+]>
+-->
+<!--ESQUEMA
+-->
+<agenda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EsquemasEs.xsd">
+	<nombre>Carlos Garcia</nombre>
+	<direccion>C/Rosalía, 25</direccion>
+	<movil>626 67 78 89</movil>
+</agenda>
