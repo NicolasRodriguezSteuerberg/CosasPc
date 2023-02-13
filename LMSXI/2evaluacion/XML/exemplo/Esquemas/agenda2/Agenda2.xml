@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!--ESQUEMA-->
+<agenda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/home/dam1/Documentos/CosasPc/LMSXI/2evaluacion/XML/exemplo/Esquemas/agenda2/EsquemasEs2.xsd">
+	<nombre>Carlos Garcia</nombre>
+	<direccion>
+	    <calle>C Rosalía</calle>
+	    <numero> 25</numero>
+  </direccion>
+	<movil>626 67 78 89</movil>
+</agenda>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?> <!-- SE GUARDA CON .xsd -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="agenda">         <!-- RAIZ -->
+  <xsd:element name="direccion">
+          <xsd:complexType>
+            <xs:sequence>
+              <xs:element name="calle" type="xs:string"/>
+              <xs:element name="numero" type="xs:integer"/>
+            </xs:sequence>
+          </xsd:complexType>
+        </xsd:element>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nombre" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>     <!-- ELEMENTOS DE RAÍZ  ||  tipo de dato ||  minimo de veces que sale  ||  máximo -->
+        <xs:element name="movil" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
