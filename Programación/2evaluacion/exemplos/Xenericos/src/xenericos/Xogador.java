@@ -4,7 +4,7 @@ package xenericos;
  *
  * @author NSteuerberg
  */
-public class Xogador {
+public class Xogador implements Comparable{
     //atributos
     private String nome;
     private int dorsal;
@@ -40,5 +40,33 @@ public class Xogador {
         return  nome + " ten o dorsal  " + dorsal;
     }
     
+    /*      Ordenar por dorsal*/
+    public int compareTo(Object o){
+        Xogador x = (Xogador)o;
+        if(this.dorsal > x.dorsal){
+            return 1;
+        }
+        else if(this.dorsal < x.dorsal){
+            return -1;
+        }
+        else{
+            return 0;
+        }
+    }
+    
+    
+    //Ordenar por nombre
+    /*public int compareTo(Object o){
+        Xogador x = (Xogador)o;
+        if(this.nome.compareToIgnoreCase(x.nome)>0){
+            return 1;
+        }
+        else if(this.nome.compareToIgnoreCase(x.nome)<0){
+            return -1;
+        }
+        else{
+            return 0;
+        }
+    }*/
     
 }
