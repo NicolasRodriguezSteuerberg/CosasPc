@@ -18,14 +18,17 @@ public class Boletin26 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Operacions obx = new Operacions();
-        int numero;
+        Operacions<Integer> obx = new Operacions();
+        int opcion;
         ArrayList<Integer> lista= new ArrayList(); 
         do{
-            numero = PedirDatos.getInt("1 --> Añadir\n2 --> Elemento mínimo\n3 --> Elemento máximo\n4 --> Buscar elemento");
-            switch(numero){
+            opcion = PedirDatos.getInt("1 --> Añadir\n2 --> Elemento mínimo\n3 --> Elemento máximo\n4 --> Buscar elemento\n5 --> Borrar primer elemento");
+            switch(opcion){
                 case 1:
-                    obx.engadir(PedirDatos.getInt("Teclee un numero"), lista);
+                    int num = PedirDatos.getInt("Cuantos numeros quieres añadir?");
+                    for(int i = 0; i < num; i++){
+                        obx.engadir(PedirDatos.getInt("Teclee un numero"), lista);
+                    }
                     break;
                 case 2:
                     obx.elementoMinimo(lista);
@@ -36,11 +39,14 @@ public class Boletin26 {
                 case 4:
                     obx.buscarElemento(lista, PedirDatos.getInt("Teclee o numero a buscar"));
                     break;
+                case 5:
+                    obx.borrarPrimero(lista);
+                    break;
                 default:
                     System.out.println("Saíndo do programa");
                     break;
             }
-        }while(numero > 0 && numero < 5);
+        }while(opcion > 0 && opcion < 6);
     }
     
 }

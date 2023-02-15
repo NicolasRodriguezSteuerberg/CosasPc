@@ -13,27 +13,22 @@ import java.util.Iterator;
  * @author dam1
  */
 public class Operacions <T>{
-    private ArrayList<T> dato;
-    
-    public Operacions(){
-        this.dato = new ArrayList<>();
-    }
-    
-       
+        
+    //metodos
     public <T> void engadir(T elemento, ArrayList<T> lista){
         lista.add(elemento);
     }
     
     public <T> void elementoMinimo(ArrayList<T> aux){
-        System.out.println("Elemento mínimo: " + Collections.min(aux, null));   
+        System.out.println("\nElemento mínimo: " + Collections.min(aux, null));   
     }
     
     public <T> void elementoMaximo(ArrayList<T> aux){
-        System.out.println("Elemento máximo: " + Collections.max(aux, null));
+        System.out.println("\nElemento máximo: " + Collections.max(aux, null));
     }
 
     public <T> void buscarElemento(ArrayList<T> aux, T buscar){
-        Iterator it = aux.iterator();
+        /*Iterator it = aux.iterator();
         int posicion = -1;
         int contador = 0;
         for(T elemento: aux){
@@ -45,12 +40,25 @@ public class Operacions <T>{
                     }
                 }
             }
+        }*/
+        if(aux.indexOf(buscar)>=0){
+            System.out.println("\nO numero: " + buscar + " aparace na posición: " + (aux.indexOf(buscar)+1));
+        }        
+        else{
+            System.out.println("\nO numero: " + buscar + " no aparece: -1");
         }
-        if(posicion  != -1){
-            System.out.println("O numero: " + buscar + " aparece na posición " + posicion);
+    }
+    
+    public <T> void borrarPrimero(ArrayList<T> aux){
+        T ele;
+        if(aux.size()>=1){
+            ele = aux.get(0);
+            aux.remove(0);
+            System.out.println("\nO elemento borrado é " + ele);
         }
         else{
-            System.out.println("O numero: " + buscar + " no aparece " + posicion);
+            System.out.println("\nNon se pode borrar, no quedan elementos");
         }
+        
     }
 }
