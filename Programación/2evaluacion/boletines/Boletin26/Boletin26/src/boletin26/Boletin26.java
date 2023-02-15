@@ -37,10 +37,13 @@ public class Boletin26 {
                     obx.elementoMaximo(lista);
                     break;
                 case 4:
-                    obx.buscarElemento(lista, PedirDatos.getInt("Teclee o numero a buscar"));
+                    int posicion = obx.buscarElemento(lista, PedirDatos.getInt("Teclee o numero a buscar"));
+                    if(posicion == -1){
+                        System.out.println("");
+                    }
                     break;
                 case 5:
-                    obx.borrarPrimero(lista);
+                    obx.borrar(lista, PedirDatos.getInt("Teclee o numero a borrar"));
                     break;
                 default:
                     System.out.println("Saíndo do programa");

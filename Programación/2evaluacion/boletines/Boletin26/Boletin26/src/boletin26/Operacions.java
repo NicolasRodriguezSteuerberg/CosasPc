@@ -27,7 +27,8 @@ public class Operacions <T>{
         System.out.println("\nElemento máximo: " + Collections.max(aux, null));
     }
 
-    public <T> void buscarElemento(ArrayList<T> aux, T buscar){
+    public <T> int buscarElemento(ArrayList<T> aux, T buscar){
+        int posicion = -1;
         /*Iterator it = aux.iterator();
         int posicion = -1;
         int contador = 0;
@@ -42,22 +43,26 @@ public class Operacions <T>{
             }
         }*/
         if(aux.indexOf(buscar)>=0){
-            System.out.println("\nO numero: " + buscar + " aparace na posición: " + (aux.indexOf(buscar)+1));
+            posicion = aux.indexOf(buscar)+1;
+            System.out.println("\nO numero: " + buscar + " aparace na posición: " + posicion);
         }        
         else{
-            System.out.println("\nO numero: " + buscar + " no aparece: -1");
+            posicion = -1;
+            System.out.println("\nO numero: " + buscar + " no aparece: " + posicion);
         }
+        return posicion;
     }
     
-    public <T> void borrarPrimero(ArrayList<T> aux){
+    public <T> void borrar(ArrayList<T> aux, T elemento){
+        int pos = buscarElemento(aux,elemento);
         T ele;
-        if(aux.size()>=1){
-            ele = aux.get(0);
-            aux.remove(0);
+        if(pos>-1){
+            ele = aux.get(pos);
+            aux.remove(pos);
             System.out.println("\nO elemento borrado é " + ele);
         }
         else{
-            System.out.println("\nNon se pode borrar, no quedan elementos");
+            System.out.println("\nNon se pode borrar, no está o elemento ");
         }
         
     }
