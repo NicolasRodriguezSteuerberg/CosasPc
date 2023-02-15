@@ -24,22 +24,33 @@ public class Operacions <T>{
         lista.add(elemento);
     }
     
-    public T elementoMinimo(ArrayList<T> aux){
-        T min = null;
-        for(T elemento: aux){
-            if(min==null){
-                min = elemento;
-            }
-            if(min > elemento){
-                min = elemento;
-            }
-        }
-        return min;   
+    public <T> void elementoMinimo(ArrayList<T> aux){
+        System.out.println("Elemento mínimo: " + Collections.min(aux, null));   
     }
     
-    public static <T> void elementoMaximo(ArrayList<T> aux){
-        
+    public <T> void elementoMaximo(ArrayList<T> aux){
+        System.out.println("Elemento máximo: " + Collections.max(aux, null));
     }
 
-
+    public <T> void buscarElemento(ArrayList<T> aux, T buscar){
+        Iterator it = aux.iterator();
+        int posicion = -1;
+        int contador = 0;
+        for(T elemento: aux){
+            if(posicion == -1){
+                if(it.hasNext()){
+                    contador++;
+                    if(it.next()==buscar){
+                        posicion = contador;
+                    }
+                }
+            }
+        }
+        if(posicion  != -1){
+            System.out.println("O numero: " + buscar + " aparece na posición " + posicion);
+        }
+        else{
+            System.out.println("O numero: " + buscar + " no aparece " + posicion);
+        }
+    }
 }
