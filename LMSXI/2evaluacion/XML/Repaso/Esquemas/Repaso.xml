@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--EJERCICIO 1
+<articulo codigo="a-1345" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Repaso.xsd"></articulo>
+-->
+
+<!--EJERCICIO 2
+<empleado xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Repaso.xsd"> 
+  <nombre>Marta</nombre>
+  <apellidos>
+     <apellido1>Pérez</apellido1>
+     <apellido2>Pérez</apellido2>
+   </apellidos>
+</empleado>
+-->
+
+<!--EJERCICIO 3
+<documento xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Repaso.xsd">
+Estimado/a <nombre>Pablo Gómez</nombre>.
+  Su petición realizada el día:<fecha>2015-03-16</fecha>
+  será resuelta el día de hoy a las:<hora>12:10:00</hora>.
+</documento>
+-->
+
+<!--EJERCICIO 4
+<encargados clase="A1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Repaso.xsd"> 
+    <encargado>
+      <nombre>Manuel</nombre>
+      <apellidos>Pérez</apellidos>
+    </encargado>
+    <encargado>
+      <nombre>Marta</nombre>
+      <apellidos>González</apellidos>
+  </encargado>
+</encargados>
+-->
+
+<!--EJERCICIO 5
+<encargados xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Repaso.xsd"> 
+  <encargado seccion="s1">
+    <nombre>Marta</nombre>
+    <apellidos>Sanchez</apellidos>
+  </encargado>
+ <encargado seccion="s2">
+    <nombre>Mario</nombre>
+    <apellidos>Casillas</apellidos>
+  </encargado>
+</encargados>
+-->
+
+<partidos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Repaso.xsd">
+
+  <partido>
+    <local>Celta
+      <goles>2</goles>
+    </local>
+    <visitante>Depor
+      <goles>0</goles>
+    </visitante>
+  </partido>
+  
+  <partido>
+    <local goles="3">Napoles</local>
+    <visitante goles="2">Juventus</visitante>
+  </partido>
+  
+<partido local="Dortmund" golesLocal="5" visitante="Bayern" golesVisitante="3"></partido>  
+  
+</partidos>

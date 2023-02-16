@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<!--EJERCICIO 1
+  <xs:element name="articulo">
+    <xs:complexType mixed="true">
+        <xs:attribute name="codigo" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+-->
+
+<!--EJERCICIO 2
+  <xs:element name="empleado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nombre" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="apellidos">
+          <xs:complexType>
+          <xs:sequence>
+            <xs:element name="apellido1" type="xs:string"/>
+            <xs:element name="apellido2" type="xs:string"/>
+          </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+-->
+
+<!--EJERCICIO 3
+  <xs:element name="documento">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element name="nombre" type="xs:string"/>
+        <xs:element name="fecha" type="xs:string"/>
+        <xs:element name="hora" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+-->
+
+<!--EJERCICIO 4
+  <xs:element name="encargados">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element name="encargado" maxOccurs="2">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" type="xs:string"/>
+              <xs:element name="apellidos" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="clase" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+-->
+
+<!--EJERCICIO 5
+  <xs:element name="encargados">
+    <xs:complexType>
+      <xs:sequence>
+      
+        <xs:element name="encargado" maxOccurs="2">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" type="xs:string"/>
+              <xs:element name="apellidos" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="seccion" type="xs:string"/>
+          </xs:complexType>
+        </xs:element>
+        
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+-->
+
+<!--EJERCICIO 6-->
+  <xs:element name="partidos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="partido" maxOccurs="3">
+          <xs:complexType mixed="true">
+            <xs:sequence>
+            
+              <xs:element name="local" minOccurs="0" maxOccurs="1">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element name="goles" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+                  </xs:sequence>
+                  <xs:attribute name="goles" type="xs:integer" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              
+              <xs:element name="visitante" minOccurs="0" maxOccurs="1">
+                <xs:complexType mixed="true">
+                  <xs:sequence>
+                    <xs:element name="goles" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+                  </xs:sequence>
+                  <xs:attribute name="goles" type="xs:integer" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+              
+            </xs:sequence>
+            
+            <xs:attribute name="local" type="xs:string" use="optional"/>
+            <xs:attribute name="golesLocal" type="xs:integer" use="optional"/>
+            <xs:attribute name="visitante" type="xs:string" use="optional"/>
+            <xs:attribute name="golesVisitante" type="xs:integer" use="optional"/>
+            
+          </xs:complexType>
+        </xs:element>
+        
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+

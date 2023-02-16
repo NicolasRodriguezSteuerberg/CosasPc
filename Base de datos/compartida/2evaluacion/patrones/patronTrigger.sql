@@ -8,7 +8,7 @@ DECLARE
 
 BEGIN
 
-
+  return new;
 END;
 $$;
 CREATE TRIGGER txt before INSERT ON tabla for each row EXECUTE PROCEDURE tx();

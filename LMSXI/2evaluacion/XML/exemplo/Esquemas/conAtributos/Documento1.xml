@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<alumno nota="8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Documento2.xsd">
+    <nombre>Maria Pérez</nombre>
+    <movil>673248794</movil>
+</alumno>

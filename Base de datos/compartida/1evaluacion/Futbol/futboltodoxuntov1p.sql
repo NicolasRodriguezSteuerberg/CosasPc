@@ -81,6 +81,24 @@ foreign key (codequ) references equipo(codequ),
 foreign key (codest) references estadio(codest));
 
 
+DROP FUNCTION tactualizanumx() CASCADE;
+CREATE FUNCTION tactualizanumx()
+	RETURNS TRIGGER
+	LANGUAGE PLPGSQL
+    AS 
+$$  
+DECLARE
+ 
+BEGIN
+   update equipo set numx=coalesce(numx,0)+1 where codequ=new.codequ;
+ return new;
+END;
+$$;
+CREATE TRIGGER tactualizanumxt before INSERT ON xogador for each row EXECUTE PROCEDURE tactualizanumx();
+
+
+
+
 insert into equipo values('e1','cuspedrinos',null);
 insert into equipo values('e2','gambusinos',null);
 insert into equipo values('e3','croques',null);
@@ -150,17 +168,23 @@ insert into interven values('c1','p2',3);
 insert into interven values('c5','p3',2);
 insert into interven values('c1','p3',3);
 
+
+/*No hace falta por tener el trigger
 create or replace procedure pequiponumx()  language plpgsql as $$
 declare
-fx  record; 
-x cursor for select codequ, count(*) cuenta  from xogador group by codequ;
+fx  record;
+--así quedaría mas bonito
+	x cursor for select codequ, count(*) cuenta  from xogador group by codequ;
+	begin
+	for fx in x loop
+--
 begin
-for fx in x loop
-	update equipo set numx= fx.cuenta where codequ= fx.codequ;
+   for fx in select codequ, count(*) cuenta  from xogador group by codequ LOOP
+	update equipo set numx=fx.cuenta where codequ= fx.codequ;
 end loop;
 end;
 $$
 ;
-call pequiponumx();
-
+--call pequiponumx();
+*/
 
