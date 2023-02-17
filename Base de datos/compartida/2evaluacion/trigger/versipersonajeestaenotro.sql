@@ -1,3 +1,14 @@
+/*
+
+insert into klingon values ('p1',null,'pla1');
+	personaje en humanos
+
+insert into klingon values ('p2',null,'pla1');
+	personaje en vulcanos
+
+insert into klingon values ('p5',null,'pla1');
+	insercion aceptada
+*/
 DROP FUNCTION thumanounico() CASCADE;
 CREATE FUNCTION thumanounico()
 	RETURNS TRIGGER
@@ -10,18 +21,15 @@ DECLARE
 BEGIN
  select count(codper) into x from vulcanos where codper=new.codper;
  if x > 0 then
- 	y = E'\nNon se pode añadir xa que está en vulcanos';
- 	raise exception '%',y;
+ 	raise exception E'\nNon se pode añadir xa que está en vulcanos';
     else
     	select count(codper) into x from klingon where codper=new.codper;
     	if x > 0 then
-    		y = E'\nNon se pode añadir xa que está en klingon';
-    		raise exception '%',y;
+    		raise exception E'\nNon se pode añadir xa que está en klingon';
     	  else
-    		y = E'\nInserción añadida';
+    		raise notice E'\nInserción añadida';
     	end if;
  end if;
- raise notice '%',y;
  return new;
 END;
 $$;
@@ -38,21 +46,17 @@ DECLARE
  x integer;
  y varchar;
 BEGIN
- select count(codper) into x from humanos where codper=new.codper;
+ select count(codper) into x from vulcanos where codper=new.codper;
  if x > 0 then
- 	y = E'\nNon se pode añadir xa que está en vulcanos';
- 	raise exception '%',y;
+ 	raise exception E'\nNon se pode añadir xa que está en vulcanos';
     else
-    	select count(codper) into x from vulcanos where codper=new.codper;
+    	select count(codper) into x from humanos where codper=new.codper;
     	if x > 0 then
-    		y = E'\nNon se pode añadir xa que está en klingon';
-    		raise exception '%',y;
+    		raise exception E'\nNon se pode añadir xa que está en humanos';
     	  else
-    		y = E'\nInserción añadida';
-    		return new;
+		raise notice E'\nInserción añadida';
     	end if;
  end if;
- raise notice '%',y;
  return new;
 END;
 $$;
@@ -71,18 +75,15 @@ DECLARE
 BEGIN
  select count(codper) into x from klingon where codper=new.codper;
  if x > 0 then
- 	y = E'\nNon se pode añadir xa que está en vulcanos';
- 	raise exception '%',y;
+ 	raise exception E'\nNon se pode añadir xa que está en klingon';
     else
     	select count(codper) into x from humanos where codper=new.codper;
     	if x > 0 then
-    		y = E'\nNon se pode añadir xa que está en klingon';
-    		raise exception '%',y;
+    		raise exception E'\nNon se pode añadir xa que está en humanos';
     	  else
-    		y = E'\nInserción añadida';
+    		 raise notice E'\nInserción añadida';
     	end if;
  end if;
- raise notice '%',y;
  return new;
 END;
 $$;
