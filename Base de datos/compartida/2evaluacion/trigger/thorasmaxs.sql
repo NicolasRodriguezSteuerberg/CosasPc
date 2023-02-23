@@ -22,8 +22,14 @@ $$
 DECLARE
  cuenta integer;
 BEGIN
-  select count(horas) into cuenta from interpretesser where coda=new.coda and c
+  select sum(coalesce(horas,0))+coalesce(new.horas,0) into cuenta from interpretesser where coda=new.coda and cods=new.cods;
+  cuenta = cuenta + coalesce(new.horas,0);
+  if cuenta <= 500 then
+  	raise notice 'inserción añadida';
+	else
+	   raise exception 'inserción fallida, este actor no puede traballar máis de 500 horas en la serie %',new.cods;
+  end if;
   return new;
 END;
 $$;
-CREATE TRIGGER thorasmaxst before INSERT ON interpretesser for each row EXECUTE PROCEDURE thorasmaxst();
+CREATE TRIGGER thorasmaxst before INSERT ON interpretesser for each row EXECUTE PROCEDURE thorasmaxs();

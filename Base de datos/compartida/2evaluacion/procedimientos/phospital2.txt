@@ -1,4 +1,0 @@
-phospital2
-procedemento que amose os nomes de todos os hospitais e para ca un deles os nomes dos medicos que prescribiron  hospitalizacions a asegurados de primeira categoria 
-
-
