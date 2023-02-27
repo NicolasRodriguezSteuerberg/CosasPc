@@ -1,7 +1,11 @@
 package lectura;
 
+import eficheiros.Alumno;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -10,12 +14,12 @@ import java.util.Scanner;
 public class LerFicheiros {
     Scanner sc;
     
-    //1º xeito de leelos
-    public void lerPalabras(File ficheiro){
+    //Leelo por palabras
+    public void lerPalabras(File ficheiro, String del){
         try {
-            sc = new Scanner(ficheiro);
+            sc = new Scanner(ficheiro).useDelimiter("\\s*" + del + "\\s*");
             while(sc.hasNext()){
-                String dato = sc.nextLine();
+                String dato = sc.next();
                 System.out.println(dato);
             }
         }catch (FileNotFoundException ex) {
@@ -26,8 +30,95 @@ public class LerFicheiros {
         }
     }
     
+    //Leerlo por liñas
+    public void lerLiñas(File ficheiro){
+        try {
+            sc = new Scanner(ficheiro);
+            while(sc.hasNext()){
+                String dato = sc.nextLine();
+                System.out.println(dato);
+            }
+        }catch (FileNotFoundException ex) {
+            System.out.println("erro 2 " + ex.getMessage());
+        }
+        finally{
+            sc.close();
+        }
+    }
     
-    //2º xeito
+    //arrayList
+    public ArrayList<Integer> lerNumero(File ficheiro){
+        int num;
+        //int aux;
+        ArrayList<Integer>lista=new ArrayList<>();
+        try{
+            sc = new Scanner(ficheiro);
+            while(sc.hasNext()){
+                num=sc.nextInt();
+                //aux = Integer.parseInt(num);
+                lista.add(num);
+            }
+        }
+        catch(FileNotFoundException ex){
+            System.out.println("error leer numero"+ex.getMessage());
+        }
+        finally{
+                sc.close();
+        }
+       
+        for(Integer ele:lista){
+            System.out.println(ele);
+        }
+       
+        return lista;
+    }
+    
+    public ArrayList<Integer> lerNumeroDelimitadores(File ficheiro){
+        int num;
+        //int aux;
+        ArrayList<Integer>lista=new ArrayList<>();
+        try{
+            sc = new Scanner(ficheiro).useDelimiter(",");
+            while(sc.hasNext()){
+                num=sc.nextInt();
+                //aux = Integer.parseInt(num);
+                lista.add(num);
+            }
+        }
+        catch(FileNotFoundException ex){
+            System.out.println("error leer numero"+ex.getMessage());
+        }
+        finally{
+                sc.close();
+        }
+       
+        for(Integer ele:lista){
+            System.out.println(ele);
+        }
+       
+        return lista;
+    }
+    
+    public void lerObxecto(File ficheiro){
+        ArrayList<Alumno> lista = new ArrayList();
+        String []aux = new String[2];
+        try{
+            sc = new Scanner(ficheiro);
+            while(sc.hasNextLine()){
+                aux = sc.nextLine().split(", ");
+                lista.add(new Alumno(aux[0], Integer.parseInt(aux[1])));
+            }
+        }catch (FileNotFoundException ex){
+            System.out.println("non se pode ler do ficheiro");
+        }finally{
+            sc.close();
+        }
+        for(Alumno al:lista){
+            System.out.println(al);
+        }
+            
+    }
+    
     
     //3º xeito
 }
