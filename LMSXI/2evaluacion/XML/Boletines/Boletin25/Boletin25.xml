@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--Ejercicio 1
+<zapatos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Boletin25.xsd">
+  <zapato>Mocasín</zapato>
+  <color>marron</color>
+</zapatos>-->
+
+<!--Ejercicio 2,3
+<usuario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Boletin25.xsd">
+  <nombreUsuario>Martina García</nombreUsuario>
+  <claveUsuario>preslT3r</claveUsuario>
+</usuario>-->
+
+<!--Ejercicio4
+<fichero xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Boletin25.xsd">
+  <nombreFichero>so2ir9tA</nombreFichero>
+  <extension>xml</extension>
+</fichero>-->

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="alumno">
+    <xs:complexType>
+      <xs:sequence>
+      
+      <!--Restricion de lo que puede haber en la etiqueta
+        <xs:element name="codigo">
+         <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="abc"/>
+            <xs:enumeration value="def"/>
+            <xs:enumeration value="ghi"/>
+          </xs:restriction>
+         </xs:simpleType>
+        </xs:element>
+        -->
+        <!--Restricción del tamaño del  contenido
+        <xs:element name="codigo">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:length value="3"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        -->
+        <!--Restricción con minimo y maximo de tamaño
+        <xs:element name="codigo" >
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:minLength value="3"/>
+              <xs:maxLength value="6"/>
+          </xs:restriction>
+        </xs:simpleType>
+        </xs:element>
+        -->
+        <xs:element name="codigo" >
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!--<xs:pattern value="[a-zA-Z0-9 ]{3}"/>para que tenga minuscula, maiuscula y numeros (si pones un espacio puedes contener espacios) {3} longitud de 3(si o si) -->
+              <!--<xs:pattern value="[a-z][A-Z]"/> primero minuscula seguido de una mayuscula-->
+              <!--<xs:pattern value="[0-9]{4}[\-][A-Z]{3}"/> para la matricula-->
+              <!--<xs:pattern value="[0-9]{8}[A-Z]"/> para el DNI-->
+              <!--<xs:pattern value="[a-zA-Z0-9 ]{3}||[0-9]{8}[A-Z]"/>para que sea de una o de la otra -->
+              <xs:pattern value="negro||blanco"/>
+          </xs:restriction>
+        </xs:simpleType>
+        </xs:element>
+        
+        
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -27,19 +27,23 @@ DECLARE
   y integer;
   t integer;
   w integer;
+  cuenta integer;
 BEGIN
    select count(cod_posto) into t from postos where cod_posto=new.cod_posto;
    select count(num_persoa) into w from persoas where num_persoa=new.num_persoa;
    if t=0 or w=0 then
    	raise exception 'non existe a persoa ou o posto';
    	else
+   	   cuenta = 0;
 	   for z in select cod_empresa from rexeita where num_persoa=new.num_persoa LOOP
    		select count(cod_posto) into y from postos where cod_empresa=z.cod_empresa and cod_posto=new.cod_posto;
+   		cuenta = cuenta + y;
 	   end LOOP;
-	   if y=0 then
-   		raise exception 'non podes entrevistar a esta persoa para dito posto pois e rexeitada por a empresa que lle corresponde a dito posto';
+	   
+	   if cuenta=0 then
+   		raise notice 'entrevista aceptada';
 	   	else
-   			raise notice 'inserción añadida';
+   			raise exception 'non podes entrevistar a esta persoa para dito posto pois e rexeitada por a empresa que lle corresponde a dito posto';
    	   end if;
    end if;
   return new;

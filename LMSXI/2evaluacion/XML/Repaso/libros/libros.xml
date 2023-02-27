@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<libro isbn="a123" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="libros.xsd">
+  <titulo>El Quijote</titulo>
+  <autor>
+    <nombre>Miguel</nombre>
+    <apellido>Cervantes</apellido>
+  </autor>
+</libro>
