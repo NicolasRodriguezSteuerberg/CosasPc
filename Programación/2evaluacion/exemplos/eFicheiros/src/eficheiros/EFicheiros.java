@@ -37,11 +37,16 @@ public class EFicheiros {
         
         obx.lerNumeroDelimitadores(n);
         */
-        
+        /*
         File al = new File("alumnos.txt");
         LerFicheiros obx = new LerFicheiros();
         
         obx.lerObxecto(al);
+*/
+        File n = new File("/home/dam1/Documentos/ficherosProg/probaNumeros.txt");
+        LerFicheiros obx = new LerFicheiros();
+        
+        obx.lerPalabras(n, " ");
     }
     
 }
