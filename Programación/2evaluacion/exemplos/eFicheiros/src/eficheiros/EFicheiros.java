@@ -4,6 +4,7 @@
  */
 package eficheiros;
 
+import escritura.EscribirFicheiros;
 import java.io.File;
 import lectura.LerFicheiros;
 
@@ -42,11 +43,20 @@ public class EFicheiros {
         LerFicheiros obx = new LerFicheiros();
         
         obx.lerObxecto(al);
-*/
+        */
+        /*
         File n = new File("/home/dam1/Documentos/ficherosProg/probaNumeros.txt");
         LerFicheiros obx = new LerFicheiros();
         
         obx.lerPalabras(n, " ");
+        */
+        EscribirFicheiros obxEs = new EscribirFicheiros();
+        File n = new File("diaSemana.txt");
+        //obxEs.escribir(n);
+        obxEs.engadirRexistro(n);
+        
+        LerFicheiros obxLer = new LerFicheiros();
+        obxLer.lerPalabras(n, "\n");
     }
     
 }
