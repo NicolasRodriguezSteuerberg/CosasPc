@@ -11,8 +11,58 @@
   <claveUsuario>preslT3r</claveUsuario>
 </usuario>-->
 
-<!--Ejercicio4
+<!--Ejercicio 4
 <fichero xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Boletin25.xsd">
   <nombreFichero>so2ir9tA</nombreFichero>
   <extension>xml</extension>
 </fichero>-->
+
+<!--Ejercicio 5-->
+<alumnos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/home/dam1/Documentos/CosasPc/LMSXI/2evaluacion/XML/Boletines/Boletin25/Boletin25.xsd"> 
+<alumno dni="......">
+<nombre>Juan Garcia</nombre>
+<direccion>
+<calle>Avenida de la Fuente</calle>
+<numero>6</numero>
+<ciudad>.........</ciudad>
+<provincia>...........</provincia>
+</direccion>
+<telefono>924555555</telefono></alumno>
+<alumno dni="........">
+<nombre>Jose Sanchez</nombre>
+<direccion>
+<calle>Calle Ancha</calle>
+<numero>3</numero>
+<ciudad>..........</ciudad>
+<provincia>.........</provincia>
+</direccion>
+<telefono>924550000</telefono>
+</alumno>
+</alumnos>
+
+<!--Ejercicio 6
+<libros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/home/dam1/Documentos/CosasPc/LMSXI/2evaluacion/XML/Boletines/Boletin25/Boletin25.xsd">
+
+  <libro>
+    <titulo>Los hombres que no amaban a las...</titulo>
+    <autor>Stieg Larsson</autor>
+    <fecha>2008</fecha>
+    <isbn>978-84-233</isbn>
+    <editor>Destino</editor>
+    <categoria>Ficcion</categoria>
+    <stock>Si</stock>
+  </libro>
+  
+  <libro revisor="Luis Rodrigo">
+  <titulo>Java a través de los tiempos</titulo>
+    <autor>Jesus bobadilla</autor>
+    <autor>Adela sancho</autor>
+    <fecha>2003</fecha>
+    <isbn>978-84-567</isbn>
+    <editor>Ra-Ma</editor>
+    <categoria>No ficcion</categoria>
+    <stock>No</stock>
+  </libro>
+  
+</libros>
+-->

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<numeros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="numeros.xsd">
+  <numero1>12.3</numero1>
+  <numero2>-1</numero2>
+  <numero3>1.8362</numero3>
+</numeros>

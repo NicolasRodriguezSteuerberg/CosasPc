@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--Ejercicio 1
+<materiales xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Boletin26.xsd">
+  <material>columna</material>
+  <altura>10</altura>
+  <precio>12.24</precio>
+</materiales>
+-->
+
+<!--Ejercicio 2
+<persona xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Boletin26.xsd">
+  <nombre>......... </nombre>
+  <altura>23.34 </altura>
+  <peso>14.342 </peso>
+</persona>
+-->
+
+<!--Ejercicio 3
+ <temperaturas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Boletin26.xsd">
+  <dia>2023-03-02</dia>
+  <maxima>41</maxima>
+  <minima>-10</minima>  
+</temperaturas>
+-->
+
+<!--Ejercicio 4-->
+ <alumno xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Boletin26.xsd">
+  <nombre>Juan Garcia</nombre>
+  <edad>100</edad>
+  <electrodomestico>AEG</electrodomestico>
+  <letra>a</letra>
+  <let>y</let>
+  <letras>ABC</letras>
+  <clave>x6e2q5</clave>
+  <password>qpegjseit</password>
+  <direccion>
+    <calle>Avenida de la Fuente</calle>
+    <ciudad>Vigo</ciudad>
+  </direccion>
+  <telefono>987654321</telefono>
+</alumno>

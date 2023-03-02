@@ -59,7 +59,7 @@
   </xs:element>
   -->
   
-  <!--Ejercicio 4-->
+  <!--Ejercicio 4
   <xs:element name="fichero">
     <xs:complexType>
       <xs:sequence>
@@ -83,23 +83,91 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  -->
   
-  
-  <!--Ejercicio 5
-  <xs:element name="root">
+  <!--Ejercicio 5-->
+  <xs:element name="alumnos">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="element" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      
+        <xs:element name="alumno" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+          <xs:sequence>
+          
+            <xs:element name="nombre" type="xs:string"/>
+        
+            <xs:element name="direccion">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="calle" type="xs:string"/>
+                  <xs:element name="numero" type="xs:integer"/>
+                  <xs:element name="ciudad" type="xs:string"/>
+                  <xs:element name="provincia" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            
+            <xs:element name="telefono">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:length value="9"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+        
+        </xs:sequence>
+        <xs:attribute name="dni" type="xs:string"/>
+        </xs:complexType>
+        </xs:element>
+        
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  -->
+  
   
   <!--Ejercicio 6
-  <xs:element name="root">
+  <xs:element name="libros">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="element" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      
+        <xs:element name="libro" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="titulo" type="xs:string"/>
+              <xs:element name="autor" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+              <xs:element name="fecha" type="xs:integer"/>
+              
+              <xs:element name="isbn">
+                <xs:simpleType>
+                 <xs:restriction base="xs:string">
+                    <xs:pattern value="[0-9]{3}[\-][0-9]{2}[\-][0-9]{3}"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              
+              <xs:element name="editor" type="xs:string"/>
+              
+              <xs:element name="categoria">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="Ficcion||No ficcion"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              
+              <xs:element name="stock">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="Si||No"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              
+            </xs:sequence>
+            <xs:attribute name="revisor" type="xs:string" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        
       </xs:sequence>
     </xs:complexType>
   </xs:element>
