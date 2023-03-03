@@ -2,7 +2,7 @@ package transportes;
 
 import com.nicosteuerberg.datos.PedirDatos;
 
-public class Bicicleta implements ITrasnportes{
+public class Bicicleta implements ITransportes {
     private Integer cp;
     private Float dimensionX;
     private Float dimensionY;
@@ -23,7 +23,7 @@ public class Bicicleta implements ITrasnportes{
             cp = PedirDatos.getInt("A este codigo postal non chegamos, ten que ser maior que 36000 e menor que 37000");
         }
         Float precio = null;
-        precio = (float) ((CODIGO-cp)*0.2);
+        precio = (float) ((CODIGO-cp)*0.02);
         if (precio == 0){
             precio = 0.2f;
         }

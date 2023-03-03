@@ -2,7 +2,7 @@ package transportes;
 
 import com.nicosteuerberg.datos.PedirDatos;
 
-public class Camion implements ITrasnportes{
+public class Camion implements ITransportes {
     private Integer cp;
     private Float dimensionX;
     private Float dimensionY;
@@ -22,8 +22,15 @@ public class Camion implements ITrasnportes{
         while (cp > 37000 || cp < 36000){
             cp = PedirDatos.getInt("A este codigo postal non chegamos, ten que ser maior que 36000 e menor que 37000");
         }
+        Integer diferencia = null;
+        if(CODIGO>cp){
+            diferencia = CODIGO-cp;
+        }
+        else{
+            diferencia = cp-CODIGO;
+        }
         Float precio = null;
-        precio = (float) ((CODIGO-cp)*0.4);
+        precio = (float) (diferencia*0.04);
         if (precio == 0){
             precio = 0.4f;
         }
