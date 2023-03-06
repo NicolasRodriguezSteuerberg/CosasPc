@@ -6,10 +6,19 @@ CREATE FUNCTION tmaxstock()
     AS 
 $$  
 DECLARE
-
+  fila record;
+  cuenta integer;
 BEGIN
-
+cuenta = 0;
+  for fila in select cantidads from stock where codm=new.codm LOOP
+  	cuenta = cuenta + fila.cantidads;
+  end LOOP;
+  if cuenta > 3 then
+  	raise exception 'no se pueden tener más cantidades de ese medicamento';
+  	else
+  		raise notice 'inserción añadida';
+  end if;
   return new;
 END;
 $$;
-CREATE TRIGGER tmaxstockt before INSERT ON tabla for each row EXECUTE PROCEDURE tmaxstock()
+CREATE TRIGGER tmaxstockt before INSERT ON stock for each row EXECUTE PROCEDURE tmaxstock()

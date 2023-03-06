@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<triangulos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="figuras.xsd">
+  <triangulo base="7" altura="5"/>
+  <triangulo base="2" altura="6"/>
+  <triangulo base="3" altura="3"/>
+</triangulos>

@@ -12,28 +12,35 @@ import javax.swing.JOptionPane;
  */
 public class PedirDatos {
     
-    public static byte getByte(String mensaxe){
+    public static byte pedirbyte(String mensaxe){
         return Byte.parseByte(JOptionPane.showInputDialog(mensaxe));
     }
     
-    public static short getShort(String mensaxe){
+    public static short pedirshort(String mensaxe){
         return Short.parseShort(JOptionPane.showInputDialog(mensaxe));
     }
     
-    
-    public static int getInt(String mensaxe){
+    public static int pedirint(String mensaxe){
         return Integer.parseInt(JOptionPane.showInputDialog(mensaxe));
     }
     
-    public static long getLong(String mensaxe){
+    public static Integer pedirInteger(String mensaxe){
+        return Integer.valueOf(JOptionPane.showInputDialog(mensaxe));
+    }
+    
+    public static long pedirlong(String mensaxe){
         return Long.parseLong(JOptionPane.showInputDialog(mensaxe));
     }
     
-    public static float getFloat(String mensaxe){
+    public static float pedirfloat(String mensaxe){
         return Float.parseFloat(JOptionPane.showInputDialog(mensaxe));
     }
     
-    public static double getDouble(String mensaxe){
+    public static Float pedirFloat(String mensaxe){
+        return Float.valueOf(JOptionPane.showInputDialog(mensaxe));
+    }
+    
+    public static double pedirdouble(String mensaxe){
         return Double.parseDouble(JOptionPane.showInputDialog(mensaxe));
     }
     

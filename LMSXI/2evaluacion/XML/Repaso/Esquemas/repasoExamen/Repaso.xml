@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<factura id="f-876" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Repaso.xsd">
+  <emision>2023-02-28T09:25:02</emision>
+
+  <vendedor id="v-12">
+    <nombre>Rodrigo Cuesta Pérez</nombre>    
+  </vendedor>
+  
+  <cliente id="c-9878">
+    <nombre>Carmen Rengo Suárez</nombre>
+    <direccion>
+      <via>Calle Alonso García, 2, 3º A</via>
+      <cp>32700</cp>
+      <localidad>Vigo</localidad>
+      <provincia>Pontevedra</provincia>
+    </direccion>
+    <telefono num="666111666"/>
+    <telefono num="954666111"/>
+  </cliente>
+  
+  <articulo id="a-121" iva="21">
+    <denominacion>Silla giratoria modelo C-121</denominacion>
+    <precio>98.23</precio>
+    <cantidad>1</cantidad>
+  </articulo>
+
+  <articulo id="a-9341" iva="21">
+    <denominacion>Mesa estudio 120x80 modelo A2-456-X</denominacion>
+    <precio>193.23</precio>
+    <cantidad>1</cantidad>
+  </articulo>
+
+  <articulo id="a-1124" iva="21">
+    <denominacion>Lámpara mesa con pantalla naranja modelo AK-987</denominacion>
+    <precio>23.12</precio>
+    <cantidad>2</cantidad>
+  </articulo>
+
+  <descuento>20</descuento>
+  
+</factura>
