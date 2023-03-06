@@ -1,9 +1,13 @@
 package escritura;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class EscribirFicheiros {
@@ -39,6 +43,28 @@ public class EscribirFicheiros {
         }
         finally{
             obxPrint.close();
+        }
+    }
+    
+    public void escribirBuffer(File ficheiro){
+        BufferedWriter bf = null;
+        
+        try {
+            bf = new BufferedWriter(new FileWriter(ficheiro,true));
+            bf.write("Hola\n");
+            bf.write("que\n");
+            bf.write("tal");
+        } catch (FileNotFoundException ex) {
+            System.out.println("Erro lectura buffer: " + ex.getMessage());
+        } catch (IOException ex){
+            System.out.println("Erro lectura buffer: " + ex.getMessage());
+        }
+        finally{
+            try {
+                bf.close();
+            } catch (IOException ex) {
+                System.out.println("Erro en cerrar: " + ex.getMessage());
+            }
         }
     }
 }

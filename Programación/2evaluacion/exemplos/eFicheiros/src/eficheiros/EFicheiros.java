@@ -50,6 +50,7 @@ public class EFicheiros {
         
         obx.lerPalabras(n, " ");
         */
+        /*
         EscribirFicheiros obxEs = new EscribirFicheiros();
         File n = new File("diaSemana.txt");
         //obxEs.escribir(n);
@@ -57,6 +58,13 @@ public class EFicheiros {
         
         LerFicheiros obxLer = new LerFicheiros();
         obxLer.lerPalabras(n, "\n");
+        */
+        File f = new File("buffer");
+        LerFicheiros obxL = new LerFicheiros();
+        EscribirFicheiros obxE = new EscribirFicheiros();
+        
+        obxE.escribirBuffer(f);
+        obxL.lerBuffer(f);
     }
     
 }

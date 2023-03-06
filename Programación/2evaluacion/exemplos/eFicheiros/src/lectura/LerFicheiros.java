@@ -119,6 +119,23 @@ public class LerFicheiros {
             
     }
     
+    public void lerBuffer(File ficheiro){
+        BufferedReader bf = null;
+        try{
+            bf = new BufferedReader(new FileReader(ficheiro));
+            String linea;
+            linea = bf.readLine();
+            while(linea!=null){
+                System.out.println(linea);
+                linea=bf.readLine();
+            }
+        }catch(FileNotFoundException ex){
+            System.out.println("Erro lectura buffer: " + ex.getMessage());
+        } catch (IOException ex) {
+            System.out.println("Erro lectura: " + ex.getMessage());
+        }
+    }
+    
     
     //3º xeito
 }
