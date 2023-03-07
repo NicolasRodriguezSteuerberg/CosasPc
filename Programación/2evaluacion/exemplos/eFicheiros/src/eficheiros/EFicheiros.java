@@ -5,6 +5,7 @@
 package eficheiros;
 
 import escritura.EscribirFicheiros;
+import ficheroSerializado.LecEscrituraSerializados;
 import java.io.File;
 import lectura.LerFicheiros;
 
@@ -59,12 +60,22 @@ public class EFicheiros {
         LerFicheiros obxLer = new LerFicheiros();
         obxLer.lerPalabras(n, "\n");
         */
+        /*
         File f = new File("buffer");
         LerFicheiros obxL = new LerFicheiros();
         EscribirFicheiros obxE = new EscribirFicheiros();
         
         obxE.escribirBuffer(f);
         obxL.lerBuffer(f);
+        */
+        
+        File f = new File("serializar.DAT");
+        LecEscrituraSerializados obxS = new LecEscrituraSerializados();
+        obxS.escribirSeri(f);
+        obxS.lerSerializable(f);
+        obxS.engadirSeri(f);
+        obxS.lerSerializable(f);
+        
     }
     
 }

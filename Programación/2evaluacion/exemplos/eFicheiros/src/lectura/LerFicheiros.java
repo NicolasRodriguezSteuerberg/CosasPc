@@ -4,9 +4,6 @@ import eficheiros.Alumno;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author NSteuerberg
@@ -34,7 +31,7 @@ public class LerFicheiros {
     public void lerLiñas(File ficheiro){
         try {
             sc = new Scanner(ficheiro);
-            while(sc.hasNext()){
+            while(sc.hasNextLine()){
                 String dato = sc.nextLine();
                 System.out.println(dato);
             }
