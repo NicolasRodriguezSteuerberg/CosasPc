@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<!--Ejercicio 1
+  <xs:element name="notas"> 
+    <xs:complexType>
+      <xs:sequence>
+      
+      <xs:element name="nota">
+        <xs:complexType>
+          <xs:sequence>
+          
+            <xs:element name="para" type="xs:string"/>
+            <xs:element name="de" type="xs:string"/>
+            <xs:element name="titulo" type="xs:string"/>
+
+      </xs:sequence>
+      <xs:attribute name="dia" type="xs:date"/>
+      <xs:attribute name="hora" type="xs:time"/>
+    </xs:complexType>
+    </xs:element>
+    
+    </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+-->
+
+<!--Ejercicio 2
+<xs:element name="supermercado"> 
+  <xs:complexType>
+   <xs:sequence>
+      
+      <xs:element name="articulo" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+          
+            <xs:element name="descripcion" type="xs:string"/>
+            <xs:element name="marca" type="xs:string"/>
+            <xs:element name="medida">
+             <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="unidad" type="xs:string" use="optional"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="oferta" type="xs:string" minOccurs="0" maxOccurs="1"/>
+
+      </xs:sequence>
+      <xs:attribute name="n_art" type="xs:string"/>
+    </xs:complexType>
+    </xs:element>
+    
+   </xs:sequence>
+  </xs:complexType>
+</xs:element>
+-->
+
+<!--Ejercicio 3-->
+<xs:element name="libro"> 
+  <xs:complexType>
+   <xs:sequence>
+      
+      <xs:element name="titulo" type="xs:string"/>
+      <xs:element name="seccion" type="xs:string"/>
+      <xs:element name="subSeccion" type="xs:string"/>
+      
+      <xs:element name="contenido" minOccurs="1" maxOccurs="2">
+        <xs:complexType>
+          <xs:sequence>
+     
+            <xs:element name="capitulo" minOccurs="1" maxOccurs="2">
+             <xs:complexType>
+              <xs:sequence>
+                <xs:element name="tema" type="xs:string" minOccurs="1" maxOccurs="2"/>
+              </xs:sequence>
+              <xs:attribute name="materia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="XHTML||XML"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>
+              </xs:complexType>
+            </xs:element>
+            
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    
+      <xs:element name="copyright" type="xs:string"/>
+    
+   </xs:sequence>
+   <xs:attribute name="num">
+                <xs:simpleType>
+                  <xs:restriction base="xs:integer">
+                    <xs:totalDigits value="4"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>

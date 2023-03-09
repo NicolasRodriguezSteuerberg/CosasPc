@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--1 Ejercicio
+<notas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="examen.xsd"> 
+  <nota  dia="2011-02-02" hora="10:10:10">
+    <para>José</para>
+    <de>Ana</de>
+    <titulo>Cita</titulo>
+  </nota>
+</notas>
+-->
+
+<!--2 Ejercicio
+<supermercado xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="examen.xsd">
+  <articulo n_art="articulo1">
+    <descripcion>yogurt</descripcion>
+    <marca>Danone</marca>
+    <medida unidad="Sistema Internacional">1 Pack 4</medida>
+  </articulo>
+  
+  <articulo n_art="articulo2">
+    <descripcion>Queso fresco</descripcion>
+    <marca>Burgo de Arias</marca>
+    <medida>250 gr</medida>
+    <oferta>Lote descuento</oferta>
+  </articulo>
+</supermercado>
+-->
+
+<!--3 Ejercicio-->
+<libro num="1234" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="examen.xsd">
+  <titulo>El ojo del golem</titulo>
+  <seccion>Novelas</seccion>
+  <subSeccion>Fantasticas</subSeccion>
+  <contenido>
+    <capitulo materia="XHTML">
+      <tema>La vida</tema>
+    </capitulo>
+    <capitulo materia="XML">
+      <tema>Divertirse</tema>
+      <tema>Correr</tema>
+    </capitulo>
+  </contenido>
+  <copyright>2010-2020</copyright>
+</libro>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
