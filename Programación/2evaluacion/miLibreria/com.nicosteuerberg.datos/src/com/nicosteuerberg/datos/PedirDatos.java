@@ -20,6 +20,9 @@ public class PedirDatos {
         return Short.parseShort(JOptionPane.showInputDialog(mensaxe));
     }
     
+    public static Integer getInteger(String mensaxe){
+        return Integer.valueOf(JOptionPane.showInputDialog(mensaxe));
+    }
     public static int getInt(String mensaxe){
         return Integer.parseInt(JOptionPane.showInputDialog(mensaxe));
     }
