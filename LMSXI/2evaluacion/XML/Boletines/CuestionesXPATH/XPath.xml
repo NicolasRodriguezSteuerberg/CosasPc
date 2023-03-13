@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<reyes>
+  <acercade>La Reina Victoria y sus descendientes</acercade>
+  
+  <persona>
+    <nombre>Reina Victoria</nombre>
+    <vida nacimiento="1819" pais="Reino Unido" muerte="1901"/>
+    <monarca>
+      <cargo>Reina</cargo>
+      <pais>Reino Unido</pais>
+    </monarca>
+  </persona>
+  
+  <persona>
+    <nombre>Emperatriz Victoria</nombre>
+    <vida nacimiento="1840" pais="Reino Unido" muerte="1901"/>
+    <monarca>
+      <cargo>Emperatriz</cargo>
+      <pais>Alemania</pais>
+    </monarca>
+  </persona>
+  
+  <persona>
+    <nombre>Guillermo II</nombre>
+    <vida nacimiento="1859" pais="Reino Unido" muerte="1941"/>
+    <monarca>
+      <cargo>Emperador</cargo>
+      <pais>Alemania</pais>
+    </monarca>
+  </persona>
+  
+</reyes>

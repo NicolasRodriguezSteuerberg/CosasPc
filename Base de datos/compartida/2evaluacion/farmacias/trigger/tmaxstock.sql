@@ -10,9 +10,8 @@ DECLARE
   cuenta integer;
 BEGIN
 cuenta = 0;
-  for fila in select cantidads from stock where codm=new.codm LOOP
-  	cuenta = cuenta + fila.cantidads;
-  end LOOP;
+  select sum(cantidads) into cuenta from stock where codm=new.codm and codf=new.codf;
+  
   if cuenta > 3 then
   	raise exception 'no se pueden tener más cantidades de ese medicamento';
   	else

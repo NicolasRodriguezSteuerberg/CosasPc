@@ -1,0 +1,5 @@
+luns
+martes
+mercores
+xoves
+venres
