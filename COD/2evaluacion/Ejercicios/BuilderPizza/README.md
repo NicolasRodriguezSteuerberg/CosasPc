@@ -13,6 +13,10 @@ Despues tenemos la clase builderPizzas. Que tiene un constructor default con el 
 
 
 ---
+### ¿Se puede combinar el builder con factory?
+Yo creo que si. :)
+
+---
 
 
 ```mermaid
