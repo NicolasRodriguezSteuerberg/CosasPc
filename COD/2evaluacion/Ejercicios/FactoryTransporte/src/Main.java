@@ -13,19 +13,19 @@ public class Main{
         int numero = PedirDatos.getInt("Como quieres que te lo entregen:\n1->Camion\n2->Bicicleta");
         switch (numero){
             case 1:
-                obxT = Factoria.getProducto(1);
-                coste = obxT.costeTotal(Factoria.cp);
-                nTipo = obxT.tipoEmbalaje(Factoria.dimensionX,Factoria.dimensionY,Factoria.dimensionZ,Factoria.peso);
+                obxT = Factoria.getProducto(Factoria.CAMION);
                 break;
             case 2:
-                obxT = Factoria.getProducto(2);
-                coste = obxT.costeTotal(Factoria.cp);
-                nTipo = obxT.tipoEmbalaje(Factoria.dimensionX,Factoria.dimensionY,Factoria.dimensionZ,Factoria.peso);
+                obxT = Factoria.getProducto(Factoria.BICICLETA);
                 break;
         }
+        coste = obxT.costeTotal(Factoria.cp);
+        nTipo = obxT.tipoEmbalaje(Factoria.dimensionX,Factoria.dimensionY,Factoria.dimensionZ,Factoria.peso);
+
         if(nTipo==null && coste==null){
             System.out.println("Opcion incorrecta, saliendo del programa");
         }
+        
         else {
             if (nTipo == obxT.PALET) {
                 tipo = "palet";
