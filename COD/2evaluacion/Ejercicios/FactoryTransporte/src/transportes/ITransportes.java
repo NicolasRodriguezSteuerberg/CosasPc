@@ -2,6 +2,10 @@ package transportes;
 
 public interface ITransportes {
     public static final int CODIGO = 36500;
+
+    public static final int PALET = 0;
+    public static final int CAJA_CARTON = 1;
+    public static final int CAJA_MADERA = 2;
     /**
      * Metodo para calcular el coste
      * @param cp -> dar un Codigo Postal

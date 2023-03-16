@@ -43,13 +43,13 @@ public class Bicicleta implements ITransportes {
         float suma = dimensionX+dimensionY+dimensionZ;
 
         if(suma <=150 && peso<=40){
-            numero = 1;
+            numero = CAJA_CARTON;
         }
         else if(suma<=3000 && peso <=100){
-            numero = 2;
+            numero = CAJA_MADERA;
         }
         else{
-            numero = 0;
+            numero = PALET;
         }
         return numero;
     }

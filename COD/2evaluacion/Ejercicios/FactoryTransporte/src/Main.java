@@ -27,10 +27,10 @@ public class Main{
             System.out.println("Opcion incorrecta, saliendo del programa");
         }
         else {
-            if (nTipo == 0) {
+            if (nTipo == obxT.PALET) {
                 tipo = "palet";
             }
-            else if (nTipo == 1) {
+            else if (nTipo == obxT.CAJA_MADERA) {
                 tipo = "caja de madera";
             }
             else {
