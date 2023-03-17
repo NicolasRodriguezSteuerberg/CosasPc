@@ -9,6 +9,13 @@ public class Barco implements ITransportes{
     private Float dimensionZ;
     private Float peso;
 
+    /**
+     * @param cp codigo postal a donde hay que enviar el paquete
+     * @param dimensionX -> ancho del paquete
+     * @param dimensionY -> largo del paquete
+     * @param dimensionZ -> alto del paquete
+     * @param peso -> peso del paquete
+     */
     public Barco(Integer cp, Float dimensionX, Float dimensionY, Float dimensionZ, Float peso) {
         this.cp = cp;
         this.dimensionX = dimensionX;
@@ -17,6 +24,10 @@ public class Barco implements ITransportes{
         this.peso = peso;
     }
 
+    /**
+     * @param cp -> codigo postal de donde hay que entregar el paquete
+     * @return precio del envio
+     */
     @Override
     public Float costeTotal(Integer cp) {
         while (cp > 37000 || cp < 36000){
@@ -37,6 +48,13 @@ public class Barco implements ITransportes{
         return precio;
     }
 
+    /**
+     * @param dimensionX -> ancho del paquete
+     * @param dimensionY -> largo del paquete
+     * @param dimensionZ -> alto del paquete
+     * @param peso -> peso del paquete
+     * @return tipo de embalaje: 0-Palet, 1-Caja de carton, 2-Caja de madera
+     */
     @Override
     public Integer tipoEmbalaje(Float dimensionX, Float dimensionY, Float dimensionZ, Float peso) {
         Integer numero = null;

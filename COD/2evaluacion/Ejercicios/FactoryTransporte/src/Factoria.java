@@ -20,7 +20,6 @@ public class Factoria {
         /**
          * Devuelve producto del tipo de la Interface
          * @param type 1: camion, 2:bicicleta, 3: barco
-         * @param
          * @return producto segun el tipo
          */
         public static ITransportes getProducto(int type) {
