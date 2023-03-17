@@ -1,4 +1,5 @@
 import com.nicosteuerberg.datos.PedirDatos;
+import transportes.Barco;
 import transportes.Bicicleta;
 import transportes.Camion;
 import transportes.ITransportes;
@@ -10,6 +11,7 @@ import transportes.ITransportes;
 public class Factoria {
         public static final int CAMION = 1;
         public static final int BICICLETA = 2;
+        public static final int BARCO = 3;
         public static Integer cp = null;
         public static Float dimensionX = null;
         public static Float dimensionY = null;
@@ -17,8 +19,8 @@ public class Factoria {
         public static Float peso = null;
         /**
          * Devuelve producto del tipo de la Interface
-         * @param type 1: consola, 2:ventana
-         * @param msg string a imprimir
+         * @param type 1: camion, 2:bicicleta, 3: barco
+         * @param
          * @return producto segun el tipo
          */
         public static ITransportes getProducto(int type) {
@@ -28,16 +30,19 @@ public class Factoria {
             dimensionZ = PedirDatos.getFloat("Teclee a dimensionZ");
             peso = PedirDatos.getFloat("Teclee o peso");
             switch (type) {
-                // tipo consola
+                // tipo camion
                 case CAMION:
                     return new Camion(cp, dimensionX, dimensionY, dimensionZ, peso);
-                // tipo ventana
+                // tipo bicicleta
                 case BICICLETA:
                     return new Bicicleta(cp, dimensionX, dimensionY, dimensionZ, peso);
+                case BARCO:
+                    return new Barco(cp, dimensionX, dimensionY, dimensionZ, peso);
                 // otro tipo
                 default:
                     return null;
             }
-    }
+        }
+
 
 }

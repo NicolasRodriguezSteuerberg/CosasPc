@@ -9,16 +9,11 @@ public class Main{
         Float coste = null;
         String tipo = null;
         Integer nTipo = null;
-
-        int numero = PedirDatos.getInt("Como quieres que te lo entregen:\n1->Camion\n2->Bicicleta");
-        switch (numero){
-            case 1:
-                obxT = Factoria.getProducto(Factoria.CAMION);
-                break;
-            case 2:
-                obxT = Factoria.getProducto(Factoria.BICICLETA);
-                break;
-        }
+        int numero;
+        do {
+            numero = PedirDatos.getInt("Como quieres que te lo entregen:\n1->Camion\n2->Bicicleta\n3->Barco");
+        }while(numero<1 || numero>3);
+        obxT = Factoria.getProducto(numero);
         coste = obxT.costeTotal(Factoria.cp);
         nTipo = obxT.tipoEmbalaje(Factoria.dimensionX,Factoria.dimensionY,Factoria.dimensionZ,Factoria.peso);
 
