@@ -10,12 +10,18 @@ CREATE FUNCTION tfarmaceuticosimple()
 $$  
 DECLARE
  x integer;
+ y integer;
 BEGIN
-  select count(*) into x from traballan where codf=new.codf;
-  if x=0 then
-  	raise notice 'inserción añadida';
+  select count(*) into y from farmaceuticos where dnip=new.dnip;
+  if y = 0 then
+  	raise notice 'inserción añadida, propio'
   	else
-  		raise exception 'non poden traballar máis de un farmaceutico por farmacia';
+	  select count(*) into x from traballan where codf=new.codf;
+		  if x=0 then
+		  	raise notice 'inserción añadida, farmaceutico';
+		      else
+  				raise exception 'non poden traballar máis de un farmaceutico por farmacia';
+ 		  end if;
   end if;
   return new;
 END;
