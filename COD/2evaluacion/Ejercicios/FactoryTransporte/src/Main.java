@@ -25,7 +25,7 @@ public class Main{
         if(nTipo==null && coste==null){
             System.out.println("Opcion incorrecta, saliendo del programa");
         }
-        
+
         else {
             if (nTipo == obxT.PALET) {
                 tipo = "palet";
