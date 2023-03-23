@@ -2,28 +2,44 @@
 que impida que nunha mesma farmacia traballe mais dun farmaceutico
  */
  
- DROP FUNCTION tfarmaceuticosimple() CASCADE;
-CREATE FUNCTION tfarmaceuticosimple()
-	RETURNS TRIGGER
-	LANGUAGE PLPGSQL
+ DROP FUNCTION tfarmaceuticossimple() CASCADE;
+CREATE FUNCTION tfarmaceuticossimple()
+    RETURNS TRIGGER
+    LANGUAGE PLPGSQL
     AS 
 $$  
 DECLARE
- x integer;
- y integer;
+fila record;
+cuenta integer;
+con integer;
+x integer;
 BEGIN
-  select count(*) into y from farmaceuticos where dnip=new.dnip;
-  if y = 0 then
-  	raise notice 'inserción añadida, propio'
-  	else
-	  select count(*) into x from traballan where codf=new.codf;
-		  if x=0 then
-		  	raise notice 'inserción añadida, farmaceutico';
-		      else
-  				raise exception 'non poden traballar máis de un farmaceutico por farmacia';
- 		  end if;
-  end if;
+cuenta = 0;
+select count(*) into x from propios where dnip=new.dnip;
+if x!=0 then
+    raise notice 'propio añadido';
+    else
+for fila in select *  from traballan where codf=new.codf loop
+    
+    select count(*) into con from farmaceuticos where dnip =fila.dnip;
+
+        if con >=1 then
+        cuenta=cuenta+1;
+        end if;
+
+
+end loop;
+
+if cuenta >=1 then
+
+raise exception 'ya hay un farmaceutico';
+else
+raise notice 'si';
+
+end if;
+end if;
+
   return new;
 END;
 $$;
-CREATE TRIGGER tfarmaceuticosimplet before INSERT ON traballan for each row EXECUTE PROCEDURE tfarmaceuticosimple();
+CREATE TRIGGER tfarmaceuticossimplet before INSERT ON traballan for each row EXECUTE PROCEDURE tfarmaceuticossimple();
