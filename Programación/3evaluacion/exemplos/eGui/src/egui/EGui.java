@@ -20,7 +20,10 @@ public class EGui {
         v3.iniciar();
         */
         Layouts v4 = new Layouts();
-        v4.flowLayout2();
+        //v4.flowLayout2();
+        //v4.boxLayout();
+        //v4.borderLayout();
+        v4.gridLayout();
     }
     
 }

@@ -1,6 +1,6 @@
 package gui;
 
-import java.awt.FlowLayout;
+import java.awt.*;
 import javax.swing.*;
 
 /**
@@ -53,9 +53,27 @@ public class Layouts {
         pecharVentana();
     }
     
+    public void flowLayout3(){
+        iniciarCompoñentes();
+        panel.setLayout(new FlowLayout(FlowLayout.RIGHT,50,100));
+        
+        //engadir os compoñentes
+        panel.add(b1);
+        panel.add(b2);
+        panel.add(b3);
+        panel.add(b4);
+        panel.add(b5);
+        marco.add(panel);
+        pecharVentana();
+    }
+    
+    
+//--------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------
+    
     public void iniciarCompoñentes(){
         //declaración compoñentes:
-        marco = new JFrame("FlowLayout");
+        marco = new JFrame("Layout");
         panel = new JPanel();
         
         b1 = new JButton("Botón 1");
@@ -78,4 +96,63 @@ public class Layouts {
         marco.setLocationRelativeTo(marco);
         marco.setDefaultCloseOperation(3);
     }
+    
+//--------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------
+    
+    public void boxLayout(){
+        iniciarCompoñentes();
+        panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
+        
+        //engadir os compoñentes
+        panel.add(b1);
+        panel.add(b2);
+        panel.add(b3);
+        panel.add(b4);
+        panel.add(b5);
+        
+        marco.add(panel);
+        pecharVentana();
+    }
+    
+//--------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------
+    
+    public void borderLayout(){
+        iniciarCompoñentes();
+        panel.setLayout(new BorderLayout());
+        
+        //engadir os compoñentes
+        panel.add(b1,BorderLayout.SOUTH);
+        panel.add(b2,BorderLayout.WEST);
+        panel.add(b3,BorderLayout.EAST);
+        panel.add(b4,BorderLayout.NORTH);
+        //panel.add(b5);
+        
+        marco.add(panel);
+        pecharVentana();
+    }
+    
+//--------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------
+    
+    public void gridLayout(){
+        iniciarCompoñentes();
+        panel.setLayout(new GridLayout(3,4));
+        
+        //engadir os compoñentes
+        panel.add(b1);
+        panel.add(b2);
+        panel.add(b3,BorderLayout.EAST);
+        panel.add(b4,BorderLayout.NORTH);
+        panel.add(b5);
+        
+        marco.add(panel);
+        pecharVentana();
+    }
+    
+//--------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------
+    
+    
 }
