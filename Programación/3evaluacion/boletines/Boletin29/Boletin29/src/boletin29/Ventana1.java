@@ -191,6 +191,9 @@ public class Ventana1 extends javax.swing.JFrame {
                 .addGap(33, 33, 33))
         );
 
+        lTexto1.getAccessibleContext().setAccessibleName("");
+        lTexto1.getAccessibleContext().setAccessibleDescription("");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
