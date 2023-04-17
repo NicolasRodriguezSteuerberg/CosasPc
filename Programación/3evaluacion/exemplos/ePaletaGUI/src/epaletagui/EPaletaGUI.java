@@ -1,5 +1,7 @@
 package epaletagui;
 
+import epaletagui.gui.Ventana;
+
 /**
  *
  * @author NSteuerberg
@@ -8,7 +10,8 @@ public class EPaletaGUI {
 
     
     public static void main(String[] args) {
-        // TODO code application logic here
+        Ventana ob = new Ventana();
+        ob.setVisible(true);
     }
     
 }

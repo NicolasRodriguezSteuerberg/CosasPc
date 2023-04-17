@@ -33,7 +33,7 @@ public class Ventana extends javax.swing.JFrame {
         bPremer = new javax.swing.JButton();
         b2Limpar = new javax.swing.JButton();
         etiqueta2Password = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        lContrasenha = new javax.swing.JPasswordField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
@@ -74,13 +74,18 @@ public class Ventana extends javax.swing.JFrame {
         b2Limpar.setBackground(new java.awt.Color(255, 255, 102));
         b2Limpar.setText("LIMPAR");
         b2Limpar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 0), 2));
+        b2Limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b2LimparActionPerformed(evt);
+            }
+        });
 
         etiqueta2Password.setText("PASSWORD");
 
-        jPasswordField1.setBackground(new java.awt.Color(255, 255, 204));
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        lContrasenha.setBackground(new java.awt.Color(255, 255, 204));
+        lContrasenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                lContrasenhaActionPerformed(evt);
             }
         });
 
@@ -104,7 +109,7 @@ public class Ventana extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lTextoNome)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))
+                            .addComponent(lContrasenha, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(70, 70, 70))
                     .addGroup(panelLayout.createSequentialGroup()
                         .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -125,7 +130,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(etiqueta2Password)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lContrasenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
@@ -157,9 +162,14 @@ public class Ventana extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bPremerActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void lContrasenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lContrasenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_lContrasenhaActionPerformed
+
+    private void b2LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2LimparActionPerformed
+        lTextoNome.setText("");
+        lContrasenha.setText("");
+    }//GEN-LAST:event_b2LimparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,9 +212,9 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JButton bPremer;
     private javax.swing.JLabel etiqueta2Password;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JPasswordField lContrasenha;
     private javax.swing.JTextField lTextoNome;
     private javax.swing.JPanel panel;
     // End of variables declaration//GEN-END:variables
