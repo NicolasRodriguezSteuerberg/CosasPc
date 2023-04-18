@@ -23,14 +23,17 @@ public class EGui {
         //v4.boxLayout();
         //v4.borderLayout();
         v4.gridLayout();
-        */
         
-        /*
+        
+        
         EventoMesmaClase v5 = new EventoMesmaClase();
         v5.iniciar();
-        */
+        
         EventoClaseInterna v6 = new EventoClaseInterna();
         v6.iniciar();
+        */
+        EventoClaseAnonima v7 = new EventoClaseAnonima();
+        v7.iniciar();
     }
     
 }

@@ -9,7 +9,7 @@ import javax.swing.*;
  * @author NSteuerberg
  */
 public class EventoClaseInterna {
-        JFrame marco;
+    JFrame marco;
     JPanel panel;
     JLabel etiqueta;
     JTextField lTexto;

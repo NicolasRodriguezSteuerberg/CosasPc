@@ -1,14 +1,15 @@
 package gui;
 
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 /**
  *
  * @author NSteuerberg
  */
-public class EventoMesmaClase implements ActionListener{
+public class EventoClaseAnonima {
     JFrame marco;
     JPanel panel;
     JLabel etiqueta;
@@ -43,17 +44,27 @@ public class EventoMesmaClase implements ActionListener{
         etiqueta.setBounds(50, 100, 100, 50);
         lTexto.setBounds(200, 100, 200, 50);
         aTexto.setBounds(50, 200, 200, 300);
-        
         bCopiar.setBounds(100, 600, 150, 100);
-        bCopiar.setToolTipText("Copiamos o texto de enriba no medio");
-        //xestión evento copiar
-        bCopiar.addActionListener(this);//evento na mesma clase↓
-        
         bSair.setBounds(500, 600, 150, 100);
         bSair.setText("Saír");
         bSair.setToolTipText("Para saír do programa");
-        //xestión evento sair
-        bSair.addActionListener(this);
+        
+        //engadimos os eventos
+        bCopiar.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                aTexto.setText(lTexto.getText());
+            }
+        });
+        
+        bSair.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+            
+        
+        });
         
         //engadir os compoñentes ao panel
         panel.setLayout(null);
@@ -64,20 +75,5 @@ public class EventoMesmaClase implements ActionListener{
         panel.add(bSair);
         marco.add(panel);
         
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        Object bAux = e.getSource();
-        if(bAux == bCopiar){
-            aTexto.setText(lTexto.getText());
-        }
-        else if(bAux == bSair){
-            //los set no sirven pa nada, cierra el programa practicamente a la vez que lo cambia
-            lTexto.setText("");
-            aTexto.setText("");
-            
-            System.exit(0);
-        }
     }
 }
