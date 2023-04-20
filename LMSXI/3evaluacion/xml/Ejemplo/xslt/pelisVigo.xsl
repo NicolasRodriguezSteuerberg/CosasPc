@@ -2,11 +2,16 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:template match="/">
   <html>
+  <head>
+    <meta charset="UTF-8"/>
+   <link rel="stylesheet" type="text/css" href="tabla.css"/>
+  
+  </head>
+  
     <body>
-      
     
     <!--Al poner el / en match selecciona todos los elementos del xml-->
-    <!--si saca todo ir a firefox poner en el buscador: about:config      buscasecurity.fileuri.strict_origin_policy y cambiarlo a false  -->
+    <!--si saca todo ir a firefox poner en el buscador: about:config      busca security.fileuri.strict_origin_policy y cambiarlo a false  -->
     <h1>Ejemplo 1</h1>
     <xsl:for-each select="//pelicula">
     <p><b>Titulo:</b> <xsl:value-of select="titulo"/></p>
@@ -82,6 +87,21 @@
         
       </xsl:choose>
     </xsl:for-each>
+    
+    <h1>Listado películas</h1>
+    <ul style="list-style:square">
+    <xsl:for-each select="//pelicula">
+      <li><xsl:value-of select="titulo"/></li>
+    </xsl:for-each>
+    </ul>
+    
+    <h1 id="tabla">Tabla</h1>
+    <table>
+    <tr><th>PELICULA</th><th>DIRECTOR</th></tr>
+      <xsl:for-each select="//pelicula">
+        <tr><td><xsl:value-of select="titulo"/></td><td><xsl:value-of select="director" /></td></tr>
+      </xsl:for-each>
+    </table>
     
     </body>
   </html>
