@@ -5,6 +5,7 @@
 package bonoloto;
 
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,10 +18,10 @@ public class Ventana extends javax.swing.JFrame {
      */
     public Ventana() {
         initComponents();
+        panel3.setVisible(false);
     }
     
     ArrayList<Integer> aElegida = new ArrayList();
-    ArrayList<Integer> aRandom = new ArrayList();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -86,6 +87,10 @@ public class Ventana extends javax.swing.JFrame {
         b47 = new javax.swing.JButton();
         b48 = new javax.swing.JButton();
         b49 = new javax.swing.JButton();
+        panel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        tAciertos1 = new javax.swing.JLabel();
+        tAciertos2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -631,17 +636,59 @@ public class Ventana extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
+        jLabel1.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel1.setText("ACIERTOS");
+
+        tAciertos1.setFont(new java.awt.Font("Liberation Sans", 0, 36)); // NOI18N
+        tAciertos1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        tAciertos2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        tAciertos2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout panel3Layout = new javax.swing.GroupLayout(panel3);
+        panel3.setLayout(panel3Layout);
+        panel3Layout.setHorizontalGroup(
+            panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel3Layout.createSequentialGroup()
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel3Layout.createSequentialGroup()
+                        .addGap(271, 271, 271)
+                        .addComponent(jLabel1))
+                    .addGroup(panel3Layout.createSequentialGroup()
+                        .addGap(222, 222, 222)
+                        .addComponent(tAciertos2, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(222, 222, 222))
+            .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel3Layout.createSequentialGroup()
+                    .addContainerGap(255, Short.MAX_VALUE)
+                    .addComponent(tAciertos1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(252, 252, 252)))
+        );
+        panel3Layout.setVerticalGroup(
+            panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                .addComponent(tAciertos2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
+            .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panel3Layout.createSequentialGroup()
+                    .addGap(50, 50, 50)
+                    .addComponent(tAciertos1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(130, Short.MAX_VALUE)))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(207, 207, 207)
-                .addComponent(lEscoger)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(9, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(p2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(eEleccion)
@@ -650,10 +697,15 @@ public class Ventana extends javax.swing.JFrame {
                                 .addComponent(eGanadora)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(p2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16))))
+                        .addGap(33, 33, 33))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(207, 207, 207)
+                .addComponent(lEscoger)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -664,14 +716,16 @@ public class Ventana extends javax.swing.JFrame {
                 .addComponent(p2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addComponent(eEleccion)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(eGanadora)))
-                .addContainerGap(359, Short.MAX_VALUE))
+                        .addComponent(eGanadora))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
@@ -1169,6 +1223,52 @@ public class Ventana extends javax.swing.JFrame {
 
     public void validar(){
         lEscoger.setVisible(false);
+        DefaultTableModel model = (DefaultTableModel) tValores.getModel();
+        Integer fila[] = new Integer[7];
+        for (int i = 0; i < aElegida.size(); i++) {
+            fila[i]=aElegida.get(i);
+        }
+        Integer filaR[] = new Integer[7];
+        int numero;
+        numero = (int) (Math.random()*(49-1)+1);
+        filaR[0] = numero;
+        for (int i = 1; i < filaR.length; i++) {
+            numero = (int) (Math.random()*(49-1)+1);
+            if(filaR[i-1] == numero){
+                i--;
+            }
+            else{
+                filaR[i] = numero;
+            }
+        }
+        model.addRow(fila);
+        model.addRow(filaR);
+        aciertos(fila,filaR);
+    }
+    
+    public void aciertos(Integer fila[], Integer filaR[]){
+        panel3.setVisible(true);
+        int cuenta = 0;
+        int banderaReintegro = 0;
+        for (int i = 0; i < fila.length; i++) {
+            if(i<6){
+                if(fila[i]==filaR[i]){
+                    cuenta++;
+                }
+            }
+            else{
+                if(fila[i]==filaR[i]){
+                    banderaReintegro = 1;
+                }
+            }
+        }
+        tAciertos1.setText("" + cuenta);
+        if(banderaReintegro == 1){
+            tAciertos2.setText("Acertaste el reintegro");
+        }
+        else{
+            tAciertos2.setText("Fallaste el reintegro");
+        }
     }
     /**
      * @param args the command line arguments
@@ -1257,9 +1357,13 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JButton b9;
     private javax.swing.JLabel eEleccion;
     private javax.swing.JLabel eGanadora;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lEscoger;
     private javax.swing.JPanel p2;
+    private javax.swing.JPanel panel3;
+    private javax.swing.JLabel tAciertos1;
+    private javax.swing.JLabel tAciertos2;
     private javax.swing.JTable tValores;
     // End of variables declaration//GEN-END:variables
 }
