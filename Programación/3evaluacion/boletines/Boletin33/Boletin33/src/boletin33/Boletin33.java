@@ -5,7 +5,7 @@
 package boletin33;
 
 /**
- *
+ * no me gusta este boletin
  * @author dam1
  */
 public class Boletin33 {
@@ -14,7 +14,24 @@ public class Boletin33 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        SeleccionFutbol obxF;
+        obxF = new Futbolista();
+        llamadas(obxF);
+        obxF = new Entrenador();
+        llamadas(obxF);
+        obxF = new Masajista();
+        llamadas(obxF);
+        obxF = new Seleccionador();
+        llamadas(obxF);
+    }
+    
+    public static void llamadas(SeleccionFutbol obxF){
+        obxF.concentrarse();
+        obxF.viajar();
+        obxF.entrenar();
+        obxF.jugarPartido();
+        System.out.println(obxF.toString());
+        System.out.println("******************");
     }
     
 }

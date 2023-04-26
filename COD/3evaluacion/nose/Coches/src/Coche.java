@@ -1,6 +1,6 @@
 public class Coche {
-    private String modelo,matricula;
-    private Integer velocidad = 0;
+    String modelo,matricula;
+    Integer velocidad;
 
     /**
      * @param modelo
@@ -9,6 +9,7 @@ public class Coche {
     public Coche(String modelo, String matricula) {
         this.modelo = modelo;
         this.matricula = matricula;
+        this.velocidad=0;
     }
 
     public void acelerar(Integer aumentoV){

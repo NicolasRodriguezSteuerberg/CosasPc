@@ -15,21 +15,29 @@ public class Model {
     }
 
     /**
+     * Coger un coche
      * @param matricula
      * @return Coche
      */
     public Coche getCoche(String matricula){
-        Integer aVelocidad;
-        String aMatricula = null;
-        String aModelo = null;
+        Coche aux = null;
         for (Coche e:parking){
             if(e.getMatricula().equalsIgnoreCase(matricula)){
-                 aVelocidad = e.getVelocidad();
-                 aMatricula = e.getMatricula();
-                 aModelo = e.getModelo();
+                 aux = e;
             }
         }
-        return new Coche(aModelo,aMatricula);
+        return aux;
+    }
+
+    public Integer cambiarVelocidad(String matricula, Integer v) {
+        // busca el coche
+        getCoche(matricula).velocidad= v;
+        // retorna la nueva velocidad
+        return getCoche(matricula).velocidad;
+    }
+
+    public Integer getVelocidad(String matricula){
+        return getCoche(matricula).velocidad;
     }
 
 
