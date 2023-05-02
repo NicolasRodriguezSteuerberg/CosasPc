@@ -4,6 +4,8 @@
  */
 package presentacion;
 
+import java.io.File;
+
 /**
  *
  * @author dam1
@@ -15,6 +17,9 @@ public class Aplication {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        File f = new File("empregados.txt");
+        GUI obx = new GUI();
+        obx.setVisible(true);
+        
     }
-    
 }
