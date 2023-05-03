@@ -29,7 +29,7 @@ public class ListaEmpleados {
         }
     }
     
-    public void engadirEmpleadoContratado(File f, EDestajo e){
+    public void engadirEmpleadoDestajado(File f, EDestajo e){
         try{
             obxWriter = new FileWriter(f, true);
             obxPrint = new PrintWriter(obxWriter);

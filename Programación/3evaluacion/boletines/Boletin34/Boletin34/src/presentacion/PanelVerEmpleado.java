@@ -38,7 +38,7 @@ public class PanelVerEmpleado extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Nombre", "Apellidos", "DNI", "DataIngreso", "Sueldo"
+                "DNI", "Nombre", "Apellidos", "DataIngreso", "Sueldo"
             }
         ) {
             Class[] types = new Class [] {
@@ -72,7 +72,7 @@ public class PanelVerEmpleado extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Nombre", "Apellidos", "DNI", "DataIngreso", "Nº Clientes"
+                "DNI", "Nombre", "Apellidos", "DataIngreso", "Nº Clientes"
             }
         ) {
             Class[] types = new Class [] {
@@ -84,9 +84,6 @@ public class PanelVerEmpleado extends javax.swing.JPanel {
             }
         });
         jScrollPane2.setViewportView(jTable2);
-        if (jTable2.getColumnModel().getColumnCount() > 0) {
-            jTable2.getColumnModel().getColumn(4).setHeaderValue("Nº Clientes");
-        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

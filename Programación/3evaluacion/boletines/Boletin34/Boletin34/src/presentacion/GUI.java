@@ -4,19 +4,40 @@
  */
 package presentacion;
 
+import java.io.File;
+import javax.swing.JScrollPane;
+
 /**
  *
  * @author dam1
  */
 public class GUI extends javax.swing.JFrame {
-    PanelCrearEmpleado crearEmpleado = new PanelCrearEmpleado();
+    PanelCrearEmpleado crearEmpleado;
+    PanelVerEmpleado verEmpleados;
+    JScrollPane scrollpanel;
+    File f, e;
     /**
      * Creates new form GUI
      */
     public GUI() {
         initComponents();
+        
+        crearEmpleado = new PanelCrearEmpleado();
+        crearEmpleado.setBounds(0, 0, 800, 600);
+        verEmpleados = new PanelVerEmpleado();
+        verEmpleados.setBounds(0, 0, 800, 600);
+        
+        add(crearEmpleado);
+        crearEmpleado.setVisible(false);
+        add(verEmpleados);
+        verEmpleados.setVisible(false);
     }
 
+    public void llevarElFile(File f, File e){
+        this.f = f;
+        this.e = e;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -121,9 +142,17 @@ public class GUI extends javax.swing.JFrame {
 
     private void bCrearEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCrearEmpleadoActionPerformed
         panelInicio.setVisible(false);
-        new GUI().add(crearEmpleado);
+        crearEmpleado.recogerFile(f, e);
+        crearEmpleado.recogerPanelInicio(panelInicio);
+        crearEmpleado.setVisible(true);
     }//GEN-LAST:event_bCrearEmpleadoActionPerformed
 
+    public void resetearPaneles(){
+        crearEmpleado.setVisible(false);
+        verEmpleados.setVisible(false);
+        panelInicio.setVisible(true);
+    }
+    
     /**
      * @param args the command line arguments
      */

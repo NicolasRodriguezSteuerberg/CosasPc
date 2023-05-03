@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
  */
 public class EContratado extends Empregado{
     
-    private float soldoBasico = 1000.30f;
+    private float soldoBasico;
     private int anoActual = 2023;
     private float soldoTotal;
     
@@ -16,26 +16,30 @@ public class EContratado extends Empregado{
      * @param DNI
      * @param nome
      * @param apelidos
-     * @param e: calendario 
+     * @param calendario
+     * @param soldoBasico
      */
-    public EContratado(String DNI, String nome, String apelidos, GregorianCalendar e) {
-        super(DNI, nome, apelidos, e);
+    public EContratado(String DNI, String nome, String apelidos, GregorianCalendar calendario, float soldoBasico) {
+        super(DNI, nome, apelidos, calendario);
+        this.soldoBasico = soldoBasico;
+        this.soldoTotal = soldoACobrar();
     }
     
     public float soldoACobrar(){
+        float soldoTotal;
         int anosTrabajados = anoActual - super.getCalendario().get(GregorianCalendar.YEAR);
         
         if(anosTrabajados>=0 && anosTrabajados<=3){
-            soldoTotal = (5/100)*soldoBasico;
+            soldoTotal = soldoBasico + (5/100)*soldoBasico;
         }
         else if(anosTrabajados<=7){
-            soldoTotal = (10/100)*soldoBasico;
+            soldoTotal = soldoBasico + (10/100)*soldoBasico;
         }
         else if(anosTrabajados<=15){
-            soldoTotal = (15/100)*soldoBasico;
+            soldoTotal = soldoBasico + (15/100)*soldoBasico;
         }
         else{
-            soldoTotal = (20/100)*soldoBasico;
+            soldoTotal = soldoBasico + (20/100)*soldoBasico;
         }
         return soldoTotal;
     }
