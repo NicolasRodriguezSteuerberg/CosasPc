@@ -1,0 +1,12 @@
+table, td,th{
+  border: 1px solid black;
+}
+
+th{
+  text-align: left;
+  background-color: skyblue;
+}
+
+td#rojo{
+  background-color: red;
+}
