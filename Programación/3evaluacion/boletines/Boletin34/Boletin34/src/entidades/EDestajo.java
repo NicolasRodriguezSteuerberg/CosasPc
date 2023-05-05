@@ -19,7 +19,7 @@ public class EDestajo extends Empregado{
 
     @Override
     public String toString() {
-        return super.toString() + ", " + numeroClientesCaptados + ", " + complementoClienteCaptado + "%";
+        return super.toString() + ", " + numeroClientesCaptados + ", " + complementoClienteCaptado;
     }
     
     

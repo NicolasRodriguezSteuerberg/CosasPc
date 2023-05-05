@@ -15,7 +15,7 @@ public class GUI extends javax.swing.JFrame {
     PanelCrearEmpleado crearEmpleado;
     PanelVerEmpleado verEmpleados;
     JScrollPane scrollpanel;
-    File f, e;
+    File fileContratado, fileDestajado;
     /**
      * Creates new form GUI
      */
@@ -34,8 +34,8 @@ public class GUI extends javax.swing.JFrame {
     }
 
     public void llevarElFile(File f, File e){
-        this.f = f;
-        this.e = e;
+        this.fileContratado = f;
+        this.fileDestajado = e;
     }
     
     /**
@@ -60,7 +60,7 @@ public class GUI extends javax.swing.JFrame {
         etiquetaEmpresa.setText("XYZ");
         etiquetaEmpresa.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        bVerEmpleados.setText("Ver lista de empleados");
+        bVerEmpleados.setText("Ver empleados");
         bVerEmpleados.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         bVerEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,14 +91,10 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(panelInicioLayout.createSequentialGroup()
                 .addGap(293, 293, 293)
                 .addGroup(panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelInicioLayout.createSequentialGroup()
-                        .addComponent(bVerEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelInicioLayout.createSequentialGroup()
-                        .addGroup(panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bCrearEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(bVerEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bCrearEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelInicioLayout.createSequentialGroup()
                 .addContainerGap(338, Short.MAX_VALUE)
                 .addComponent(etiquetaEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -133,7 +129,12 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bVerEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVerEmpleadosActionPerformed
-        // TODO add your handling code here:
+        panelInicio.setVisible(false);
+        verEmpleados.recogerFile(fileContratado, fileDestajado);
+        verEmpleados.recogerPanelInicio(panelInicio);
+        verEmpleados.crearTablaEContratado(fileContratado);
+        verEmpleados.crearTablaEDestajado(fileDestajado);
+        verEmpleados.setVisible(true);
     }//GEN-LAST:event_bVerEmpleadosActionPerformed
 
     private void bSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalirActionPerformed
@@ -142,7 +143,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void bCrearEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCrearEmpleadoActionPerformed
         panelInicio.setVisible(false);
-        crearEmpleado.recogerFile(f, e);
+        crearEmpleado.recogerFile(fileContratado, fileDestajado);
         crearEmpleado.recogerPanelInicio(panelInicio);
         crearEmpleado.setVisible(true);
     }//GEN-LAST:event_bCrearEmpleadoActionPerformed

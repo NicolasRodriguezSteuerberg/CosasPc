@@ -19,7 +19,7 @@ public class Empregado {
 
     @Override
     public String toString() {
-        return DNI + ", " + nome + ", " + apelidos + ", " + calendario.get(GregorianCalendar.YEAR) + ", " + calendario.get(GregorianCalendar.MONTH) + ", " + calendario.get(GregorianCalendar.DATE);
+        return DNI + ", " + nome + ", " + apelidos + ", " + calendario.get(GregorianCalendar.YEAR) + "/" + calendario.get(GregorianCalendar.MONTH) + "/" + calendario.get(GregorianCalendar.DATE);
     }
     
     //setters y getters

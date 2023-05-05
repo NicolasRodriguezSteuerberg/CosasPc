@@ -23,8 +23,7 @@ public class PanelCrearEmpleado extends javax.swing.JPanel {
     float soldo, complemento;
     GregorianCalendar calendario;
     
-    File fileContratado;
-    File fileDestajo;
+    File fileContratado,fileDestajo;
     
     JPanel panel;
     

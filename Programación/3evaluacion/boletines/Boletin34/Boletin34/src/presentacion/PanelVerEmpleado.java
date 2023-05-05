@@ -4,17 +4,75 @@
  */
 package presentacion;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author dam1
  */
 public class PanelVerEmpleado extends javax.swing.JPanel {
 
+    File fileContratado,fileDestajo;
+    JPanel panel;
+    Scanner sc;
+    
     /**
      * Creates new form panel3
      */
     public PanelVerEmpleado() {
         initComponents();
+    }
+    
+    public void recogerFile(File f, File e){
+        this.fileContratado = f;
+        this.fileDestajo = e;
+    }
+    
+    public void recogerPanelInicio(JPanel panel){
+        this.panel=panel;
+    }
+    
+    public void crearTablaEContratado(File f){
+        hacerTablas(f, tContratado,5);
+    }
+    
+    public void crearTablaEDestajado(File f){
+        hacerTablas(f, tDestajado,6);
+    }
+    
+    public void hacerTablas(File f, JTable t, int columnas){
+        Object fila[] = new Object[columnas];
+        Object filaAux[] = new Object[columnas];
+        DefaultTableModel model = (DefaultTableModel) t.getModel();
+        int numAux;
+        try{
+            sc = new Scanner(f);
+            while(sc.hasNextLine()){
+                numAux=0;
+                fila = sc.nextLine().split(", ");
+                for(int i = 0; i < t.getRowCount(); i++){
+                    for(int j = 0; j < t.getColumnCount(); j++){
+                        filaAux[j] = t.getValueAt(i, j);
+                    }
+                    if(Arrays.equals(fila, filaAux)){
+                        numAux=1;
+                    }
+                }
+                if(numAux==0){
+                    model.addRow(fila);
+                }
+            }
+        }catch (FileNotFoundException ex){
+            System.out.println("non se pode ler do ficheiro");
+        }finally{
+            sc.close();
+        }
     }
 
     /**
@@ -27,29 +85,21 @@ public class PanelVerEmpleado extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tContratado = new javax.swing.JTable();
         bInicio = new javax.swing.JButton();
         bSalir = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tDestajado = new javax.swing.JTable();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tContratado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "DNI", "Nombre", "Apellidos", "DataIngreso", "Sueldo"
+                "DNI", "Nombre", "Apellidos", "Ingreso", "Sueldo"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
+        ));
+        jScrollPane1.setViewportView(tContratado);
 
         bInicio.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         bInicio.setText("INICIO");
@@ -67,23 +117,15 @@ public class PanelVerEmpleado extends javax.swing.JPanel {
             }
         });
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tDestajado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "DNI", "Nombre", "Apellidos", "DataIngreso", "Nº Clientes"
+                "DNI", "Nombre", "Apellidos", "Ingreso", "Nº Clientes", "Compl."
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(jTable2);
+        ));
+        jScrollPane2.setViewportView(tDestajado);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -94,14 +136,11 @@ public class PanelVerEmpleado extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 661, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
+                .addGap(47, 47, 47))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,11 +159,12 @@ public class PanelVerEmpleado extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInicioActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        panel.setVisible(true);
     }//GEN-LAST:event_bInicioActionPerformed
 
     private void bSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalirActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_bSalirActionPerformed
 
 
@@ -133,7 +173,7 @@ public class PanelVerEmpleado extends javax.swing.JPanel {
     private javax.swing.JButton bSalir;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable tContratado;
+    private javax.swing.JTable tDestajado;
     // End of variables declaration//GEN-END:variables
 }
