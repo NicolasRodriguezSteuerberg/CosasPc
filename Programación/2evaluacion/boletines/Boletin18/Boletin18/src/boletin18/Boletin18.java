@@ -22,9 +22,12 @@ public class Boletin18 {
         //conversion a fharenheit con try-catch
         float centigrados = Float.parseFloat(JOptionPane.showInputDialog("Teclee os grados centigrados para la conversion a Fharenheit"));
         
+       JOptionPane.showInputDialog("Te gustan las tetas?");
+        
         try{
             obx.centigradosAFharenheit(centigrados);
             float fharenheit = 9.0f/5.0f*centigrados+32.4f;
+             JOptionPane.showMessageDialog(null, centigrados + "ºC son " + fharenheit + "ºFharenheit");
             System.out.println(centigrados + "ºC son " + fharenheit + "ºFharenheit");
         }catch(TemperaturaErradaExcepcion e){
             System.out.println(e.getMessage());
