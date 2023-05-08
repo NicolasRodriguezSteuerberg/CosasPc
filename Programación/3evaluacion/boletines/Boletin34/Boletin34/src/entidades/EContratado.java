@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
 public class EContratado extends Empregado{
     
     private float soldoBasico;
-    private int anoActual = 2023;
+    private static final int ANOACTUAL = 2023;
     private float soldoTotal;
     
     /**
@@ -27,7 +27,7 @@ public class EContratado extends Empregado{
     
     public float soldoACobrar(){
         float soldoTotal;
-        int anosTrabajados = anoActual - super.getCalendario().get(GregorianCalendar.YEAR);
+        int anosTrabajados = ANOACTUAL - super.getCalendario().get(GregorianCalendar.YEAR);
         
         if(anosTrabajados>=0 && anosTrabajados<=3){
             soldoTotal = soldoBasico + (5/100)*soldoBasico;
@@ -51,14 +51,6 @@ public class EContratado extends Empregado{
 
     public void setSoldoBasico(float soldoBasico) {
         this.soldoBasico = soldoBasico;
-    }
-
-    public int getAnoActual() {
-        return anoActual;
-    }
-
-    public void setAnoActual(int anoActual) {
-        this.anoActual = anoActual;
     }
 
     @Override

@@ -43,7 +43,7 @@ public class PanelVerEmpleado extends javax.swing.JPanel {
     }
     
     public void crearTablaEDestajado(File f){
-        hacerTablas(f, tDestajado,6);
+        hacerTablas(f, tDestajado,7);
     }
     
     public void hacerTablas(File f, JTable t, int columnas){
@@ -122,7 +122,7 @@ public class PanelVerEmpleado extends javax.swing.JPanel {
 
             },
             new String [] {
-                "DNI", "Nombre", "Apellidos", "Ingreso", "Nº Clientes", "Compl."
+                "DNI", "Nombre", "Apellidos", "Ingreso", "Nº Clientes", "Compl.", "Sueldo"
             }
         ));
         jScrollPane2.setViewportView(tDestajado);

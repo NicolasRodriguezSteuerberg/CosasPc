@@ -33,7 +33,8 @@ public class ListaEmpleados {
         try{
             obxWriter = new FileWriter(f, true);
             obxPrint = new PrintWriter(obxWriter);
-            obxPrint.println(e.toString());
+            obxPrint.print(e.toString());
+            obxPrint.println(", " + e.sueldo());
         }catch (IOException ex){
             System.out.println("Error de escritura: " + ex.getMessage());
         }

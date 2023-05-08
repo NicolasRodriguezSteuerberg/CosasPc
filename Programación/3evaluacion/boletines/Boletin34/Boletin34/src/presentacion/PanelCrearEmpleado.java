@@ -374,6 +374,7 @@ public class PanelCrearEmpleado extends javax.swing.JPanel {
 
     private void bEngadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEngadirActionPerformed
         eError.setVisible(false);
+        //EContratado
         if(comboEmpleado.getSelectedIndex()==0){
             if(!lDNI.getText().equals("") && !lNombre.getText().equals("") && !lApellidos.getText().equals("") && !lAno.getText().equals("") && !lMes.getText().equals("") && !lDia.getText().equals("") && !lCambia.getText().equals("")){
                 darValoresVariables();
@@ -396,6 +397,7 @@ public class PanelCrearEmpleado extends javax.swing.JPanel {
                 
             }
         }
+        //EDestajo
         else{
             if(!lDNI.getText().equals("") && !lNombre.getText().equals("") && !lApellidos.getText().equals("") && !lAno.getText().equals("") && !lMes.getText().equals("") && !lDia.getText().equals("") && !lCambia.getText().equals("") && !lDestajo.getText().equals("")){
                 darValoresVariables();

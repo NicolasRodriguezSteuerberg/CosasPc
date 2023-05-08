@@ -16,6 +16,12 @@ public class EDestajo extends Empregado{
         this.numeroClientesCaptados = clientesCaptados;
         this.complementoClienteCaptado = complemento;
     }
+    
+    public float sueldo(){
+        float sueldo;
+        sueldo = numeroClientesCaptados*(complementoClienteCaptado/100);
+        return sueldo;
+    }
 
     @Override
     public String toString() {
