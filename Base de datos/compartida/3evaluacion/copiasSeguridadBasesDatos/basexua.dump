@@ -1,0 +1,54 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 12.12 (Ubuntu 12.12-0ubuntu0.20.04.1)
+-- Dumped by pg_dump version 12.12 (Ubuntu 12.12-0ubuntu0.20.04.1)
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: probauat1; Type: TABLE; Schema: sa; Owner: ua
+--
+
+CREATE TABLE sa.probauat1 (
+    coda integer,
+    noma character varying(20)
+);
+
+
+ALTER TABLE sa.probauat1 OWNER TO ua;
+
+--
+-- Data for Name: probauat1; Type: TABLE DATA; Schema: sa; Owner: ua
+--
+
+COPY sa.probauat1 (coda, noma) FROM stdin;
+1	ola
+\.
+
+
+--
+-- Name: TABLE probauat1; Type: ACL; Schema: sa; Owner: ua
+--
+
+GRANT SELECT ON TABLE sa.probauat1 TO readonly;
+
+
+--
+-- PostgreSQL database dump complete
+--
+
