@@ -11,6 +11,7 @@ package boletin33;
 public class Boletin33 {
 
     /**
+     * Falta el arrayList!!!!
      * @param args the command line arguments
      */
     public static void main(String[] args) {
