@@ -1,12 +1,7 @@
-﻿.idea
+﻿﻿.idea
 out
 dist
 *.iml
-**/nbproject/private/
-**/nbproject/Makefile-*.mk
-**/nbproject/Package-*.bash
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
+build
+dist
+nbproject
