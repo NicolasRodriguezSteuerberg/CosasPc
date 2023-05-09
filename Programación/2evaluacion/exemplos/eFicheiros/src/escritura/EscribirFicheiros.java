@@ -10,13 +10,13 @@ import java.io.PrintWriter;
 
 public class EscribirFicheiros {
     
-    FileWriter obxWriter = null;
+    FileWriter obxFile = null;
     PrintWriter obxPrint = null;
     
     public void escribir(File f){
         try{
-            obxWriter = new FileWriter(f);
-            obxPrint = new PrintWriter(obxWriter);
+            obxFile = new FileWriter(f);
+            obxPrint = new PrintWriter(obxFile);
             obxPrint.println("luns");
             obxPrint.println("martes");
             obxPrint.println("mercores");
@@ -32,8 +32,8 @@ public class EscribirFicheiros {
     
     public void engadirRexistro(File f){
         try{
-            obxWriter = new FileWriter(f, true);
-            obxPrint = new PrintWriter(obxWriter);
+            obxFile = new FileWriter(f, true);
+            obxPrint = new PrintWriter(obxFile);
             obxPrint.println("sabado");
             obxPrint.println("domingo");
         }catch (IOException ex){

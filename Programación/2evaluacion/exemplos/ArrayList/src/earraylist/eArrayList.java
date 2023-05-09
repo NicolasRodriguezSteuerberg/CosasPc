@@ -16,30 +16,31 @@ public class eArrayList {
         
         ListaEnteiros obxE = new ListaEnteiros();
         int num ;
-        ArrayList <Integer> aux = new ArrayList();
+        ArrayList <Integer> lista = new ArrayList();
         do{
             num = PedirDatos.getInt("1. Crear lista numeros\n2. Ver\n3. Añadir\n4. Borrar por posición\n5. Buscar si existe\n6. Añadir varios\n7. Borrar por numero\n8. Ordenar menor a maior\n9. Ordenar de maior a menor");
             switch (num){
                 case 1:
-                    aux = obxE.crear();
+                    lista = obxE.crear();
+                    lista.add(2);
                     break;
                 case 2:
                     obxE.ver();
                     break;
                 case 3:
-                    obxE.añadir(aux, PedirDatos.getInt("Teclee a posicion onde o queres añadir"));
+                    obxE.añadir(lista, PedirDatos.getInt("Teclee a posicion onde o queres añadir"));
                     break;
                 case 4:
-                    obxE.borrar(aux, PedirDatos.getInt("Teclee a posición a borrar"));
+                    obxE.borrar(lista, PedirDatos.getInt("Teclee a posición a borrar"));
                     break;
                 case 5:
-                    obxE.buscarElemento(aux, PedirDatos.getInt("Teclee o elemento a atopar"));
+                    obxE.buscarElemento(lista, PedirDatos.getInt("Teclee o elemento a atopar"));
                     break;
                 case 6:
-                    obxE.añadirVarios(aux, PedirDatos.getInt("Teclee a cantidad de numeros a añadir"));
+                    obxE.añadirVarios(lista, PedirDatos.getInt("Teclee a cantidad de numeros a añadir"));
                     break;
                 case 7:
-                    obxE.borrarNumero(aux, PedirDatos.getInt("Teclee o numero a borrar"));
+                    obxE.borrarNumero(lista, PedirDatos.getInt("Teclee o numero a borrar"));
                     break;
                 case 8:
                     obxE.ordenar();

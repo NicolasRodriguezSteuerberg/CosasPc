@@ -9,37 +9,37 @@ import java.util.Scanner;
  * @author NSteuerberg
  */
 public class LerFicheiros {
-    Scanner sc;
+    Scanner obxSc;
     
     //Leelo por palabras
     public void lerPalabras(File ficheiro, String del){
         try {
-            sc = new Scanner(ficheiro).useDelimiter("\\s*" + del + "\\s*");
-            while(sc.hasNext()){
-                String dato = sc.next();
+            obxSc = new Scanner(ficheiro).useDelimiter("\\s*" + del + "\\s*");
+            while(obxSc.hasNext()){
+                String dato = obxSc.next();
                 System.out.println(dato);
             }
         }catch (FileNotFoundException ex) {
             System.out.println("erro 1 " + ex.getMessage());
         }
         finally{
-            sc.close();
+            obxSc.close();
         }
     }
     
     //Leerlo por liñas
     public void lerLiñas(File ficheiro){
         try {
-            sc = new Scanner(ficheiro);
-            while(sc.hasNextLine()){
-                String dato = sc.nextLine();
+            obxSc = new Scanner(ficheiro);
+            while(obxSc.hasNextLine()){
+                String dato = obxSc.nextLine();
                 System.out.println(dato);
             }
         }catch (FileNotFoundException ex) {
             System.out.println("erro 2 " + ex.getMessage());
         }
         finally{
-            sc.close();
+            obxSc.close();
         }
     }
     
@@ -49,9 +49,9 @@ public class LerFicheiros {
         //int aux;
         ArrayList<Integer>lista=new ArrayList<>();
         try{
-            sc = new Scanner(ficheiro);
-            while(sc.hasNext()){
-                num=sc.nextInt();
+            obxSc = new Scanner(ficheiro);
+            while(obxSc.hasNext()){
+                num=obxSc.nextInt();
                 //aux = Integer.parseInt(num);
                 lista.add(num);
             }
@@ -60,7 +60,7 @@ public class LerFicheiros {
             System.out.println("error leer numero"+ex.getMessage());
         }
         finally{
-                sc.close();
+                obxSc.close();
         }
        
         for(Integer ele:lista){
@@ -75,9 +75,9 @@ public class LerFicheiros {
         //int aux;
         ArrayList<Integer>lista=new ArrayList<>();
         try{
-            sc = new Scanner(ficheiro).useDelimiter(",");
-            while(sc.hasNext()){
-                num=sc.nextInt();
+            obxSc = new Scanner(ficheiro).useDelimiter(",");
+            while(obxSc.hasNext()){
+                num=obxSc.nextInt();
                 //aux = Integer.parseInt(num);
                 lista.add(num);
             }
@@ -86,7 +86,7 @@ public class LerFicheiros {
             System.out.println("error leer numero"+ex.getMessage());
         }
         finally{
-                sc.close();
+                obxSc.close();
         }
        
         for(Integer ele:lista){
@@ -100,15 +100,15 @@ public class LerFicheiros {
         ArrayList<Alumno> lista = new ArrayList();
         String []aux = new String[2];
         try{
-            sc = new Scanner(ficheiro);
-            while(sc.hasNextLine()){
-                aux = sc.nextLine().split(", ");
+            obxSc = new Scanner(ficheiro);
+            while(obxSc.hasNextLine()){
+                aux = obxSc.nextLine().split(", ");
                 lista.add(new Alumno(aux[0], Integer.parseInt(aux[1])));
             }
         }catch (FileNotFoundException ex){
             System.out.println("non se pode ler do ficheiro");
         }finally{
-            sc.close();
+            obxSc.close();
         }
         for(Alumno al:lista){
             System.out.println(al);

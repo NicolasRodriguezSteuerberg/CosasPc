@@ -15,20 +15,23 @@ public class ListaEnteiros {
         listaEnteiros.add(3);
         listaEnteiros.add(4);
         listaEnteiros.add(5);
+        
+        
         return listaEnteiros;
     }
     
     public void ver(){
-        System.out.println(listaEnteiros);//2 manera de observar a lista (por toString)        
+        System.out.println(listaEnteiros);//2 manera de observar a lista (por toString)
     }
     
-    public void añadir(ArrayList<Integer> listaEnteiros, int posicion){
+    public void añadir(ArrayList<Integer> listaAux, int posicion){
         int num = PedirDatos.getInt("Teclee o elemento a añadir");
-        listaEnteiros.add((posicion-1), num);
+        listaAux.add((posicion-1), num);
     }
     
     public void borrar(ArrayList<Integer> listaEnteiros, int posicion){
         listaEnteiros.remove((posicion-1));
+        listaEnteiros.remove(2);
     }
     
     public void buscarElemento(ArrayList<Integer> listaEnteiros, int elemento){
@@ -38,6 +41,15 @@ public class ListaEnteiros {
        else{
            JOptionPane.showConfirmDialog(null, "No existe o numero na colección");
        }
+       
+       int bandera = 0;
+       
+        for (int i = 0; i < listaEnteiros.size(); i++) {
+            if(elemento==listaEnteiros.get(i)){
+                bandera = 1;
+            }
+        }
+       
     }
     
     public void añadirVarios(ArrayList<Integer> listaEnteiros, int cant){
