@@ -4,6 +4,7 @@ import eficheiros.Alumno;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 /**
  *
  * @author NSteuerberg
@@ -131,6 +132,46 @@ public class LerFicheiros {
         } catch (IOException ex) {
             System.out.println("Erro lectura: " + ex.getMessage());
         }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        JOptionPane.showMessageDialog(null, "Este es un mensaje");
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
     
     

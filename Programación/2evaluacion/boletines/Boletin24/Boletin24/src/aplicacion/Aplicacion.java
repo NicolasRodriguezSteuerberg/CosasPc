@@ -18,6 +18,7 @@ public class Aplicacion {
         Metodos obx = new Metodos();
         ArrayList<Libro> aux = new ArrayList();
         int num;
+        
         do{
             num = PedirDatos.getInt("1 --> Engadir libros\n2 --> Vender libros\n3 --> Amosar libros\n4 --> Dar de baixa os libros\n5 --> Consultar libro");
             switch(num){

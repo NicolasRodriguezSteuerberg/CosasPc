@@ -41,6 +41,5 @@ public class PedirDatos {
     
     public static String getString(String mensaxe){
         return JOptionPane.showInputDialog(mensaxe);
-    }
-    
+    } 
 }

@@ -1,8 +1,10 @@
 package eficheiros;
 
+import com.nicosteuerberg.datos.PedirDatos;
 import escritura.EscribirFicheiros;
 import ficheroSerializado.LecEscrituraSerializados;
 import java.io.File;
+import javax.swing.JOptionPane;
 import lectura.LerFicheiros;
 
 
@@ -58,13 +60,62 @@ public class EFicheiros {
         obxE.escribirBuffer(f);
         obxL.lerBuffer(f);
         */
-        
+        /*
         File f = new File("serializar.DAT");
         LecEscrituraSerializados obxS = new LecEscrituraSerializados();
         obxS.escribirSeri(f);
         obxS.lerSerializable(f);
         obxS.engadirSeri(f);
         obxS.lerSerializable(f);
+*/
+        
+        
+        
+        
+        
+        
+        
+        
+        JOptionPane.showMessageDialog(null, "Este es un mensaje");
+        String titulo = JOptionPane.showInputDialog("Teclee el titulo");
+        int numero = Integer.parseInt(JOptionPane.showInputDialog("Teclee el numero"));
+        
+        titulo = PedirDatos.getString("mensaje");
+        numero = PedirDatos.getInt("mensaje");
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
     }
     
