@@ -4,6 +4,8 @@
  */
 package exemplobd;
 
+import interfaz.InterfazGrafica;
+
 /**
  *
  * @author dam1
@@ -15,6 +17,7 @@ public class ExemploBD {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        InterfazGrafica obxUI = new InterfazGrafica();
     }
     
 }
