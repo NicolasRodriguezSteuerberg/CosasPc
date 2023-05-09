@@ -14,7 +14,6 @@ import postgressql.ConexionSQL;
  */
 public class Menu2 extends javax.swing.JPanel {
     JPanel pCrear, pVer;
-    InterfazGrafica obxI = new InterfazGrafica();
     /**
      * Creates new form Menu2
      */

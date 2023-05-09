@@ -3,12 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package exemplobd;
-
 import interfaz.InterfazGrafica;
-
 /**
  *
- * @author dam1
+ * @author nicol
  */
 public class ExemploBD {
 

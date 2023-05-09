@@ -4,7 +4,11 @@
  */
 package interfaz;
 
+import interfaz.CrearLibros;
+import interfaz.Menu2;
+import interfaz.VerLibros;
 import postgressql.ConexionSQL;
+import java.sql.Connection;
 
 /**
  *
@@ -24,7 +28,9 @@ public class InterfazGrafica extends javax.swing.JFrame {
      */
     public InterfazGrafica() {
         initComponents();
+        eError.setVisible(false);
         this.setVisible(true);
+        
         pMenu = new Menu2();
         pMenu.setBounds(0, 0, 400, 300);
         add(pMenu);
@@ -52,6 +58,7 @@ public class InterfazGrafica extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         bConectarse = new javax.swing.JButton();
+        eError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,21 +69,30 @@ public class InterfazGrafica extends javax.swing.JFrame {
             }
         });
 
+        eError.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(131, 131, 131)
-                .addComponent(bConectarse)
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(155, 155, 155)
+                        .addComponent(bConectarse))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(125, 125, 125)
+                        .addComponent(eError, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(124, 124, 124)
+                .addContainerGap(101, Short.MAX_VALUE)
+                .addComponent(eError, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(bConectarse)
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addGap(139, 139, 139))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -94,13 +110,18 @@ public class InterfazGrafica extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bConectarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bConectarseActionPerformed
-        obxC.conectar();
-        System.out.println(texto);
-        jPanel1.setVisible(false);
-        pCrear.recoger(pMenu);
-        pVer.recogerPanelMenu(pMenu);
-        pMenu.recogerPaneles(pCrear, pVer);
-        pMenu.setVisible(true);
+        Connection aux = obxC.conectar();
+        if(aux==null){
+            eError.setVisible(true);
+            eError.setText("Error de conexion");
+        }else{
+            System.out.println(texto);
+            jPanel1.setVisible(false);
+            pCrear.recoger(pMenu);
+            pVer.recogerPanelMenu(pMenu);
+            pMenu.recogerPaneles(pCrear, pVer);
+            pMenu.setVisible(true);
+        }
     }//GEN-LAST:event_bConectarseActionPerformed
 
     
@@ -141,6 +162,7 @@ public class InterfazGrafica extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bConectarse;
+    private javax.swing.JLabel eError;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

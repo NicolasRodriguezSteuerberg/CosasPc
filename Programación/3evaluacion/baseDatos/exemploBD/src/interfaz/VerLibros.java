@@ -147,7 +147,6 @@ public class VerLibros extends javax.swing.JPanel {
             obxC.selectLibrosID(Integer.parseInt(lTexto.getText()), tabla,eError);
         }
         else{
-            
             if(lTexto.getText().equals("")){
                 eError.setText("El titulo no puede ser vacio");
             }else{
