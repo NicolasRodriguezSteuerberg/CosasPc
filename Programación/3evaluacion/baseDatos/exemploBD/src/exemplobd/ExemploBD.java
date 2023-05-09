@@ -16,6 +16,7 @@ public class ExemploBD {
     public static void main(String[] args) {
         // TODO code application logic here
         InterfazGrafica obxUI = new InterfazGrafica();
+        
     }
     
 }
