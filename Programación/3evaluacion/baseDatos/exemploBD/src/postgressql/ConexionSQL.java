@@ -49,7 +49,12 @@ public class ConexionSQL {
         }
     }
     
-    
+    /**
+     * insertar libros
+     * @param id
+     * @param titulo
+     * @return retorna si el insert es fallido o si se añade
+     */
     public String insertarLibros(int id, String titulo){
         try{
             Connection conexion = conectar();
@@ -65,68 +70,155 @@ public class ConexionSQL {
     }
     
     /**
-     * 
-     * @param id
-     * @param tabla 
+     * Buscar libros el id
+     * @param id -> el id a buscar
+     * @param tabla -> tabla donde vamos a hacer inserts
+     * @param texto -> le doy una etiqueta con texto solo para cuando haya errores poder notificarlos
      */
     public void selectLibrosID(int id, JTable tabla,JLabel texto){
         eliminarFilas(tabla);
         try {
             conectar();
             obxStatement = obxConectar.createStatement();
+            
+            DefaultTableModel model = (DefaultTableModel) tabla.getModel();
+            
             String busqueda = "select * from libros where id=" + id + ";";
             obxResultado = obxStatement.executeQuery(busqueda);
             while(obxResultado.next()){
                 Object[] fila = {obxResultado.getString("id"), obxResultado.getString("titulo")};
-                DefaultTableModel model = (DefaultTableModel) tabla.getModel();
                 model.addRow(fila);
             }
+            obxStatement.close();
+            cerrarConexion();
+            
+            encontroSelect(model,texto);
         } catch (SQLException ex) {
             texto.setText("Error en la busqueda");
             texto.setVisible(true);
         }
+        
     }
     
+    /**
+     * Buscar libros el titulo
+     * @param titulo -> el titulo a buscar
+     * @param tabla -> tabla donde vamos a hacer inserts
+     * @param texto -> le doy una etiqueta con texto solo para cuando haya errores poder notificarlos
+     */
     public void selectLibrosTitulo(String titulo, JTable tabla,JLabel texto){
         eliminarFilas(tabla);
         try {
             conectar();
             obxStatement = obxConectar.createStatement();
+            
+            DefaultTableModel model = (DefaultTableModel) tabla.getModel();
+            
             String busqueda = "select * from libros where titulo='" + titulo + "';";
             obxResultado = obxStatement.executeQuery(busqueda);
             while(obxResultado.next()){
                 Object[] fila = {obxResultado.getString("id"), obxResultado.getString("titulo")};
-                DefaultTableModel model = (DefaultTableModel) tabla.getModel();
                 model.addRow(fila);
             }
+            obxStatement.close();
+            cerrarConexion();
+            
+            encontroSelect(model,texto);
+            
         } catch (SQLException ex) {
             texto.setText("Error en la busqueda");
             texto.setVisible(true);
         }
     }
     
+    /**
+     * Buscar todos los libros
+     * @param tabla -> tabla donde vamos a hacer inserts
+     * @param texto -> le doy una etiqueta con texto solo para cuando haya errores poder notificarlos
+     */
     public void selectLibros(JTable tabla, JLabel texto){
         eliminarFilas(tabla);
         try {
             conectar();
             obxStatement = obxConectar.createStatement();
+            
+            DefaultTableModel model = (DefaultTableModel) tabla.getModel();
+            
             String busqueda = "select * from libros;";
             obxResultado = obxStatement.executeQuery(busqueda);
             while(obxResultado.next()){
                 Object[] fila = {obxResultado.getString("id"), obxResultado.getString("titulo")};
-                DefaultTableModel model = (DefaultTableModel) tabla.getModel();
                 model.addRow(fila);
             }
+            obxStatement.close();
+            cerrarConexion();
         } catch (SQLException ex) {
             texto.setText("Error en la busqueda");
             texto.setVisible(true);
         }
     }
     
+    public void encontroSelect(DefaultTableModel model, JLabel texto){
+        if(model.getRowCount()==0){
+            texto.setText("Libros no encontrados");
+            texto.setVisible(true);
+        }
+        else{
+            texto.setVisible(false);
+        }
+    }
+    
+    /**
+     * elimino las filas para que no se repitan las filas
+     * @param tabla 
+     */
     public void eliminarFilas(JTable tabla){
         DefaultTableModel model = (DefaultTableModel) tabla.getModel();
-        for(int i=0;i<tabla.getRowCount();i++){
+        System.out.println(tabla.getRowCount());
+        for(int i=(model.getRowCount()-1);i>=0;i--){
             model.removeRow(i);
+        }
+    }
+    
+    public void actualizarNombre(int ID, String nombreNuevo, JLabel errores, JLabel texto){
+        try{
+            conectar();
+            obxStatement = obxConectar.createStatement();
+            String busqueda = "update libros set titulo='" + nombreNuevo + "' where id=" + ID + ";";
+            int numero = obxStatement.executeUpdate(busqueda);
+            System.out.println(numero);
+            if(numero==0){
+                errores.setText("Libro no encontrado");
+                errores.setVisible(true);
+            }
+            else{
+                texto.setVisible(true);
+            }
+            obxStatement.close();
+            cerrarConexion();
+        }catch (Exception e){
+            System.out.println("error en la actualizacion");
+        }
+    }
+    
+    public void borrarLibro(int ID, JLabel errores, JLabel texto){
+        try{
+            conectar();
+            obxStatement = obxConectar.createStatement();
+            String busqueda = "delete from libros where id=" + ID + ";";
+            int numero = obxStatement.executeUpdate(busqueda);
+            System.out.println(numero);
+            if(numero==0){
+                errores.setText("LIBRO NO ENCONTRADO");
+                errores.setVisible(true);
+            }
+            else{
+                texto.setVisible(true);
+            }
+            obxStatement.close();
+            cerrarConexion();
+        }catch (Exception e){
+            System.out.println("error en el borrado");
         }
     }
     

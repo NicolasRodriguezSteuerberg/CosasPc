@@ -22,6 +22,8 @@ public class InterfazGrafica extends javax.swing.JFrame {
     Menu2 pMenu;
     CrearLibros pCrear;
     VerLibros pVer;
+    ActualizarTitulo pActualizar;
+    EliminarLibros pEliminar;
     
     /**
      * Creates new form InterfazGrafica
@@ -45,6 +47,16 @@ public class InterfazGrafica extends javax.swing.JFrame {
         pVer.setBounds(0,0,400,300);
         add(pVer);
         pVer.setVisible(false);
+        
+        pActualizar = new ActualizarTitulo();
+        pActualizar.setBounds(0,0,400,300);
+        add(pActualizar);
+        pActualizar.setVisible(false);
+        
+        pEliminar = new EliminarLibros();
+        pEliminar.setBounds(0,0,400,300);
+        add(pEliminar);
+        pEliminar.setVisible(false);
     }
 
     /**
@@ -119,7 +131,9 @@ public class InterfazGrafica extends javax.swing.JFrame {
             jPanel1.setVisible(false);
             pCrear.recoger(pMenu);
             pVer.recogerPanelMenu(pMenu);
-            pMenu.recogerPaneles(pCrear, pVer);
+            pActualizar.recogerPanelMenu(pMenu);
+            pEliminar.recogerPanelMenu(pMenu);
+            pMenu.recogerPaneles(pCrear, pVer, pActualizar, pEliminar);
             pMenu.setVisible(true);
         }
     }//GEN-LAST:event_bConectarseActionPerformed

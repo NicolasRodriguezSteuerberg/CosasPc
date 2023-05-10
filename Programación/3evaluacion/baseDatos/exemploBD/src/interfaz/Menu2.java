@@ -13,7 +13,7 @@ import postgressql.ConexionSQL;
  * @author dam1
  */
 public class Menu2 extends javax.swing.JPanel {
-    JPanel pCrear, pVer;
+    JPanel pCrear, pVer, pActualizar, pEliminar;
     /**
      * Creates new form Menu2
      */
@@ -21,9 +21,11 @@ public class Menu2 extends javax.swing.JPanel {
         initComponents();
     }
     
-    public void recogerPaneles(JPanel crear, JPanel ver){
+    public void recogerPaneles(JPanel crear, JPanel ver, JPanel actualizar, JPanel eliminar){
         pCrear=crear;
         pVer = ver;
+        pActualizar = actualizar;
+        pEliminar = eliminar;
     }
 
     /**
@@ -38,6 +40,8 @@ public class Menu2 extends javax.swing.JPanel {
         bCrear = new javax.swing.JButton();
         bVer = new javax.swing.JButton();
         bDesconectar = new javax.swing.JButton();
+        bModificar = new javax.swing.JButton();
+        bBorrar = new javax.swing.JButton();
 
         bCrear.setText("CREAR LIBROS");
         bCrear.addActionListener(new java.awt.event.ActionListener() {
@@ -60,32 +64,48 @@ public class Menu2 extends javax.swing.JPanel {
             }
         });
 
+        bModificar.setText("MODIFICAR");
+        bModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bModificarActionPerformed(evt);
+            }
+        });
+
+        bBorrar.setText("BORRAR");
+        bBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bBorrarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(116, 116, 116)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bDesconectar)
-                            .addComponent(bCrear)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
-                        .addComponent(bVer)))
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addGap(127, 127, 127)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(bBorrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bDesconectar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bModificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bVer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bCrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(125, 125, 125))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
+                .addGap(19, 19, 19)
                 .addComponent(bCrear)
-                .addGap(43, 43, 43)
+                .addGap(34, 34, 34)
                 .addComponent(bVer)
-                .addGap(52, 52, 52)
+                .addGap(36, 36, 36)
+                .addComponent(bModificar)
+                .addGap(35, 35, 35)
+                .addComponent(bBorrar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(bDesconectar)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addGap(19, 19, 19))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -103,11 +123,26 @@ public class Menu2 extends javax.swing.JPanel {
 
     private void bDesconectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDesconectarActionPerformed
         // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_bDesconectarActionPerformed
 
+    private void bModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bModificarActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        pActualizar.setVisible(true);
+    }//GEN-LAST:event_bModificarActionPerformed
+
+    private void bBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBorrarActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        pEliminar.setVisible(true);
+    }//GEN-LAST:event_bBorrarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bBorrar;
     private javax.swing.JButton bCrear;
     private javax.swing.JButton bDesconectar;
+    private javax.swing.JButton bModificar;
     private javax.swing.JButton bVer;
     // End of variables declaration//GEN-END:variables
 }
