@@ -27,12 +27,9 @@ public class ConexionSQL {
     
 
     public Connection conectar(){
-        //returno un String para poder mandar un mensaje de si se pudo conectar 
-        //o no en la UI (podría ser void mismamente)
         try{
             Class.forName("org.postgresql.Driver");
             obxConectar = DriverManager.getConnection(url,user,password);
-            
         }catch(Exception e){
             System.out.println("Error");
         }
