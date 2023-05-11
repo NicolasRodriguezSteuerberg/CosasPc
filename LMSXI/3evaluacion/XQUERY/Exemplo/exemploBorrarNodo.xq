@@ -1,0 +1,1 @@
+delete node doc("Boletin37")//alumno[@dni="35293940"]
