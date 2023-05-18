@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="examen.xsl"?>
+<acciones>
+  <empresa indice="general">
+     <nombre>General Motors</nombre>
+    <simbolo>GMO</simbolo>
+    <precio>28.875</precio>
+  </empresa>
+  <empresa indice="tecno">
+    <nombre>Adobe</nombre>
+    <simbolo>ADB</simbolo>
+    <precio>92.250</precio>
+  </empresa>
+  <empresa indice="tecno">
+    <nombre>Microsoft</nombre>
+    <simbolo>MSF</simbolo>
+    <precio>20.313</precio>
+  </empresa>
+  <empresa indice="general">
+    <nombre>Coca-Cola</nombre>
+    <simbolo>COC</simbolo>
+    <precio>38.895</precio>
+  </empresa>
+<empresa indice="tecno">
+    <nombre>Sun Microsystems</nombre>
+    <simbolo>SUN</simbolo>
+    <precio>45.119</precio>
+  </empresa>
+</acciones>
