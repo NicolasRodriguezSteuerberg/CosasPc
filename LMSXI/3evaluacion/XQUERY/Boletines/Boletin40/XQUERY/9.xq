@@ -1,0 +1,1 @@
+delete node doc("Boletin40")//baile[profesor='Miriam Gutiérrez']

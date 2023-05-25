@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Bailes>
+  <baile id="4">
+    <nombre>Foxtrot</nombre>
+    <precio cuota="mensual" moneda="euro">22</precio>
+    <plazas>14</plazas>
+    <comienzo>01/01/2019</comienzo>
+    <fin>31/07/2019</fin>
+    <profesor>Angel Correlada</profesor>
+    <sala>3</sala>
+  </baile>
+    <baile id="1">
+    <nombre>Tango</nombre>
+    <precio cuota="mensual" moneda="euro">27</precio>
+    <plazas>20</plazas>
+    <comienzo>1/1/2019</comienzo>
+    <fin>1//12/2019</fin>
+    <profesor>Roberto Garcia</profesor>
+    <sala>1</sala>
+  </baile>
+  <baile id="2">
+    <nombre>Cha-cha-cha</nombre>
+    <precio cuota="trimestral" moneda="euro">80</precio>
+    <plazas>18</plazas>
+    <comienzo>1/2/2019</comienzo>
+    <fin>31/7/2019</fin>
+    <profesor>Miriam Gutiérrez</profesor>
+    <sala>1</sala>
+  </baile>
+  <baile id="3">
+    <nombre>Rock</nombre>
+    <precio cuota="mensual" moneda="euro">30</precio>
+    <plazas>15</plazas>
+    <comienzo>1/1/2019</comienzo>
+    <fin>1/12/2019</fin>
+    <profesor>Laura Mendiola</profesor>
+    <sala>1</sala>
+  </baile>
+ <baile id="5">
+    <nombre>Rock</nombre>
+    <precio cuota="mensual" moneda="euro">30</precio>
+    <plazas>11</plazas>
+    <comienzo>1/1/2019</comienzo>
+    <fin>1/12/2019</fin>
+    <profesor>Laura Mendiola</profesor>
+    <sala>1</sala>
+  </baile>
+</Bailes>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<clases>
+  <baile>
+    <nombre>Foxtrot</nombre>
+    <pasos>1-2 1-2</pasos>
+  </baile>
+  <baile>
+    <nombre>Tango</nombre>
+    <pasos>1-2-3 1-2-3</pasos>
+  </baile>
+</clases>

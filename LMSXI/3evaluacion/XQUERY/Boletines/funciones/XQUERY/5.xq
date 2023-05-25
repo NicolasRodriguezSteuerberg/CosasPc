@@ -1,3 +1,3 @@
-for $x in doc("funciones")//book/year/text()
+for $x in distinct-values(//book/year/text())
 
-return distinct-values($x)
+return <año>{$x}</año>
