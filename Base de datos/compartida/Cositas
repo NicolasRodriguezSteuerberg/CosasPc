@@ -1,0 +1,16 @@
+DROP FUNCTION tNumeroMedicos() CASCADE;
+CREATE FUNCTION tNumeroMedicos()
+	RETURNS TRIGGER
+	LANGUAGE PLPGSQL
+    AS 
+$$  
+DECLARE
+ x integer;
+BEGIN
+  select count(*) into x from hospital where codH=new.codH;
+  x = x + 1;
+  update hospital set nroM=x where codH=new.codH;
+  return new;
+END;
+$$;
+CREATE TRIGGER tNumeroMedicost before INSERT ON medico for each row EXECUTE PROCEDURE tNumeroMedicos();
