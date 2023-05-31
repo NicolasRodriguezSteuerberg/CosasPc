@@ -48,14 +48,14 @@ pg_restore -U postgres -C -d postgres futbol2Comprimido.dump
 
 17)Recargar o que se atopa na copia nunha nova base (chamádea futbol3):
 createdb -U postgres -T template0 futbol3
-pg_restore -U postgres -C -d futbol3 futbol2Comprimido.dump
+pg_restore -U postgres -d futbol3 futbol2Comprimido.dump
 
 18)exportar da base futbol2 esquema fu so as taboas cuxo nome comece por x  ( en formato de texto plano) nun ficheiro chamdo fup.dump
 pg_dump -U postgres -t 'fu.x*' -Fp futbol2 > fup.dump
 
 19)exportar da base futbol2 esquema fu so as taboas cuxo nome comece por x e ademais as taboas adestra e interven ( en formato de texto plano (fup2.dump) e tamén en formato de restaurable con pg_restore (fuc2.dump)
-pg_dump -U postgres -t 'fu.x*' -t 'fu.adestra' -t 'fu.interven' -Fc futbol2 > fup2.dump
-pg_dump -U postgres -t _'fu.x*' -t 'fu.adestra' -t 'fu.interven' -Fp futbol2 > fuc2.dump
+pg_dump -U postgres -t 'fu.x*' -t 'fu.adestra' -t 'fu.interven' -Fp futbol2 > fup2.dump
+pg_dump -U postgres -t _'fu.x*' -t 'fu.adestra' -t 'fu.interven' -Fc futbol2 > fuc2.dump
 
 20) eliminar estructura e_ contido da taboa xoga e elimino o contido da taboa adestra
 psql futbol2 userfu
