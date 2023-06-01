@@ -4,6 +4,8 @@
  */
 package View;
 
+import com.nicosteuerberg.datos.VentanaLabel;
+import java.awt.Color;
 import javax.swing.table.TableModel;
 
 /**
@@ -11,12 +13,16 @@ import javax.swing.table.TableModel;
  * @author dam1
  */
 public class pHospital extends javax.swing.JPanel {
+    Vista obxV = new Vista();
+    Controller miController;
+    int numero;
 
     /**
      * Creates new form pHospital
      */
     public pHospital() {
         initComponents();
+        miController = obxV.recibirController();
     }
 
     /**
@@ -33,19 +39,17 @@ public class pHospital extends javax.swing.JPanel {
         tHospital = new javax.swing.JTable();
         lcodH = new javax.swing.JTextField();
         lnombreH = new javax.swing.JTextField();
-        ltipoH = new javax.swing.JTextField();
-        lnMedicos = new javax.swing.JTextField();
         lnHabitaciones = new javax.swing.JTextField();
         bCrear = new javax.swing.JButton();
         bModificar = new javax.swing.JButton();
         bBorrar = new javax.swing.JButton();
         bVaciar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        eCodh = new javax.swing.JLabel();
+        eNomH = new javax.swing.JLabel();
+        eTipoH = new javax.swing.JLabel();
+        eNHabitaciones = new javax.swing.JLabel();
+        eMensaje = new javax.swing.JLabel();
+        cTipoH = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(23, 165, 199));
         setMaximumSize(new java.awt.Dimension(1280, 720));
@@ -56,6 +60,11 @@ public class pHospital extends javax.swing.JPanel {
         bVolverMenu.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         bVolverMenu.setForeground(new java.awt.Color(255, 255, 255));
         bVolverMenu.setText("MENÚ");
+        bVolverMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bVolverMenuActionPerformed(evt);
+            }
+        });
 
         tHospital.setAutoCreateRowSorter(true);
         tHospital.setBackground(new java.awt.Color(204, 255, 255));
@@ -104,24 +113,27 @@ public class pHospital extends javax.swing.JPanel {
         lcodH.setBackground(new java.awt.Color(204, 255, 255));
         lcodH.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         lcodH.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        lcodH.setToolTipText("No se pueden repetir");
+        lcodH.setText("asd");
+        lcodH.setToolTipText("Solo 3 caracteres. No se pueden repetir");
         lcodH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lcodHActionPerformed(evt);
+            }
+        });
+        lcodH.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                lcodHKeyTyped(evt);
             }
         });
 
         lnombreH.setBackground(new java.awt.Color(204, 255, 255));
         lnombreH.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         lnombreH.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        ltipoH.setBackground(new java.awt.Color(204, 255, 255));
-        ltipoH.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        ltipoH.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        lnMedicos.setBackground(new java.awt.Color(204, 255, 255));
-        lnMedicos.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        lnMedicos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        lnombreH.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                lnombreHKeyTyped(evt);
+            }
+        });
 
         lnHabitaciones.setBackground(new java.awt.Color(204, 255, 255));
         lnHabitaciones.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -131,18 +143,38 @@ public class pHospital extends javax.swing.JPanel {
                 lnHabitacionesActionPerformed(evt);
             }
         });
+        lnHabitaciones.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                lnHabitacionesKeyTyped(evt);
+            }
+        });
 
         bCrear.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         bCrear.setForeground(new java.awt.Color(0, 102, 153));
         bCrear.setText("CREAR");
+        bCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCrearActionPerformed(evt);
+            }
+        });
 
         bModificar.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         bModificar.setForeground(new java.awt.Color(0, 102, 153));
         bModificar.setText("MODIFICAR");
+        bModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bModificarActionPerformed(evt);
+            }
+        });
 
         bBorrar.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         bBorrar.setForeground(new java.awt.Color(0, 102, 153));
         bBorrar.setText("BORRAR");
+        bBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bBorrarActionPerformed(evt);
+            }
+        });
 
         bVaciar.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         bVaciar.setForeground(new java.awt.Color(0, 102, 153));
@@ -153,74 +185,66 @@ public class pHospital extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Código del hospital");
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        eCodh.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        eCodh.setForeground(new java.awt.Color(255, 255, 255));
+        eCodh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        eCodh.setText("Código del hospital");
+        eCodh.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Nombre del hospital");
-        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        eNomH.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        eNomH.setForeground(new java.awt.Color(255, 255, 255));
+        eNomH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        eNomH.setText("Nombre del hospital");
+        eNomH.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Tipo del hospital");
-        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        eTipoH.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        eTipoH.setForeground(new java.awt.Color(255, 255, 255));
+        eTipoH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        eTipoH.setText("Tipo del hospital");
+        eTipoH.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Nº de médicos");
-        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        eNHabitaciones.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        eNHabitaciones.setForeground(new java.awt.Color(255, 255, 255));
+        eNHabitaciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        eNHabitaciones.setText("Nº de habitaciones");
+        eNHabitaciones.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Nº de habitaciones");
-        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        eMensaje.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        eMensaje.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        eMensaje.setRequestFocusEnabled(false);
 
-        jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setRequestFocusEnabled(false);
+        cTipoH.setBackground(new java.awt.Color(204, 255, 255));
+        cTipoH.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        cTipoH.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Publico", "Privado" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(65, 65, 65)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(lcodH, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(57, 57, 57)
-                                .addComponent(lnombreH, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(56, 56, 56)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ltipoH, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(64, 64, 64)
+                            .addComponent(lcodH, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(eCodh, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lnMedicos, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(48, 48, 48)
+                            .addComponent(lnombreH, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(eNomH, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(127, 127, 127)
+                                .addComponent(eTipoH, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(127, 127, 127)
+                                .addComponent(cTipoH, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(127, 127, 127)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lnHabitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(eNHabitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(eMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(bModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
@@ -237,22 +261,20 @@ public class pHospital extends javax.swing.JPanel {
                 .addComponent(bVolverMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(eNHabitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eTipoH, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eNomH, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eCodh, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lcodH, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lnombreH, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ltipoH, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lnMedicos, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lnHabitaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bVaciar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                    .addComponent(bVaciar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cTipoH, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(eMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -279,18 +301,79 @@ public class pHospital extends javax.swing.JPanel {
         lcodH.setText(model.getValueAt(fila, 0).toString());
         lnombreH.setText(model.getValueAt(fila, 1).toString());
         ltipoH.setText(model.getValueAt(fila, 2).toString());
-        lnMedicos.setText(model.getValueAt(fila, 3).toString());
-        lnHabitaciones.setText(model.getValueAt(fila, 4).toString());
+        lnHabitaciones.setText(model.getValueAt(fila, 3).toString());
     }//GEN-LAST:event_tHospitalMouseClicked
 
     private void bVaciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVaciarActionPerformed
         lcodH.setText("");
         lnombreH.setText("");
-        ltipoH.setText("");
-        lnMedicos.setText("");
         lnHabitaciones.setText("");
     }//GEN-LAST:event_bVaciarActionPerformed
 
+    private void bCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCrearActionPerformed
+        try{
+            numero = Integer.parseInt(lnHabitaciones.getText());
+        
+            if(lcodH.getText().equals("") || lnHabitaciones.getText().equals("") || lnombreH.getText().equals("")){
+                VentanaLabel.mensajeLabel("LOS CAMPOS NO PUEDEN ESTAR VACIOS, RELLENELOS Y VUELVA A INTENTARLO", eMensaje, Color.red);
+            }
+            else{
+                VentanaLabel.mensajeLabel("", eMensaje, Color.red);
+                miController.crearHospital(lcodH.getText(),lnombreH.getText(),cTipoH.getSelectedItem().toString(),numero,eMensaje);
+                System.out.println("dfbdsbfjd");
+            }
+        }catch(Exception e){
+            VentanaLabel.mensajeLabel("EL NUMERO DE HABITACIONES NO PUEDE CONTENER LETRAS O SIGNOS", eMensaje, Color.red);
+        }
+    }//GEN-LAST:event_bCrearActionPerformed
+
+    private void lcodHKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lcodHKeyTyped
+        if(lcodH.getText().length() >= 3){
+            evt.consume();
+        }
+    }//GEN-LAST:event_lcodHKeyTyped
+
+    private void lnombreHKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lnombreHKeyTyped
+        if(lnombreH.getText().length() >= 20){
+            evt.consume();
+        }
+    }//GEN-LAST:event_lnombreHKeyTyped
+
+    private void lnHabitacionesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lnHabitacionesKeyTyped
+        if(lnHabitaciones.getText().length() >= 3){
+            evt.consume();
+        }
+    }//GEN-LAST:event_lnHabitacionesKeyTyped
+
+    private void bModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bModificarActionPerformed
+        try{
+            numero = Integer.parseInt(lnHabitaciones.getText());
+        
+            if(lcodH.getText().equals("") || lnHabitaciones.getText().equals("") || lnombreH.getText().equals("")){
+                VentanaLabel.mensajeLabel("LOS CAMPOS NO PUEDEN ESTAR VACIOS, RELLENELOS Y VUELVA A INTENTARLO", eMensaje, Color.red);
+            }
+            else{
+                miController.modificarHospital(lcodH.getText(), lnombreH.getText().equals(""), cTipoH.getSelectedItem().toString(), numero, eMensaje);
+            }
+        }catch(Exception e){
+            VentanaLabel.mensajeLabel("EL NUMERO DE HABITACIONES NO PUEDE CONTENER LETRAS O SIGNOS", eMensaje, Color.red);
+        }
+    }//GEN-LAST:event_bModificarActionPerformed
+
+    private void bBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBorrarActionPerformed
+        if(lcodH.getText().equals("")){
+            VentanaLabel.mensajeLabel("EL CÓDIGO DEL HOSPITAL NO PUEDE ESTAR VACIO", eMensaje, Color.red);
+        }
+        else{
+            miController.eliminarHospital(lcodH.getText(), eMensaje)
+        }
+    }//GEN-LAST:event_bBorrarActionPerformed
+
+    private void bVolverMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bVolverMenuActionPerformed
+        miController.cambiarPaneles(Vista.panelMenu);
+    }//GEN-LAST:event_bVolverMenuActionPerformed
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bBorrar;
@@ -298,18 +381,16 @@ public class pHospital extends javax.swing.JPanel {
     private javax.swing.JButton bModificar;
     private javax.swing.JButton bVaciar;
     private javax.swing.JButton bVolverMenu;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JComboBox<String> cTipoH;
+    private javax.swing.JLabel eCodh;
+    private javax.swing.JLabel eMensaje;
+    private javax.swing.JLabel eNHabitaciones;
+    private javax.swing.JLabel eNomH;
+    private javax.swing.JLabel eTipoH;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField lcodH;
     private javax.swing.JTextField lnHabitaciones;
-    private javax.swing.JTextField lnMedicos;
     private javax.swing.JTextField lnombreH;
-    private javax.swing.JTextField ltipoH;
     private javax.swing.JTable tHospital;
     // End of variables declaration//GEN-END:variables
 }

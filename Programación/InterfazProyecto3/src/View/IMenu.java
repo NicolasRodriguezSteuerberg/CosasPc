@@ -112,6 +112,10 @@ public class IMenu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_bPacienteActionPerformed
 
+    public Controller obxController(){
+        return miController;
+    }
+    
     /**
      * @param args the command line arguments
      */
