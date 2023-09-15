@@ -46,7 +46,7 @@ public class Arquivos {
                     obx.crearDirectorio(JOptionPane.showInputDialog("Teclee la direccion de la carpeta a crear"));
                     break;
                 case 4: 
-                    obx.crearFichero(JOptionPane.showInputDialog("Teclee la direccion de creacion de fichero"));
+                    obx.crearFichero(JOptionPane.showInputDialog("Teclee a dirección onde quere crear o ficheiro"), JOptionPane.showInputDialog("Tecle o nome do ficheiro"));
                     break;
                 case 5:
                     obx.modoAcceso(JOptionPane.showInputDialog("Teclee la ruta"));
@@ -54,8 +54,27 @@ public class Arquivos {
                 case 6:
                     obx.calculaLonxitude(JOptionPane.showInputDialog("Teclee a dirección"));
                     break;
+                case 7:
+                    obx.mLectura(JOptionPane.showInputDialog("Teclee a dirección e o nome do archivo"));
+                    break;
+                case 8:
+                    obx.mEscritura(JOptionPane.showInputDialog("Teclee a dirección e o nome do archivo"));
+                    break;
+                case 9:
+                    obx.borraFicheiro(JOptionPane.showInputDialog("Teclee a dirección e o nome do archivo a borrar"));
+                    break;
+                case 10:
+                    obx.borraDirectorio(JOptionPane.showInputDialog("Teclee a dirección do directorio a borrar"));
+                    break;
+                case 11:
+                    obx.mContido(JOptionPane.showInputDialog("Teclee a dirección do directorio do que queres ver o seu contido"));
+                    break;
+                case 12:
+                    
+                    break;
             }
-        }while(opcion<=12);
+        }while(opcion<=12 && opcion>0);
+        JOptionPane.showMessageDialog(null, "Saíndo do programa");
     }
     
 }
