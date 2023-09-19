@@ -94,4 +94,24 @@ public class Metodos {
             }
         }
     }
+    
+    public void leerEscribir(String rutaLeer, String rutaEscribir,boolean falso_verdadero){
+        System.out.println(falso_verdadero);
+        try {
+            FileInputStream lectura = new FileInputStream(rutaLeer);
+            
+            //FileOutputStream escritura = new FileOutputStream(JOptionPane.showInputDialog("Teclee la ruta a pegar"));
+            FileOutputStream escritura = new FileOutputStream(rutaEscribir, falso_verdadero);
+            
+            int bytes2;
+            
+            while((bytes2 = lectura.read()) != -1){
+                escritura.write(bytes2);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(CopyBytes.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(CopyBytes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
