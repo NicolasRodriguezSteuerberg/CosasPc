@@ -71,3 +71,43 @@ diccionario = { 1: "un",
 print(diccionario[3])
 diccionario[3] = 0b00011 #el 0b significa que es binario
 print(diccionario[3])
+
+if t[0]==1:
+    # O bloque márcase con ':'
+    # Se tabula o código con espazos
+    # O número de espazos é libre pero sempre o mesmo denrto do bloque de código
+    print("Nico guapo")
+else:
+    print("Nico no es guapo")
+
+variable = 3
+var = "par" if variable % 2 ==0 else "impar"
+print(var)
+
+while variable < 20:
+    variable+=1
+    if variable % 5:
+        continue
+    else:
+        print("O valor é: " + str(variable))
+numeros = [1, 2, 3, 4, 5]
+suma = 0
+for numero in numeros:
+    print(numero)
+    suma+=numero
+    print("suma: " + str(suma))
+
+print("\nSuma final: " + str(suma))
+
+# for i in range (1,3,1):
+#    print(i)
+
+for i in range(len(numeros)):
+    print(numeros[i])
+
+#for i in enumerate(numeros):   -> de esta manera la i es una tupla
+#    print(i, numeros[i])
+
+for i, num in enumerate(numeros):
+    #print(i, numeros[i]) -> sirve igualmente
+    print(i, num) # guarda el elemento de numeros en num
