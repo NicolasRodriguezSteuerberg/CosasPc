@@ -4,13 +4,11 @@
  */
 package primitivewrite;
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author postgres
  */
-public class PrimitiveWrite {
+public class PrimitiveWriteChars {
 
     /**
      * @param args the command line arguments
@@ -20,6 +18,7 @@ public class PrimitiveWrite {
         Metodos obxM = new Metodos();
         String ruta = "/media/sf_Compartida/PrimitiveWriteUTF/texto3.txt";
         obxM.escribir(ruta);
+        System.out.println("");
         obxM.leer(ruta);
     }
     
