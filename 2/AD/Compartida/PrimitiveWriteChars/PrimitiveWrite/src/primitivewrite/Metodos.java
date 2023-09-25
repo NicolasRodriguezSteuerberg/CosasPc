@@ -64,11 +64,11 @@ public class Metodos {
             int c;
             
             while((c=dataLec.available())!=0){
-                System.out.println("quedan: " + c + " bytes por ler");
                 for (int i = 0; i < tamaño; i++) {
                     System.out.print(dataLec.readChar());
                 }
                 System.out.println();
+                System.out.println("quedan: " + dataLec.available() + " bytes por ler");
             }
             
             System.out.println("Xa non queda nada por ler");
