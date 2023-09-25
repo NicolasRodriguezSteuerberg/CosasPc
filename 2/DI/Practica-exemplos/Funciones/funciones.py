@@ -10,9 +10,6 @@ Tambien sirve para documentar una función
 :param …:
 :return:
 """
-import main
-
-
 def nome_da_funcion (parametro1, parametro2):
     """
     Función de exemplo para mostrar como se escriben as funcións
@@ -67,7 +64,7 @@ usuarioConDatosExtendidos("Nico", "98798754Y", 20, Sexo = "Varón", Direccion = 
 var = 5
 def funcion(valor):
 # Si quieres usar la variable var que está antes de la función tendrías que usar el nombre de la clase.var main.var-->no lo cambia, pero puedes usarlo para hacer operaciones, sacar su valor...
-    var = valor + main.var # Creas otro variable, ya que para la función no existía la variable var
+    var = valor # Creas otro variable, ya que para la función no existía la variable var
     print(var)
 funcion(9)
 print(var)

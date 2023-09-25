@@ -29,8 +29,6 @@ print(dir)
 division = 128>>3 # mueve el 1 del 128 3 posiciones a la derecha
 print(division)
 """
-import funciones
-
 lista = [1,2,3,4,5]
 print(lista[3])
 
@@ -113,5 +111,3 @@ for i in range(len(numeros)):
 for i, num in enumerate(numeros):
     #print(i, numeros[i]) -> sirve igualmente
     print(i, num) # guarda el elemento de numeros en num
-
-funciones.nome_da_funcion("Hola", 2)
