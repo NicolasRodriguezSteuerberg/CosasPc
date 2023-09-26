@@ -1,0 +1,17 @@
+services:
+  # container apache
+  apache:
+    image: httpd:2.4
+    ports:
+      - "8080:80"
+    volumes:
+      - ./htdocs:/usr/local/apache2/htdocs
+    container_name: dam_web1
+
+  apache2:
+    image: httpd:2.4
+    ports:
+      - "9000:80"
+    volumes:
+      - ./htdocs:/usr/local/apache2/htdocs
+    container_name: dam_web2

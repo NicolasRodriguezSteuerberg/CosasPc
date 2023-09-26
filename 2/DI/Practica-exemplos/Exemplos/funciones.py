@@ -1,5 +1,5 @@
 # Para declarar una funcion se define con def
-
+# Para ejecutar esta clase llega con click derecho -> run 'funciones'
 # Esto es un comentario de solo una linea
 """
 Se pueden hacer de dos formas:
