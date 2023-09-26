@@ -64,12 +64,12 @@ print(cadena[4:10])
 
 diccionario = { 1: "un",
                 2: "dos",
-                3: "tres",
+                "aeropuerto": "tres",
                 4: "cuatro"
                 }
 
-print(diccionario[3])
-diccionario[3] = 0b00011 #el 0b significa que es binario
+print(diccionario["aeropuerto"])
+diccionario[3] = 0b00011 # el 0b significa que es binario, lo convierte en numero y no en letras
 print(diccionario[3])
 
 if t[0]==1:
