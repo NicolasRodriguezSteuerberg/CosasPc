@@ -1,12 +1,18 @@
 package com.nsteuerberg.primerintento
 
+import android.graphics.Paint.Align
 import android.os.Bundle
+import android.print.PrintAttributes.Margins
+import android.provider.CalendarContract.Colors
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -29,7 +35,7 @@ class MainActivity : ComponentActivity() {
         setContent { //recibe una función como parámetros
             PrimerIntentoTheme { //lo mismo que antes
                 // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = Color.Yellow) { //lo mismo
+                Surface(modifier = Modifier.fillMaxSize(), color = Color.Cyan) { //lo mismo
                     Saludo(NOMBRE)
                 }
             }
@@ -37,6 +43,45 @@ class MainActivity : ComponentActivity() {
 
         //mensaje de estado (solo lo puedo mirar el Logcat de la terminal de android)
         Log.d(TAG,"Estoy en onCreate")
+
+        calcular(a=1,b=2,
+            fun(x:Int, y:Int){
+                val suma = x+y
+                Log.d("Calcular", suma.toString())
+            }
+        )
+
+        calcular(4,5,
+            fun(x, y){
+                val resta = x - y
+                Log.d("Calcular", resta.toString())
+            }
+        )
+
+        calcular2(4,1,
+            fun(){
+                Log.d("Calcular","No hago nada")
+            }
+        )
+
+        //Simploficación del anterior
+        calcular2(4, 1) { //No hace falta poner el fun()
+            Log.d("Calcular", "No hago nada")
+        }
+
+
+
+        //Simplificación al máximo ya que utiliza los valores por defecto
+        calcular2{
+            Log.d("Calcular", "No hago nada")
+        }
+    }
+    fun calcular (a: Int = 0, b: Int, operacion: (x:Int, y:Int) -> Unit){
+        operacion(a,b)
+    }
+
+    fun calcular2 (a:Int = 0, b: Int = 0, operacion:() -> Unit){
+        operacion()
     }
 
     override fun onStart() {
@@ -69,32 +114,57 @@ class MainActivity : ComponentActivity() {
         Log.e(TAG, "He llegado al destroy")
     }
 
+    fun cambioString(){
 
+    }
+
+    /*
+    var suma: Int = fun (a: Int,b: Int){
+        a + b
+    }
+    */
 }
 @Composable
 fun Saludo(name: String, modifier: Modifier = Modifier) {
-    Row {
-        Text(
-            text = "Hola mi $name!",
-            modifier = modifier,
-            fontSize = 25.sp,
-            lineHeight = 90.sp,
-            color = Color.Red,
-            textAlign = TextAlign.Center
-        )
-        Text(
-            text = "Hola mi $name!",
-            modifier = modifier,
-            fontSize = 50.sp,
-            lineHeight = 100.sp,
-            color = Color.Red,
-            textAlign = TextAlign.Center
-        )
+    Column {
+        Row {
+            Text(
+                text = "Hola mi $name!",
+                modifier = modifier,
+                fontSize = 25.sp,
+                lineHeight = 90.sp,
+                color = Color.Red,
+                textAlign = TextAlign.Center
+            )
+            Text(
+                text = "Hola mi $name!",
+                modifier = modifier,
+                fontSize = 50.sp,
+                lineHeight = 100.sp,
+                color = Color.Red,
+                textAlign = TextAlign.Center
+            )
+        }
+        Row {
+                Button(
+                    onClick = {Log.d("calcular", "CLick!!!!")},
+                    modifier = Modifier.background(Color.Yellow))
+                {
+                    Text(text = "Click me!",
+                        color = Color.Cyan,
+
+
+                    )
+
+                }
+                Button(
+                    onClick = {Log.d("calcular", "CLick!!!!")})
+                {
+                    Text(text = "Click me!")
+                }
+        }
     }
 }
-
-
-
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
@@ -103,4 +173,26 @@ fun GreetingPreview() {
             Saludo(NOMBRE)
         }
     }
+}
+@Composable
+fun InterfazUsuario(){
+    login()
+    texto_descriptivo("Hola texto")
+    chat()
+}
+
+@Composable
+fun login(){
+    // texto y boton para loguear
+}
+
+@Composable
+fun texto_descriptivo(texto: String){
+    // texto descriptivo
+    Text(text = texto)
+}
+
+@Composable
+fun chat(){
+    // chat
 }
