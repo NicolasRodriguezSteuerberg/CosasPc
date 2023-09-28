@@ -1,27 +1,30 @@
 package com.nsteuerberg.primerintento
 
-import android.graphics.Paint.Align
 import android.os.Bundle
-import android.print.PrintAttributes.Margins
-import android.provider.CalendarContract.Colors
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonColors
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.nsteuerberg.primerintento.ui.theme.PrimerIntentoTheme
 import com.nsteuerberg.primerintento.ui.theme.PrimerIntentoTheme
 
 val NOMBRE = "mii"
@@ -35,7 +38,7 @@ class MainActivity : ComponentActivity() {
         setContent { //recibe una función como parámetros
             PrimerIntentoTheme { //lo mismo que antes
                 // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = Color.Cyan) { //lo mismo
+                Surface(modifier = Modifier.fillMaxSize(), color = Color(255,100,150)) { //lo mismo
                     Saludo(NOMBRE)
                 }
             }
@@ -129,7 +132,7 @@ fun Saludo(name: String, modifier: Modifier = Modifier) {
     Column {
         Row {
             Text(
-                text = "Hola mi $name!",
+                text = "${stringResource(id = R.string.greetings)} $name!",
                 modifier = modifier,
                 fontSize = 25.sp,
                 lineHeight = 90.sp,
@@ -146,28 +149,27 @@ fun Saludo(name: String, modifier: Modifier = Modifier) {
             )
         }
         Row {
-                Button(
-                    onClick = {Log.d("calcular", "CLick!!!!")},
-                    modifier = Modifier.background(Color.Yellow))
-                {
-                    Text(text = "Click me!",
-                        color = Color.Cyan,
+            Button(
+                onClick = {Log.d("calcular", "CLick!!!!")},
+                modifier = Modifier
+                    .height(100.dp)
+                    .width(100.dp),
+                colors = ButtonDefaults.buttonColors(Color.Yellow)
+            )
+            {
+                Text(text = "Click me!", textAlign = TextAlign.Center, color = Color.Cyan)
 
-
-                    )
-
-                }
-                Button(
-                    onClick = {Log.d("calcular", "CLick!!!!")})
-                {
-                    Text(text = "Click me!")
-                }
+            }
+            Image(
+                painter = painterResource(id = R.drawable.dino),
+                contentDescription = "icono de android"
+            )
         }
     }
 }
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun GreetingPreview() { //saludo
     PrimerIntentoTheme {
         Surface(modifier = Modifier.fillMaxSize(), color = Color.Yellow) { //lo mismo
             Saludo(NOMBRE)

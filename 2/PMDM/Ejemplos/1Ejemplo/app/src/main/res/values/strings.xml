@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PrimerIntento</string>
+    <string name="greetings">Hola amigo: </string>
 </resources>
