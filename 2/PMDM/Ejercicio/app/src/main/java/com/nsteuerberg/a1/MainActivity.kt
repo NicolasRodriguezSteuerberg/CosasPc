@@ -9,6 +9,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -55,16 +56,24 @@ fun Artist(){
     Column (modifier = Modifier.border(BorderStroke(0.dp,Color.Red))){
         Row(modifier = Modifier.padding(30.dp, 20.dp)){
             Column {
-                Image(
-                    painter = painterResource(id = R.drawable.dino_icon),
-                    contentDescription = "${stringResource(id = R.string.iconDescription)}",
-                    modifier = Modifier
-                        .width(70.dp)
-                        .height(70.dp)
-                        .clip(CircleShape)
-                        .background(Color(100, 100, 100))
-                        .padding(10.dp)
-                )
+                Box(modifier = Modifier.size(80.dp,70.dp)){
+                    Image(
+                        painter = painterResource(id = R.drawable.dino_icon),
+                        contentDescription = "${stringResource(id = R.string.iconDescription)}",
+                        modifier = Modifier
+                            .width(70.dp)
+                            .height(70.dp)
+                            .clip(CircleShape)
+                            .background(Color(100, 100, 100))
+                            .padding(10.dp)
+                    )
+                    Image(
+                        painter = painterResource(id = R.drawable.verification_icon),
+                        contentDescription = "${stringResource(id = R.string.iconDescription)}",
+                        modifier = Modifier
+                            .padding(55.dp,40.dp,5.dp,10.dp)
+                    )
+                }
             }
             Column(modifier = Modifier.padding(10.dp,0.dp)){
                 Text(
