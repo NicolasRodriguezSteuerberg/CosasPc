@@ -5,7 +5,6 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,9 +12,13 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -24,7 +27,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.nsteuerberg.primerintento.ui.theme.PrimerIntentoTheme
 import com.nsteuerberg.primerintento.ui.theme.PrimerIntentoTheme
 
 val NOMBRE = "mii"
@@ -39,7 +41,7 @@ class MainActivity : ComponentActivity() {
             PrimerIntentoTheme { //lo mismo que antes
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = Color(255,100,150)) { //lo mismo
-                    Saludo(NOMBRE)
+                    InterfazUsuario(NOMBRE)
                 }
             }
         }
@@ -127,8 +129,12 @@ class MainActivity : ComponentActivity() {
     }
     */
 }
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Saludo(name: String, modifier: Modifier = Modifier) {
+fun InterfazUsuario(name: String, modifier: Modifier = Modifier) {
+    var numbers = remember {mutableStateOf(0)}  // esto hace que siempre que cambie el valor de numbers se va a actualizar, remember es un observer
+                            //al ponerle el cero el compilador ya sabe que es un entero
+    var nameOut = remember { mutableStateOf("") }
     Column {
         Row {
             Text(
@@ -149,21 +155,49 @@ fun Saludo(name: String, modifier: Modifier = Modifier) {
             )
         }
         Row {
+            Text(
+                text = "Numeros: ${numbers.value}" // recojo el valor de la variable
+            )
             Button(
-                onClick = {Log.d("calcular", "CLick!!!!")},
+                onClick = {
+                    numbers.value = (0..10).random()
+                    Log.d("Estado", "Click!!!!!!!!!")
+                },
                 modifier = Modifier
                     .height(100.dp)
-                    .width(100.dp),
+                    .width(150.dp),
                 colors = ButtonDefaults.buttonColors(Color.Yellow)
-            )
-            {
-                Text(text = "Click me!", textAlign = TextAlign.Center, color = Color.Cyan)
+            ){
+                Image(
+                    painter = painterResource(id = R.drawable.croissant_icon),
+                    contentDescription = "Icono boton"
+                )
+                Text(
+                    text = "Click me!", textAlign = TextAlign.Center,
+                    color = Color.Cyan
+                )
 
-            }
+             }
             Image(
                 painter = painterResource(id = R.drawable.dino),
                 contentDescription = "icono de android"
             )
+        }
+
+        Row{
+            OutlinedTextField(
+                value = nameOut.value,
+                onValueChange = {
+                    nameOut.value = it
+                },
+                label = { Text(
+                    text = "Introduzca un nombre",
+                    color = Color.Red
+                )}
+            )
+        }
+        Row{
+            Text(text = "${nameOut.value}")
         }
     }
 }
@@ -172,7 +206,7 @@ fun Saludo(name: String, modifier: Modifier = Modifier) {
 fun GreetingPreview() { //saludo
     PrimerIntentoTheme {
         Surface(modifier = Modifier.fillMaxSize(), color = Color.Yellow) { //lo mismo
-            Saludo(NOMBRE)
+            InterfazUsuario(NOMBRE)
         }
     }
 }
