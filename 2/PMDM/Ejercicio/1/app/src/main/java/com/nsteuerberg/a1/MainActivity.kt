@@ -33,6 +33,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.nsteuerberg.a1.ui.theme._1Theme
+import com.nsteuerberg.ejercicio1.R
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,7 +51,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
 @Composable
 fun Artist(){
     Column (modifier = Modifier.border(BorderStroke(0.dp,Color.Red))){
