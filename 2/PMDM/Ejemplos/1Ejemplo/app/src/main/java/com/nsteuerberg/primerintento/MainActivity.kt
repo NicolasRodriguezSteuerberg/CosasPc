@@ -29,53 +29,48 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.nsteuerberg.primerintento.ui.theme.PrimerIntentoTheme
 
+var numbers = mutableStateOf(0)  // Cuando no está en la interfaz grafica se usa sin el remember y sin las llaves
+
 val NOMBRE = "mii"
+
+val TAG : String = "Estado" //val=value -> es una constante :)
 class MainActivity : ComponentActivity() {
-    val TAG : String = "Estado" //val=value -> es una constante :)
+
     //var numero : Int = 3 -> es lo mismo que val, excepto que no es constante -> las variables empiezan todas en mayúsculas
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         //entorno gráfico -> necesario siempre en el onCreate
         setContent { //recibe una función como parámetros
             PrimerIntentoTheme { //lo mismo que antes
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = Color(255,100,150)) { //lo mismo
-                    InterfazUsuario(NOMBRE)
+                    InterfazUsuario(NOMBRE) //si lo creas fuera de la clase no tienes que llamarla a traves de objeto
                 }
             }
         }
-
         //mensaje de estado (solo lo puedo mirar el Logcat de la terminal de android)
         Log.d(TAG,"Estoy en onCreate")
-
         calcular(a=1,b=2,
             fun(x:Int, y:Int){
                 val suma = x+y
                 Log.d("Calcular", suma.toString())
             }
         )
-
         calcular(4,5,
             fun(x, y){
                 val resta = x - y
                 Log.d("Calcular", resta.toString())
             }
         )
-
         calcular2(4,1,
             fun(){
                 Log.d("Calcular","No hago nada")
             }
         )
-
         //Simploficación del anterior
         calcular2(4, 1) { //No hace falta poner el fun()
             Log.d("Calcular", "No hago nada")
         }
-
-
-
         //Simplificación al máximo ya que utiliza los valores por defecto
         calcular2{
             Log.d("Calcular", "No hago nada")
@@ -84,151 +79,39 @@ class MainActivity : ComponentActivity() {
     fun calcular (a: Int = 0, b: Int, operacion: (x:Int, y:Int) -> Unit){
         operacion(a,b)
     }
-
     fun calcular2 (a:Int = 0, b: Int = 0, operacion:() -> Unit){
         operacion()
     }
-
     override fun onStart() {
         super.onStart()
         Log.d(TAG,"He llegado al start")
     }
-
     override fun onResume() {
         super.onResume()
         Log.d(TAG, "He llegado al resume")
     }
-
     override fun onPause() {
         super.onPause()
         Log.d(TAG,"He llegado al pause")
     }
-
     override fun onStop() {
         super.onStop()
         Log.d(TAG, "He llegado al stop")
     }
-
     override fun onRestart() {
         super.onRestart()
         Log.d(TAG, "He llegado al restart")
     }
-
     override fun onDestroy() {
         super.onDestroy()
         Log.e(TAG, "He llegado al destroy")
     }
-
-    fun cambioString(){
-
-    }
-
     /*
     var suma: Int = fun (a: Int,b: Int){
         a + b
     }
     */
 }
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun InterfazUsuario(name: String, modifier: Modifier = Modifier) {
-    var numbers = remember {mutableStateOf(0)}  // esto hace que siempre que cambie el valor de numbers se va a actualizar, remember es un observer
-                            //al ponerle el cero el compilador ya sabe que es un entero
-    var nameOut = remember { mutableStateOf("") }
-    Column {
-        Row {
-            Text(
-                text = "${stringResource(id = R.string.greetings)} $name!",
-                modifier = modifier,
-                fontSize = 25.sp,
-                lineHeight = 90.sp,
-                color = Color.Red,
-                textAlign = TextAlign.Center
-            )
-            Text(
-                text = "Hola mi $name!",
-                modifier = modifier,
-                fontSize = 50.sp,
-                lineHeight = 100.sp,
-                color = Color.Red,
-                textAlign = TextAlign.Center
-            )
-        }
-        Row {
-            Text(
-                text = "Numeros: ${numbers.value}" // recojo el valor de la variable
-            )
-            Button(
-                onClick = {
-                    numbers.value = (0..10).random()
-                    Log.d("Estado", "Click!!!!!!!!!")
-                },
-                modifier = Modifier
-                    .height(100.dp)
-                    .width(150.dp),
-                colors = ButtonDefaults.buttonColors(Color.Yellow)
-            ){
-                Image(
-                    painter = painterResource(id = R.drawable.croissant_icon),
-                    contentDescription = "Icono boton"
-                )
-                Text(
-                    text = "Click me!", textAlign = TextAlign.Center,
-                    color = Color.Cyan
-                )
-
-             }
-            Image(
-                painter = painterResource(id = R.drawable.dino),
-                contentDescription = "icono de android"
-            )
-        }
-
-        Row{
-            OutlinedTextField(
-                value = nameOut.value,
-                onValueChange = {
-                    nameOut.value = it
-                },
-                label = { Text(
-                    text = "Introduzca un nombre",
-                    color = Color.Red
-                )}
-            )
-        }
-        Row{
-            Text(text = "${nameOut.value}")
-        }
-    }
-}
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() { //saludo
-    PrimerIntentoTheme {
-        Surface(modifier = Modifier.fillMaxSize(), color = Color.Yellow) { //lo mismo
-            InterfazUsuario(NOMBRE)
-        }
-    }
-}
-@Composable
-fun InterfazUsuario(){
-    login()
-    texto_descriptivo("Hola texto")
-    chat()
-}
-
-@Composable
-fun login(){
-    // texto y boton para loguear
-}
-
-@Composable
-fun texto_descriptivo(texto: String){
-    // texto descriptivo
-    Text(text = texto)
-}
-
-@Composable
-fun chat(){
-    // chat
+fun random(){
+    numbers.value = (0..10).random()
 }
