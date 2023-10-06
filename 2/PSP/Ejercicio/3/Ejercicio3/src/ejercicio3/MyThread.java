@@ -35,8 +35,8 @@ public class MyThread extends Thread{
             
         }else{
             String nombre = String.valueOf(Integer.parseInt(getName())+1);
-            MyThread obx = new MyThread(nombre, contador);
-            obx.start();
+            MyThread oThread = new MyThread(nombre, contador);
+            oThread.start();
             
             for (int i = 0; i < 10; i++) {
                 try {
@@ -47,7 +47,7 @@ public class MyThread extends Thread{
                 }
             }
             try {
-                obx.join();
+                oThread.join();
                 System.out.println("Terminó el hilo: " + getName());
             } catch (InterruptedException ex) {
                 System.out.println("Error join");
