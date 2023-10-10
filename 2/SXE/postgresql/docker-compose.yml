@@ -1,0 +1,16 @@
+services:
+  # container postgres
+  postgreSQL: # server name
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: postgres # necesitas si o si
+      POSTGRES_USER: postgres # si no la pones es lo mismo es el usuario por defecto de postgres "postgres"
+      POSTGRES_DB: nico # creado el nombre de la base de datos, si no coge el nombre de usuario
+    container_name: postgres_nico
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
