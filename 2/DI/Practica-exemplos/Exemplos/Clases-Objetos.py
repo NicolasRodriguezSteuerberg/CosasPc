@@ -1,5 +1,10 @@
 import math
 
+class PrimeiroCadranteError(Exception):
+    def __init__(self, coordenada):
+        self.valor = coordenada
+    def __str__(self):
+        return "Error de coordenadas, " + self.valor + ": No es un punto del primer cuadrante"
 
 class Punto:
     """
@@ -11,13 +16,39 @@ class Punto:
         # init é un método para inicializar
         # self sirve para que crear y declar las variables que están en el parentesis
         # Se declara e se inicializa á vez
-        self.x = x
-        self.y = y
+        self.setX(x)
+        self.setY(y)
 
-p1 = Punto(1.0,2.3)
-p1.x = 15.66
-print("Coordenadas do punto: " + str(p1.x) + ", " + str(p1.y))
-print(type(p1))
+    def getY(self):
+        return self.__y
+
+    def getX(self):
+        return self.__x
+    def setX(self,x):
+        if x >= 0:
+            self.__x = x
+        else:
+            raise PrimeiroCadranteError("X")
+
+    def setY(self, y):
+        if y >= 0:
+            self.__y = y
+        else:
+            raise PrimeiroCadranteError("Y")
+
+    def __aCadea(self):
+        return "(x,y) = " + str(self.__x) + "," + str(self.__y)
+
+    def aCadea2(self):
+        return self.__aCadea()
+
+    x = property(getX, setX)
+    y = property(getY, setY)
+
+#p1 = Punto(1.0,2.3)
+#p1.x = 15.66
+#print("Coordenadas do punto: " + str(p1.getX) + ", " + str(p1.getY))
+#print(type(p1))
 
 class Circulo(Punto): # (extiende de Punto), hereda sus atributos
     """
@@ -26,6 +57,8 @@ class Circulo(Punto): # (extiende de Punto), hereda sus atributos
     def __init__(self, x, y, r = 1):
         Punto.__init__(self, x, y)
         self.__r = r # self.__r --> de esta manera pones privado la variable y asi una vez creado el objeto no lo puedes modificar
+        self.x = x
+        self.y = y
 
     def superficie(self):
         return math.pi * (self.__r**2)
@@ -83,3 +116,22 @@ print(cil1 == cil2)
 print(cil1.__gt__(cil2))
 print(cil1.__eq__(cil2))
 print(cil1.__doc__)
+
+
+try:
+    #raise (Exception("Este é otro erro indeterminado"))
+    p1 = Punto(1, 3)
+    p2 = Punto (1, -3)
+    p1.x = 3
+    print (p1.x, p1.y)
+    print(p1.aCadea2())
+    print(p1.getY())
+    print(p1._Punto__x)
+except PrimeiroCadranteError as error:
+    print(error)
+except Exception as error:
+    print(error)
+else:
+    print("Só se executa cando non hai erros")
+finally:
+    print("Executase o finally")
