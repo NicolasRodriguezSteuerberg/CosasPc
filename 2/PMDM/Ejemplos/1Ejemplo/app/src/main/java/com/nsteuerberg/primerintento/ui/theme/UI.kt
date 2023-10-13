@@ -1,10 +1,11 @@
-package com.nsteuerberg.primerintento
+@file:OptIn(ExperimentalMaterial3Api::class)
+
+package com.nsteuerberg.primerintento.ui.theme
 
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -12,13 +13,10 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -27,23 +25,27 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.nsteuerberg.primerintento.ui.theme.PrimerIntentoTheme
-
-class View {
-}
+import com.nsteuerberg.primerintento.R
 
 @OptIn(ExperimentalMaterial3Api::class)
+open class UI {
+}
+
 @Composable
-fun InterfazUsuario(name: String, modifier: Modifier = Modifier) {
+ fun InterfazUsuario(miViewModel: MyViewModel, name: String, modifier: Modifier = Modifier) {
     //var numbers = remember { mutableStateOf(0) }  // esto hace que siempre que cambie el valor de numbers se va a actualizar, remember es como un repintar
     //al ponerle el cero el compilador ya sabe que es un entero
     //var numbers by remember { mutableStateOf(0) } //lo mismo que lo de arriba
 
     var nameOut = remember { mutableStateOf("") }
+
+    var greetings = stringResource(R.string.greetings)
+
+
     Column {
         Row {
             Text(
-                text = "${stringResource(id = R.string.greetings)} $name!",
+                text = "$greetings, $name!",
                 modifier = modifier,
                 fontSize = 25.sp,
                 lineHeight = 90.sp,
@@ -61,14 +63,14 @@ fun InterfazUsuario(name: String, modifier: Modifier = Modifier) {
         }
         Row {
             Text(
-                text = "Numeros: ${numbers.value}" // recojo el valor de la variable
+                text = "Numeros: ${miViewModel.getNumero()}" // recojo el valor de la variable
             )
         }
         Row (modifier = Modifier.padding(0.dp,10.dp)){
             Button(
                 onClick = {
-                    random()
-                    Log.d(TAG, "Click!!!!!!!!!")
+                    miViewModel.crearRandom()
+                    Log.d("Funciones", "Click!!!!!!!!!")
                 },
                 modifier = Modifier
                     .height(100.dp)
@@ -77,7 +79,7 @@ fun InterfazUsuario(name: String, modifier: Modifier = Modifier) {
                 colors = ButtonDefaults.buttonColors(Color.Yellow)
             ){
                 Image(
-                    painter = painterResource(id = R.drawable.chaplin),
+                    painter = painterResource(id = R.drawable.dino),
                     contentDescription = "Icono boton"
                 )
                 Text(
@@ -87,10 +89,12 @@ fun InterfazUsuario(name: String, modifier: Modifier = Modifier) {
             }
         }
         Row{
+            // campo de texto para rellenar
             OutlinedTextField(
-                value = nameOut.value,
+                value = miViewModel.getNombre(),
                 onValueChange = {
-                    nameOut.value = it
+                    // preguntar a gabriel por que se hace esto, ¿Esto no es privado?
+                    miViewModel._nameC.value = it
                 },
                 label = { Text(
                     text = "Introduzca un nombre",
@@ -100,7 +104,7 @@ fun InterfazUsuario(name: String, modifier: Modifier = Modifier) {
             )
         }
         Row(modifier = Modifier.padding(15.dp,0.dp)){
-            if(nameOut.value.length>3){
+            if(miViewModel.getNombre().length>3){
                 Text(
                     text = "Hola: ${nameOut.value}!"
                 )
@@ -110,10 +114,28 @@ fun InterfazUsuario(name: String, modifier: Modifier = Modifier) {
 }
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() { //saludo
+fun GreetingPreview() {
     PrimerIntentoTheme {
-        Surface(modifier = Modifier.fillMaxSize(), color = Color.Yellow) { //lo mismo
-            InterfazUsuario(NOMBRE)
-        }
+        InterfazUsuario(miViewModel = MyViewModel(), "prueba")
     }
+}
+@Composable
+fun chat(){
+    TODO("Not yet implemented")
+}
+@Composable
+fun login(){
+    //texto y boton para loguear
+    texto_descriptivo(texto = "Fallo de login")
+}
+@Composable
+fun texto_descriptivo(texto:String){
+    //texto descriptivo
+    Text(text = texto)
+}
+@Composable
+fun interfazUsuario(){
+    login()
+    texto_descriptivo(texto = "Hola texto")
+    chat()
 }

@@ -27,6 +27,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.nsteuerberg.primerintento.ui.theme.InterfazUsuario
+import com.nsteuerberg.primerintento.ui.theme.MyViewModel
 import com.nsteuerberg.primerintento.ui.theme.PrimerIntentoTheme
 
 var numbers = mutableStateOf(0)  // Cuando no está en la interfaz grafica se usa sin el remember y sin las llaves
@@ -39,12 +41,15 @@ class MainActivity : ComponentActivity() {
     //var numero : Int = 3 -> es lo mismo que val, excepto que no es constante -> las variables empiezan todas en mayúsculas
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // creo el objeto miviewmodel
+        val miViewModel: MyViewModel = MyViewModel()
+
         //entorno gráfico -> necesario siempre en el onCreate
         setContent { //recibe una función como parámetros
             PrimerIntentoTheme { //lo mismo que antes
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = Color(255,100,150)) { //lo mismo
-                    InterfazUsuario(NOMBRE) //si lo creas fuera de la clase no tienes que llamarla a traves de objeto
+                    InterfazUsuario(miViewModel,NOMBRE) //si lo creas fuera de la clase no tienes que llamarla a traves de objeto
                 }
             }
         }
