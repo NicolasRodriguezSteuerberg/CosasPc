@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33490f83-6a96-45f0-8606-5f448f27055f" name="Changes" comment="" />
+    <list default="true" id="33490f83-6a96-45f0-8606-5f448f27055f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../compose/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../compose/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../postgresql/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../postgresql/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/.idea/workspace.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,9 +20,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2WqIAowCR89JEIgMEQ6DfiEr3xx" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -30,6 +34,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/CosasPc/2/SXE/MinecraftServerWordpress",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -47,6 +52,7 @@
       <option name="presentableId" value="Default" />
       <updated>1697453542946</updated>
       <workItem from="1697453543961" duration="1099000" />
+      <workItem from="1697470696454" duration="90000" />
     </task>
     <servers />
   </component>

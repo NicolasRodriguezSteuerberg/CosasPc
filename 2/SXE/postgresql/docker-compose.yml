@@ -1,4 +1,5 @@
-services:
+services: # siempre empezamos por esto
+  
   # container postgres
   postgreSQL: # server name
     image: postgres:latest
@@ -10,7 +11,8 @@ services:
     ports:
       - 5432:5432
 
+  # gestor de bases de datos
   adminer:
     image: adminer
     ports:
-      - 8080:8080
+      - 8080:8080 # se usa este puerto para entrar

@@ -1,12 +1,13 @@
-services:
-  # container apache
+services: # siempre empezamos por aqui
+  # server name, apache
   apache:
-    image: httpd:2.4
+    image: httpd:2.4 # nombre de la imagen
     ports:
       - "8000:80"
     volumes:
+      # 1- directorio nuevo que queremos usar : Directorio por defecto
       - ./htdocs:/usr/local/apache2/htdocs
-    container_name: dam_web1
+    container_name: dam_web1 # container name
 
   apache2:
     image: httpd:2.4
