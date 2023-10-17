@@ -1,16 +1,19 @@
 services:
   db:
-    # We use a mariadb image which supports both amd64 & arm64 architecture
+    # imagen del contenedor -> mariadb
     image: mariadb:10.6.4-focal
-    # If you really want to use MySQL, uncomment the following line
-    #image: mysql:8.0.27
+    # comando que nos permite usar el plugin por defecto de mysql
     command: '--default-authentication-plugin=mysql_native_password'
     volumes:
       - db_data:/var/lib/mysql
     environment:
+      # la contraseña del superusuario
       - MYSQL_ROOT_PASSWORD=somewordpress
+      # nombre de la base de datos
       - MYSQL_DATABASE=wordpress
+      # nombre del usuario nuevo/que vamos a usar
       - MYSQL_USER=wordpress
+      # contraseña del usuario
       - MYSQL_PASSWORD=wordpress
     # para que estos contenedores puedan acceder a estos puertos
     expose:
@@ -23,7 +26,9 @@ services:
     ports:
       - 80:80
     environment:
-      - WORDPRESS_DB_HOST=db # identificador del contenedor de arriba, si no tuvieramos to-do en el mismo compose pondriamos la ip el de arriba :)
+      # identifica el contenedor de arriba, si no tuvieramos to-do en el mismo compose
+      # tendriamos que poner la ip del de servicio db
+      - WORDPRESS_DB_HOST=db
       - WORDPRESS_DB_USER=wordpress
       - WORDPRESS_DB_PASSWORD=wordpress
       - WORDPRESS_DB_NAME=wordpress
