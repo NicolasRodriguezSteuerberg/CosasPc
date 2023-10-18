@@ -37,8 +37,6 @@ open class UI {
     //al ponerle el cero el compilador ya sabe que es un entero
     //var numbers by remember { mutableStateOf(0) } //lo mismo que lo de arriba
 
-    var nameOut = remember { mutableStateOf("") }
-
     var greetings = stringResource(R.string.greetings)
 
 
@@ -63,13 +61,14 @@ open class UI {
         }
         Row {
             Text(
-                text = "Numeros: ${miViewModel.getNumero()}" // recojo el valor de la variable
+                text = "Lista: ${miViewModel.getLista()}"
             )
         }
         Row (modifier = Modifier.padding(0.dp,10.dp)){
             Button(
                 onClick = {
-                    miViewModel.crearRandom()
+                    //miViewModel.crearRandom()
+                    miViewModel.crearListaRandom()
                     Log.d("Funciones", "Click!!!!!!!!!")
                 },
                 modifier = Modifier
@@ -106,7 +105,7 @@ open class UI {
         Row(modifier = Modifier.padding(15.dp,0.dp)){
             if(miViewModel.getNombre().length>3){
                 Text(
-                    text = "Hola: ${nameOut.value}!"
+                    text = "Hola: ${miViewModel.getNombre()}!"
                 )
             }
         }

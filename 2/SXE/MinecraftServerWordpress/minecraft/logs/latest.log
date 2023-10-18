@@ -1,0 +1,73 @@
+[11:14:14] [ServerMain/INFO]: Environment: Environment[accountsHost=https://api.mojang.com, sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[11:14:15] [ServerMain/INFO]: Loaded 7 recipes
+[11:14:15] [ServerMain/INFO]: Loaded 1275 advancements
+[11:14:15] [Server thread/INFO]: Starting minecraft server version 1.20.2
+[11:14:15] [Server thread/INFO]: Loading properties
+[11:14:15] [Server thread/INFO]: Default game type: SURVIVAL
+[11:14:15] [Server thread/INFO]: Generating keypair
+[11:14:15] [Server thread/INFO]: Starting Minecraft server on *:25565
+[11:14:15] [Server thread/INFO]: Using epoll channel type
+[11:14:15] [Server thread/INFO]: Preparing level "world"
+[11:14:15] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[11:14:17] [Worker-Main-6/INFO]: Preparing spawn area: 0%
+[11:14:17] [Worker-Main-9/INFO]: Preparing spawn area: 0%
+[11:14:17] [Worker-Main-6/INFO]: Preparing spawn area: 0%
+[11:14:17] [Worker-Main-4/INFO]: Preparing spawn area: 0%
+[11:14:17] [Worker-Main-9/INFO]: Preparing spawn area: 0%
+[11:14:18] [Worker-Main-6/INFO]: Preparing spawn area: 72%
+[11:14:18] [Server thread/INFO]: Time elapsed: 2670 ms
+[11:14:18] [Server thread/INFO]: Done (2.745s)! For help, type "help"
+[11:14:18] [Server thread/INFO]: Starting remote control listener
+[11:14:18] [Server thread/INFO]: Thread RCON Listener started
+[11:14:18] [Server thread/INFO]: RCON running on 0.0.0.0:25575
+[11:14:19] [User Authenticator #1/INFO]: UUID of player NSteuerberg is 9a57d483-7e1e-4acb-a249-a06c611b28c2
+[11:14:19] [Server thread/INFO]: NSteuerberg[/192.168.48.1:59002] logged in with entity id 2 at (3.8352606695445313, -377.93051482449187, 2.030219221973634)
+[11:14:19] [Server thread/INFO]: NSteuerberg joined the game
+[11:16:33] [User Authenticator #2/INFO]: UUID of player Pokegonzaloxd is 306bdd65-65d1-44a4-a488-4671a13031d1
+[11:16:33] [Server thread/INFO]: Pokegonzaloxd[/10.0.9.3:60312] logged in with entity id 4 at (-0.5, 61.0, -1.5)
+[11:16:33] [Server thread/INFO]: Pokegonzaloxd joined the game
+[11:16:43] [Server thread/INFO]: Pokegonzaloxd fell out of the world
+[11:16:44] [Server thread/WARN]: Pokegonzaloxd moved too quickly! 1.440588471883022,442.72790482800355,0.14801027403149308
+[11:16:44] [Server thread/WARN]: Pokegonzaloxd moved too quickly! 1.440588471883022,442.72790482800355,0.14801027403149308
+[11:16:56] [Server thread/INFO]: Pokegonzaloxd fell out of the world
+[11:16:57] [Server thread/WARN]: Pokegonzaloxd moved too quickly! -6.820638800120262,438.53439468933624,-4.972883127975538
+[11:16:57] [Server thread/WARN]: Pokegonzaloxd moved too quickly! -6.820638800120262,438.53439468933624,-4.972883127975538
+[11:17:42] [Server thread/INFO]: Pokegonzaloxd fell out of the world
+[11:17:55] [Server thread/INFO]: Pokegonzaloxd fell out of the world
+[11:18:59] [Server thread/INFO]: NSteuerberg fell out of the world
+[11:19:10] [Server thread/INFO]: Pokegonzaloxd fell out of the world
+[11:19:11] [Server thread/WARN]: Pokegonzaloxd moved too quickly! -1.5897866476816178,412.2595732657116,3.97409292086996
+[11:19:11] [Server thread/WARN]: Pokegonzaloxd moved too quickly! -1.5897866476816178,412.2595732657116,3.97409292086996
+[11:19:23] [Server thread/INFO]: NSteuerberg fell out of the world
+[11:19:23] [Server thread/INFO]: Pokegonzaloxd fell out of the world
+[11:20:11] [Server thread/WARN]: NSteuerberg moved too quickly! 1.7496927585671056,439.0305148244919,-0.5190207610213777
+[11:20:21] [Server thread/INFO]: Pokegonzaloxd fell out of the world
+[11:20:45] [Server thread/WARN]: Pokegonzaloxd moved too quickly! 3.698941587739734,398.5410408375912,2.6532427305037687
+[11:21:04] [Server thread/INFO]: NSteuerberg fell out of the world
+[11:21:25] [Server thread/WARN]: NSteuerberg moved too quickly! -0.19999998807907104,435.9353638858012,4.894603391845112
+[11:21:43] [Server thread/INFO]: Pokegonzaloxd fell out of the world
+[11:21:44] [Server thread/WARN]: Pokegonzaloxd moved too quickly! 1.7818212587218831,441.70606930691764,0.433871823304056
+[11:21:51] [Server thread/INFO]: NSteuerberg lost connection: Disconnected
+[11:21:51] [Server thread/INFO]: NSteuerberg left the game
+[11:23:25] [Server thread/INFO]: Pokegonzaloxd lost connection: Disconnected
+[11:23:25] [Server thread/INFO]: Pokegonzaloxd left the game
+[11:24:07] [User Authenticator #3/INFO]: UUID of player NSteuerberg is 9a57d483-7e1e-4acb-a249-a06c611b28c2
+[11:24:07] [Server thread/INFO]: NSteuerberg[/192.168.48.1:35216] logged in with entity id 68 at (4.087520202477208, -123.81746309876779, 2.7776544884387833)
+[11:24:07] [Server thread/INFO]: NSteuerberg joined the game
+[11:24:10] [Server thread/INFO]: NSteuerberg fell out of the world
+[11:24:17] [Server thread/WARN]: NSteuerberg moved too quickly! -3.587520202477208,438.5032384140549,-2.2776544884387833
+[11:29:40] [Server thread/INFO]: NSteuerberg lost connection: Disconnected
+[11:29:40] [Server thread/INFO]: NSteuerberg left the game
+[11:29:54] [RCON Listener #1/INFO]: Thread RCON Client /127.0.0.1 started
+[11:29:54] [RCON Client /127.0.0.1 #2/INFO]: Thread RCON Client /127.0.0.1 shutting down
+[11:29:54] [Server thread/INFO]: Stopping server
+[11:29:54] [Server thread/INFO]: Saving players
+[11:29:54] [Server thread/INFO]: Saving worlds
+[11:29:54] [Server thread/INFO]: Saving chunks for level 'ServerLevel[§9OneBlock §eReborn]'/minecraft:overworld
+[11:29:54] [Server thread/INFO]: Saving chunks for level 'ServerLevel[§9OneBlock §eReborn]'/minecraft:the_end
+[11:29:54] [Server thread/INFO]: Saving chunks for level 'ServerLevel[§9OneBlock §eReborn]'/minecraft:the_nether
+[11:29:54] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[11:29:54] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[11:29:54] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[11:29:54] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[11:29:54] [Server thread/INFO]: Thread RCON Listener stopped
