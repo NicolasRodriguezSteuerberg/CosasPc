@@ -11,5 +11,3 @@ notas:
  getColumnCount()-- devolta o numero de columnas da taboa
  getColumnName(int)-- devolta o nome da columna cuxa posicion se pase
  getColumnTypeName(int)-- devolta o tipo de columna cuxa posicion se pase
- 
- 

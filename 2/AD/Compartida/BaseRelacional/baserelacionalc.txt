@@ -1,3 +1,4 @@
+
 baserelacionalC 
 
 Neste exercicio imos traballar as insercions , modificacions consulta   mediante sentenzas preparadas.
