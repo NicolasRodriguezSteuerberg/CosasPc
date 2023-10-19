@@ -7,7 +7,7 @@ class VentanaPrincipal (Gtk.Window):
         super().__init__()
         self.set_title("Primera ventan con Gtk")
 
-        caixa = Gtk.Box(orientation = Gtk.Orientation.VERTICAL, spacing = 10)
+        caixa = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 10)
 
         imagen = Gtk.Image()
         imagen.set_from_file("dino.jpg")

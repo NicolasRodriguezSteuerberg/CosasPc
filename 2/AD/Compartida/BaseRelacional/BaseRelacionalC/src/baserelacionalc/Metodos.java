@@ -41,7 +41,7 @@ public class Metodos {
         
         int verificacion = ps.executeUpdate();
         if(verificacion == 0){
-            System.out.println("Error: Alumno no encontrado o modificacion no permitida");
+            System.out.println("Error: Produto no encontrado o modificacion no permitida");
         } else{
             System.out.println("Modificacion exitosa");
         }
