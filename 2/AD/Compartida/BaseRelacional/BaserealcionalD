@@ -1,4 +1,3 @@
-
 baserelacionalD
  fai un  resulset sobre unha  taboa calquera ,para   obter e amosar os  nomes ,tipos e tamaños das columnas de dito  resulset utilizando  a clase ResulSetMetaData
 
