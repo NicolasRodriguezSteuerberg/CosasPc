@@ -30,3 +30,23 @@
 5. Ahora que ya lo tenemos encendido solo tendremos que acceder a el a traves de nuestro navegador poniendo: `localhost` o en vez de poner localhost nuestra ip y se verá algo así:
    ![imgWordpress](imagen/imgWordpress.png)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Entrar en postgres psql -h localhost -U postgres
