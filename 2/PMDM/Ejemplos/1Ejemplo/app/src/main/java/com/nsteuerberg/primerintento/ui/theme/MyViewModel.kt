@@ -23,7 +23,6 @@ class MyViewModel(): ViewModel() {
     fun getNombre(): String{
         return _nameC.value
     }
-
     fun crearRandom(){
         // que nos cambie el valor de numbers aleatoriamente y lo sacamos por el log
         _numbers.value = ((0..10).random())

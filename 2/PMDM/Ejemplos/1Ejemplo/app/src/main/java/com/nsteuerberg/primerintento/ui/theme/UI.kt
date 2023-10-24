@@ -69,6 +69,7 @@ fun fButton(miViewModel: MyViewModel){
     Row {
         Text(
             text = "Lista: ${miViewModel.getLista()}"
+            //text = "Numeros: ${miViewModel.getNumero()}"
         )
     }
     Row (modifier = Modifier.padding(0.dp,10.dp)) {
@@ -105,10 +106,11 @@ fun fTextoRellenar(miViewModel: MyViewModel){
                 // preguntar a gabriel por que se hace esto, ¿Esto no es privado?
                 miViewModel._nameC.value = it //variable string
             },
-            label = { Text(
-                text = "Introduzca un nombre",
-                color = Color.Red
-            )
+            label = {
+                Text(
+                    text = "Introduzca un nombre",
+                    color = Color.Red
+                )
             }
         )
     }
