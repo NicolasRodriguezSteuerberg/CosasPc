@@ -10,7 +10,7 @@ public class Ejercicio {
         // TODO code application logic here
         Metodos obx = new Metodos();
         String ruta = "/media/sf_Compartida/xml/proba0/mixml.xml";
-        obx.escribirXML(ruta);
+        obx.leerXML(ruta);
     }
     
 }

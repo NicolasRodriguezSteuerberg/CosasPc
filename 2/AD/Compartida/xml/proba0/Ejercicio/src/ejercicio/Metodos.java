@@ -24,16 +24,16 @@ public class Metodos {
             numero = obxReader.getEventType();
             switch(numero){
                 case XMLStreamConstants.START_ELEMENT:
-                    
+                    System.out.println("<" + obxReader.getLocalName() + ">");
                     break;
                 case XMLStreamConstants.END_ELEMENT:
-                    
+                    System.out.println("</" + obxReader.getLocalName() + ">");
                     break;
                 case XMLStreamConstants.ATTRIBUTE:
                     
                     break;
                 case XMLStreamConstants.CHARACTERS:
-                    
+                    System.out.println("\t" + obxReader.getText());
                     break;
                 case XMLStreamConstants.COMMENT:
                     
