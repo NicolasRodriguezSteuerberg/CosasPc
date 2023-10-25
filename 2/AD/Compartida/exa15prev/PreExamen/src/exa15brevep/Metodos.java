@@ -28,6 +28,7 @@ public class Metodos {
     }
     
     public void lecturaSerializada(String ruta) throws FileNotFoundException, IOException, ClassNotFoundException, SQLException{
+        Connection con = conexion();
         ObjectInputStream lec = null;
         Platos obx = null;
 
@@ -37,7 +38,7 @@ public class Metodos {
             obx = (Platos) lec.readObject();
             if(obx != null){
                 System.out.println(obx.getCodigop() + "\n" + obx.getNomep());
-                lecturaDatos(obx.getCodigop());
+                lecturaDatos(con,obx.getCodigop());
             }
             else{
                 System.out.println("Objeto nulo");
@@ -47,8 +48,7 @@ public class Metodos {
         lec.close();
     }
     
-    public void lecturaDatos(String codp) throws SQLException{
-        Connection con = conexion();
+    public void lecturaDatos(Connection con,String codp) throws SQLException{
         int peso;
         int graxa;
         String codc;
@@ -70,10 +70,10 @@ public class Metodos {
         
             ResultSet rs2 = ps.executeQuery();
     
-            while(rs2.next()){
-                graxa = rs2.getInt("graxa");
-                graxa_total+=(peso/100*graxa);
-            }
+            rs2.next();
+            graxa = rs2.getInt("graxa");
+            graxa_total+=(peso/100*graxa);
+            
         }
         System.out.println("graxatotal: " + graxa_total);
         
