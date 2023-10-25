@@ -103,8 +103,8 @@ fun fTextoRellenar(miViewModel: MyViewModel){
         OutlinedTextField(
             value = miViewModel.getNombre(),
             onValueChange = {
-                // preguntar a gabriel por que se hace esto, ¿Esto no es privado?
-                miViewModel._nameC.value = it //variable string
+                // nuevoNombre coge los parametros del textfield y llama a actualizar nombre
+                nuevoNombre -> miViewModel.actualizarNombre(nuevoNombre)
             },
             label = {
                 Text(
