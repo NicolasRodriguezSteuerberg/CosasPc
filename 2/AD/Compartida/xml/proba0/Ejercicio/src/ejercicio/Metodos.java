@@ -18,34 +18,21 @@ public class Metodos {
         XMLStreamReader obxReader = obxFactory.createXMLStreamReader(obxFile);
         
         int numero;
+        String element = "";
+        
         
         while(obxReader.hasNext()){
             obxReader.next();
             numero = obxReader.getEventType();
-            switch(numero){
-                case XMLStreamConstants.START_ELEMENT:
-                    System.out.println("<" + obxReader.getLocalName() + ">");
-                    break;
-                case XMLStreamConstants.END_ELEMENT:
-                    System.out.println("</" + obxReader.getLocalName() + ">");
-                    break;
-                case XMLStreamConstants.ATTRIBUTE:
-                    
-                    break;
-                case XMLStreamConstants.CHARACTERS:
-                    System.out.println("\t" + obxReader.getText());
-                    break;
-                case XMLStreamConstants.COMMENT:
-                    
-                    break;
-                case XMLStreamConstants.SPACE:
-                    
-                    break;
-                case XMLStreamConstants.DTD:
-                    
-                    break;
+            
+            if(numero == XMLStreamConstants.START_ELEMENT){
+                element = obxReader.getLocalName();
+                if (element.equals("autor")){
+                    System.out.println(obxReader.getAttributeValue(0));
+                }else if(element.equals("nome") || element.equals("titulo")){
+                    System.out.println("\t" + obxReader.getElementText());
+                }
             }
-                    
             
         }
         
