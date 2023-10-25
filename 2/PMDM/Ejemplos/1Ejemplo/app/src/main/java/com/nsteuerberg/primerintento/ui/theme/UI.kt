@@ -35,13 +35,103 @@ import com.nsteuerberg.primerintento.R
 
     Column {
         // están separado por filas
-        fInicio(greetings = greetings, name = name, modifier = modifier)
+        //fInicio(greetings = greetings, name = name, modifier = modifier)
 
-        fButton(miViewModel = miViewModel)
+        //fButton(miViewModel = miViewModel)
 
-        fTextoRellenar(miViewModel = miViewModel)
+        //fTextoRellenar(miViewModel = miViewModel)
+        ronda(miViewModel)
+        botonesSimon()
+        startSumaRonda(miViewModel)
     }
 }
+
+@Composable
+fun ronda(miViewModel: MyViewModel){
+    Row (modifier = Modifier.padding(300.dp,0.dp,0.dp,0.dp)){
+        Text(
+            text = stringResource(id = R.string.round)
+        )
+    }
+    Row (modifier = Modifier
+        .padding(315.dp, 0.dp, 0.dp, 0.dp)
+        .height(25.dp)
+        ){
+        Text(
+            text = "${miViewModel.getRound()}",
+            fontSize = miViewModel.getTamanhoLetra().sp
+        )
+    }
+}
+
+
+@Composable
+fun botonesSimon(){
+    Row (modifier = Modifier.padding(0.dp,100.dp,0.dp,0.dp)){
+        columnButtonSimon(color = Color.Cyan)
+        columnButtonSimon(color = Color.Green)
+    }
+    Row (){
+        columnButtonSimon(color = Color.Red)
+        columnButtonSimon(color = Color.Yellow)
+    }
+}
+
+@Composable
+fun columnButtonSimon(color: Color){
+    Column {
+        Button(onClick = {
+            /*TODO*/
+        },
+            modifier = Modifier
+                .height(200.dp)
+                .width(200.dp)
+                .padding(50.dp, 50.dp)
+            ,
+            colors = ButtonDefaults.buttonColors(color)
+        ){
+
+        }
+    }
+}
+
+@Composable
+fun startSumaRonda(miViewModel: MyViewModel){
+    Row {
+        Column {
+            Button(
+                onClick = {
+                    miViewModel.changeEstado()
+                },
+                modifier = Modifier
+                    .height(200.dp)
+                    .width(200.dp)
+                    .padding(50.dp, 50.dp)
+            ){
+                Text(
+                    text = miViewModel.getEstadoRonda(), textAlign = TextAlign.Center
+                )
+            }
+        }
+        Column {
+            Button(
+                onClick = {
+                    miViewModel.elevateRound()
+                },
+                modifier = Modifier
+                    .height(200.dp)
+                    .width(200.dp)
+                    .padding(50.dp, 50.dp)
+            ){
+                Image(
+                    painter = painterResource(id = R.drawable.play_arrow),
+                    contentDescription = stringResource(id = R.string.descripcionImagen)
+                )
+            }
+        }
+    }
+}
+
 
 @Composable
 fun fInicio(greetings: String, name: String, modifier: Modifier){
@@ -96,6 +186,7 @@ fun fButton(miViewModel: MyViewModel){
         }
     }
 }
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun fTextoRellenar(miViewModel: MyViewModel){
     Row{
