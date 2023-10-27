@@ -15,17 +15,17 @@ public class Syncrhonized {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Contador cuenta = new Contador();
-        
-        MyThread hilo1 = new MyThread("primer");
-        MyThread hilo2 = new MyThread("segundo");
-        MyThread hilo3 = new MyThread("tercero");
-        MyThread hilo4 = new MyThread("cuarto");
-        
+        Contador cont = new Contador();	
+	ContadorHilo hilo1 = new ContadorHilo("Hilo1",cont);
+	ContadorHilo hilo2 = new ContadorHilo("Hilo2",cont);
+	ContadorHilo hilo3 = new ContadorHilo("Hilo3",cont);
+        ContadorHilo hilo4 = new ContadorHilo("Hilo4",cont);
+ 
         hilo1.start();
         hilo2.start();
         hilo3.start();
         hilo4.start();
+
 
     }
     

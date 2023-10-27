@@ -4,36 +4,31 @@
  */
 package sincronizacionhilos.nosincronizado;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author dam2
  */
 public class MyThread extends Thread{
-    String cadena;
-    int numeroLetra;
-    String vocales = "aeiouAEIOU";
+    Letra let;
+    String nombre;
     boolean isFinal = false;
     
-    public MyThread(String cadena, int numeroLetra){
-        this.cadena = cadena;
-        this.numeroLetra = numeroLetra;
+    public MyThread(Letra let, String nombre){
+        this.let = let;
+        this.nombre = nombre;
     }
     
     public void run(){
-        boolean vocal = false;
-        while(vocal == false){
-            for(int i = numeroLetra; i < cadena.length(); i++){
-                vocal = (vocales.indexOf(cadena.charAt(i)) !=-1) ? true : false;
-                if(vocal==true){
-                    numeroLetra = i;
-                    if(numeroLetra == (cadena.length()-1)){
-                        isFinal = true;
-                    }
-                    break;
-                }
-                
+        while(!isFinal){
+            isFinal = let.cuenta(nombre);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                System.out.println("Error sleep");
             }
-            
         }
     }
 }
