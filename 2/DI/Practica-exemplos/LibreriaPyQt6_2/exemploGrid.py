@@ -1,7 +1,5 @@
 import sys
-from PyQt6.QtWidgets import (QApplication, QMainWindow,QPushButton, QLabel,
-                             QVBoxLayout, QWidget, QLineEdit, QGridLayout)
-from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QGridLayout)
 
 # importo la clase caixaColor de la clase VentanaEjercicio
 from VentanaEjercicio import CaixaColor

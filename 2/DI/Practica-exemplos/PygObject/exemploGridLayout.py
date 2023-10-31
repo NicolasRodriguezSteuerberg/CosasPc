@@ -1,7 +1,7 @@
 import gi
 
 gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk, Gdk
+from gi.repository import Gtk
 
 class VentanaPrincipal (Gtk.Window):
     def __init__(self):
@@ -32,8 +32,6 @@ class VentanaPrincipal (Gtk.Window):
         grid.attach_next_to(button6,button5, Gtk.PositionType.RIGHT,1,1)
         # metes el elemento a la derecha o abajo de otro elemento
         # grid.attach_next_to(button2, button1, )
-
-
 
         self.add(grid)
 

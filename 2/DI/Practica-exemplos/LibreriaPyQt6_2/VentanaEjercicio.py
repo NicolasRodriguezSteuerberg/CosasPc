@@ -16,7 +16,7 @@ class VentanaEjercicio (QMainWindow):
     # definimos la interfaz
     def __init__(self):
         super().__init__()
-        # caja que contenga todo
+        # caja que contenga las cosas
         box = QHBoxLayout()
 
         # una caja que contenga varios cuadrados
