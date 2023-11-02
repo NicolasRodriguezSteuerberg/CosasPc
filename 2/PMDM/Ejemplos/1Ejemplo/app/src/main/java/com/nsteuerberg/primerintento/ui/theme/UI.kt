@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.sp
 import com.nsteuerberg.primerintento.R
 
 @Composable
- fun InterfazUsuario(miViewModel: MyViewModel, name: String, modifier: Modifier = Modifier) {
+fun InterfazUsuario(miViewModel: MyViewModel, name: String, modifier: Modifier = Modifier) {
     //var numbers = remember { mutableStateOf(0) }  // esto hace que siempre que cambie el valor de numbers se va a actualizar, remember es como un repintar
     //al ponerle el cero el compilador ya sabe que es un entero
     //var numbers by remember { mutableStateOf(0) } //lo mismo que lo de arriba

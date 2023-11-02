@@ -8,6 +8,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 // creo la data class datos
 data class MyData(
@@ -49,13 +53,15 @@ class MyViewModel(): ViewModel() {
 
     fun crearRandom(){
         // que nos cambie el valor de numbers aleatoriamente y lo sacamos por el log
-        data.value = data.value.copy(number = (0..10).random())
-        Log.d(LOG_TAG, "creamos random ${data.value.number}")
+        coroutine()
     }
     fun crearListaRandom(){
         // creo una copia de la lista añadiendole otro valor y actualizo el objeto data
-        data.value = data.value.copy(numList = data.value.numList + ((0..3).random()))
-        Log.d(LOG_TAG, "creamos random ${data.value.numList.get(data.value.numList.size-1)}")
+        viewModelScope.launch{
+            delay(5000L)
+            data.value = data.value.copy(numList = data.value.numList + ((0..3).random()))
+            Log.d(LOG_TAG, "creamos random ${data.value.numList.get(data.value.numList.size-1)}")
+        }
     }
     // metodo que returna el valor de numbers
     fun getNumero(): Int{
@@ -63,5 +69,12 @@ class MyViewModel(): ViewModel() {
     }
     fun getLista():List<Int>{
         return data.value.numList
+    }
+    fun coroutine() = runBlocking {
+        launch {
+            delay(2000L)
+            data.value = data.value.copy(number = (0..10).random())
+            Log.d(LOG_TAG, "creamos random ${data.value.number}")
+        }
     }
 }
