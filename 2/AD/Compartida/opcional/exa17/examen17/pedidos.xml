@@ -1,0 +1,21 @@
+<?xml version="1.0"?><!--Product Data-->
+
+
+<Pedidos>
+
+<Pedido Codcli="c1" Codpro="p1">
+<Cantidade>2</Cantidade>
+<Data>02/02/2011</Data>
+</Pedido>
+
+<Pedido Codcli="c2" Codpro="p2">
+<Cantidade>3</Cantidade>
+<Data>03/03/2011</Data>
+</Pedido>
+
+<Pedido Codcli="c1" Codpro="p2">
+<Cantidade>4</Cantidade>
+<Data>04/04/2011</Data>
+</Pedido>
+
+</Pedidos>

@@ -1,0 +1,71 @@
+
+package exa17p;
+
+
+/*
+  Dispomos dun script denominado 'taboasexamena.sql' que crea tres taboas 
+  denominadas clientes, produtos e vendas con certos datos que se insiren dende
+  o propio script. Lanzar dito script coma usuario 'oracle' contra a base de datos 'postgres'.
+  
+  Dispomos dun ficheiro xml denominado 'produtos.xml' que rexistra unha serie
+  de pedidos por parte dos clientes.
+  
+  Opcional (non e necesario usar):  Dispomos dunha clase java  Pedidos.java que permite crear un obxecto pedido e manipular o seu contido 
+  
+  Desenvolver unha aplicacion denominada exa17p que actualize as taboas cos datos do ficheiro xml do seguinte xeito: 
+   Para cada pedido do ficheiro pedidos.xml:
+  - deben imprimirse  os valores correspondentes a cada pedido.
+  - o campo stock da taboa productos debe disminuir na mesma cantidade especificada no elemento
+  cantidade de dito pedido
+  - o campo gasto da taboa clientes debe aumentar nunha cantidade resultante de multiplicar
+  o prezo  do producto (taboa produtos) pola cantidade especificada no elemento cantidade
+  de dito pedido
+  - debe inserirse na taboa vendas o codigo do cliente, o codigo do produto, e a  data do pedido xunto co total resultante de multiplicar o prezo  do producto (taboa produtos) pola cantidade especificada no elemento cantidade de dito pedido
+  
+O contido do ficheiro XML e o seguinte:
+
+<Pedidos>
+<Pedido Codcli="c1" Codpro="p1">
+<Cantidade>2</Cantidade>
+<Data>02/02/2011</Data>
+</Pedido>
+<Pedido Codcli="c2" Codpro="p2">
+<Cantidade>3</Cantidade>
+<Data>03/03/2011</Data>
+</Pedido>
+<Pedido Codcli="c1" Codpro="p2">
+<Cantidade>4</Cantidade>
+<Data>04/04/2011</Data>
+</Pedido>
+</Pedidos>
+
+
+
+
+O contido final das tres taboas deberia ser o seguinte: 
+
+select * from clientes;
+
+COD NOMEC	    DIREC		 GASTO
+--- --------------- --------------- ----------
+c1  juan	    r/burgos		   100
+c2  ana 	    r/urzaiz		    60
+c3  luis	    r/faisan		     0
+
+select * from produtos;
+ 
+COD NOMEP		 PREZO	    STOCK
+--- --------------- ---------- ----------
+p1  tornillos		    10	      998
+p2  arandelas		    20	      493
+p3  tuercas		    30	      100
+
+select * from vendas;
+COD COD DATA		TOTAL
+--- --- ---------- ----------
+c1  p1	02/02/2011	   20
+c2  p2	03/03/2011	   60
+c1  p2	04/04/2011	   80
+
+
+
