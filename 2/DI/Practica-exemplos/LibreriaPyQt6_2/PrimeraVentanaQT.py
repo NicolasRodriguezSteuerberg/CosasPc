@@ -17,7 +17,7 @@ class VentanaPrincipal (QMainWindow):
 
         self.txtSaudo = QLineEdit()
         self.txtSaudo.editingFinished.connect(self.btnCambioEtiqueta)
-        self.txtSaudo.returnPressed.connect(self.lblEtiqueta2.setText)
+
 
         # creamos lo que quereamos poner en la ventana:
         # lblEtiqueta = QLabel ("Hola :)")
@@ -32,9 +32,6 @@ class VentanaPrincipal (QMainWindow):
         fonte.setPointSize(30)
         self.lblEtiqueta2.setFont(fonte)
         self.lblEtiqueta2.setAlignment(Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter)
-
-
-
 
         # creamos un objeto
         btnSumar = QPushButton("Cambia la etiqueta pulsandome")

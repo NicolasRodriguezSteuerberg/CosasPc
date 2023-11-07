@@ -7,6 +7,9 @@ class VentanaPrincipal (Gtk.Window):
         super().__init__()
         self.set_title("First check-radio buttons")
 
+        # existe el toggled button tambien, link button (enlace de wifi?), spin button(subir, bajar)
+        # switch button (on/off)
+
         caixa = Gtk.Box(orientation = Gtk.Orientation.VERTICAL, spacing = 10)
 
         # creamos el primer radio botón
@@ -26,9 +29,41 @@ class VentanaPrincipal (Gtk.Window):
         radioBtn3.connect("toggled", self.on_radioBtn_toggled, "3")
         caixa.pack_start(radioBtn3, False, False, 2)
 
+        # mete como un borde para juntar cosas, solo le puedes añadir un widget por lo que tendrás
+        # que crear un contenedor para meterlo en el
+        myFrame = Gtk.Frame( label = "CHECKS")
+        caixa2 = Gtk.Box(orientation = Gtk.Orientation.VERTICAL, spacing = 10)
+
         checkB1 = Gtk.CheckButton.new_with_label("Check 1")
-        # checkB1.connect("activa")
-        caixa.pack_start(checkB1, False, False, 2)
+        checkB1.connect("toggled", self.on_check_toggled)
+        # caixa.pack_start(checkB1, False, False, 2)
+        caixa2.pack_start(checkB1, False, False, 2)
+
+        checkB2 = Gtk.CheckButton.new_with_label("Check 2")
+        checkB2.connect("toggled", self.on_check_toggled)
+        # caixa.pack_start(checkB2, False, False, 2)
+        caixa2.pack_start(checkB2, False, False, 2)
+
+        checkB3 = Gtk.CheckButton.new_with_label("Check 3")
+        checkB3.connect("toggled", self.on_check_toggled)
+        # caixa.pack_start(checkB3, False, False, 2)
+        caixa2.pack_start(checkB3, False, False, 2)
+
+        checkB4 = Gtk.CheckButton.new_with_label("Check 4")
+        checkB4.connect("toggled", self.on_check_toggled)
+        # caixa.pack_start(checkB4, False, False, 2)
+        caixa2.pack_start(checkB4, False, False, 2)
+
+        checkB5 = Gtk.CheckButton.new_with_label("Check 5")
+        checkB5.connect("toggled", self.on_check_toggled)
+        # caixa.pack_start(checkB5, False, False, 2)
+        caixa2.pack_start(checkB5, False, False, 2)
+
+        myFrame.add(caixa2)
+        caixa.pack_start(myFrame, False, False, 2)
+
+        self.lbl = Gtk.Label(label = "Etiqueta")
+        caixa.pack_start(self.lbl, False, False, 2)
 
         self.add(caixa)
         # para los listeners/eventos
@@ -42,6 +77,15 @@ class VentanaPrincipal (Gtk.Window):
             print("Boton", number, "ha sido seleccionado")
         else:
             print("Boton", number, "ha sido deseleccionado")
+
+
+    def on_check_toggled(self, sinal):
+        # A C T I V E ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !
+        if sinal.get_active():
+            self.lbl.set_text("Activado " + sinal.get_label())
+        else:
+            self.lbl.set_text("Desactivado " + sinal.get_label())
+
 
 
 if __name__ == "__main__":

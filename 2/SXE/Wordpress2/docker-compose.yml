@@ -1,0 +1,36 @@
+services:
+  db:
+    # imagen del contenedor -> mariadb
+    image: mariadb:10.6.4-focal
+    # comando que nos permite usar el plugin por defecto de mysql
+    command: '--default-authentication-plugin=mysql_native_password'
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      # la contraseña del superusuario
+      - MYSQL_ROOT_PASSWORD=somewordpress
+      # nombre de la base de datos
+      - MYSQL_DATABASE=wordpress
+      # nombre del usuario nuevo/que vamos a usar
+      - MYSQL_USER=wordpress
+      # contraseña del usuario
+      - MYSQL_PASSWORD=wordpress
+    # para que estos contenedores puedan acceder a estos puertos
+    ports:
+      - 3306:3306
+      - 33060:33060
+  wordpress:
+    image: wordpress:latest
+    volumes:
+      - ./html:/var/www/html
+    ports:
+      - 80:80
+    environment:
+      # identifica el contenedor de arriba, si no tuvieramos to-do en el mismo compose
+      # tendriamos que poner la ip del de servicio db
+      - WORDPRESS_DB_HOST=db
+      - WORDPRESS_DB_USER=wordpress
+      - WORDPRESS_DB_PASSWORD=wordpress
+      - WORDPRESS_DB_NAME=wordpress
+volumes:
+  db_data:
