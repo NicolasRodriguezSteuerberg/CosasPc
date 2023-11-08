@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="Persona" schema="PUBLIC" table="Personas">
+    <id name="id" type="int">
+        <column name="id" precision="38" scale="0"/>
+    </id>
+    <property name="nombre" type="String">
+        <column length="32" name="nombre"/>
+    </property>
+    <property name="apellido" type="String">
+        <column length="32" name="apellido"/>
+    </property>
+    <property name="salario" type="big_decimal">
+        <column name="salario" precision="22" scale="0"/>
+    </property>
+  </class>
+</hibernate-mapping>

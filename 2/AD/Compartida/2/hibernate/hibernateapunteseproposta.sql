@@ -1,4 +1,4 @@
-
+/*
 
 Introdución a ORM (Object Relational Mapping) e Hibernate 
 
@@ -18,7 +18,7 @@ https://docs.jboss.org/hibernate/orm/5.6/quickstart/html_single/#hibernate-gsg-t
 
 Seguindo a información que atoparás nos enlaces anteriores desenvolve unha aplicación mínima que insira, modifique e elimine datos dunha taboa .
 o script de creacion da taboa para facer as probas pode ser este :
-
+*/
 drop table if exists personas;
 create table personas(
 id numeric,
