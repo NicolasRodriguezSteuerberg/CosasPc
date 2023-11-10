@@ -14,10 +14,10 @@ public class Main {
         MyThread hiloEsc2 = new MyThread("Enviar", "Hola gabriel", buz);
         MyThread hiloLec2 = new MyThread("Lectura2", null,buz);
         
-        hiloEsc.start();
         hiloLec.start();
-        hiloEsc2.start();
         hiloLec2.start();
+        hiloEsc.start();
+        hiloEsc2.start();
     }
     
 }

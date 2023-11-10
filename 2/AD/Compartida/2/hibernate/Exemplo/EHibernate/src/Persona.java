@@ -1,6 +1,5 @@
-
-
 import java.io.Serializable;
+import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -20,9 +19,11 @@ public class Persona implements Serializable{
     private String apellido;
     
     @Column(name="salario")
-    private float salario;
+    private BigDecimal salario;
+    
+    public Persona(){}
 
-    public Persona(int id, String nombre, String apellido, float salario) {
+    public Persona(int id, String nombre, String apellido, BigDecimal salario) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -37,11 +38,11 @@ public class Persona implements Serializable{
         this.id = id;
     }
 
-    public float getSalario() {
+    public BigDecimal getSalario() {
         return salario;
     }
 
-    public void setSalario(float salario) {
+    public void setSalario(BigDecimal salario) {
         this.salario = salario;
     }
 
