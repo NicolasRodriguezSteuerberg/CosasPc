@@ -1,8 +1,6 @@
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 import org.hibernate.Transaction;
-import org.hibernate.service.ServiceRegistry;
 import java.math.BigDecimal;
 import java.util.List;
 import org.hibernate.boot.registry.StandardServiceRegistry;
@@ -21,7 +19,9 @@ public class Metodos {
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure()
                 .build();
-        SessionFactory sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
+        SessionFactory sessionFactory = new MetadataSources(registry)
+                .buildMetadata()
+                .buildSessionFactory();
         return sessionFactory;
     }
     

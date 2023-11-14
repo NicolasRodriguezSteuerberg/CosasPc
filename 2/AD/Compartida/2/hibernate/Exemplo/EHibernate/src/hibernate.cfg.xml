@@ -9,4 +9,4 @@
     <property name="hibernate.connection.password">postgres</property>
     <mapping resource="Persona.hbm.xml"/>
   </session-factory>
-</hibernate-configuration>hibernate-configuration>
+</hibernate-configuration>
