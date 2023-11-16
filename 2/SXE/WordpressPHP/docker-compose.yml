@@ -1,3 +1,0 @@
-# conteiner wordpress
-version: '3.1'
-services:
