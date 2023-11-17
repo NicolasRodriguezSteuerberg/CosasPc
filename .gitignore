@@ -1,7 +1,8 @@
-﻿﻿.idea
+﻿.idea
 out
 dist
 *.iml
 build
 dist
 nbproject
+db

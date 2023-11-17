@@ -32,7 +32,6 @@ public class Metodos {
         obxW.writeObject(obxN);
         
         obxW.close();
-        
     }
     
     public void read(String ruta) throws FileNotFoundException, IOException, ClassNotFoundException{
