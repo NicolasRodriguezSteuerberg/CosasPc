@@ -56,7 +56,7 @@ class Circulo(Punto): # (extiende de Punto), hereda sus atributos
     """
     def __init__(self, x, y, r = 1):
         Punto.__init__(self, x, y)
-        self.__r = r # self.__r --> de esta manera pones privado la variable y asi una vez creado el objeto no lo puedes modificar
+        self.__r = r # self.__r --> de esta manera pones privado la variable y asi una vez creado el objeto no lo puedes modificar MENTIRA
         self.x = x
         self.y = y
 
@@ -89,6 +89,7 @@ class Cilindro(Circulo):
     def superficie(self):
         return super().superficie() * 2  + super().perimetro() * self.h
 
+    # to string
     def __str__(self):
         return "Mi cilindro tiene centro en " + str(self.x) + "," + str(self.y) + " cun radio de " + str(self.r) + " y una altura de " + str(self.h)
 

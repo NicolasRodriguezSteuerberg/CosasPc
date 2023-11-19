@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b74a4ed4-2277-4317-8524-4ade53017813" name="Changes" comment="" />
+    <list default="true" id="b74a4ed4-2277-4317-8524-4ade53017813" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../DI/Practica-exemplos/Exemplos/Clases-Objetos.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DI/Practica-exemplos/Exemplos/Clases-Objetos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DI/Practica-exemplos/LibreriaPyQt6_2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DI/Practica-exemplos/LibreriaPyQt6_2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SXE/PhP/src/functions.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,21 +17,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2XyLM1pJjkmfjeN22I2Gkg8J8gr" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/CosasPc/2/PSP/Ejemplos/Syncrhonized"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/CosasPc/2/PSP/Ejemplos/Syncrhonized&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

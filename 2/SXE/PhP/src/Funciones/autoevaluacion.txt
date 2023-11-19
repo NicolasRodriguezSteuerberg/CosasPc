@@ -1,0 +1,2 @@
+En php el servidor almacena la informacion de las sesiones
+
