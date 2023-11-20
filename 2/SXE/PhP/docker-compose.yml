@@ -9,10 +9,10 @@ services:
     volumes:
       - ./src:/var/www/html
     depends_on:
-      - db
-  db:
+      - db_nico
+  db_nico:
     image: mysql:5.7
-    container_name: db
+    container_name: db_nico
     ports:
       - "3306:3306"
     volumes:
