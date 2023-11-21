@@ -5,52 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7bdfc85-e535-4063-819c-4afccfc6f8ac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../DI/Practica-exemplos/LibreriaPyQt6_2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DI/Practica-exemplos/LibreriaPyQt6_2/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/BaseDeDatos/Borrado/eliminar.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/BaseDeDatos/Borrado/eliminar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/BaseDeDatos/Borrado/formulario.html" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/BaseDeDatos/Borrado/formulario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/BaseDeDatos/CreacionBDyTablas.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/BaseDeDatos/CreacionBDyTablas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/BaseDeDatos/Lectura/formulario.html" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/BaseDeDatos/Lectura/formulario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/BaseDeDatos/Lectura/lectura.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/BaseDeDatos/Lectura/lectura.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/BaseDeDatos/actualizacion/actualizar.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/BaseDeDatos/actualizacion/actualizar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/BaseDeDatos/actualizacion/formulario.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/BaseDeDatos/actualizacion/formulario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/BaseDeDatos/inserccion/formulario.html" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/BaseDeDatos/inserccion/formulario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/BaseDeDatos/inserccion/inserta.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/BaseDeDatos/inserccion/inserta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Cookies/Comprobacion_cookie_aceptada.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Cookies/Comprobacion_cookie_aceptada.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Cookies/creacion_obtencion_eliminacion_Cookies.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Cookies/creacion_obtencion_eliminacion_Cookies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Cookies/cuenta_cookies.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Cookies/cuenta_cookies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Formularios/Creacion_formularios/Creacion_formulario.html" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Formularios/Creacion_formularios/Creacion_formulario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Formularios/Creacion_formularios/procesa.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Formularios/Creacion_formularios/procesa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Formularios/emails.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Formularios/emails.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Formularios/subida_archivos_mejorado/formulario_archivos2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Formularios/subida_archivos_mejorado/formulario_archivos2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Formularios/subida_archivos_mejorado/subirmejorado.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Formularios/subida_archivos_mejorado/subirmejorado.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Formularios/subida_archivos_servidor/formulario_archivos.html" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Formularios/subida_archivos_servidor/formulario_archivos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Formularios/subida_archivos_servidor/subir.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Formularios/subida_archivos_servidor/subir.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Sesiones/Entre_paginas1.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Sesiones/Entre_paginas1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Sesiones/Entre_paginas2.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Sesiones/Entre_paginas2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Sesiones/Entre_paginas3.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Sesiones/Entre_paginas3.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Sesiones/sesiones1.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Cookies_Sesiones/Sesiones/sesiones1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Funciones/Creacion_lectura_ficheros.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Funciones/Creacion_lectura_ficheros.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Funciones/Directorios.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Funciones/Directorios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Funciones/Escritura_Informacion_ficheros.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Funciones/Escritura_Informacion_ficheros.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Funciones/Formato_numeros.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Funciones/Formato_numeros.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Funciones/Redondeo_numeros.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Funciones/Redondeo_numeros.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Funciones/archivo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Funciones/archivo.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Funciones/autoevaluacion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Funciones/autoevaluacion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Funciones/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Funciones/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Funciones/numeros_varios_funciones.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Funciones/numeros_varios_funciones.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/Index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/arrays.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/arrays.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/cogiendoVariables.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/cogiendoVariables.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/estructurasControlFujo.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/estructurasControlFujo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/include2.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/include2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/operadores.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/operadores.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/pasovariables.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/pasovariables.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/predefinidas.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/predefinidas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/script.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/script.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PhP/src/variables.php" beforeDir="false" afterPath="$PROJECT_DIR$/../PhP/src/variables.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AD/Compartida/1/pcidades2/.~lock.exameconcabeceravariacion2023.odt#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DI/Practica-exemplos/LibreriaPyQt6_2/QListView.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../DI/Practica-exemplos/LibreriaPyQt6_2/QListView.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0eb88791-5715-4d11-9e74-e412a540f1f1/storage_v2/_src_/schema/sys.zb4BAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0eb88791-5715-4d11-9e74-e412a540f1f1/storage_v2/_src_/schema/sys.zb4BAA.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/wp-content/plugins/words/words.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/wp-content/plugins/words/words.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +40,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/dam2/Documentos/CosasPc/2/SXE/PhP",
+    "last_opened_file_path": "/home/dam2/Documentos/Repositorios/words",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -109,7 +68,8 @@
       <workItem from="1699877454323" duration="132000" />
       <workItem from="1699877590261" duration="10000" />
       <workItem from="1699877937629" duration="10000" />
-      <workItem from="1700480888249" duration="3508000" />
+      <workItem from="1700480888249" duration="3635000" />
+      <workItem from="1700569218727" duration="2837000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,6 @@
 import sys
 
+from PyQt6.QtGui import QColor, QIcon
 # importamos del pyqt6 los elementos que nos importa -> ventana principal, boton
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QPushButton, QLabel,
                              QVBoxLayout, QWidget, QLineEdit, QListView, QHBoxLayout)
@@ -21,8 +22,24 @@ class MyModel(QAbstractListModel):
             - EditRole -> the text to be edited
         '''
         if role == Qt.ItemDataRole.DisplayRole:
-            state, text = self.tasks[index.row()]
+            # the _ is a convention to say that we don't use the variable
+            _, text = self.tasks[index.row()]
             return text
+        elif role == Qt.ItemDataRole.DecorationRole:
+            state, _ = self.tasks[index.row()]
+            if state:
+                return QIcon('icons/check.png')
+            else:
+                return QIcon('icons/uncheck.png')
+
+        ''' Para poner color de fondo
+        elif role == Qt.ItemDataRole.BackgroundRole:
+            state, text = self.tasks[index.row()]
+            if state:
+                return QColor('green')
+            else:
+                return QColor('red')
+        '''
 
     def rowCount(self, index):
         return len(self.tasks)
@@ -40,7 +57,7 @@ class MyView (QMainWindow):
 
         # we create a list
         taskList = [
-            (True, "Tarea 1"),
+            (False, "Tarea 1"),
             (False, "Tarea 2"),
             (False, "Tarea 3")
         ]
@@ -51,20 +68,27 @@ class MyView (QMainWindow):
         vBox = QVBoxLayout()
 
         # create a list view
-        listView = QListView()
+        self.listView = QListView()
         # we add the model to the list view
-        listView.setModel(self.myModel)
+        self.listView.setModel(self.myModel)
+        # we set the selection mode to multiples
+        self.listView.setSelectionMode(QListView.SelectionMode.ExtendedSelection)
         # we add the list view to the vertical box
-        vBox.addWidget(listView)
+        vBox.addWidget(self.listView)
 
         # we create a horizontal box with two buttons
         hBox = QHBoxLayout()
         # create the buttons
         deleteButton = QPushButton("Borrar")
-        buttonFeito = QPushButton("Feito")
+        # we connect the button to the method
+        deleteButton.pressed.connect(self.on_buttonDelete_pressed)
+        # create the button to mark the task as done
+        doneButton = QPushButton("Feito")
+        # we connect the button to the method
+        doneButton.pressed.connect(self.on_buttonDone_pressed)
         # we add the buttons to the horizontal box
         hBox.addWidget(deleteButton)
-        hBox.addWidget(buttonFeito)
+        hBox.addWidget(doneButton)
         # we add the horizontal box to the vertical box
         vBox.addLayout(hBox)
 
@@ -102,6 +126,36 @@ class MyView (QMainWindow):
             self.myModel.layoutChanged.emit()
             # we clear the line edit
             self.lineEdit.setText("")
+
+    # function to delete the selected task
+    def on_buttonDelete_pressed(self):
+        # we get the selected indexes
+        indexes = self.listView.selectedIndexes()
+        # we see if the index is valid
+        if indexes:
+            # we remove the task from the list, we use a for because sometimes we can select more than one task
+            # we use sorted to delete the tasks from the last to the first, if we don't use it, we will have problems
+            for index in sorted(indexes, reverse=True):
+                del self.myModel.tasks[index.row()]
+            # we update the list view -> we emit the signal layoutChanged to the model to update the view
+            self.myModel.layoutChanged.emit()
+            # we clear the selection
+            self.listView.clearSelection()
+    
+    def on_buttonDone_pressed(self):
+        # we get the selected indexes
+        indexes = self.listView.selectedIndexes()
+        # we see if we have selected something
+        if indexes:
+            for index in indexes:
+                # we get the state and the text
+                state, text = self.myModel.tasks[index.row()]
+                # we change the state
+                self.myModel.tasks[index.row()] = (not state, text)
+            self.myModel.layoutChanged.emit()
+            self.listView.clearSelection()
+
+        
 
 if __name__ == "__main__":
     # creamos un objeto de instancia qapplication

@@ -12,11 +12,28 @@ Version: 0.0.1
 Author URI: http://ma.tt/
 */
 
-$wordsList = [
-    "hola",
-    "adios",
-    "no se",
-    "maburro"
+# list of offensive words
+$offensiveWordsList = [
+    "mierda",
+    "puta",
+    "puto",
+    "coño",
+    " polla ",
+    "gilipollas",
+    "cabron",
+    "cabrona",
+    "joder"
+];
+$nonOffensiveWordsList = [
+    "caca",
+    "fruta",
+    "fruto",
+    "vagina",
+    " pito ",
+    "estolido",
+    "cabro",
+    "cabra",
+    "recorcholis"
 ];
 
 /**
@@ -27,7 +44,8 @@ $wordsList = [
  * @return string
  */
 function renym_wordpress_typo_fix( $text ) {
-    return str_replace( 'WordPress', 'WordPressDAM', $text );
+    global $offensiveWordsList, $nonOffensiveWordsList;
+    return str_replace( $offensiveWordsList, $nonOffensiveWordsList, $text );
 }
 
 add_filter( 'the_content', 'renym_wordpress_typo_fix' );
