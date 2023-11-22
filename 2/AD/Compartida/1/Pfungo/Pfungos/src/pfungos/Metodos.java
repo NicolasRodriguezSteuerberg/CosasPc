@@ -45,7 +45,7 @@ public class Metodos {
                 aumentarFungoArea(con, obx.getCodarea());
                 
                 // fungo area
-                    select = "select noma,hummedia,superficie,numerofungos from areas where codarea = ?";
+                    select = "select noma,hummedia,superficie,numerofungos from areas where coda = ?";
                     PreparedStatement ps = con.prepareStatement(select);
 
                     ps.setInt(1, obx.getCodarea());
@@ -68,7 +68,7 @@ public class Metodos {
                     ps.close();
                     
                 // propiedades fungo
-                    select = "select nomef,humlimite from fungos where id=?";
+                    select = "select id,nomf,humlimite from fungos where id=?";
                     ps = con.prepareStatement(select);
 
                     ps.setInt(1, obx.getCodfungo());
@@ -78,7 +78,7 @@ public class Metodos {
                     rs.next();
                     
                     humLimite = rs.getFloat("humlimite");
-                    nomFungo = rs.getString("nomef");
+                    nomFungo = rs.getString("nomf");
                     
                     System.out.println("Id fungo: " + rs.getInt("id")
                             + ", Nombre fungo: " + nomFungo
@@ -99,7 +99,7 @@ public class Metodos {
                 System.out.println("Objeto nulo");
             }
         }while(obx != null);
-            
+        esc.close();
         lec.close();   
     }
     
