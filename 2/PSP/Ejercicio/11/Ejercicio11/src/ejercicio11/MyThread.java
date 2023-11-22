@@ -16,13 +16,15 @@ public class MyThread extends Thread{
     public void run(){
         boolean terminado = false;
         while(terminado==false){
-            if(nombre.equals("Tortuga")){
-                miTablero.movimientoTortuga();
-            } else{
-                miTablero.movimientoLiebre();
-            }
-            miTablero.comprobación();
             try {
+                if(nombre.equals("Tortuga")){
+                    miTablero.movimientoTortuga();
+                } else{
+                    miTablero.movimientoLiebre();
+                }
+                terminado = miTablero.comprobación();
+
+                System.out.println();
                 Thread.sleep(1000l);
             } catch (InterruptedException ex) {
                 Logger.getLogger(MyThread.class.getName()).log(Level.SEVERE, null, ex);
