@@ -4,6 +4,8 @@ from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QGridLayout)
 # importo la clase caixaColor de la clase VentanaEjercicio
 from VentanaEjercicio import CaixaColor
 
+
+
 class VentanaPrincipal(QMainWindow):
     def __init__(self):
         super().__init__()
