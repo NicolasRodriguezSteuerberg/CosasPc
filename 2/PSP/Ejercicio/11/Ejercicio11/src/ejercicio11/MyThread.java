@@ -15,19 +15,31 @@ public class MyThread extends Thread{
  
     public void run(){
         boolean terminado = false;
-        while(terminado==false){
+        if(nombre.equals("Tortuga")){
+            miTablero.setThreadTortuga(this);
+        } else{
+            miTablero.setThreadLiebre(this);
+        }
+        
+        
+        while((terminado=miTablero.terminado)==false){
             try {
                 if(nombre.equals("Tortuga")){
                     miTablero.movimientoTortuga();
                 } else{
                     miTablero.movimientoLiebre();
                 }
-                terminado = miTablero.comprobación();
-
+                
+                Thread.sleep(500l);
+                if(!(terminado=miTablero.terminado)){
+                    miTablero.comprobación();
+                }
+                
                 System.out.println();
-                Thread.sleep(1000l);
+                Thread.sleep(500l);
+                
             } catch (InterruptedException ex) {
-                Logger.getLogger(MyThread.class.getName()).log(Level.SEVERE, null, ex);
+                
             }
         }
     }

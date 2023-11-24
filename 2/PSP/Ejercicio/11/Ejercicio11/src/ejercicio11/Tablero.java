@@ -6,12 +6,14 @@ public class Tablero {
     private boolean liebreMovida = false;
     boolean terminado = false;
     boolean vistoSiTermino = false;
-    static int posicionFinal = 70;
+    static int posicionFinal = 20;
     int posicionTortuga = 1;
     int posicionLiebre = 1;
     
     int tiradaTortuga;
     int tiradaLiebre;
+    
+    MyThread threadLiebre, threadTortuga;
     
     public void movimientoTortuga() throws InterruptedException {
 
@@ -88,18 +90,34 @@ public class Tablero {
             terminado = true;
             if (!vistoSiTermino) {
                 if (posicionTortuga == posicionFinal && posicionLiebre != posicionFinal) {
-                    System.out.println("Tortuga ha ganado");
+                    System.out.println("\nTortuga ha ganado");
+                    threadLiebre.interrupt();
+                    threadTortuga.interrupt();
                 } else if (posicionTortuga != posicionFinal && posicionLiebre == posicionFinal) {
-                    System.out.println("Liebre ha ganado");
+                    System.out.println("\nLiebre ha ganado");
+                    threadTortuga.interrupt();
+                    threadLiebre.interrupt();
                 } else {
-                    System.out.println("Empate");
+                    System.out.println("\nEmpate");
+                    threadTortuga.interrupt();
+                    threadLiebre.interrupt();
                 }
+                vistoSiTermino = true;
             }
-            vistoSiTermino = true;
+            
+            
         }
         tortugaMovida = false;
         liebreMovida = false;
 
         return terminado;
+    }
+    
+    public void setThreadTortuga(MyThread threadTortuga){
+        this.threadTortuga = threadTortuga;
+    }
+    
+    public void setThreadLiebre(MyThread threadLiebre){
+        this.threadLiebre = threadLiebre;
     }
 }
