@@ -266,6 +266,8 @@ class View(QMainWindow):
 
     def on_checkButton_toggled(self):
         if self.checkButton1.isChecked():
+            self.myModel.tasks.append((False, "Check 1 checked"))
+            self.myModel.layoutChanged.emit()
             print("Check 1 checked")
         else:
             print("Check 1 unchecked")
