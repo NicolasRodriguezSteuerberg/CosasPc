@@ -9,7 +9,6 @@ public class Supermercado {
     boolean usandoseCajaTotal = false;
     boolean usandoseCaja[];
     ArrayList<ThreadClientes> listaClientes = new ArrayList();
-    ArrayList<ThreadCola> listaCola = new ArrayList();
     
     public Supermercado(int nCajas){
         this.nCajas = nCajas;
@@ -28,7 +27,6 @@ public class Supermercado {
         Thread.sleep(1000l);
         valorCajaTotal += dineroAIngresar;
         System.out.println("La persona de la caja: " + nCaja + " ha ingresado el dinero, dinero total: " + valorCajaTotal + "\n");
-        usandoseCaja[nCaja] = false;
         usandoseCajaTotal=false;
         notifyAll();
     }
@@ -37,10 +35,11 @@ public class Supermercado {
         while(usandoseCaja[cajaAUsar]){
             wait();
         }
+        usandoseCaja[cajaAUsar] = true;
         System.out.println("El " + name + " ha pasado a ser cobrado en la caja: " + cajaAUsar + "\t Le ha pagado " + pago + "€ por su compra");
         Thread.sleep(1000l);
+        usandoseCaja[cajaAUsar] = false;
         notifyAll();
-        ponerDinero(cajaAUsar, pago);
     }
     
 }
