@@ -3,13 +3,9 @@ import sqlite3 as dbapi
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Pango
+# para que funcione primero tenemos que tener la base de datos creada
 
 columnas = ("Nombre", "Apellido", "Numero de teléfono")
-agendaTelefonica = (("Pepe", "Pérez", "986 444 555"),
-                    ("Ana", "Yañéz", "985 333 777"),
-                    ("Roque", "Díz", "987 222 889"),
-                    )
-
 
 class FestraPrincipal(Gtk.Window):
     def __init__(self):
@@ -44,7 +40,10 @@ class FestraPrincipal(Gtk.Window):
                 celda.props.weight = Pango.Weight.BOLD
             if i == 2:
                 celda.props.editable = True
-                celda.connect("edited", self.on_celda_edited, modelo)
+                # mi manera
+                celda.connect("edited", self.on_celda_edited, modelo, i)
+                # manera del profesor
+                # celda.connect("edited", self.on_celda_editedP, modelo, i)
             col = Gtk.TreeViewColumn(nombreColumna, celda, text=i)
             self.vistaVerdista.append_column(col)
 
@@ -150,8 +149,9 @@ class FestraPrincipal(Gtk.Window):
         except dbapi.DatabaseError as e:
             print(e)
 
-    def on_celda_edited(self, celda, fila, texto, modelo):
-        modelo[fila][2] = texto
+    # mi manera
+    def on_celda_edited(self, celda, fila, texto, modelo, columna):
+        modelo[fila][columna] = texto
         self.actualizarDatos(modelo[fila][0], modelo[fila][1], modelo[fila][2])
 
     def actualizarDatos(self, nome, apelido, telefono):
@@ -170,6 +170,23 @@ class FestraPrincipal(Gtk.Window):
         except dbapi.DatabaseError as e:
             print(e)
 
+    # manera del profesor
+    def on_celda_editedP(self, celda, fila, texto, modelo, columna):
+        try:
+            database = dbapi.connect("baseDatosListaTelefonos.dat")
+            # print(database)
+            cursor = database.cursor()
+            cursor.execute("update listaTelefonos set telefono = ? where telefono = ?", (texto, modelo[fila][2]))
+            database.commit()
+
+            cursor.close()
+            database.close()
+
+        except dbapi.StandardError as e:
+            print(e)
+        except dbapi.DatabaseError as e:
+            print(e)
+        modelo[fila][columna] = texto
 
 if __name__ == "__main__":
     FestraPrincipal()
