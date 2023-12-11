@@ -5,11 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7bdfc85-e535-4063-819c-4afccfc6f8ac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../AD/Compartida/1/pcidades2/.~lock.exameconcabeceravariacion2023.odt#" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DI/Practica-exemplos/LibreriaPyQt6_2/QListView.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../DI/Practica-exemplos/LibreriaPyQt6_2/QListView.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DI/Practica-exemplos/PygObject/baseDatos2.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../../DI/Practica-exemplos/PygObject/baseDatos2.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DI/Practica-exemplos/PygObject/treeViewFiltrado.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../DI/Practica-exemplos/PygObject/treeViewFiltrado.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0eb88791-5715-4d11-9e74-e412a540f1f1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0eb88791-5715-4d11-9e74-e412a540f1f1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0eb88791-5715-4d11-9e74-e412a540f1f1/storage_v2/_src_/schema/mysql.osA4Bg.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/0eb88791-5715-4d11-9e74-e412a540f1f1/storage_v2/_src_/schema/sys.zb4BAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0eb88791-5715-4d11-9e74-e412a540f1f1/storage_v2/_src_/schema/sys.zb4BAA.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0eb88791-5715-4d11-9e74-e412a540f1f1/storage_v2/_src_/schema/wordpress.ebP8NQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0eb88791-5715-4d11-9e74-e412a540f1f1/storage_v2/_src_/schema/wordpress.ebP8NQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/html/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/wp-admin/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/wp-admin/about.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/wp-admin/css/about-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/html/wp-admin/css/about-rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/wp-admin/css/about-rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/html/wp-admin/css/about-rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/wp-admin/css/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/html/wp-admin/css/about.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/wp-admin/css/about.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/html/wp-admin/css/about.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/wp-content/plugins/words/words.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/wp-content/plugins/words/words.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/wp-includes/block-patterns.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/wp-includes/block-patterns.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/wp-includes/block-template-utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/wp-includes/block-template-utils.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/wp-includes/html-api/class-wp-html-tag-processor.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/wp-includes/html-api/class-wp-html-tag-processor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/wp-includes/html-api/class-wp-html-token.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/wp-includes/html-api/class-wp-html-token.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/wp-includes/ms-blogs.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/wp-includes/ms-blogs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/wp-includes/rest-api/class-wp-rest-server.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/wp-includes/rest-api/class-wp-rest-server.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/wp-includes/theme.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/wp-includes/theme.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/wp-includes/version.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/wp-includes/version.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,26 +51,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/dam2/Documentos/Repositorios/words",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/dam2/Documentos/CosasPc/2/SXE/Wordpress2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/html/wp-content/plugins/words" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/html/wp-content/plugins/words" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -70,6 +95,11 @@
       <workItem from="1699877937629" duration="10000" />
       <workItem from="1700480888249" duration="3635000" />
       <workItem from="1700569218727" duration="2837000" />
+      <workItem from="1702286264098" duration="1589000" />
+      <workItem from="1702287886206" duration="187000" />
+      <workItem from="1702288121303" duration="1608000" />
+      <workItem from="1702293205782" duration="2000" />
+      <workItem from="1702296074210" duration="1216000" />
     </task>
     <servers />
   </component>
