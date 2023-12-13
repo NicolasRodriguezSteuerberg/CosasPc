@@ -41,19 +41,6 @@ $nonOffensiveWordsList = [
  * Whenever the word WordPress appears in the content
  * of a post or a page,
  * it will be replaced by WordPressDAM.
- * @param $text string
- * @return string
-
-function renym_wordpress_typo_fix( $text ) {
-    global $offensiveWordsList, $nonOffensiveWordsList;
-    return str_replace( $offensiveWordsList, $nonOffensiveWordsList, $text );
-}
-*/
-
-/**
- * Whenever the word WordPress appears in the content
- * of a post or a page,
- * it will be replaced by WordPressDAM.
  * This time using the database
  * @param $text string
  * @return string
@@ -70,15 +57,6 @@ function renym_wordpress_typo_fix($text){
 
 
 add_filter('the_content', 'renym_wordpress_typo_fix');
-/*
-function nico_words_get_lyric() {
-    /** These are the lyrics to Nico Words
-    global $wordsList;
-    $lyrics = $wordsList[rand(0, count($wordsList) - 1)];
-
-    return wptexturize( $lyrics );
-}
-*/
 
 /**
  * To do this but with databases,
