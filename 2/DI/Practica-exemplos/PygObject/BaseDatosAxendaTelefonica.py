@@ -16,7 +16,7 @@ try:
         create table if not exists listaTelefonos (
             nome text,
             apelido text,
-            telefono text
+            telefono text   
         )"""
     )
 except dbapi.DatabaseError as e:
