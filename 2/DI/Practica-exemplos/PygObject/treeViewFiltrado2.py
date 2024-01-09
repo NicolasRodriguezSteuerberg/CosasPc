@@ -13,10 +13,10 @@ class FestraPrincipal(Gtk.Window):
         self.set_default_size(250, 100)
         self.set_border_width(10)
 
-        caja = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL,spacing=4)
+        caja_general = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL,spacing=4)
 
         # la lista
-        caixa = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=4)
+        caja_tabla = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=4)
 
         self.filtradoXenero="None"
 
@@ -24,9 +24,6 @@ class FestraPrincipal(Gtk.Window):
         modelo = Gtk.ListStore(str, str, int, str, bool)
         modelo_filtrado = modelo.filter_new()
         modelo_filtrado.set_visible_func(self.filtrar_usuarios_xenero)
-
-        filaSeleccionada = self.miTreeView.get_selection()
-        filaSeleccionada.connect("changed", self.on_rowSelection_changed)
 
         try:
             database = dbapi.connect("baseDatos2.dat")
@@ -45,6 +42,8 @@ class FestraPrincipal(Gtk.Window):
         #self.miTreeView = Gtk.TreeView(model=modelo)
         self.miTreeView = Gtk.TreeView(model=modelo_filtrado)
         selection = self.miTreeView.get_selection()
+        selection.connect("changed", self.on_obxectoSeleccion_changed)
+
         for i, nombreColumna in enumerate(["DNI", "Nombre", "Edad"]):
             celda = Gtk.CellRendererText()
             col = Gtk.TreeViewColumn(nombreColumna, celda, text=i)
@@ -70,25 +69,25 @@ class FestraPrincipal(Gtk.Window):
         columna = Gtk.TreeViewColumn("Xenero", celdaCombo, text=3)
         self.miTreeView.append_column(columna)
 
-        caixa.pack_start(self.miTreeView, True, True, 0)
+        caja_tabla.pack_start(self.miTreeView, True, True, 0)
 
-        caixaH = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=2)
-        caixa.pack_start(caixaH, True, True, 0)
+        caja_ordenar = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=2)
+        caja_tabla.pack_start(caja_ordenar, True, True, 0)
         rbtAll = Gtk.RadioButton.new_with_label(None, "All")
         rbtHome = Gtk.RadioButton.new_with_label_from_widget(rbtAll, "Home")
         rbtMuller = Gtk.RadioButton.new_with_label_from_widget(rbtAll, "Muller")
         rbtOutros = Gtk.RadioButton.new_with_label_from_widget(rbtAll, "Outros")
-        caixaH.pack_start(rbtAll, True, True, 2)
-        caixaH.pack_start(rbtHome, True, True, 2)
-        caixaH.pack_start(rbtMuller, True, True, 2)
-        caixaH.pack_start(rbtOutros, True, True, 2)
+        caja_ordenar.pack_start(rbtAll, True, True, 2)
+        caja_ordenar.pack_start(rbtHome, True, True, 2)
+        caja_ordenar.pack_start(rbtMuller, True, True, 2)
+        caja_ordenar.pack_start(rbtOutros, True, True, 2)
 
         rbtAll.connect("toggled", self.on_rbt_toggled, "None", modelo_filtrado)
         rbtHome.connect("toggled", self.on_rbt_toggled, "Home", modelo_filtrado)
         rbtMuller.connect("toggled", self.on_rbt_toggled, "Muller", modelo_filtrado)
         rbtOutros.connect("toggled", self.on_rbt_toggled, "Outros", modelo_filtrado)
 
-        caja.pack_start(caixa, True, True, 0)
+        caja_general.pack_start(caja_tabla, True, True, 0)
 
 
         # para añadir, editar...
@@ -106,6 +105,8 @@ class FestraPrincipal(Gtk.Window):
         lblEdad = Gtk.Label(label="Edade")
         self.txtEdad = Gtk.Entry()
 
+        self.bloquear_campos_texto()
+
         # añadimos las cosas
         cajaDatos.pack_start(lblNombre, True, True, 0)
         cajaDatos.pack_start(self.txtNombre, True, True, 0)
@@ -119,18 +120,18 @@ class FestraPrincipal(Gtk.Window):
         # creamos la etiqueta
         lblEtiqueta = Gtk.Label(label="Xénero")
         # creamos los radio buttons
-        rbtDatosHome = Gtk.RadioButton.new_with_label_from_widget(None, "Home")
-        rbtDatosHome.connect("toggled", self.on_rbt_toggled2, "Home")
-        rbtDatosMuller = Gtk.RadioButton.new_with_label_from_widget(rbtDatosHome, "Muller")
-        rbtDatosMuller.connect("toggled", self.on_rbt_toggled2, "Muller")
-        rbtDatosOutros = Gtk.RadioButton.new_with_label_from_widget(rbtDatosHome, "Outros")
-        rbtDatosOutros.connect("toggled", self.on_rbt_toggled2, "Outros")
+        self.rbtDatosHome = Gtk.RadioButton.new_with_label_from_widget(None, "Home")
+        self.rbtDatosHome.connect("toggled", self.on_gender_changed, "Home")
+        self.rbtDatosMuller = Gtk.RadioButton.new_with_label_from_widget(self.rbtDatosHome, "Muller")
+        self.rbtDatosMuller.connect("toggled", self.on_gender_changed, "Muller")
+        self.rbtDatosOutros = Gtk.RadioButton.new_with_label_from_widget(self.rbtDatosHome, "Outros")
+        self.rbtDatosOutros.connect("toggled", self.on_gender_changed, "Outros")
 
         # añadimos los radio a la caja
         cajaRadioButtons.pack_start(lblEtiqueta, True, True, 0)
-        cajaRadioButtons.pack_start(rbtDatosHome, True, True, 0)
-        cajaRadioButtons.pack_start(rbtDatosMuller, True, True, 0)
-        cajaRadioButtons.pack_start(rbtDatosOutros, True, True, 0)
+        cajaRadioButtons.pack_start(self.rbtDatosHome, True, True, 0)
+        cajaRadioButtons.pack_start(self.rbtDatosMuller, True, True, 0)
+        cajaRadioButtons.pack_start(self.rbtDatosOutros, True, True, 0)
         self.generoActivo = "Home"
         # caja para los botones
         cajaBotones = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
@@ -156,27 +157,35 @@ class FestraPrincipal(Gtk.Window):
         cajaDatosGeneral.pack_start(cajaRadioButtons, True, True, 0)
         cajaDatosGeneral.pack_start(cajaBotones, True, True, 0)
 
-        caja.pack_start(cajaDatosGeneral, True, True, 0)
+        caja_general.pack_start(cajaDatosGeneral, True, True, 0)
 
-        self.add(caja)
+        self.add(caja_general)
 
         self.connect("delete-event",Gtk.main_quit)  ## la el segundo argumento no debe tener el parentesis de funcion, ya que en ese caso la ejecutaria
 
         self.show_all()
 
-        # ocultamos los botones Aceptar y Cancelar
-        self.btnAceptar.hide()
-        self.btnCancelar.hide()
+        # no dejamos tocar los botones Aceptar y Cancelar
+        self.btnAceptar.set_sensitive(False)
+        self.btnCancelar.set_sensitive(False)
 
-    def on_rowSelection_changed(self, selection):
-        model, treeiter = selection.get_selected()
-        if treeiter is not None:
-            # Obtener los valores de las columnas para la fila seleccionada
-            self.txtDni.set_text(model[treeiter][0])
-            nombre = model[treeiter][1]
-            edad = model[treeiter][2]
-            genero = model[treeiter][3]
-            activo = model[treeiter][4]
+    def on_obxectoSeleccion_changed(self, seleccion):
+        (modelo, fila) = seleccion.get_selected()
+
+        self.txtNombre.set_text(modelo[fila][1])
+        self.txtDni.set_text(modelo[fila][0])
+        self.txtEdad.set_text(str(modelo[fila][2]))
+        if modelo[fila][3] == "Home":
+            self.rbtDatosHome.set_active(True)
+        elif modelo[fila][3] == "Muller":
+            self.rbtDatosMuller.set_active(True)
+        elif modelo[fila][3] == "Outros":
+            self.rbtDatosOutros.set_active(True)
+
+    def bloquear_campos_texto(self):
+        self.txtNombre.set_sensitive(False)
+        self.txtDni.set_sensitive(False)
+        self.txtEdad.set_sensitive(False)
 
     def on_celdaCombo_edited(self, celda, fila, texto, modelo, indice):
         cambiado = self.modificarComboBD(texto,modelo,fila)
@@ -213,32 +222,44 @@ class FestraPrincipal(Gtk.Window):
         else:
             return modelo[fila][3] == self.filtradoXenero
 
-    def on_rbt_toggled2(self, botonSeleccionado, genero):
+    def on_gender_changed(self, botonSeleccionado, genero):
         if botonSeleccionado.get_active():
             self.generoActivo = genero
 
+    def vaciar_campos(self):
+        self.txtNombre.set_text("")
+        self.txtDni.set_text("")
+        self.txtEdad.set_text("")
+
     def btnNuevoPulsado(self,banderaboton):
         self.aceptarFlag = 1
+        self.vaciar_campos()
         self.cambiar_botones_verAC()
 
     def btnEditarPulsado(self,banderaboton):
         self.aceptarFlag = 2
-        self.cambiar_botones_verNE()
+        self.cambiar_botones_verAC()
 
     # ocultar botones nuevo y editado + mostrar botones aceptar y cancelar
     def cambiar_botones_verAC(self):
-        self.btnNuevo.hide()
-        self.btnEditar.hide()
+        self.btnNuevo.set_sensitive(False)
+        self.btnEditar.set_sensitive(False)
 
-        self.btnAceptar.show()
-        self.btnCancelar.show()
+        self.btnAceptar.set_sensitive(True)
+        self.btnCancelar.set_sensitive(True)
+
+        self.txtNombre.set_sensitive(True)
+        self.txtDni.set_sensitive(True)
+        self.txtEdad.set_sensitive(True)
 
     def cambiar_botones_verNE(self):
-        self.btnAceptar.hide()
-        self.btnCancelar.hide()
+        self.btnAceptar.set_sensitive(False)
+        self.btnCancelar.set_sensitive(False)
 
-        self.btnNuevo.show()
-        self.btnEditar.show()
+        self.btnNuevo.set_sensitive(True)
+        self.btnEditar.set_sensitive(True)
+
+        self.bloquear_campos_texto()
 
     def aceptar_pulsado(self, banderaboton, modelo, modelo_filtrado):
         if self.aceptarFlag == 1:
@@ -247,14 +268,19 @@ class FestraPrincipal(Gtk.Window):
             self.editar_usuario(modelo, modelo_filtrado)
         else:
             print("Error al aceptar")
+        self.vaciar_campos()
 
     def cancelar_pulsado(self, banderaboton):
         self.cambiar_botones_verNE()
 
     def engadir_usuario(self,modelo, modelo_filtrado):
-        if (self.txtDni!="" and self.txtNombre!="" and self.txtEdad!=""):
-            self.engadir_bdusuario(self.txtNombre.get_text(), self.txtDni.get_text(), int(self.txtEdad.get_text()), self.generoActivo)
-            modelo.append((self.txtDni.get_text(), self.txtNombre.get_text(), int(self.txtEdad.get_text()), self.generoActivo, True))
+        dni = self.txtDni.get_text()
+        nombre = self.txtNombre.get_text()
+        edad = int(self.txtEdad.get_text())
+        genero = self.generoActivo
+        if (dni!="" and nombre!="" and edad!=""):
+            self.engadir_bdusuario(nombre, dni, edad, genero)
+            modelo.append((dni, nombre, edad, genero, True))
             modelo_filtrado.refilter()
             self.cambiar_botones_verNE()
 
@@ -276,7 +302,20 @@ class FestraPrincipal(Gtk.Window):
             database.close()
 
     def editar_usuario(self, modelo, modelo_filtrado):
-        self.editar_usuarioBD(self.txtNombre.get_text(), self.txtDni.get_text(), int(self.txtEdad.get_text()), self.generoActivo)
+        dni = self.txtDni.get_text()
+        nombre = self.txtNombre.get_text()
+        edad = int(self.txtEdad.get_text())
+        genero = self.generoActivo
+        self.editar_usuarioBD(nombre, dni, edad, genero)
+        for lista in modelo:
+            if lista[0] == dni:
+                lista[0] = dni
+                lista[1] = nombre
+                lista[2] = edad
+                lista[3] = genero
+                break
+        modelo_filtrado.refilter()
+        self.cambiar_botones_verNE()
 
     def editar_usuarioBD(self, nome, dni, edade, genero):
         try:
