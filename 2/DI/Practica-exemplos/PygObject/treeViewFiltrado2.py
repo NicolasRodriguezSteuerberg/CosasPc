@@ -98,14 +98,20 @@ class FestraPrincipal(Gtk.Window):
         # etiqueta y cuadro de texto nombre
         lblNombre = Gtk.Label(label="Nome")
         self.txtNombre = Gtk.Entry()
+        self.txtNombre.set_width_chars(15)
+        self.txtNombre.set_max_length(15)
+
         # dni
         lblDni = Gtk.Label(label="DNI")
         self.txtDni = Gtk.Entry()
+        self.txtDni.set_width_chars(6)
+        self.txtDni.set_max_length(6)
+
         # edad
         lblEdad = Gtk.Label(label="Edade")
         self.txtEdad = Gtk.Entry()
-
-        self.bloquear_campos_texto()
+        self.txtEdad.set_width_chars(3)
+        self.txtEdad.set_max_length(3)
 
         # añadimos las cosas
         cajaDatos.pack_start(lblNombre, True, True, 0)
@@ -126,6 +132,9 @@ class FestraPrincipal(Gtk.Window):
         self.rbtDatosMuller.connect("toggled", self.on_gender_changed, "Muller")
         self.rbtDatosOutros = Gtk.RadioButton.new_with_label_from_widget(self.rbtDatosHome, "Outros")
         self.rbtDatosOutros.connect("toggled", self.on_gender_changed, "Outros")
+
+        # bloqueamos los campos de texto y los radio buttons
+        self.bloquear_campos_texto()
 
         # añadimos los radio a la caja
         cajaRadioButtons.pack_start(lblEtiqueta, True, True, 0)
@@ -182,10 +191,6 @@ class FestraPrincipal(Gtk.Window):
         elif modelo[fila][3] == "Outros":
             self.rbtDatosOutros.set_active(True)
 
-    def bloquear_campos_texto(self):
-        self.txtNombre.set_sensitive(False)
-        self.txtDni.set_sensitive(False)
-        self.txtEdad.set_sensitive(False)
 
     def on_celdaCombo_edited(self, celda, fila, texto, modelo, indice):
         cambiado = self.modificarComboBD(texto,modelo,fila)
@@ -240,6 +245,16 @@ class FestraPrincipal(Gtk.Window):
         self.aceptarFlag = 2
         self.cambiar_botones_verAC()
 
+    def bloquear_campos_texto(self):
+        self.txtNombre.set_sensitive(False)
+        self.txtDni.set_sensitive(False)
+        self.txtEdad.set_sensitive(False)
+
+        self.rbtDatosHome.set_sensitive(False)
+        self.rbtDatosMuller.set_sensitive(False)
+        self.rbtDatosOutros.set_sensitive(False)
+
+
     # ocultar botones nuevo y editado + mostrar botones aceptar y cancelar
     def cambiar_botones_verAC(self):
         self.btnNuevo.set_sensitive(False)
@@ -251,6 +266,10 @@ class FestraPrincipal(Gtk.Window):
         self.txtNombre.set_sensitive(True)
         self.txtDni.set_sensitive(True)
         self.txtEdad.set_sensitive(True)
+
+        self.rbtDatosHome.set_sensitive(True)
+        self.rbtDatosMuller.set_sensitive(True)
+        self.rbtDatosOutros.set_sensitive(True)
 
     def cambiar_botones_verNE(self):
         self.btnAceptar.set_sensitive(False)
