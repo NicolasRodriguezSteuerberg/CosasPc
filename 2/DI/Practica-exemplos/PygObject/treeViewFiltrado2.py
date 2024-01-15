@@ -39,10 +39,17 @@ class FestraPrincipal(Gtk.Window):
             cursor.close()
             database.close()
 
+        # Creamos un scroll
+        fiestraScroll = Gtk.ScrolledWindow()
+        fiestraScroll.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        fiestraScroll.set_size_request(100, 132)
         #self.miTreeView = Gtk.TreeView(model=modelo)
         self.miTreeView = Gtk.TreeView(model=modelo_filtrado)
         selection = self.miTreeView.get_selection()
         selection.connect("changed", self.on_obxectoSeleccion_changed)
+
+        # Añadimos el treeview al scroll
+        fiestraScroll.add(self.miTreeView)
 
         for i, nombreColumna in enumerate(["DNI", "Nombre", "Edad"]):
             celda = Gtk.CellRendererText()
@@ -69,7 +76,7 @@ class FestraPrincipal(Gtk.Window):
         columna = Gtk.TreeViewColumn("Xenero", celdaCombo, text=3)
         self.miTreeView.append_column(columna)
 
-        caja_tabla.pack_start(self.miTreeView, True, True, 0)
+        caja_tabla.pack_start(fiestraScroll, True, True, 0)
 
         caja_ordenar = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=2)
         caja_tabla.pack_start(caja_ordenar, True, True, 0)

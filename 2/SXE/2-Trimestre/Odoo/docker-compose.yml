@@ -1,14 +1,29 @@
 version: '3.1'
 
 services:
+  # odoo:
+  web:
+    image: odoo:16.0
+    depends_on:
+      - mydb
+    ports:
+      - "8069:8069"
+    environment:
+      - HOST=mydb # same name as the postgres service
+      - USER=odoo
+      - PASSWORD=odoo
+
   # postgres:
-  db:
+  mydb:
     image: postgres
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: odoo
+      POSTGRES_USER: odoo
 
+  # adminer:
   adminer:
     image: adminer
     ports:
