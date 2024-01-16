@@ -56,11 +56,10 @@ Para subirlo tendremos que usar el comando `docker-compose up -d`, si en el sigu
 ## Ver el odoo
 Para ver el odoo tendremos que ir a la url `localhost:8069` y nos aparecera la pagina de inicio de sesion de odoo. Cuando lo hayas configurado ya tendrás disponible el odoo. <u>Ejemplo:</u>
 ![](imagenes/odoo.png)
-<details><summary><b>PRECAUCIÓN</b></summary>
-<p>
-En el apartado Database Name tendras que poner otro nombre que no sea el de la base de datos de postgres del docker compose, ya que si no te dara un error.
-</p>
-</details>
+
+> [!WARNING]
+> En el apartado Database Name tendras que poner otro nombre que no sea el de la base de datos de postgres del docker compose, ya que si no te dara un error.
+
 
 ## Como vemos que la nueva base de datos se ha creado?
 En el mismo IDE que ante y igual que en un paso anterior, a la derecha le damos al boton de `Database` y nos aparecera una ventana donde podemos ver las bases de datos que tenemos. Al lado del nombre del servicio de postgres nos aparecera un numero, si ese es uno le tendremos que dar a refrescar:<br>
