@@ -24,7 +24,8 @@ services:
       - PASSWORD=odoo # password of the postgres user
 ```
 ### Postgres
-Necesitamos una base de datos para poder usar odoo, por lo que en este caso usaremos postgres y crearemos otro contenedor para ello.
+Necesitamos una base de datos para poder usar odoo, por lo que en este caso usaremos postgres y crearemos otro contenedor para ello.<br>
+:warning: Ten cuidado de no tener el [puerto](#puerto) de postgres ocupado.
 ```yml
   # postgres:
   mydb: # name of the service
@@ -68,6 +69,8 @@ En el mismo IDE que ante y igual que en un paso anterior, a la derecha le damos 
 <br>
 ![](imagenes/database5.png)
 
+
+
 ## Para que necesitamos python? 
 <a id="python"> </a>
 
@@ -86,3 +89,18 @@ En el mismo IDE que ante y igual que en un paso anterior, a la derecha le damos 
 * **Personalización y Scripts:**
   - Los usuarios de Odoo suelen realizar personalizaciones y desarrollos adicionales a través de scripts Python.
   - Python es esencial para la creación de nuevas funcionalidades y la adaptación del sistema según las necesidades específicas de la empresa.
+
+
+## Que hacer si el puerto no esta disponible?
+<a id="puerto"> </a>
+Si el puerto no esta disponible tendremos que usar el siguiente comando en la terminal para ver quien lo está usando:
+
+```bash
+sudo netstat -putan | grep 5432
+```
+Y si nos sale un proceso que lo esta usando tendremos que matarlo con el siguiente comando:
+```bash
+sudo kill nombre_del_proceso
+```
+![](imagenes/puerto_usado.png)
+En mi caso no he tenido que matar ningun proceso ya que no estaba ocupado antes de hacer el docker compose.
