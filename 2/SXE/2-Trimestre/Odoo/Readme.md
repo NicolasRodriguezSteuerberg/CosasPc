@@ -53,7 +53,7 @@ En esta ventana puede que te salga que tienes que descargar un driver, si es as�
 ### Lanzar el docker compose
 Para subirlo tendremos que usar el comando `docker-compose up -d`, si en el siguiente paso no ves la página tendrás que ejecutar el comando `docker compose down -v` y volver a subirlo.
 
-## Ver el odoo
+## Como ver que el odoo esta funcionando?
 Para ver el odoo tendremos que ir a la url `localhost:8069` y nos aparecera la pagina de inicio de sesion de odoo. Cuando lo hayas configurado ya tendrás disponible el odoo. <u>Ejemplo:</u>
 ![](imagenes/odoo.png)
 
@@ -68,9 +68,21 @@ En el mismo IDE que ante y igual que en un paso anterior, a la derecha le damos 
 <br>
 ![](imagenes/database5.png)
 
+## Que hacer si el puerto no esta disponible?
+<a id="puerto"> </a>
+Si el puerto no esta disponible tendremos que usar el siguiente comando en la terminal para ver quien lo está usando:
 
+```bash
+sudo netstat -putan | grep 5432
+```
+Y si nos sale un proceso que lo esta usando tendremos que matarlo con el siguiente comando:
+```bash
+sudo kill nombre_del_proceso
+```
+![](imagenes/puerto_usado.png)
+En mi caso no he tenido que matar ningun proceso ya que no estaba ocupado antes de hacer el docker compose.
 
-## Para que necesitamos python? 
+## Que funcionalidades podremos realizar con python? 
 <a id="python"> </a>
 
 * **Desarrollo de Módulos:**
@@ -88,18 +100,3 @@ En el mismo IDE que ante y igual que en un paso anterior, a la derecha le damos 
 * **Personalización y Scripts:**
   - Los usuarios de Odoo suelen realizar personalizaciones y desarrollos adicionales a través de scripts Python.
   - Python es esencial para la creación de nuevas funcionalidades y la adaptación del sistema según las necesidades específicas de la empresa.
-
-
-## Que hacer si el puerto no esta disponible?
-<a id="puerto"> </a>
-Si el puerto no esta disponible tendremos que usar el siguiente comando en la terminal para ver quien lo está usando:
-
-```bash
-sudo netstat -putan | grep 5432
-```
-Y si nos sale un proceso que lo esta usando tendremos que matarlo con el siguiente comando:
-```bash
-sudo kill nombre_del_proceso
-```
-![](imagenes/puerto_usado.png)
-En mi caso no he tenido que matar ningun proceso ya que no estaba ocupado antes de hacer el docker compose.
