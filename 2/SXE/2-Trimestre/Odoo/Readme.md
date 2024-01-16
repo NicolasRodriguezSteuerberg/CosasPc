@@ -3,7 +3,7 @@
 Odoo es un *ERP* (Planificacion de Recursos Empresariales) de codigo abierto, que nos permite gestionar una empresa de forma integral, desde la gestion de clientes, proveedores, facturacion, contabilidad, etc.
 Para usar odoo necesitamos precisa de tener instalado:
 - `Una base de datos`(En este caso usaremos *Postgres*)
-- `Python`
+- `Python` (odoo esta escrito en python y lo necesitaremos para poder hacer algunas [funcionalidades](#python))
 
 ## Docker compose
 ### Odoo
@@ -67,3 +67,22 @@ En el mismo IDE que ante y igual que en un paso anterior, a la derecha le damos 
 <br> Ahora ya debería salir una etiqueta que hay 1 de 2, le daremos click a esa misma y marcaremos la base de datos que hemos puesto en la configuración de odoo del paso anterior, tambien podrías desmarcar las otras ya que no las necesitarás. De esta forma ya sabemos que se ha creado de forma correcta.
 <br>
 ![](imagenes/database5.png)
+
+## Para que necesitamos python? 
+<a id="python"> </a>
+
+* **Desarrollo de Módulos:**
+  - En Odoo, los diferentes componentes y funcionalidades se organizan en módulos escritos en Python.
+  - Tanto el desarrollo de nuevos módulos como la personalización de los existentes se lleva a cabo mediante scripts Python.
+
+* **Framework Odoo:**
+  - Python desempeña un papel esencial en el framework interno de Odoo.
+  - Proporciona las herramientas necesarias para la gestión de la interfaz de usuario, la lógica empresarial y la seguridad.
+
+* **Object-Relational Mapping (ORM):**
+  - Odoo utiliza un ORM en Python para interactuar con la base de datos.
+  - Este ORM simplifica la manipulación de datos y la creación de modelos de datos, facilitando a los desarrolladores trabajar con la base de datos de manera eficiente.
+
+* **Personalización y Scripts:**
+  - Los usuarios de Odoo suelen realizar personalizaciones y desarrollos adicionales a través de scripts Python.
+  - Python es esencial para la creación de nuevas funcionalidades y la adaptación del sistema según las necesidades específicas de la empresa.
