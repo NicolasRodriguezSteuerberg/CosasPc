@@ -22,9 +22,3 @@ services:
       POSTGRES_DB: postgres
       POSTGRES_PASSWORD: odoo
       POSTGRES_USER: odoo
-
-  # adminer:
-  adminer:
-    image: adminer
-    ports:
-        - 8080:8080
