@@ -1,4 +1,24 @@
 # ODOO
+
+## Indice
+1. [Que es Odoo y que necesitamos para usarlo?](#que-es-odoo-y-que-necesitamos-para-usarlo)
+
+2. [Docker compose](#docker-compose)
+   - [Odoo](#odoo)
+   - [Postgres](#postgres-docker)
+     - [Como vemos que la base de datos esta funcionando desde un IDE?](#como-vemos-la-base-de-datos-desde-ide)
+     - [Que hacer si el puerto no esta disponible?](#que-hacer-puerto-no-disponible)
+   - [Lanzar el docker compose](#lanzar-docker-compose)
+
+3. [Como ver que el Odoo esta funcionando?](#como-ver-que-odoo-esta-funcionando)
+   - [Como vemos que la nueva base de datos se ha creado?](#como-vemos-nueva-base-de-datos-creada)
+
+4. [Que funcionalidades podremos realizar con Python?](#funcionalidades-con-python)
+   - [Desarrollo de Módulos](#desarrollo-de-modulos)
+   - [Framework Odoo](#framework-odoo)
+   - [Object-Relational Mapping (ORM)](#orm)
+   - [Personalización y Scripts](#personalizacion-y-scripts)
+
 ## Que es Odoo y que necesitamos para usarlo?
 Odoo es un *ERP* (Planificacion de Recursos Empresariales) de codigo abierto, que nos permite gestionar una empresa de forma integral, desde la gestion de clientes, proveedores, facturacion, contabilidad, etc.
 Para usar odoo necesitamos precisa de tener instalado:
@@ -38,7 +58,7 @@ Necesitamos una base de datos para poder usar odoo, por lo que en este caso usar
       POSTGRES_USER: odoo # user of the postgres
 ```
 
-### Como vemos que la base de datos esta funcionando desde un IDE?
+#### Como vemos que la base de datos esta funcionando desde un IDE?
 En caso de que estés usando pycharm como yo, en la pestaña de la derecha le damos al boton de `Database` y nos aparecera una ventana donde podemos ver las bases de datos que tenemos.
 Al no tener ninguna le daremos al + , despues a `Add a Database` y nos aparecera una ventana donde pondremos elegir el servicio, en este caso usaremos la de postgres, nos aparecera otra ventana donde tendremos que poner el nombre de la base de datos, el usuario y la contraseña.
 En esta ventana puede que te salga que tienes que descargar un driver, si es así hazlo. Cuando tengas eso configurado y descargado el Driver pulsa en `Test Connection` si te dice que la conexion es correcta pulsa en `Apply` y despues en `OK`. Ahora donde no teniamos ninguna base de datos ya deberiamos tener la que acabamos de crear.
@@ -50,25 +70,7 @@ En esta ventana puede que te salga que tienes que descargar un driver, si es as�
 </p>
 </details>
 
-### Lanzar el docker compose
-Para subirlo tendremos que usar el comando `docker-compose up -d`, si en el siguiente paso no ves la página tendrás que ejecutar el comando `docker compose down -v` y volver a subirlo.
-
-## Como ver que el odoo esta funcionando?
-Para ver el odoo tendremos que ir a la url `localhost:8069` y nos aparecera la pagina de inicio de sesion de odoo. Cuando lo hayas configurado ya tendrás disponible el odoo. <u>Ejemplo:</u>
-![](imagenes/odoo.png)
-
-> [!WARNING]
-> En el apartado Database Name tendras que poner otro nombre que no sea el de la base de datos de postgres del docker compose, ya que si no te dara un error.
-
-
-## Como vemos que la nueva base de datos se ha creado?
-En el mismo IDE que ante y igual que en un paso anterior, a la derecha le damos al boton de `Database` y nos aparecera una ventana donde podemos ver las bases de datos que tenemos. Al lado del nombre del servicio de postgres nos aparecera un numero, si ese es uno le tendremos que dar a refrescar:<br>
-![](imagenes/database4.png)
-<br> Ahora ya debería salir una etiqueta que hay 1 de 2, le daremos click a esa misma y marcaremos la base de datos que hemos puesto en la configuración de odoo del paso anterior, tambien podrías desmarcar las otras ya que no las necesitarás. De esta forma ya sabemos que se ha creado de forma correcta.
-<br>
-![](imagenes/database5.png)
-
-## Que hacer si el puerto no esta disponible?
+#### Que hacer si el puerto no esta disponible?
 <a id="puerto"> </a>
 Si el puerto no esta disponible tendremos que usar el siguiente comando en la terminal para ver quien lo está usando:
 
@@ -81,6 +83,26 @@ sudo kill nombre_del_proceso
 ```
 ![](imagenes/puerto_usado.png)
 En mi caso no he tenido que matar ningun proceso ya que no estaba ocupado antes de hacer el docker compose.
+
+
+
+#### Lanzar el docker compose
+Para subirlo tendremos que usar el comando `docker-compose up -d`, si en el siguiente paso no ves la página tendrás que ejecutar el comando `docker compose down -v` y volver a subirlo.
+
+## Como ver que el odoo esta funcionando?
+Para ver el odoo tendremos que ir a la url `localhost:8069` y nos aparecera la pagina de inicio de sesion de odoo. Cuando lo hayas configurado ya tendrás disponible el odoo. <u>Ejemplo:</u>
+![](imagenes/odoo.png)
+
+> [!WARNING]
+> En el apartado Database Name tendras que poner otro nombre que no sea el de la base de datos de postgres del docker compose, ya que si no te dara un error.
+
+
+### Como vemos que la nueva base de datos se ha creado?
+En el mismo IDE que ante y igual que en un paso anterior, a la derecha le damos al boton de `Database` y nos aparecera una ventana donde podemos ver las bases de datos que tenemos. Al lado del nombre del servicio de postgres nos aparecera un numero, si ese es uno le tendremos que dar a refrescar:<br>
+![](imagenes/database4.png)
+<br> Ahora ya debería salir una etiqueta que hay 1 de 2, le daremos click a esa misma y marcaremos la base de datos que hemos puesto en la configuración de odoo del paso anterior, tambien podrías desmarcar las otras ya que no las necesitarás. De esta forma ya sabemos que se ha creado de forma correcta.
+<br>
+![](imagenes/database5.png)
 
 ## Que funcionalidades podremos realizar con python? 
 <a id="python"> </a>
