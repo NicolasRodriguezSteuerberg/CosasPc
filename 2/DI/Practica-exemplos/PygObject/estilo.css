@@ -1,0 +1,13 @@
+/*cambiar el fondo de la ventana*/
+window {
+    background-color: black;
+}
+
+/*cambiar el color de la letra*/
+#error {
+    color: #ff5252;
+}
+
+#normal{
+    color: #ffffff;
+}

@@ -1,6 +1,8 @@
 import gi
 import sqlite3 as dbapi
 
+from gi.overrides.Gdk import Gdk
+
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Pango
 # para que funcione primero tenemos que tener la base de datos creada
@@ -12,6 +14,14 @@ class FestraPrincipal(Gtk.Window):
 
         self.set_default_size(250, 100)
         self.set_border_width(10)
+
+        # caja general
+        self.css_provider = Gtk.CssProvider()
+        self.css_provider.load_from_path('estilo.css')
+
+        self.contexto = Gtk.StyleContext()
+        self.screen = Gdk.Screen.get_default()
+        self.contexto.add_provider_for_screen(self.screen, self.css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
         caja_general = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL,spacing=4)
 
@@ -103,29 +113,29 @@ class FestraPrincipal(Gtk.Window):
         # para las labels y los cuadros de texto
         cajaDatos = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
         # etiqueta y cuadro de texto nombre
-        lblNombre = Gtk.Label(label="Nome")
+        self.lblNombre = Gtk.Label(label="Nome")
         self.txtNombre = Gtk.Entry()
         self.txtNombre.set_width_chars(15)
         self.txtNombre.set_max_length(15)
 
         # dni
-        lblDni = Gtk.Label(label="DNI")
+        self.lblDni = Gtk.Label(label="DNI")
         self.txtDni = Gtk.Entry()
-        self.txtDni.set_width_chars(6)
-        self.txtDni.set_max_length(6)
+        self.txtDni.set_width_chars(9)
+        self.txtDni.set_max_length(9)
 
         # edad
-        lblEdad = Gtk.Label(label="Edade")
+        self.lblEdad = Gtk.Label(label="Edade")
         self.txtEdad = Gtk.Entry()
         self.txtEdad.set_width_chars(3)
         self.txtEdad.set_max_length(3)
 
         # añadimos las cosas
-        cajaDatos.pack_start(lblNombre, True, True, 0)
+        cajaDatos.pack_start(self.lblNombre, True, True, 0)
         cajaDatos.pack_start(self.txtNombre, True, True, 0)
-        cajaDatos.pack_start(lblDni, True, True, 0)
+        cajaDatos.pack_start(self.lblDni, True, True, 0)
         cajaDatos.pack_start(self.txtDni, True, True, 0)
-        cajaDatos.pack_start(lblEdad, True, True, 0)
+        cajaDatos.pack_start(self.lblEdad, True, True, 0)
         cajaDatos.pack_start(self.txtEdad, True, True, 0)
 
         # caja para el radioButton
@@ -288,27 +298,67 @@ class FestraPrincipal(Gtk.Window):
         self.bloquear_campos_texto()
 
     def aceptar_pulsado(self, banderaboton, modelo, modelo_filtrado):
+        self.lblNombre.set_name("normal")
+        self.lblDni.set_name("normal")
+        self.lblEdad.set_name("normal")
+        self.contexto.add_provider_for_screen(self.screen, self.css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
         if self.aceptarFlag == 1:
             self.engadir_usuario(modelo, modelo_filtrado)
         elif self.aceptarFlag ==2:
             self.editar_usuario(modelo, modelo_filtrado)
         else:
             print("Error al aceptar")
-        self.vaciar_campos()
 
     def cancelar_pulsado(self, banderaboton):
+        self.lblNome.set_name("normal")
+        self.lblDni.set_name("normal")
+        self.lblEdad.set_name("normal")
+        self.contexto.add_provider_for_screen(self.screen, self.css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
         self.cambiar_botones_verNE()
 
     def engadir_usuario(self,modelo, modelo_filtrado):
-        dni = self.txtDni.get_text()
-        nombre = self.txtNombre.get_text()
-        edad = int(self.txtEdad.get_text())
-        genero = self.generoActivo
-        if (dni!="" and nombre!="" and edad!=""):
+        # comprobrar que la edad, dni y nombre son correctos para poder añadir
+        if(self.comprobaciones(self.txtDni.get_text(), self.txtNombre.get_text(), self.txtEdad.get_text())):
+            # recoger datos
+            dni = self.txtDni.get_text()
+            edad = int(self.txtEdad.get_text())
+            nombre = self.txtNombre.get_text()
+            genero = self.generoActivo
+            # añadir los datos
             self.engadir_bdusuario(nombre, dni, edad, genero)
             modelo.append((dni, nombre, edad, genero, True))
+            # refiltramos
             modelo_filtrado.refilter()
+            # cambiamos la visibilidad de los botones
+            self.vaciar_campos()
             self.cambiar_botones_verNE()
+
+    def comprobaciones(self, dni, nombre, edad):
+        if(self.comprobar_dni(dni) and self.comprobar_edad(edad)):
+            return True
+        else:
+            return False
+
+    def comprobar_dni(self, dni):
+        if len(dni) == 9 and dni[0:8].isdigit() and dni[8].isalpha():
+                return True
+        else:
+            # change color of the text
+            self.lblDni.set_name("error")
+            self.contexto.add_provider_for_screen(self.screen, self.css_provider,
+                                                  Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+            return False
+
+    def comprobar_edad(self, edad):
+        if edad.isdigit() and (int(edad) >= 0 and int(edad) <= 150):
+            return True
+        else:
+            # change color of the text
+            self.lblEdad.set_name("error")
+            self.contexto.add_provider_for_screen(self.screen, self.css_provider,
+                                                  Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+            return False
+
 
     def engadir_bdusuario(self, nome, dni, edade, genero):
         try:
@@ -341,6 +391,7 @@ class FestraPrincipal(Gtk.Window):
                 lista[3] = genero
                 break
         modelo_filtrado.refilter()
+        self.vaciar_campos()
         self.cambiar_botones_verNE()
 
     def editar_usuarioBD(self, nome, dni, edade, genero):
