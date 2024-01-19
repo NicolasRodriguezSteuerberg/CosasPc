@@ -34,6 +34,7 @@ class SolutionRomanToInt {
     si el siguiente valor es mayor que el actual lo multiplica con -1
     y todos estos valores los suma
     s.getOrNull -> si no existe ese valor por que se salga de los limites
+    
     fun romanToInt(s: String) = s.mapIndexed { i, c ->
         c.roman * if ((s.getOrNull(i + 1)?.roman ?: 0) <= c.roman) 1 else -1
     }.sum()
