@@ -4,7 +4,7 @@ import sqlite3 as dbapi
 from gi.overrides.Gdk import Gdk
 
 gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk, Pango
+from gi.repository import Gtk, Pango, GLib
 # para que funcione primero tenemos que tener la base de datos creada
 
 class FestraPrincipal(Gtk.Window):
@@ -165,23 +165,37 @@ class FestraPrincipal(Gtk.Window):
         # 0 -> nada, 1 -> Nuevo, 2 -> Editar
         self.aceptarFlag = 0
 
-        self.btnNuevo = Gtk.Button(label="Nuevo")
+        self.btnNuevo = Gtk.Button.new_with_mnemonic("_Nuevo")
         self.btnNuevo.connect("clicked", self.btnNuevoPulsado)
-        self.btnEditar = Gtk.Button(label="Editar")
+        self.btnEditar = Gtk.Button.new_with_mnemonic("_Editar")
         self.btnEditar.connect("clicked", self.btnEditarPulsado)
-        self.btnAceptar = Gtk.Button(label="Aceptar")
+        self.btnAceptar = Gtk.Button.new_with_mnemonic("_Aceptar")
         self.btnAceptar.connect("clicked", self.aceptar_pulsado, modelo, modelo_filtrado)
-        self.btnCancelar = Gtk.Button(label="Cancelar")
+        self.btnCancelar = Gtk.Button.new_with_mnemonic("_Cancelar")
         self.btnCancelar.connect("clicked", self.cancelar_pulsado)
         cajaBotones.pack_start(self.btnNuevo, True, True, 0)
         cajaBotones.pack_start(self.btnEditar, True, True, 0)
         cajaBotones.pack_start(self.btnAceptar, True, True, 0)
         cajaBotones.pack_start(self.btnCancelar, True, True, 0)
+        cajaBufferText = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
+        self.txtViewConsola = Gtk.TextView()
+        self.bufferText = Gtk.TextBuffer()
+        self.txtViewConsola.set_sensitive(False)
+        self.txtViewConsola.set_buffer(self.bufferText)
+        cajaBufferText.pack_start(self.txtViewConsola, True, True, 0)
+
+        cajaTemporizador = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
+        self.barraProgreso = Gtk.ProgressBar()
+        self.contador = 50
+        self.temporizador = GLib.timeout_add(50, self.on_contador, None)
+        cajaTemporizador.pack_start(self.barraProgreso, True, True, 0)
 
         # añadimos las cajas al general
         cajaDatosGeneral.pack_start(cajaDatos, True, True, 0)
         cajaDatosGeneral.pack_start(cajaRadioButtons, True, True, 0)
         cajaDatosGeneral.pack_start(cajaBotones, True, True, 0)
+        cajaDatosGeneral.pack_start(cajaBufferText, True, True, 0)
+        cajaDatosGeneral.pack_start(cajaTemporizador, True, True, 0)
 
         caja_general.pack_start(cajaDatosGeneral, True, True, 0)
 
@@ -194,6 +208,16 @@ class FestraPrincipal(Gtk.Window):
         # no dejamos tocar los botones Aceptar y Cancelar
         self.btnAceptar.set_sensitive(False)
         self.btnCancelar.set_sensitive(False)
+        self.barraProgreso.hide()
+
+
+    def on_contador(self, temporizador):
+        if self.contador < 50:
+            self.contador += 2
+            self.barraProgreso.set_fraction(self.contador/50)
+        else:
+            self.barraProgreso.hide()
+        return True
 
     def on_obxectoSeleccion_changed(self, seleccion):
         (modelo, fila) = seleccion.get_selected()
@@ -327,6 +351,9 @@ class FestraPrincipal(Gtk.Window):
             # añadir los datos
             self.engadir_bdusuario(nombre, dni, edad, genero)
             modelo.append((dni, nombre, edad, genero, True))
+            self.barraProgreso.show()
+            self.contador = 0
+            self.bufferText.set_text("\nNovo usuario engadido")
             # refiltramos
             modelo_filtrado.refilter()
             # cambiamos la visibilidad de los botones
@@ -345,8 +372,7 @@ class FestraPrincipal(Gtk.Window):
         else:
             # change color of the text
             self.lblDni.set_name("error")
-            self.contexto.add_provider_for_screen(self.screen, self.css_provider,
-                                                  Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+            self.contexto.add_provider_for_screen(self.screen, self.css_provider,Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
             return False
 
     def comprobar_edad(self, edad):
@@ -391,6 +417,8 @@ class FestraPrincipal(Gtk.Window):
                 lista[3] = genero
                 break
         modelo_filtrado.refilter()
+        self.barraProgreso.show()
+        self.contador = 0
         self.vaciar_campos()
         self.cambiar_botones_verNE()
 
