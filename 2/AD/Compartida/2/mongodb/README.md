@@ -13,6 +13,8 @@
 6. [Creation](#creation)
     1. [Create a Data/Collection](#create-a-datacollection)
     2. [Create a Row with Personalized ID](#create-a-row-with-personalized-id)
+7. [Update](#update)
+8. [Connect to a Database or Create One](#connect-to-a-database-or-create-one)
 
 
 ## Entering MongoDB
@@ -110,3 +112,42 @@ Collections are created by inserting a row:
 ### Create a row with personalized id
 - `db.people.insertOne({_id:1, name:"Pedro"})`
 
+## Update
+- Replace entire document/row with new:
+    - `db.people.replaceOne({_id:1},{name:"luis"})`
+        - If it has a "hello" field, it replaces it with "name". If it has 4 fields, it replaces them with just "name".
+    - `db.people.replaceOne({},{phone:4444})`
+        - Replaces the first one it finds.
+
+- Modify a document/row or add a field:
+    - `db.people.updateOne({name:"Smith"},{$set:{children:2.5}})`
+        - Searches for the first document/row with the "name" field and changes the second parameter. If it doesn't exist, it creates it.
+        - CANNOT CHANGE THE ID
+    - `db.people.updateOne({name:"Jones"}, {$set:{age:50}},{upsert:true})`
+        - If it doesn't find the condition field, it creates it.
+
+- Modify several/all documents/rows or add a field:
+    - `db.people.updateMany({},{$set:{city:"NYC"}})`
+
+- Delete a data from a document/row:
+    - `db.people.updateOne({name:"Smith"},{$unset:{childre:443}})`
+        - After the field you want to delete, you don't have to put the exact data of that field; you can put whatever you want.
+
+- Modify multiple documents/rows:
+    - `db.people.updateMany({name:"Smith"},{$set:{children:2.5}})`
+
+- Increment a field:
+    - `db.books.updateOne({_id:1}, {$inc:{stock:1}})`
+        - The number you provide is how much it increments.
+
+- Decrease a field:
+    - `db.books.updateOne({_id:1}, {$inc:{stock:-1}})`
+        - The number you provide is how much it decreases.
+
+- Modify multiple fields:
+    - `db.books.updateOne({_id:1}, {$inc:{stock:18},$set:{item:"ABCD"}})`
+    - `db.books.updateOne({_id:1}, {$inc:{stock:5},$set:{item:"ABC123", "info.publisher":2222, tags:["software"], "ratings.1":{by:"xyz", rating: 3}}}`
+
+## Connect to a Database or Create One
+(If you create one without adding any collections, it won't appear in the show dbs list)
+- `use databaseName`
