@@ -1,20 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package pruebamongo;
 
-/**
- *
- * @author postgres
- */
+
 public class PruebaMongo {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         // TODO code application logic here
+        Metodos obx = new Metodos();
+        String db = "test";
+        String collectionDatos = "datos";
+        obx.conect(db);
+        // obx.crearDato();
+        obx.updatePuntuationEstudiante(1, 2, 42);
+        obx.verEstudiantePuntuacionExamenesTest();
+        obx.cerrarCliente();
     }
     
 }
