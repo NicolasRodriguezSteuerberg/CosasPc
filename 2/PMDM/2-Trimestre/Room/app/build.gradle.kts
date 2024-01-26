@@ -51,6 +51,10 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    // Asegúrate de configurar la versión de Java para kapt
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class) {
+        kotlinOptions.jvmTarget = "1.8"
+    }
 }
 
 dependencies {

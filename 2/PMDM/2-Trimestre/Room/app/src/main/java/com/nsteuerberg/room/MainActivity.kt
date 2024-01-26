@@ -11,21 +11,24 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.room.Room
+import com.nsteuerberg.room.room.UserDao
 import com.nsteuerberg.room.room.UserDatabase
 import com.nsteuerberg.room.ui.theme.RoomTheme
+import com.nsteuerberg.room.viewmodels.UserViewModel
+import com.nsteuerberg.room.views.Inicio
 
 class MainActivity : ComponentActivity() {
     private lateinit var db: UserDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+    /*
         db = Room.databaseBuilder(
             applicationContext,
             UserDatabase::class.java,
             "user"
         ).build()
-
+        */
         setContent {
             RoomTheme {
                 // A surface container using the 'background' color from the theme
@@ -33,7 +36,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    // call inicio from iu
+                    Inicio()
                 }
             }
         }
@@ -43,21 +47,5 @@ class MainActivity : ComponentActivity() {
     override fun onDestroy() {
         db.close()
         super.onDestroy()
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    RoomTheme {
-        Greeting("Android")
     }
 }
