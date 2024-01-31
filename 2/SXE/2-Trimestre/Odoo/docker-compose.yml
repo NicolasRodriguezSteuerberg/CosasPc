@@ -21,4 +21,4 @@ services:
     environment:
       POSTGRES_DB: postgres
       POSTGRES_PASSWORD: odoo
-      POSTGRES_USER: odoo
+      POSTGRdES_USER: odoo

@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+  # odoo:
+  web_dev:
+    image: odoo:16.0
+    depends_on:
+      - mydb_dev
+    volumes:
+      - ./extra-addons:/mnt/extra-addons
+    ports:
+      - "8069:8069"
+    environment:
+      - HOST=mydb_dev # same name as the postgres service
+      - USER=odoo
+      - PASSWORD=odoo
+
+  # postgres:
+  mydb_dev:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: odoo
+      POSTGRES_USER: odoo
