@@ -8,8 +8,10 @@ from reportlab.lib.pagesizes import A4
 
 follaEstilo = getSampleStyleSheet()
 
-imaxe = Image("tombaker.jpg")
-parafo = Paragraph("Optare", style = [Color(0,0,150,0)])
+imaxe = Image("tombaker.jpg", 20, 20)
+estiloCorpoTexto = follaEstilo["BodyText"]
+estiloCorpoTexto.textColor = Color(0,0,250,0.5)
+parafo = Paragraph("Optare", style = estiloCorpoTexto)
 
 elementosDoc = []
 
