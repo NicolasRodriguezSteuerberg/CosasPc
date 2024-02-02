@@ -13,6 +13,7 @@ public class CalculadoraServer {
         boolean continuation = true;
         
         while(continuation){
+            obx.sendPosibilityOperations();
             obx.getOperando();
             obx.getNumbers();
             obx.sendCalculation();

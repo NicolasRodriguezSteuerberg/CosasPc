@@ -1,5 +1,7 @@
 package calculadoracliente;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -13,6 +15,8 @@ import javax.swing.JOptionPane;
 public class Metodos {
     InputStream is;
     OutputStream os;
+    DataOutputStream dos;
+    DataInputStream dis;
     int[] numbers = new int[2];
 
     public void connect() throws IOException{
@@ -24,16 +28,17 @@ public class Metodos {
         
         setIs(clienteSocket.getInputStream());
         setOs(clienteSocket.getOutputStream());
+        setDos(new  DataOutputStream(os));
+        setDis(new DataInputStream(is));
     }
     
     public void getOperationOptions() throws IOException{
-        byte[] lengthBuffer = new byte[4];
-        is.read(lengthBuffer);
-        int dataLength = ByteBuffer.wrap(lengthBuffer).getInt();
+        // Leemos la longitud del mensaje
+        int dataLength = dis.readInt();
 
-        // Recibir el array de bytes
+        // leemos el array de bytes
         byte[] receivedData = new byte[dataLength];
-        is.read(receivedData);
+        dis.readFully(receivedData);
 
         // Convertir los bytes a un string
         String receivedString = new String(receivedData);
@@ -58,32 +63,67 @@ public class Metodos {
         String mensajeMandar = operandos[choice];
         byte[] mensajeMandarBytes = mensajeMandar.getBytes();
 
-        os.write(ByteBuffer.allocate(4).putInt(mensajeMandarBytes.length).array()); // Enviamos la longitud del mensaje
-        os.write(mensajeMandarBytes);
+        dos.writeInt(mensajeMandarBytes.length);
+        dos.write(mensajeMandarBytes);
     }
     
     public void sendOperaciones() throws IOException{
-        numbers[0] = Integer.parseInt(JOptionPane.showInputDialog("TECLEE 1 OPERANDO"));
+        for (int i = 0; i < 2; i++) {
+            numbers[i] = Integer.parseInt(JOptionPane.showInputDialog("TECLEE EL " + (i+1) + " OPERANDO"));
+        }
 
         // Obtener la longitud del array
         int arrayLength = numbers.length;
 
         // Enviar la longitud del array
-        os.write(ByteBuffer.allocate(4).putInt(arrayLength).array());
-
-        // Enviar el array de enteros
-        ByteBuffer intBuffer = ByteBuffer.allocate(4 * arrayLength);
-        IntBuffer intBufferData = intBuffer.asIntBuffer();
-        intBufferData.put(numbers);
-        os.write(intBuffer.array());
+        dos.writeInt(arrayLength);
+        
+        // Enviar los numeros
+        for (int i = 0; i < arrayLength; i++) {
+            dos.writeInt(numbers[i]);
+        }
     }
     
-    public void getContinueMessage(){
+    public boolean receiveCalculation() throws IOException{
+        // Leemos la longitud del mensaje
+        int messageLength = dis.readInt();
         
+        // Leemos el mensaje como array de bytes
+        byte[] mensajeBytes = new byte[messageLength];
+        dis.readFully(mensajeBytes);
+        
+        // Convertimos los bytes a String
+        String receivedString = new String(mensajeBytes);
+        
+        // lo pasamos a array
+        String[] receivedArray = receivedString.split(",");
+        
+        boolean isContinue = sendContinueResult(receivedArray);
+        sendContinue(isContinue);
+        return isContinue;
     }
     
-    public void sendContinue(){
+    
+    public void sendContinue(boolean isContinue) throws IOException{
+        dos.writeBoolean(isContinue);
+    }
+    
+    public boolean sendContinueResult(String[] array){
+        String[] options = new String[]{array[1],array[2]};
+        int choice = JOptionPane.showOptionDialog(
+                null, 
+                "Tu operacion es de\n" + array[0],
+                "VENTANA CLIENTE", 0, 0,
+                null,
+                options,
+                options[1]
+        );
         
+        if(choice == 0){
+            return true;
+        } else{
+            return false;
+        }
     }
     
     public InputStream getIs() {
@@ -100,6 +140,22 @@ public class Metodos {
 
     public void setOs(OutputStream os) {
         this.os = os;
+    }
+    
+    public DataOutputStream getDos() {
+        return dos;
+    }
+
+    public void setDos(DataOutputStream dos) {
+        this.dos = dos;
+    }
+
+    public DataInputStream getDis() {
+        return dis;
+    }
+
+    public void setDis(DataInputStream dis) {
+        this.dis = dis;
     }
     
 }

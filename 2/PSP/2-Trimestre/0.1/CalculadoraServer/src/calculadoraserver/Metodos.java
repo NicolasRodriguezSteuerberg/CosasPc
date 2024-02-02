@@ -1,5 +1,7 @@
 package calculadoraserver;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -13,6 +15,8 @@ import java.nio.IntBuffer;
 public class Metodos {
     InputStream is;
     OutputStream os;
+    DataOutputStream dos;
+    DataInputStream dis;
     String operaciones = "+,-,*,/";
     String operando;
     int numbers[] = new int[2];
@@ -29,54 +33,40 @@ public class Metodos {
         System.out.println("Conexion realizada");
         setIs(newSocket.getInputStream());
         setOs(newSocket.getOutputStream());
+        setDos(new  DataOutputStream(os));
+        setDis(new DataInputStream(is));
     }
     
     
     public void sendPosibilityOperations() throws IOException{
         byte[] mensajeEnviarBytes = operaciones.getBytes();
         // convertimos el mensaje en un ByteBuffer y lo pasamos a array
-        os.write(ByteBuffer.allocate(4).putInt(mensajeEnviarBytes.length).array());
+        dos.writeInt(mensajeEnviarBytes.length);
         // enviamos el mensaje
-        os.write(mensajeEnviarBytes);
+        dos.write(mensajeEnviarBytes);
     }
     
     public void getOperando() throws IOException{
-        // Usamos un buffer de 4 bytes para almacenar la longitud del mensaje
-        // para pasarlo a int necesitamos 32 bits (1 espacio de byte tiene 8), 4x8=32
-        byte[] lengthBuffer = new byte[4];
-
-        // is.read(lengthBuffer) -> el metodo read toma los bytes del flujo de entrada
-        // y los coloca en el array de lengtBuffer
-        is.read(lengthBuffer);
-
-        // ByteBuffer -> (clase java que proporciona trabajar con datos binarios)
-        // .wrap() -> crea objeto tipo ByteBuffer
-        // .getInt() -> extrae un entero de 32 bits del buffer
-        int messageLength = ByteBuffer.wrap(lengthBuffer).getInt();
-
-        // creamos un array de bytes igual al length de bytes
+        // Leemos la longitud del mensaje
+        int messageLength = dis.readInt();
+        
+        //Leemos el mensaje como array de bytes
         byte[] messageBuffer = new byte[messageLength];
-        // coloca los bytes en el array
-        is.read(messageBuffer);
+        dis.readFully(messageBuffer);
+        
         // convertimos los bytes a String
         operando = new String(messageBuffer);
+        System.out.println(operando);
     }
     
     public void getNumbers() throws IOException{
-        byte[] lengthBuffer = new byte[4];            
-        is.read(lengthBuffer);
-        int arrayLength = ByteBuffer.wrap(lengthBuffer).getInt();
+        // recibir la longitud
+        int arrayLength = dis.readInt();
 
-        // creamos un array de bytes igual al length de bytes
-        // lo multiplicamos por 2 por que recibimos array de 2 numeros
-        byte[] receivedData = new byte[2 * arrayLength];
-        // coloca los bytes en el array
-        is.read(receivedData);
-        
-        // convertimos los bytes al array
-        IntBuffer intBuffer = ByteBuffer.wrap(receivedData).asIntBuffer();
-        // transferimos los valores de intBuffer al array numbers
-        intBuffer.get(numbers);
+        for (int i = 0; i < arrayLength; i++) {
+            numbers[i] = dis.readInt();
+            System.out.println(numbers[i]);
+        }
     }
     
     public void sendCalculation() throws IOException{
@@ -85,10 +75,11 @@ public class Metodos {
         // send mensaje
         String mandar = calc + ",nuevo,finalizar";
         byte[] mensajeEnviarBytes = mandar.getBytes();
-        // convertimos el mensaje en un ByteBuffer y lo pasamos a array
-        os.write(ByteBuffer.allocate(4).putInt(mensajeEnviarBytes.length).array());
+        
+        // Enviamos la longitud del mensaje
+        dos.writeInt(mensajeEnviarBytes.length);
         // enviamos el mensaje
-        os.write(mensajeEnviarBytes);
+        dos.write(mensajeEnviarBytes);
     }
     
     public int doCalculation(){
@@ -107,26 +98,8 @@ public class Metodos {
     }
     
     public boolean getContinuation() throws IOException{
-        byte[] lengthBuffer = new byte[4];
-        is.read(lengthBuffer);
-
-        // ByteBuffer -> (clase java que proporciona trabajar con datos binarios)
-        // .wrap() -> crea objeto tipo ByteBuffer
-        // .getInt() -> extrae un entero de 32 bits del buffer
-        int messageLength = ByteBuffer.wrap(lengthBuffer).getInt();
-
-        // creamos un array de bytes igual al length de bytes
-        byte[] messageBuffer = new byte[messageLength];
-        // coloca los bytes en el array
-        is.read(messageBuffer);
-        // convertimos los bytes a String
-        String continuation = new String(messageBuffer);
-        if (continuation.equalsIgnoreCase("nuevo")){
-            return true;
-        }
-        else{
-            return false;
-        }
+        boolean isContinue = dis.readBoolean();
+        return isContinue;
     }
     
     public InputStream getIs() {
@@ -143,6 +116,22 @@ public class Metodos {
 
     public void setOs(OutputStream os) {
         this.os = os;
+    }
+
+    public DataOutputStream getDos() {
+        return dos;
+    }
+
+    public void setDos(DataOutputStream dos) {
+        this.dos = dos;
+    }
+
+    public DataInputStream getDis() {
+        return dis;
+    }
+
+    public void setDis(DataInputStream dis) {
+        this.dis = dis;
     }
     
     
