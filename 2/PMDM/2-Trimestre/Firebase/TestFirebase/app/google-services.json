@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "576153857242",
+    "project_id": "prueba-5aff5",
+    "storage_bucket": "prueba-5aff5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:576153857242:android:f1d9879ad325557d4849e3",
+        "android_client_info": {
+          "package_name": "com.example.testfirebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt5X2JeTap6QiUIgRLXk5nBE3iZQlAL38"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
