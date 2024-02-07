@@ -8,9 +8,12 @@ import com.google.firebase.firestore.SetOptions
 import kotlinx.coroutines.tasks.await
 
 data class User(
-    val nombre: String,
-    val edad: Int
-)
+    val nombre: String = "",
+    val edad: Int = 0
+){
+    // Constructor vacío requerido por Firebase
+    constructor() : this("", 0)
+}
 
 object UserModel{
     private val db = FirebaseFirestore.getInstance()

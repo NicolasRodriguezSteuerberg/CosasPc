@@ -17,6 +17,7 @@ class UserViewModel(private val userRepository: UserModel): ViewModel() {
 
     private fun loadUsers() {
         viewModelScope.launch {
+
             val userList = userRepository.getUsers()
             // Actualiza la lista de usuarios
             data.users.value = userList
