@@ -1,7 +1,7 @@
 import os
 
 from reportlab.graphics.charts.barcharts import VerticalBarChart
-from reportlab.graphics.charts.legends import LineLegend
+from reportlab.graphics.charts.legends import LineLegend, Legend
 from reportlab.graphics.charts.linecharts import HorizontalLineChart
 from reportlab.graphics.shapes import Drawing
 from reportlab.graphics.widgets.markers import makeMarker
@@ -9,6 +9,7 @@ from reportlab.lib import colors
 from reportlab.platypus import SimpleDocTemplate
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.pagesizes import A4
+from reportlab.graphics.charts.piecharts import Pie, Pie3d
 
 follaEstilo = getSampleStyleSheet()
 
@@ -75,6 +76,64 @@ lenda.y = 0
 lenda.columnMaximum = 2
 series = ["Maximas", "Minimas"]
 lenda.colorNamePairs = [(gl.lines[i].strokeColor, series[i]) for i in range(len(gl.data))]
+debuxo.add(lenda)
+
+elementosDoc.append(debuxo)
+
+debuxo = Drawing(300, 200)
+tarta = Pie3d()
+tarta.x = 65
+tarta.y = 15
+# porcenteaje de las porciones
+tarta.data = [10, 5, 20, 25, 40]
+tarta.labels = ["Edge", "Brave", "Firefox", "Safari", "Chrome"]
+
+tarta.slices.strokeWidth = 0.5
+
+# separacion de las porciones
+tarta.slices[3].popout = 10
+# grosor del borde
+tarta.slices[3].strokeWidth = 2
+# resultado con lineas punteadas
+tarta.slices[3].strokeDashArray = [2,2]
+tarta.slices[3].labelRadius = 2
+tarta.slices[3].fontColor = colors.blue
+# linea hacia las etiquetas
+tarta.sideLabels = 1
+debuxo.add(tarta)
+
+lenda = Legend()
+lenda.x = 300
+lenda.y = 5
+lenda.dx = 10
+lenda.dy = 10
+lenda.fontName = "Helvetica"
+lenda.fontSize = 7
+lenda.boxAnchor = "n"
+lenda.columnMaximum = 15
+lenda.strokeWidth = 0.5
+lenda.strokeColor = colors.grey
+lenda.deltax = 75
+lenda.deltay = 10
+lenda.autoXPadding = 5
+lenda.yGap = 1.5
+lenda.dxTextSpace = 3
+lenda.alignment = "right"
+lenda.dividerLines = 1|4
+lenda.dividerOffsY = 4.5
+lenda.subCols.rpad = 30
+
+coloresLenda = []
+
+colores = [colors.blue, colors.red, colors.pink, colors.yellow, colors.green]
+
+for i, color in enumerate(colores):
+    tarta.slices[i].fillColor = color
+    coloresLenda.append((color, tarta.labels[i]))
+
+lenda.colorNamePairs = coloresLenda
+
+
 debuxo.add(lenda)
 elementosDoc.append(debuxo)
 

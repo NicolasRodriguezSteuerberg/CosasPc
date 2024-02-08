@@ -92,3 +92,215 @@ Ahora sincronizaremos el proyecto de Android y ya podremos usarlo.
 
 ### Google Analytics
 Sirve para obtener estadísticas sobre el comportamiento de los usuarios con [Analytics] 
+
+### Firestore database
+
+#### Creación de la base de datos
+Para manejar nuestra base de datos usaremos firestore, para ello tendremos que añadirlo a nuestros accesos directos del proyecto:
+![](imagenes/Firestore1.png)
+
+Ahora que tenemos el acceso entramos y le damos a crear una base de datos y tendremos que poner la ubicación del server, en este caso usare uno de europa
+![](imagenes/Firestore2.png)
+Y en el siguiente paso tendremos que elegir nuestras reglas de seguridad, en este caso como estamos probando firebase usaremos el modo prueba:
+![](imagenes/Firestore3.png)
+
+#### Creación de nuestras colecciones
+Para usar esta base de datos tendremos que crear una colección. Para esto  le daremos a iniciar y pondremos el nombre de nuestra colección y en el apartado siguiente tendremos que agregar nuestro primer documento (fila).
+
+<details>
+    <summary>Fotos de creacion de colecciones</summary>
+    <p>
+        <img src="imagenes/FirestoreCollection1.png"/>
+        <img src="imagenes/FirestoreCollection2.png"/>
+    </p>
+</details>
+Despues de crear esto tendremos una tabla parecida a esta:
+
+![](imagenes/FirestoreCollection3.png)
+
+#### Usar firebase desde Android Studio
+En la explicación va a estar basada en el patron MVVM
+
+##### DATA:
+En este proyecto solo tendremos 3 variables en este caso una lista de usuarios y una variable nombre y otra edad
+
+##### MODEL:
+En esta clase tendremos la clase con la que se crearán los objetos de cada documento y las funciones para crearlos. Necesitamos crear un constructior vacio ya que si no a la hora de coger los datos de firestore nos dará error:
+```kotlin
+data class User(
+    val nombre: String = "",
+    val edad: Int = 0
+){
+    // Constructor vacío requerido por Firebase
+    constructor() : this("", 0)
+}
+
+object UserModel{
+    private val db = FirebaseFirestore.getInstance()
+
+    suspend fun getUsers(): List<User> {
+        // Obtiene todos los usuarios de la colección "usuarios" de tipo QuerySnapshot
+        val querySnapshot: QuerySnapshot = db.collection("table_prueba").get().await()
+        // Convierte el QuerySnapshot a una lista de objetos User y la retorna
+        return querySnapshot.documents.map { document ->
+            val user = document.toObject(User::class.java)
+            user ?: throw IllegalStateException("Error al convertir documento a User")
+        }
+    }
+
+    fun addUser(user: User): Task<DocumentReference> {
+        return db.collection("table_prueba").add(user)
+    }
+
+    fun updateUser(documentId: String, user: User): Task<Void> {
+        // Actualiza un usuario existente en la colección "usuarios"
+        return db.collection("table_prueba").document(documentId).set(user, SetOptions.merge())
+    }
+}
+```
+
+##### ViewModel
+Esta clase es la que manejara el model y se llamará desde la view. Esta clase tendrá una [inyección de dependencias](https://developer.android.com/training/dependency-injection?hl=es-419) y tendrá que extender de ViewModel:
+```
+class UserViewModel(private val userRepository: UserModel): ViewModel() {
+
+
+    init {
+        // Cargar datos del modelo al inicializar el ViewModel
+        loadUsers()
+    }
+
+    private fun loadUsers() {
+        viewModelScope.launch {
+
+            val userList = userRepository.getUsers()
+            // Actualiza la lista de usuarios
+            data.users.value = userList
+        }
+    }
+
+    fun addUser(user: User) {
+        viewModelScope.launch {
+            userRepository.addUser(user)
+            // Actualiza la lista de usuarios después de agregar uno nuevo
+            loadUsers()
+        }
+    }
+
+    fun updateUser(documentId: String, user: User) {
+        viewModelScope.launch {
+            userRepository.updateUser(documentId, user)
+            // Actualiza la lista de usuarios después de actualizar uno existente
+            loadUsers()
+        }
+    }
+}
+```
+Al crear un objeto de esta clase se realizará el init para cargar al principio de la ejecucion todos los datos ya que los estarémos mostrando.
+
+##### VIEW
+En esta clase crearemos toda la lógica de vista de nuestro proyecto. A parte de crear toda la view tendremos que llamar a las funciones necesarias de la viewmodel:
+
+```kotlin
+@Composable
+fun UserScreen(
+    viewModel: UserViewModel,
+) {
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        OutlinedTexts()
+        Buttons(viewModel)
+        UserList(users = data.users.value)
+    }
+}
+
+// Composable que contiene los botones de añadir y actualizar usuario
+@Composable
+fun Buttons(viewModel: UserViewModel) {
+    Row(
+        horizontalArrangement = Arrangement.Center,
+        modifier = Modifier.padding(vertical = 16.dp)
+    ) {
+        Button(
+            onClick = {
+                viewModel.addUser(User(data.nombre.value, data.edad.value.toIntOrNull() ?: 0))
+            }
+        ) {
+            Text("Añadir Usuario")
+        }
+
+        Button(
+            onClick = {
+                // Actualizar usuario
+            }, modifier = Modifier.padding(start = 8.dp)
+        ) {
+            Text("Actualizar Usuario")
+        }
+    }
+}
+
+// Composable que contiene los campos de texto para el nombre y la edad
+@Composable
+fun OutlinedTexts(){
+    OutlinedTextField(
+        value = data.nombre.value,
+        onValueChange = {
+            data.nombre.value = it
+        },
+        label = {
+            Text("Nombre")
+        },
+        modifier = Modifier.padding(16.dp)
+    )
+    OutlinedTextField(
+        value = data.edad.value,
+        onValueChange = {
+            // Solo coge el valor si es un número
+            data.edad.value = it.takeIf {
+                    text -> text.all {
+                it.isDigit()
+            }
+            } ?: data.edad.value
+        },
+        label = {
+            Text("Edad")
+        },
+        modifier = Modifier.padding(16.dp),
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+    )
+}
+
+// Composable que contiene la lista de usuarios
+@Composable
+fun UserList(users: List<User>) {
+    LazyColumn(
+        modifier = Modifier.fillMaxSize(),
+        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
+    ) {
+        items(users) { user ->
+            UserListItem(user = user)
+        }
+    }
+}
+
+// Composable que contiene un elemento de la lista de usuarios
+@Composable
+fun UserListItem(user: User) {
+    Card(
+        modifier = Modifier
+            .padding(vertical = 4.dp)
+            .fillMaxWidth()
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp)
+        ) {
+            Text(text = "Nombre: ${user.nombre}")
+            Text(text = "Edad: ${user.edad}")
+        }
+    }
+}
+```

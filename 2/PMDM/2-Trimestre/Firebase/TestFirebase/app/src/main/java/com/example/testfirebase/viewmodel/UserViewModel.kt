@@ -9,34 +9,44 @@ import kotlinx.coroutines.launch
 
 class UserViewModel(private val userRepository: UserModel): ViewModel() {
 
-
     init {
-        // Cargar datos del modelo al inicializar el ViewModel
-        loadUsers()
+        // Escuchar cambios en la colección de usuarios
+        listenForUserChanges()
     }
 
-    private fun loadUsers() {
+    private fun listenForUserChanges() {
         viewModelScope.launch {
-
-            val userList = userRepository.getUsers()
-            // Actualiza la lista de usuarios
-            data.users.value = userList
+            // Escucha cambios en la colección de usuarios
+            userRepository.listenForUserChanges().collect { userList ->
+                // Actualiza la lista de usuarios
+                data.users.value = userList
+            }
         }
     }
 
     fun addUser(user: User) {
         viewModelScope.launch {
             userRepository.addUser(user)
-            // Actualiza la lista de usuarios después de agregar uno nuevo
-            loadUsers()
+            data.nombre.value = ""
+            data.edad.value = ""
         }
     }
 
-    fun updateUser(documentId: String, user: User) {
+    fun getIdUser(user: User){
         viewModelScope.launch {
-            userRepository.updateUser(documentId, user)
-            // Actualiza la lista de usuarios después de actualizar uno existente
-            loadUsers()
+            userRepository.getIdUser(user)
+        }
+    }
+
+    // Actualiza un usuario existente
+    fun updateUser(user: User) {
+        viewModelScope.launch {
+            if (!data.documentId.value.isEmpty()) {
+                userRepository.updateUser(data.documentId.value,user)
+                data.nombre.value = ""
+                data.edad.value = ""
+                data.documentId.value = ""
+            }
         }
     }
 }
