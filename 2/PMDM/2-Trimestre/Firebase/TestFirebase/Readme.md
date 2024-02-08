@@ -36,7 +36,9 @@ Debemos registrarla app con el proyecto de Firebase. El registro de tu app a men
 1. Dirigirse a Firebase console (deberias tenerlo abierto ya que creaste el proyecto)[pinche aqui si no es asi](https://console.firebase.google.com/?hl=es-419&_gl=1*1rvx8u4*_ga*MTY1MjI5MDU5OS4xNzA3MjU3NTQ0*_ga_CW55HF8NVT*MTcwNzI5MjUwNy4yLjEuMTcwNzI5Njc1MC4xOS4wLjA.) y escoges tu base de datos
 2. Haz clic en el icono de Android para iniciar el flujo de trabajo de configuración.![](imagenes/Add1.png)
 3. Ingresamos el nombre del paquete de tu app en el campo Nombre del paquete de Android![](imagenes/Add2.png)
-4. Descargamos el archivo json y lo guardamos en la carpeta app de nuestro proyecto![](imagenes/Add3.png)
+4. Descargamos el archivo json y lo guardamos en la carpeta app de nuestro proyecto
+
+![](imagenes/Add3.png)
 5. Agregamos el [SDK](#agregar-el-sdk-de-realtime-database-en-la-aplicación-android-studio)
 
 ### Agregar el sdk de Realtime Database en la aplicación (Android Studio)

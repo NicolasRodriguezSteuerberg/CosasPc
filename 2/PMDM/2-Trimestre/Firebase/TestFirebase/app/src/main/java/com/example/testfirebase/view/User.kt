@@ -33,8 +33,7 @@ fun UserScreen(
 
     Column(
         modifier = Modifier
-            .fillMaxSize()
-            .background(Color.Cyan),
+            .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         OutlinedTextField(
