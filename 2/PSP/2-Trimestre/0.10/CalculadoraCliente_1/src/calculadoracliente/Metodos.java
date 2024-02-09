@@ -4,12 +4,17 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 
 public class Metodos {
@@ -18,6 +23,8 @@ public class Metodos {
     DataOutputStream dos;
     DataInputStream dis;
     int[] numbers = new int[2];
+    ObjectInputStream ois;
+    JLabel operationLabel;
 
     public void connect() throws IOException{
         Socket clienteSocket = new Socket();
@@ -30,58 +37,46 @@ public class Metodos {
         setOs(clienteSocket.getOutputStream());
         setDos(new  DataOutputStream(os));
         setDis(new DataInputStream(is));
+        
+        ois = new ObjectInputStream(clienteSocket.getInputStream());
     }
     
-    public void getOperationOptions() throws IOException{
-        // Leemos la longitud del mensaje
-        int dataLength = dis.readInt();
-
-        // leemos el array de bytes
-        byte[] receivedData = new byte[dataLength];
-        dis.readFully(receivedData);
-
-        // Convertir los bytes a un string
-        String receivedString = new String(receivedData);
-
-        // Dividir el string en un array de strings utilizando el delimitador ","
-        String[] receivedArray = receivedString.split(",");
+    public void getButtons() throws IOException{
+        int messageLength = dis.readInt();
         
-        // enviar el operando
-        sendOperando(receivedArray);
+        // Leemos el mensaje como array de bytes
+        byte[] mensajeBytes = new byte[messageLength];
+        dis.readFully(mensajeBytes);
+        
+        // Convertimos los bytes a String
+        String receivedString = new String(mensajeBytes);
+        
+        // lo pasamos a array
+        String[] receivedArray = receivedString.split("_");
+        
+        createPanel(receivedArray);
     }
     
-    public void sendOperando(String[] operandos) throws IOException{
-        int choice = JOptionPane.showOptionDialog(
-                null, 
-                "Elige el operando",
-                "VENTANA CLIENTE", 0, 0,
-                null,
-                operandos,
-                operandos[0]
-        );
+    public void createPanel(String[] buttons){
+        // creamos el panel y el layout
+        JPanel panel = new JPanel();
+        panel.setLayout(new java.awt.GridLayout(5,4));
         
-        String mensajeMandar = operandos[choice];
-        byte[] mensajeMandarBytes = mensajeMandar.getBytes();
-
-        dos.writeInt(mensajeMandarBytes.length);
-        dos.write(mensajeMandarBytes);
+        // Etiqueta para mostrar la operacion
+        operationLabel = new JLabel("", SwingConstants.RIGHT);
+        panel.add(operationLabel);
     }
     
-    public void sendOperaciones() throws IOException{
-        for (int i = 0; i < 2; i++) {
-            numbers[i] = Integer.parseInt(JOptionPane.showInputDialog("TECLEE EL " + (i+1) + " OPERANDO"));
-        }
-
-        // Obtener la longitud del array
-        int arrayLength = numbers.length;
-
-        // Enviar la longitud del array
-        dos.writeInt(arrayLength);
+    
+    public void sendOperation() throws IOException{
+        // get operation from client
+        String operation = JOptionPane.showInputDialog("Teclee la operacion");
         
-        // Enviar los numeros
-        for (int i = 0; i < arrayLength; i++) {
-            dos.writeInt(numbers[i]);
-        }
+        // send the operation to the server
+        byte[] sendMessageOperation = operation.getBytes();
+
+        dos.writeInt(sendMessageOperation.length);
+        dos.write(sendMessageOperation);
     }
     
     public boolean receiveCalculation() throws IOException{
@@ -96,7 +91,13 @@ public class Metodos {
         String receivedString = new String(mensajeBytes);
         
         // lo pasamos a array
-        String[] receivedArray = receivedString.split(",");
+        String[] receivedArray = receivedString.split("_");
+        if(receivedArray[0].equals("null")){
+            JOptionPane.showMessageDialog(null, "TU OPERACION NO ESTÁ BIEN FORMADA POR FAVOR INGRESE UNA VALIDA");
+            sendContinue(true);
+            // retorno true por que así ya le saca el mensaje de operación
+            return true;
+        }
         
         boolean isContinue = sendContinueResult(receivedArray);
         sendContinue(isContinue);
