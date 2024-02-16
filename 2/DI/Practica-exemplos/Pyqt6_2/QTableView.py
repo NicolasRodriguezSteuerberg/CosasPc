@@ -8,9 +8,14 @@ from PyQt6.QtWidgets import (
 )
 
 from PyQt6.QtCore import Qt, QAbstractTableModel, QModelIndex
+from PyQt6 import QtGui
 
 
 class ModeloTaboa(QAbstractTableModel):
+    """
+    Clase que hereda de QAbstractTableModel para crear un modelo de tabla
+    A partir de esta clase se creará un modelo de tabla que se usará para cambiar el estilo de la tabla
+    """
     def __init__(self, table, headerData):
         super().__init__()
         self.table = table
@@ -27,9 +32,22 @@ class ModeloTaboa(QAbstractTableModel):
         if index.isValid():
             if role == Qt.ItemDataRole.EditRole or role == Qt.ItemDataRole.DisplayRole:
                 return self.table[index.row()][index.column()]
+            ''' color texto
             if role == Qt.ItemDataRole.ForegroundRole:
                 if self.table[index.row()][3]:
-                    return QColor(Qt.GlobalColor.red)
+                    return QColor(255,0,0)
+            '''
+            if role == Qt.ItemDataRole.BackgroundRole:
+                if self.table[index.row()][2] == "Muller":
+                    if self.table[index.row()][3]:
+                        return QColor(255,80,150)
+                    else:
+                        return QColor(255,150,203)
+                else:
+                    if self.table[index.row()][3]:
+                        return QColor(0,150,255)
+                    else:
+                        return QColor(0,200,255)
 
     # to edit the table
     def setData(self, index, value, role):
@@ -122,6 +140,10 @@ class MyView (QMainWindow):
         self.show() # para que se vea a pantalla
 
     def on_row_selected(self):
+        """
+
+        :return:
+        """
         index = self.tableView.selectedIndexes()
         if not index==[]:
             self.txtName.setText(self.table[index[0].row()][0])

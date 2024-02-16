@@ -27,7 +27,6 @@ public class ClientHandler extends Thread{
                 continuation = obx.getContinuation();
                 System.out.println(continuation);
             }
-            
             clientSocket.close();
         } catch (IOException ex) {
             ex.printStackTrace();

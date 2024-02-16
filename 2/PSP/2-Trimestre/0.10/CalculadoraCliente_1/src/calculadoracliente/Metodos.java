@@ -41,33 +41,6 @@ public class Metodos {
         ois = new ObjectInputStream(clienteSocket.getInputStream());
     }
     
-    public void getButtons() throws IOException{
-        int messageLength = dis.readInt();
-        
-        // Leemos el mensaje como array de bytes
-        byte[] mensajeBytes = new byte[messageLength];
-        dis.readFully(mensajeBytes);
-        
-        // Convertimos los bytes a String
-        String receivedString = new String(mensajeBytes);
-        
-        // lo pasamos a array
-        String[] receivedArray = receivedString.split("_");
-        
-        createPanel(receivedArray);
-    }
-    
-    public void createPanel(String[] buttons){
-        // creamos el panel y el layout
-        JPanel panel = new JPanel();
-        panel.setLayout(new java.awt.GridLayout(5,4));
-        
-        // Etiqueta para mostrar la operacion
-        operationLabel = new JLabel("", SwingConstants.RIGHT);
-        panel.add(operationLabel);
-    }
-    
-    
     public void sendOperation() throws IOException{
         // get operation from client
         String operation = JOptionPane.showInputDialog("Teclee la operacion");

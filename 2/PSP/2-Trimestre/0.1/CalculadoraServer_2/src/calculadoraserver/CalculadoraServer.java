@@ -23,8 +23,5 @@ public class CalculadoraServer {
             ClientHandler clientThread = new ClientHandler(newSocket);
             clientThread.start();
         }
-        
-        
     }
-    
 }
