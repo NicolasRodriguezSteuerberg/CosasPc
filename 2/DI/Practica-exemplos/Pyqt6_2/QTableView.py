@@ -1,14 +1,13 @@
 import sys
 
-from PyQt6.QtGui import QColor, QIcon
+from PyQt6.QtGui import QColor
 # importamos del pyqt6 los elementos que nos importa -> ventana principal, boton
 from PyQt6.QtWidgets import (
     QApplication, QMainWindow, QVBoxLayout,
     QLineEdit, QHBoxLayout, QTableView, QWidget, QComboBox, QCheckBox
 )
 
-from PyQt6.QtCore import Qt, QAbstractTableModel, QModelIndex
-from PyQt6 import QtGui
+from PyQt6.QtCore import Qt, QAbstractTableModel
 
 
 class ModeloTaboa(QAbstractTableModel):
@@ -37,6 +36,7 @@ class ModeloTaboa(QAbstractTableModel):
                 if self.table[index.row()][3]:
                     return QColor(255,0,0)
             '''
+            # color de fondo
             if role == Qt.ItemDataRole.BackgroundRole:
                 if self.table[index.row()][2] == "Muller":
                     if self.table[index.row()][3]:
@@ -56,14 +56,16 @@ class ModeloTaboa(QAbstractTableModel):
             return True
         return False
 
+     # esta funcion es para que se pueda editar la tabla (por defecto no se puede)
     def flags(self, index):
         return Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsEditable | Qt.ItemFlag.ItemIsSelectable
 
     def headerData(self, section, orientation, role):
+        # para añadir la cabezera
         if role == Qt.ItemDataRole.DisplayRole:
             if orientation == Qt.Orientation.Horizontal:
                 return self.headerData[0][section]
-            '''
+            ''' para que se ponga a la izquierda numeros
             elif orientation == Qt.Orientation.Vertical:
                 return section + 1
             '''
@@ -139,11 +141,9 @@ class MyView (QMainWindow):
         # mostramos la ventana
         self.show() # para que se vea a pantalla
 
+    # function to fill the fields with the selected row
     def on_row_selected(self):
-        """
 
-        :return:
-        """
         index = self.tableView.selectedIndexes()
         if not index==[]:
             self.txtName.setText(self.table[index[0].row()][0])
