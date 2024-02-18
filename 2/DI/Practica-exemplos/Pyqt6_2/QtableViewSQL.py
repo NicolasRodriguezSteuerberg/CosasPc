@@ -1,5 +1,6 @@
 import sys
 
+from PyQt6.QtGui import QKeySequence
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QPushButton, QVBoxLayout,
                              QWidget, QHBoxLayout, QTableView)
 from PyQt6.QtCore import QSize
@@ -32,6 +33,9 @@ class VentanaPrincipal(QMainWindow):
 
         cajaH = QHBoxLayout()
         btnAceptar = QPushButton("Aceptar")
+        shorcut = QKeySequence("Ctrl+A")
+        btnAceptar.setShortcut(shorcut)
+
         btnCancelar = QPushButton("Cancelar")
         cajaH.addWidget(btnAceptar)
         cajaH.addWidget(btnCancelar)
