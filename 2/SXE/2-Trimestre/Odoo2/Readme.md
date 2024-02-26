@@ -43,6 +43,7 @@ services:
       - USER=odoo # user of the postgres
       - PASSWORD=odoo # password of the postgres user
 ```
+
 ### Postgres
 Necesitamos una base de datos para poder usar odoo, por lo que en este caso usaremos postgres y crearemos otro contenedor para ello.<br>
 :warning: Ten cuidado de no tener el [puerto](#puerto) de postgres ocupado.
@@ -81,7 +82,7 @@ Y si nos sale un proceso que lo esta usando tendremos que matarlo con el siguien
 ```bash
 sudo kill nombre_del_proceso
 ```
-![](imagenes/puerto_usado.png)
+![imagen](imagenes/puerto_usado.png)
 En mi caso no he tenido que matar ningun proceso ya que no estaba ocupado antes de hacer el docker compose.
 
 
@@ -91,7 +92,7 @@ Para subirlo tendremos que usar el comando `docker-compose up -d`, si en el sigu
 
 ## Como ver que el odoo esta funcionando?
 Para ver el odoo tendremos que ir a la url `localhost:8069` y nos aparecera la pagina de inicio de sesion de odoo. Cuando lo hayas configurado ya tendrás disponible el odoo. <u>Ejemplo:</u>
-![](imagenes/odoo.png)
+![imagen1](imagenes/odoo.png)
 
 > [!WARNING]
 > En el apartado Database Name tendras que poner otro nombre que no sea el de la base de datos de postgres del docker compose, ya que si no te dara un error.
@@ -99,10 +100,10 @@ Para ver el odoo tendremos que ir a la url `localhost:8069` y nos aparecera la p
 
 ### Como vemos que la nueva base de datos se ha creado?
 En el mismo IDE que ante y igual que en un paso anterior, a la derecha le damos al boton de `Database` y nos aparecera una ventana donde podemos ver las bases de datos que tenemos. Al lado del nombre del servicio de postgres nos aparecera un numero, si ese es uno le tendremos que dar a refrescar:<br>
-![](imagenes/database4.png)
+![imagen2](imagenes/database4.png)
 <br> Ahora ya debería salir una etiqueta que hay 1 de 2, le daremos click a esa misma y marcaremos la base de datos que hemos puesto en la configuración de odoo del paso anterior, tambien podrías desmarcar las otras ya que no las necesitarás. De esta forma ya sabemos que se ha creado de forma correcta.
 <br>
-![](imagenes/database5.png)
+![imagen3](imagenes/database5.png)
 
 ## Que funcionalidades podremos realizar con python? 
 <a id="python"> </a>

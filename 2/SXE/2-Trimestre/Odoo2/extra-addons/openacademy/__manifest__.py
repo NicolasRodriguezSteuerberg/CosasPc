@@ -3,14 +3,15 @@
     'name': "openacademy",
 
     'summary': """
-        No se""",
+        Este es un modulo de odoo que guarda nombres y descripciones de cosas.
+        """,
 
     'description': """
-        Mi modulo de odoo
+        Este es mi modulo de odoo
     """,
 
-    'author': "No es nico",
-    'website': "https://www.marcosfabobo.com",
+    'author': "NSteuerberg",
+    'website': "https://www.nsteuerberg_openacademy.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/16.0/odoo/addons/base/data/ir_module_category_data.xml
