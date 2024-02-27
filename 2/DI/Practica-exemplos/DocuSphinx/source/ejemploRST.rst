@@ -81,3 +81,39 @@ El parrafo tiene un enlace a la pagina principal de `Daniel Castelao`_.
 Enlaces internos
 ````````````````
 Puedo hacer referencias con una etiqueta colocada arriba con :ref:`nivelSecciones`.
+
+Taboas
+^^^^^^
+
++------------+------------+------------+
+| Cabecera   | Cabecera2  | Cabecera3  |
++============+============+============+
+| Contido    | Contido2   | Contido3   |
++------------+------------+------------+
+| Contido1.1 | Contido2.1 | Contido3.1 |
++------------+------------+------------+
+
+Otra forma más facil
+
+========== =======
+Lunes      Martes
+========== =======
+Di         Di
+Di         Di
+Di         Libre
+Di         Libre
+Descanso   Descanso
+Sxe        Libre
+Sxe        Libre
+Sxe        Libre
+========== =======
+
+Imaxes
+^^^^^^
+
+.. image:: _static/images/tom_baker.jpg
+   :height: 200px
+   :width: 200 px
+   :scale: 100%
+   :alt: tom baker
+   :align: center
