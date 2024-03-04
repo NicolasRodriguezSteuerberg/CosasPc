@@ -117,3 +117,36 @@ Imaxes
    :scale: 100%
    :alt: tom baker
    :align: center
+
+Notas de pie:
+`````````````
+Este texto está realizado con Spinhx [#n1]_ para realizar la documentación.
+
+Directivas
+``````````
+
+..
+    Las posibilidades de las directivas son:
+    Attention, cuation, danger, error, hint, important, note, tip, warning
+
+.. rubric::Notas
+
+.. [#n1] Podes encontrar más información en `Sphinx`_.
+
+.. _Sphinx: http://www.sphinx-doc.org
+
+.. Danger::
+   Este es un mensaje de peligro
+
+.. Attention::
+   Este es un mensaje de atención
+
+.. Caution::
+   Este es un mensaje de precaución
+
+.. Important::
+   Este es un mensaje importante
+
+.. Tip::
+    Este es un mensaje de consejo
+

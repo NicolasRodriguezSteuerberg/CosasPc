@@ -28,6 +28,7 @@
         'views/views.xml',
         'views/templates.xml',
         'data/datos.xml',
+        'data/datosPuntos.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

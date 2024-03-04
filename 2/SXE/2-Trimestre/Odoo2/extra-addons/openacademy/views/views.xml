@@ -1,7 +1,7 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-
+    <!-- Cuando tienes uno no hace falta, con 2 si -->
     <record model="ir.ui.view" id="openacademy.list">
       <field name="name">openacademy list</field>
       <field name="model">test_model</field>
@@ -13,11 +13,33 @@
       </field>
     </record>
 
+    <!-- para referenciar la tabla -->
+    <record model="ir.ui.view" id="openacademy.list2">
+      <field name="name">OpenAcademy puntos</field>
+      <field name="model">puntos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="Nombre"/>
+          <field name="Puntos"/>
+        </tree>
+      </field>
+    </record>
+
 
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="openacademy.action_window">
       <field name="name">openacademy window</field>
       <field name="res_model">test_model</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--
+     ir.actions.act_window es siempre lo mismo,
+     hay que cambiar el ir.model.access.csv (antes de esto ya lo creas pero no puedes verlo en odoo)
+    -->
+    <record model="ir.actions.act_window" id="openacademy.action_window2">
+      <field name="name">OpenAcademy Puntos</field>
+      <field name="res_model">puntos</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -40,13 +62,18 @@
     <!-- Top menu item -->
     <menuitem name="openacademy" id="openacademy.menu_root"/>
 
-    <!-- menu categories -->
+    <!-- menu categories - botones de arriba de odoo -->
     <menuitem name="Menu 1" id="openacademy.menu_1" parent="openacademy.menu_root"/>
-    <menuitem name="Menu 2" id="openacademy.menu_2" parent="openacademy.menu_root"/>
+    <menuitem name="Tabla Lista" id="openacademy.menu_2" parent="openacademy.menu_root" action="openacademy.action_window"/>
+    <menuitem name="Tabla Puntos" id="openacademy.menu_3" parent="openacademy.menu_root" action="openacademy.action_window2"/>
 
     <!-- actions -->
     <menuitem name="List" id="openacademy.menu_1_list" parent="openacademy.menu_1"
               action="openacademy.action_window"/>
+
+    <!-- añadir el menu de puntos -->
+    <menuitem name="Puntos" id="openacademy.menu_1_list2" parent="openacademy.menu_1"
+              action="openacademy.action_window2"/>
     <!--
     <menuitem name="Server to list" id="openacademy" parent="openacademy.menu_2"
               action="openacademy.action_server"/>
