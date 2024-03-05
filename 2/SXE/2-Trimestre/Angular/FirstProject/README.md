@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+----
+Para crear un componente, iremos a la terminal, ponemos el siguiente comando:
+```shell
+ng generate component nombreComponente
+```
+No necesitas moverte entre carpetas, si estas en la carpeta del proyecto te lo crea en src/app
