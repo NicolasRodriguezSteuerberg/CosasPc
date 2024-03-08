@@ -26,7 +26,8 @@ public class Metodos {
     
     static ServerSocket serverSocket;
     
-    public void initializeStreams() throws IOException{
+    public void initializeStreams() {
+        try{
         System.out.println("Esperando conexion");
         serverSocket = new ServerSocket();
         int puerto = Integer.parseInt(JOptionPane.showInputDialog("Que puerto quieres usar?"));
@@ -52,8 +53,12 @@ public class Metodos {
                 new ThreadCliente(dis, dos, nickname).start();
             } else{
                 dos = (new  DataOutputStream(socketCliente.getOutputStream()));
+                dis = (new DataInputStream(socketCliente.getInputStream()));
                 sendEntryChat(dennied);
             }
+        }
+        } catch(IOException ex){
+            System.out.println("Aviso: " + ex);
         }
     }
     

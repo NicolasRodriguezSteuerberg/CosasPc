@@ -17,7 +17,7 @@ public class ThreadLeer extends Thread{
         try {
             obx.leerMensaje();
         } catch (IOException ex) {
-            ex.printStackTrace();
+            System.out.println("Aviso: " + ex);
         }
     }
 }

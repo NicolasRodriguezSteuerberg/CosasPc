@@ -34,6 +34,8 @@ public class ChatCliente {
             ThreadLeer miThread = new ThreadLeer(obx);
             miThread.start();
             obx.sendMensaje();
+        } else{
+            obx.cerrarConexion();
         }
     }
     

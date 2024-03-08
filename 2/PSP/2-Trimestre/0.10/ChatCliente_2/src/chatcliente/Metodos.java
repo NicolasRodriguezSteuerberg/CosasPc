@@ -62,7 +62,7 @@ public class Metodos {
         
         String mensaje = new String(messageBuffer);
         if(mensaje.equals("no")){
-            cerrarConexion();
+            System.out.println("No puedes conectarte");
             return false;
         } else{
             return true;

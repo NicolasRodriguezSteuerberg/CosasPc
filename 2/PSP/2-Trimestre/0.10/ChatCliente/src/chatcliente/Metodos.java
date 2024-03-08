@@ -5,6 +5,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
@@ -63,7 +65,6 @@ public class Metodos {
         String mensaje = new String(messageBuffer);
         if(mensaje.equals("no")){
             System.out.println("No puedes conectarte");
-            cerrarConexion();
             return false;
         } else{
             return true;
@@ -76,8 +77,12 @@ public class Metodos {
         dos.write(mensajeBytes);
     }
     
-    public void cerrarConexion() throws IOException{
-        this.newSocket.close();
-        System.exit(0);
+    public void cerrarConexion(){
+        try {
+            this.newSocket.close();
+            System.exit(0);
+        } catch (IOException ex) {
+            System.out.println("Aviso: " + ex);
+        }
     }
 }

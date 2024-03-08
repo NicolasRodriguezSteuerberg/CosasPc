@@ -30,31 +30,6 @@ public class Server {
         OutputStream os = newSocket.getOutputStream();
 
 
-        /*
-        // El mensaje recibir 3 veces repetido de continuo unilateral
-
-        for (int i = 0; i < 3; i++) {
-            byte[] mensajeRecibido=new byte[26];
-            is.read(mensajeRecibido);
-
-            System.out.println("Mensaje recibido: "+new String(mensajeRecibido));
-
-        }
-
-        // El mensaje enviar 3 veces repetido de continuo unilateral
-
-        for (int i = 1; i <= 3; i++) {
-            System.out.println("Enviando mensaje");
-
-            String mensajeEnviar="mensaje "+i+" desde el servidor";
-            os.write(mensajeEnviar.getBytes());
-
-            System.out.println("Mensaje enviado");
-        }
-
-        */
-
-
         // El mensaje recibir y enviar 3 veces repetido de continuo intercalado
         String mensajeMandar = "";
         String mensajeRecibido = "";

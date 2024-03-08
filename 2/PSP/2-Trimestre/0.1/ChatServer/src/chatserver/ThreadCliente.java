@@ -35,7 +35,7 @@ public class ThreadCliente extends Thread{
                 }
             }while(!mensaje.contains("/bye"));
         } catch (IOException ex) {
-            Logger.getLogger(ThreadCliente.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Aviso: " + ex);
         } finally {
             Metodos.nConnectedClients--;
             
@@ -44,31 +44,31 @@ public class ThreadCliente extends Thread{
                 System.out.println("Ningun cliente conectado");
             } else{
                 System.out.println("Hay: " + Metodos.nConnectedClients + " conectados");
-                Metodos.connectedClients.remove(dos);
+            }
+            Metodos.connectedClients.remove(dos);
+            if(Metodos.nConnectedClients>0){
                 String mensaje = nickname + ": dejo el chat";
                 Metodos.sendMessages(mensaje);
-                
-                int option = JOptionPane.showConfirmDialog(null, "Quieres cerrar conexion?");
-                if(option == 0){
-                    Metodos.serverRunning = false;
-                }
-                
-                if(!Metodos.serverRunning){
-                    synchronized(Metodos.connectedClients){
-                        String mensaje2 = "Se cerro el servidor";
-                        Metodos.sendMessages(mensaje2);
-                        byte[] mensajeBytes = mensaje2.getBytes();
-                        try{
-                            Metodos.serverSocket.close();
-                            System.out.println("SERVIDOR DESCONECTADO");
-                            System.exit(0);
-                        } catch (IOException ex) {
-                            Logger.getLogger(ChatServer.class.getName()).log(Level.SEVERE, null, ex);
-                        }
+            }
+            int option = JOptionPane.showConfirmDialog(null, "Quieres cerrar conexion?");
+            if(option == 0){
+                Metodos.serverRunning = false;
+            }
+
+            if(!Metodos.serverRunning){
+                synchronized(Metodos.connectedClients){
+                    String mensaje2 = "Se cerro el servidor";
+                    Metodos.sendMessages(mensaje2);
+                    byte[] mensajeBytes = mensaje2.getBytes();
+                    try{
+                        Metodos.serverSocket.close();
+                        System.out.println("SERVIDOR DESCONECTADO");
+                        System.exit(0);
+                    } catch (IOException ex) {
+                        System.out.println("Aviso: " + ex);
                     }
                 }
             }
-            
         }
     }
 }
