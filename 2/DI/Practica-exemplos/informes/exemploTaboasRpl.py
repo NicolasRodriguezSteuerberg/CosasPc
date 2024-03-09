@@ -6,6 +6,7 @@ from reportlab.platypus import SimpleDocTemplate, Table, Image, Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.pagesizes import A4
 
+# cogemos el estilo por defecto
 follaEstilo = getSampleStyleSheet()
 
 imaxe = Image("tombaker.jpg", 20, 20)
@@ -19,13 +20,16 @@ parrafo2 = Paragraph("Optare", style = estiloCorpoTexto2)
 
 elementosDoc = []
 
+# creamos los datos de la tabla
 datos = [
+    # cabecera
     ["Empresas", "Candidato 1", "Candidato 2", "Especificaciones"],
     ["Ayco", "Marcos", "Ruben", "Desenvolvemento web con PHP"],
     [[parrafo,parrafo2], "Borja", "Juan", "Recoñecemento de imaxes con OpenCV"],
     [[parrafo, imaxe], "Lidier", "Lucas", "Apliccacions para as telco"]
 ]
 
+# creamos un estilo para la tabla
 estilo = [
     # estilo , (inicio columna, inicio fila), (fin columna, fin fila), color
     ("TEXTCOLOR", (0,0), (0,-1), colors.blue),

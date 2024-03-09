@@ -1,11 +1,13 @@
 from reportlab.graphics.shapes import Image, Drawing
 from reportlab.graphics import renderPDF
 from reportlab.lib.pagesizes import A4
+# empieza en el 0,0 -> abajo izquierda
 
 imaxes = []
 imaxe = Image(10, -100, 300, 281, "tombaker.jpg")
 debuxo = Drawing()
 debuxo.add(imaxe)
+# movemos la imagen 700 puntos hacia arriba
 debuxo.translate(0,700)
 imaxes.append(debuxo)
 
