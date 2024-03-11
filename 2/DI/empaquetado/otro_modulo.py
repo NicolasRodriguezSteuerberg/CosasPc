@@ -1,0 +1,7 @@
+import moduloUno
+from moduloUno import MiClase
+from paqueteProyecto.moduloDeUnPaquete import MiClaseDeUnPaquete
+from paqueteProyecto.paqueteDelPaqueteProyecto.moduloDeUnPaqueteDeUnPaquete import MiClaseDeUnPaqueteDeUnPaquete
+
+moduloUno.miFuncion()
+MiClase()

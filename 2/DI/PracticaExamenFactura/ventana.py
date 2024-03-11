@@ -135,6 +135,7 @@ class Ventana(QMainWindow):
         if index:
             record = self.modelo.record(index[0].row())
             if not record.isEmpty():
+                cliente = record.value(0)
                 self.cliente.setText(record.value(0) if not record.isNull(0) else "")
                 self.domicilio.setText(record.value(1) if not record.isNull(1) else "")
                 self.codigoPostal.setText(str(record.value(2)) if not record.isNull(2) else "")

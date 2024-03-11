@@ -1,0 +1,11 @@
+moduloUno.py
+otro_modulo.py
+setup.py
+ejemplo_setup.egg-info/PKG-INFO
+ejemplo_setup.egg-info/SOURCES.txt
+ejemplo_setup.egg-info/dependency_links.txt
+ejemplo_setup.egg-info/top_level.txt
+paqueteProyecto/__init__.py
+paqueteProyecto/moduloDeUnPaquete.py
+paqueteProyecto/paqueteDelPaqueteProyecto/__init__.py
+paqueteProyecto/paqueteDelPaqueteProyecto/moduloDeUnPaqueteDeUnPaquete.py
