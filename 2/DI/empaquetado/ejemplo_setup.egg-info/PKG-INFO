@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: ejemplo-setup
+Version: 0.0.0
+Summary: Ejemplo de setuptools
+Home-page: http://danielcastelao.org
+Author: Nico
+Author-email: nrodriguezsteuerberg@danielcastelao.org
+License: glp
+
+esta es una explicación larga sobre el proyecyo
