@@ -1,10 +1,10 @@
-.. Documentacion Sphinx para DI documentation master file, created by
-   sphinx-quickstart on Thu Feb 22 13:17:47 2024.
+.. prueba documentation master file, created by
+   sphinx-quickstart on Sat Mar  9 15:43:19 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Documentacion Sphinx para DI's documentation!
-========================================================
+Welcome to prueba's documentation!
+==================================
 
 .. toctree::
    :maxdepth: 2
@@ -12,7 +12,6 @@ Welcome to Documentacion Sphinx para DI's documentation!
 
    funciones
    conexionBD
-   ejemploRST
 
 
 

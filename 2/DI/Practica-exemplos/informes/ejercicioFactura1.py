@@ -1,7 +1,6 @@
 import os
 
 from reportlab.lib import colors
-from reportlab.lib.colors import Color
 from reportlab.platypus import SimpleDocTemplate, Table, Image, Paragraph, Spacer, Flowable
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.pagesizes import A4
@@ -48,14 +47,14 @@ class Factura:
         self.elementosDoc.append(pie)
 
     def lineaSeparadora(self):
-        elementos = ["", "", "", ""],
+        elementos = [""],
         estilo = [
             # estilo , (inicio columna, inicio fila), (fin columna, fin fila), color
             # poner linea de abajo
             ("LINEBELOW", (0, 0), (-1, 0), 1, colors.black),
         ]
 
-        tabla = Table(data=elementos, style=estilo, colWidths=[210, 90, 90, 100], rowHeights=35)
+        tabla = Table(data=elementos, style=estilo, colWidths=[490], rowHeights=35)
         self.elementosDoc.append(tabla)
         self.elementosDoc.append(Spacer(0, 20))
 

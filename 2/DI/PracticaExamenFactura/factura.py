@@ -8,7 +8,8 @@ class Factura2():
     def __init__(
         self, cliente = "", domicilio = "",
         codigo_postal = "", nif = "", fecha = "",
-        n_pedido="", fecha_vencimiento="", condiciones_pago=""
+        n_pedido="", fecha_vencimiento="", condiciones_pago="",
+        importeNeto="", importeBruto=""
     ):
 
         self.hojaEstilo = getSampleStyleSheet()
@@ -16,7 +17,7 @@ class Factura2():
         self.cabecera()
         self.tablaFactura(cliente, domicilio, codigo_postal, nif, fecha, n_pedido, fecha_vencimiento, condiciones_pago)
         self.tablaDescripcion()
-        self.tablaDescripcionPago()
+        self.tablaDescripcionPago(importeNeto, importeBruto)
         self.textoDespedida()
         documento = SimpleDocTemplate("factura2.pdf", pagesize=A4)
         documento.build(self.elementosDoc)
@@ -32,7 +33,7 @@ class Factura2():
         self.elementosDoc.append(Spacer(0, 20))
         self.elementosDoc.append(pie2)
 
-    def tablaDescripcionPago(self):
+    def tablaDescripcionPago(self, importeNeto, importeBruto):
         elementos_tabla1 = [
             ["Método de pago:"]
         ]
@@ -44,15 +45,16 @@ class Factura2():
         tabla1 = Table(data=elementos_tabla1, style=estilo_tabla1, colWidths=245, rowHeights=60)
 
         elementos_tabla2 = [
-            ["Importe neto", ""],
+            ["Importe neto", importeNeto],
             ["IVA de   %", ""],
             ["IRPF de   %", ""],
             ["",""],
-            ["IMPORTE BRUTO", ""],
+            ["IMPORTE BRUTO", importeBruto],
         ]
         estilo_tabla2 = [
             # estilo , (inicio columna, inicio fila), (fin columna, fin fila), color
             ("GRID", (0, 0), (-1, -1), 1, "black"),
+            # BOX (para solo el exterior)
             ("BACKGROUND", (0, -1), (-1, -1), "lightgrey"),
             ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
             ("FONTSIZE", (0, -1), (-1, -1), 12),

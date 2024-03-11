@@ -1,0 +1,72 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="prueba2.list">
+      <field name="name">Prueba tabla</field>
+      <field name="model">test_model</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="prueba2.listEdad">
+      <field name="name">Prueba tabla</field>
+      <field name="model">test_edad_model</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="edad"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="prueba2.action_window">
+      <field name="name">prueba2 window</field>
+      <field name="res_model">test_model</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="prueba2.action_window_edad">
+      <field name="name">Edad prueba</field>
+      <field name="res_model">test_edad_model</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="prueba2.action_server">
+      <field name="name">prueba2 server</field>
+      <field name="model_id" ref="model_prueba2_prueba2"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+    <menuitem name="prueba2" id="prueba2.menu_root"/>
+    <!-- menu categories -->
+    <menuitem name="Menu 1" id="prueba2.menu_1" parent="prueba2.menu_root"/>
+    <menuitem name="Lista Test" id="prueba2.menu_2" parent="prueba2.menu_root" action="prueba2.action_window"/>
+    <menuitem name="Lista Edad" id="prueba2.menu_3" parent="prueba2.menu_root" action="prueba2.action_window_edad"/>
+
+    <!-- actions -->
+    <menuitem name="Tabla" id="prueba2.menu_1_list" parent="prueba2.menu_1"
+              action="prueba2.action_window"/>
+    <menuitem name="TablaEdad" id="prueba2.menu_1_list2" parent="prueba2.menu_1"
+              action="prueba2.action_window_edad"/>
+<!--
+    <menuitem name="Server to list" id="prueba2" parent="prueba2.menu_2"
+              action="prueba2.action_server"/>
+-->
+  </data>
+</odoo>

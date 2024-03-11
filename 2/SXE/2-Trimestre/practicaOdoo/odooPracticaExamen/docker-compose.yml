@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+  # odoo:
+  web2_dev:
+    image: odoo:16.0
+    depends_on:
+      # poner el mismo nombre que el servicio de postgres
+      - mydb2_dev
+    volumes:
+      - ./extra-addons:/mnt/extra-addons
+    ports:
+      - "8069:8069"
+    environment:
+      - HOST=mydb2_dev # same name as the postgres service
+      - USER=odoo
+      - PASSWORD=odoo
+
+  # postgres:
+  mydb2_dev:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: odoo
+      POSTGRES_USER: odoo

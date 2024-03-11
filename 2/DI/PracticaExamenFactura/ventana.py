@@ -89,6 +89,13 @@ class Ventana(QMainWindow):
         btnImprimir.clicked.connect(self.on_btn_imprimir_clicked)
         cajaV.addWidget(btnImprimir)
 
+        self.importeNeto = QLineEdit()
+        self.importeNeto.setPlaceholderText("Importe Neto")
+        self.importeBruto = QLineEdit()
+        self.importeBruto.setPlaceholderText("Importe Bruto")
+        cajaV.addWidget(self.importeNeto)
+        cajaV.addWidget(self.importeBruto)
+
         contenedor = QWidget()
         contenedor.setLayout(cajaV)
         self.setCentralWidget(contenedor)
@@ -104,7 +111,9 @@ class Ventana(QMainWindow):
             fecha=self.fecha.text().strip(),
             n_pedido=self.nPedido.text().strip(),
             fecha_vencimiento=self.fechaVencimiento.text().strip(),
-            condiciones_pago=self.condicionesPago.text().strip()
+            condiciones_pago=self.condicionesPago.text().strip(),
+            importeNeto=self.importeNeto.text().strip(),
+            importeBruto=self.importeBruto.text().strip()
         )
 
     def on_btn_engadir_clicked(self):

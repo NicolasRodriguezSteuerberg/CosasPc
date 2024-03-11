@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <record model="test_edad_model" id="prueba2.edad">
+            <field name="name">Pepe</field> <!--El nombre debe ser el mismo que la variable del modelo-->
+            <field name="edad">50</field> <!--El nombre debe ser el mismo que la variable del modelo-->
+        </record>
+        <record model="test_edad_model" id="prueba2.edad">
+            <field name="name">Nico</field> <!--El nombre debe ser el mismo que la variable del modelo-->
+            <field name="edad">20</field> <!--El nombre debe ser el mismo que la variable del modelo-->
+        </record>
+    </data>
+</odoo>

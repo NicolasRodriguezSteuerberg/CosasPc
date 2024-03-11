@@ -22,23 +22,36 @@ temperaturas = [
     [-3, -4, 2, 5, 9, 1, 11, 12, 3, 4, 5, -10]
 ]
 
+# creamos un dibujo de 400x200, tamaño de un a4 es 595x841
 debuxo = Drawing(400, 200)
 
+# inicializamos la grafica de barras verticales
 gb = VerticalBarChart()
+# ponemos la posicion de la grafica en el dibujo
 gb.x = 50
 gb.y = 50
+# ponemos el tamaño de la grafica
 gb.height = 125
 gb.width = 300
+# ponemos los datos de la grafica, quitamos el primer elemento que es el nombre de los meses
 gb.data = temperaturas[1:]
+# ponemos el color del borde de lo que rodea
 gb.strokeColor = colors.black
+# ponemos el valor minimo, maximo y de cuanto en cuanto se ponen los pasos
 gb.valueAxis.valueMin = -10
 gb.valueAxis.valueMax = 30
 gb.valueAxis.valueStep = 5
-gb.categoryAxis.labels.boxAnchor = 'ne'
+# ponemos la orientacion de las etiquetas
+# posiciones: n, s, e, w, ne, se, sw, nw (norte, sur, este, oeste, noroeste, sureste, suroeste, noroeste)
+gb.categoryAxis.labels.boxAnchor = 'ne' # noroeste
+# desplazamos las etiquetas 8 a la derecha y 30 hacia abajo
 gb.categoryAxis.labels.dx = 8
 gb.categoryAxis.labels.dy = -30
+# cambiamos el angulo de las etiquetas
 gb.categoryAxis.labels.angle = 30
+# añadimos el nombre de los meses a las etiquetas
 gb.categoryAxis.categoryNames = temperaturas[0]
+# ponemos el espacio entre las barras
 gb.groupSpacing = 10
 gb.barSpacing = 2
 

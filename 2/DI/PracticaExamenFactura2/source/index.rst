@@ -1,18 +1,19 @@
-.. Documentacion Sphinx para DI documentation master file, created by
-   sphinx-quickstart on Thu Feb 22 13:17:47 2024.
+.. factucaca documentation master file, created by
+   sphinx-quickstart on Mon Mar 11 17:28:07 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Documentacion Sphinx para DI's documentation!
-========================================================
+Welcome to factucaca's documentation!
+=====================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   funciones
+   facturaa
    conexionBD
-   ejemploRST
+   exame20022024_alumnos
+   modeloTaboa
 
 
 
