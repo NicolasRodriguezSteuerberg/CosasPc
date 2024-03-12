@@ -89,3 +89,23 @@ class Factura():
         ]
         tabla = Table(data=elementos, style=estilo, colWidths=300, rowHeights=100)
         self.elementosDoc.append(tabla)
+
+
+
+""" 
+Deseña o caso de proba para a aplicación, para a tarefa de engadir novos clientes. 
+O caso de proba ten que ter os seguintes apartados
+- Id de proba
+- Nome do caso de proba
+- Descripción
+- Precondicións para a execución do caso
+- Pasos e condicións de execución
+- Resultado esperado
+- Estado da proba
+- Resultado obtido
+- Erros asociados
+- Responsable do deseño da proba
+- Responsable da execución da proba
+- Comentarios
+(2 ptos)
+"""

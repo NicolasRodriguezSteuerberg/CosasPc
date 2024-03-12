@@ -1,0 +1,23 @@
+#contenedor{
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+.password{
+  position: relative;
+  display: inline-block;
+}
+
+
+#toggleButton{
+  position: absolute;
+  right:0;
+  top: 0;
+  border: none;
+  background: none;
+}
+
+img{
+  width: 50px;
+  height: 50px;
+}

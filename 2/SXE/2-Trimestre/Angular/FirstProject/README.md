@@ -28,8 +28,64 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ----
-Para crear un componente, iremos a la terminal, ponemos el siguiente comando:
+## Craar uu componente
+Para crear un componente tenemos que ir a nuestra terminal y poner lo siguiente:
 ```shell
 ng generate component nombreComponente
 ```
-No necesitas moverte entre carpetas, si estas en la carpeta del proyecto te lo crea en src/app
+
+## Como tener un contador que suba al pulsar un boton:
+Nos dirigimos al archivo nombreComponente.component.ts y añadimos lo siguiente:
+```typescript
+export class HomeComponent {
+  // inicializar contador
+  counter = 0;
+
+  // método que se llamara en nuestro boton
+  increasCounter(){
+    this.counter++;
+  }
+}
+```
+Ahora en nuestro html del componente en el boton llamamos a nuestra funcion:
+```html
+<!-- (click) es la funcion que hace que puedes asociar la funcion del typescript -->
+<button id="botton" (click)="increasCounter()">
+  Button clicker
+</button>
+```
+### Como hacer un if para que salga texto dependiendo de alguna variable:
+En mi caso solo voy a mostrar el contador cuando este sea mayor que 0
+```html
+<!-- podemos llamar directamente a las variables del typescript -->
+@if (counter>0){
+<!-- para añadir una variable a un texto tendremos que meterla entre {{}} -->
+<p>Has marcado: {{counter}} goles</p>
+}
+```
+
+## Como poner eventos
+En nuestro archivo typescript podemos crear una funcion en la que dentro cogamos una referencia al elemento del evento y añadirselo, este es un ejemplo para que cada vez que se pulsa un boton se mueva aleatoriamente y que su color de fondo tambien sea aleatorio:
+```typescript
+  ngAfterViewInit() {
+    // coger la referencia del boton
+    const button = document.getElementById('randomButton') as HTMLButtonElement;
+    // añadirle un evento que haga lo de dentro cada vez que se pulse
+    button.addEventListener('click', () => {
+      // coger los elementos aleatorios
+      const x = Math.floor(Math.random() * window.innerWidth);
+      const y = Math.floor(Math.random() * window.innerHeight);
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+      // ponerle estilo
+      button.style.position = 'absolute';
+      // le ponemos cuanto se mueve a partir de la izquierda y de arriba
+      button.style.left = `${x}px`;
+      button.style.top = `${y}px`;
+      button.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+      // aumento un contador diferente
+      this.contador++;
+    });
+  }
+```

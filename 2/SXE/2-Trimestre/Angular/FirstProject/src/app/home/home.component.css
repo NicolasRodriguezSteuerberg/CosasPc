@@ -10,3 +10,9 @@
 #botton{
   margin: auto;
 }
+
+p{
+  text-align: center;
+  color: #025c98;
+  background: antiquewhite;
+}

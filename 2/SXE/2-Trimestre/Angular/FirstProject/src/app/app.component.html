@@ -1,13 +1,19 @@
-
-<main class="main">
+<main class="main" xmlns="http://www.w3.org/1999/html">
   <div class="content">
     <div class="left-side">
       <h1>Chao, {{ title }}, {{ course }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
     </div>
     <div>
       <app-home></app-home>
     </div>
+    <div class="formulario">
+      <app-formulario></app-formulario>
+    </div>
+    <button id="randomButton">MAGIA MAXIMA</button>
+
+    @if (contador>0){
+      <p>Contador de magia maxima = {{ contador }}</p>
+    }
   </div>
 </main>
 

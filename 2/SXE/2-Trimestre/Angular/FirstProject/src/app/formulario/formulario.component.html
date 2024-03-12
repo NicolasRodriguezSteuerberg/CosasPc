@@ -1,0 +1,16 @@
+<div id="contenedor">
+  <h3>Formulario</h3>
+  <input type="text" [(ngModel)]="nombre" placeholder="Nombre"/>
+  <br>
+  <!--input contraseña con boton para ver la contraseña-->
+  <div class="password">
+    <input type="password" id="password" [(ngModel)]="password" placeholder="Contraseña"/>
+    <button id="toggleButton" (click)="togglePasswordVisibility()">👁️</button>
+  </div>
+  <br>
+  <button (click)="myAlert()">MAGIA</button>
+  <br>
+  @if(isLogged){
+    <img src="https://github.com/NicolasRodriguezSteuerberg.png">
+  }
+</div>

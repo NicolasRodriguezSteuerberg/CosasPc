@@ -1,0 +1,16 @@
+.main{
+  background-image: url("../inazuma.gif");
+}
+
+.formulario{
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+p{
+  font-size: 20px;
+  font-weight: bold;
+  color: #a80202;
+  background: antiquewhite;
+}
