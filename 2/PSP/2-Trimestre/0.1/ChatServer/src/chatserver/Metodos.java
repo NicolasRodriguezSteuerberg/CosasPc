@@ -15,7 +15,7 @@ public class Metodos {
     DataOutputStream dos;
     // leer
     DataInputStream dis;
-    static final int MAX_CLIENTES = 2;
+    static final int MAX_CLIENTES = 3;
     public static Set<DataOutputStream> connectedClients = new HashSet<>();
     static int nConnectedClients=0;
     String nickname;

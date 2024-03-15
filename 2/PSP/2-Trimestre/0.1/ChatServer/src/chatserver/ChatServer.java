@@ -8,9 +8,6 @@ import javax.swing.JOptionPane;
 
 
 public class ChatServer {
-    
-    static int genteConectada = 0;
-    final static int genteMaxima = 3;
 
     public static void main(String[] args) throws IOException {
         Metodos obx = new Metodos();
